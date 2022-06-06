@@ -1,9 +1,14 @@
-@import './partials/variables';
-@import './partials/mixins';
-@import './normalize.css/normalize';
-@import './partials/reset';
-@import './partials/fonts';
-@import 'swiper/swiper';
-@import './vendor/swiper';
-@import './modules/common';
-@import './modules/main';
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/grid";
+
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./normalize.css/normalize";
+@import "./partials/reset";
+@import "./partials/fonts";
+
+@import "./modules/common";
+@import "./modules/main";

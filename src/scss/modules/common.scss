@@ -5,7 +5,7 @@ html body {
 }
 
 .container {
-  max-width: 1110px;
+  max-width: $container;
   margin: 0 auto;
 }
 
@@ -55,12 +55,75 @@ html body {
     &__icon {
       width: 56px;
       height: 56px;
+      color: $green;
     }
 
     &:hover {
       .btn-play__text {
         border-color: $black;
       }
+    }
+  }
+}
+
+// Слайдер - нужно будет заменить
+.slider-nav {
+  &__wrapper {
+    height: 100%;
+  }
+  &__btn {
+    &-wrap {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+    &_prev {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+    &-icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &__active-slide {
+    transform: translateY(-3px);
+    @extend %regular-20-gilroy;
+  }
+}
+
+.slider-quiz {
+  &__slide {
+    position: relative;
+  }
+  &__btn {
+    &-wrap {
+      position: absolute;
+      bottom: 39px;
+      right: 39px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    padding: 17px 15px;
+    background: $green;
+    border-radius: 6px;
+    &:disabled {
+      display: none;
+    }
+    &_prev {
+      svg {
+        transform: rotate(-180deg);
+      }
+    }
+    &-icon {
+      display: block;
+      width: 30px;
+      height: 16px;
+      color: $white;
     }
   }
 }

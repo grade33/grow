@@ -8,10 +8,10 @@
   width: 0px;
 }
 
-// html,
-// body {
-//   overflow-x: hidden;
-// }
+html,
+body {
+  overflow-x: hidden;
+}
 
 html {
   box-sizing: border-box;
@@ -37,6 +37,11 @@ ol {
 
 a {
   text-decoration: none;
+}
+
+svg {
+  vertical-align: middle;
+  font-size: 0;
 }
 
 input,

@@ -36,57 +36,57 @@
 .home {
   &-hero {
     background: $gray-gradient;
-    position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      background-image: url('@img/header/hero-bg.png');
-      background-repeat: no-repeat;
-      background-position: top right;
-    }
-
-    &__container {
+    &__slider {
       position: relative;
       height: 600px;
-      padding: 72px 0;
-    }
-
-    &__title {
-      @extend %bold-65-inter;
-      max-width: 697px;
-      margin-bottom: 19px;
-    }
-
-    &__desc {
-      @extend %regular-17-gilroy;
-      max-width: 348px;
-      margin-bottom: 30px;
-    }
-
-    &__btn {
-      &-wrap {
-        display: flex;
-        align-items: center;
-        gap: 45px;
+      .slider-nav {
+        &__slide {
+          height: 100%;
+          &-1 {
+            position: relative;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+              background: url('@img/header/hero-bg.png') no-repeat top right / auto 100%;
+              margin-right: calc((-100vw + $container) / 2);
+              padding-right: calc((100vw - $container) / 2);
+            }
+          }
+          padding-top: 72px;
+        }
+        &__btn-wrap {
+          bottom: 72px;
+        }
       }
     }
+    &__title {
+      @extend %bold-65-inter;
+      margin-bottom: 19px;
+    }
+    &__desc {
+      @extend %regular-17-gilroy;
+      margin-bottom: 30px;
+    }
+    &__btn-wrap {
+      display: flex;
+      align-items: center;
+      gap: 45px;
+    }
   }
+
   &-benefits {
-    padding: 70px 0;
-    &__container {}
+    padding: 72px 0;
     &__title {
       margin-bottom: 42px;
     }
     &__list {
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, auto);
+      display: flex;
+      flex-wrap: wrap;
       gap: 58px 0;
-      max-width: 918px;
     }
     &__item {
       display: flex;
@@ -97,41 +97,58 @@
     &__icon {
       width: 84px;
       height: 84px;
-      display: inline-block;
-      margin-bottom: 21px;
     }
     &__heading {
       @extend %medium-30-inter;
       margin-bottom: 10px;
     }
-    &__link {
+    &__link  {
       display: flex;
       align-items: center;
       gap: 12px;
       &-text {
-        @extend %regular-16-gilroy;;
+        @extend %regular-16-gilroy;
       }
       &-icon {
-        width: 15px;
         color: $black;
+        width: 15px;
         height: 8px;
       }
     }
   }
+
   &-quiz {
     background: $gray-gradient;
+    height: 633px;
     &__container {
       display: flex;
+      align-items: center;
       gap: 54px;
     }
     &__video {
+      &-block {
+        position: relative;
+        flex: none;
+        height: 100%;
+        margin-left: calc((-100vw + $container) / 2);
+      }
+      &-btn {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      &-icon {
+        width: 89px;
+        height: 89px;
+        color: $white;
+      }
       display: block;
-      width: 548px;
-      height: 633px;
       object-fit: cover;
     }
     &__content {
-      padding-top: 70px;
+      margin-left: auto;
     }
     &__title {
       display: flex;
@@ -145,39 +162,37 @@
       }
       &-heading {
         @extend %semibold-38-inter;
-        max-width: 577px;
+      }
+    }
+    &__slide {
+      padding: 33px 38px 37px;
+      background: $white;
+      border-radius: 12px;
+      box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.08);
+      &-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @extend %medium-30-inter;
+        margin-bottom: 30px;
+        &-pagination {
+          color: $green;
+        }
       }
     }
     &__form {
       &-content {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
         gap: 21px;
       }
       &-label {
-        cursor: pointer;
-        display: inline-flex;
-        width: fit-content;
-        align-items: center;
-        gap: 15px;
-      }
-    }
-    &__item {
-      padding: 33px 38px 37px;
-      background-color: $white;
-      max-height: 341px;
-      box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.08);
-      border-radius: 12px;
-      &-title {
         display: flex;
         align-items: center;
-        gap: 8px;
-        @extend %medium-30-inter;
-        margin-bottom: 30px;
-        &-pagination {
-          color: $green;
-        }
+        gap: 15px
+      }
+      &-text {
+        @extend %regular-22-gilroy;
       }
     }
   }

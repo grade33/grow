@@ -14,29 +14,25 @@ html(lang="ru")
       +header()
       main.main 
         section.home-hero
-          .home-hero__container.container
-            .swiper.swiper-nav
-              ul.swiper-wrapper 
-                li.swiper-slide
-                    h1.home-hero__title Grow faster, bigger, easier with us
-                    p.home-hero__desc We've got you covered with fully automated remote environmental controller
+          .container.home-hero__container
+            .slider-nav.home-hero__slider
+              ul.slider-nav__wrapper
+                li.slider-nav__slide.slider-nav__slide-1
+                  .home-hero__text-block
+                    h1.home-hero__title.col-7 Grow faster, bigger, easier with us
+                    p.home-hero__desc.col-4 We've got you covered with fully automated remote environmental controller
                     .home-hero__btn-wrap 
                       +btn('green','Select device',1,'home-hero__btn')
                       +btnVideo('home-hero__btn-video')
-                li.swiper-slide
-                    h1.home-hero__title Grow faster, bigger, easier with us
-                    p.home-hero__desc We've got you covered with fully automated remote environmental controller
-                    .home-hero__btn-wrap 
-                      +btn('green','Select device',1,'home-hero__btn')
-                      +btnVideo('home-hero__btn-video')
-              .swiper-button-wrap
-                button.swiper-button-prev
-                  svg.swiper-button-icon
+              .slider-nav__btn-wrap
+                button.slider-nav__btn.slider-nav__btn_prev
+                  svg.slider-nav__btn-icon
                     use(xlink:href="@img/sprite.svg#chevron")
-                span.swiper-active-slide-num
-                button.swiper-button-next
-                  svg.swiper-button-icon
+                span.slider-nav__active-slide 3
+                button.slider-nav__btn.slider-nav__btn_next
+                  svg.slider-nav__btn-icon
                     use(xlink:href="@img/sprite.svg#chevron")
+        
         section.home-benefits
           .container.home-benefits__container
             +sectionTitle('Benefits of GrowDirector Pro','home-benefits__title')
@@ -49,7 +45,7 @@ html(lang="ru")
                   'Open API', 'Scalability'
                 ]
               each val, idx in values
-                li.home-benefits__item
+                li.home-benefits__item.col-4
                   svg.home-benefits__icon
                     use(xlink:href="@img/sprite.svg#home-benefit-" + (+idx + 1))
                   h3.home-benefits__heading= val
@@ -57,25 +53,30 @@ html(lang="ru")
                     span.home-benefits__link-text More information
                     svg.home-benefits__link-icon
                       use(xlink:href="@img/sprite.svg#arrow-15")
+        
         section.home-quiz
           .container
             .home-quiz__container
-              video.home-quiz__video(src="#" poster="@img/header/quiz-video-preview.jpg") 
+              .home-quiz__video-block.col-6
+                button.home-quiz__video-btn(type="button")
+                  svg.home-quiz__video-icon
+                    use(xlink:href="@img/sprite.svg#video-play")
+                video.home-quiz__video(src="#" poster="@img/header/quiz-video-preview.jpg") 
               .home-quiz__content
                 .home-quiz__title 
                   svg.home-quiz__title-icon
                     use(xlink:href="@img/sprite.svg#question-mark")
                   h2.home-quiz__title-heading Just answer 5 questions and we'll find the right kit for you!
-                form.home-quiz__forms
-                  .swiper.home-quiz__swiper
-                    ul.swiper-wrapper 
-                      li.swiper-slide.home-quiz__item
-                        h3.home-quiz__item-title
-                          span.home-quiz__item-title-pagination
-                            span.home-quiz__item-title_pagination-this 1
+                form.home-quiz__form
+                  .slider-quiz.home-quiz__slider
+                    ul.slider-quiz__wrapper
+                      li.slider-quiz__slide.home-quiz__slide
+                        h3.home-quiz__slide-title
+                          span.home-quiz__slide-title-pagination
+                            span.home-quiz__slide-title_pagination_this 1
                             | /
-                            span.home-quiz__item-title_pagination-all 5
-                          span.home-quiz__item-title_text How big is the grow area? 
+                            span.home-quiz__slide-title_pagination_all 5
+                          span.home-quiz__slide-title-text How big is the grow area? 
                         .home-quiz__form-content
                           label.home-quiz__form-label
                             input.radio.visually-hidden(type="radio" checked name="quiz-first" value="1")
@@ -89,153 +90,14 @@ html(lang="ru")
                             input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
                             span.radio__custom
                             span.home-quiz__form-text Small: &lt; 100
-                        .swiper-button-wrap
-                          button.swiper-button-prev
-                            svg.swiper-button-icon
+                        .slider-quiz__btn-wrap
+                          button.slider-quiz__btn.slider-quiz__btn_prev(type="button" disabled)
+                            svg.slider-quiz__btn-icon
                               use(xlink:href="@img/sprite.svg#arrow-15")
-                          button.swiper-button-next
-                            svg.swiper-button-icon
+                          button.slider-quiz__btn.slider-quiz__btn_next(type="button" )
+                            svg.slider-quiz__btn-icon
                               use(xlink:href="@img/sprite.svg#arrow-15")
-                      li.swiper-slide.home-quiz__item
-                        h3.home-quiz__item-title
-                          span.home-quiz__item-title-pagination
-                            span.home-quiz__item-title_pagination-this 1
-                            | /
-                            span.home-quiz__item-title_pagination-all 5
-                          span.home-quiz__item-title_text What's your method of cultivation? 
-                        .home-quiz__form-content
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" checked name="quiz-first" value="1")
-                            span.radio__custom
-                            span.home-quiz__form-text Hydroponics water only
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="2")
-                            span.radio__custom
-                            span.home-quiz__form-text Hydroponics in coco substance 
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Coir or rockwool 
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Soil
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Others
-                        .swiper-button-wrap
-                          button.swiper-button-prev
-                            svg.swiper-button-icon
-                              use(xlink:href="@img/sprite.svg#arrow-15")
-                          button.swiper-button-next
-                            svg.swiper-button-icon
-                              use(xlink:href="@img/sprite.svg#arrow-15")
-                      li.swiper-slide.home-quiz__item
-                        h3.home-quiz__item-title
-                          span.home-quiz__item-title-pagination
-                            span.home-quiz__item-title_pagination-this 1
-                            | /
-                            span.home-quiz__item-title_pagination-all 5
-                          span.home-quiz__item-title_text What do you grow?
-                        .home-quiz__form-content
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" checked name="quiz-first" value="1")
-                            span.radio__custom
-                            span.home-quiz__form-text Lettuce or greens
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="2")
-                            span.radio__custom
-                            span.home-quiz__form-text Strawberries
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Tomatoes 
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Сannabis  
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Cabbage 
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Flowers 
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Others 
-                        .swiper-button-wrap
-                          button.swiper-button-prev
-                            svg.swiper-button-icon
-                              use(xlink:href="@img/sprite.svg#arrow-15")
-                          button.swiper-button-next
-                            svg.swiper-button-icon
-                              use(xlink:href="@img/sprite.svg#arrow-15")
-                      li.swiper-slide.home-quiz__item
-                        h3.home-quiz__item-title
-                          span.home-quiz__item-title-pagination
-                            span.home-quiz__item-title_pagination-this 1
-                            | /
-                            span.home-quiz__item-title_pagination-all 5
-                          span.home-quiz__item-title_text Is there a WiFi connection?
-                        .home-quiz__form-content
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" checked name="quiz-first" value="1")
-                            span.radio__custom
-                            span.home-quiz__form-text Yes
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="2")
-                            span.radio__custom
-                            span.home-quiz__form-text No
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Yes, there may be interruptions 
-                        .swiper-button-wrap
-                          button.swiper-button-prev
-                            svg.swiper-button-icon
-                              use(xlink:href="@img/sprite.svg#arrow-15")
-                          button.swiper-button-next
-                            svg.swiper-button-icon
-                              use(xlink:href="@img/sprite.svg#arrow-15")
-                      li.swiper-slide.home-quiz__item
-                        h3.home-quiz__item-title
-                          span.home-quiz__item-title-pagination
-                            span.home-quiz__item-title_pagination-this 1
-                            | /
-                            span.home-quiz__item-title_pagination-all 5
-                          span.home-quiz__item-title_text How big is the grow area? 
-                        .home-quiz__form-content
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" checked name="quiz-first" value="1")
-                            span.radio__custom
-                            span.home-quiz__form-text Sensors 
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="2")
-                            span.radio__custom
-                            span.home-quiz__form-text Environment  
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Irrigation 
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text Light  
-                          label.home-quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.home-quiz__form-text All of the greenhouse devices 
-                        .swiper-button-wrap
-                          button.swiper-button-prev
-                            svg.swiper-button-icon
-                              use(xlink:href="@img/sprite.svg#arrow-15")
-                          button.swiper-button-next
-                            svg.swiper-button-icon
-                              use(xlink:href="@img/sprite.svg#arrow-15")
+
 
 
 
