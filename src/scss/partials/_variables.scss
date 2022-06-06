@@ -1,0 +1,168 @@
+$green: #40AC6C;
+$green2: #29864F;
+$black: #202020;
+$gray: #777777;
+$gray2: #D6D6D6;
+$gray3: #F8F8F8;
+$gray4: #828282;
+$white: #FEFEFE;
+$blue: #0F4C6E;
+$blue2: #BED4DC;
+$gray-gradient: linear-gradient(180deg, #EDEFF3 0%, #EDEDED 100%);
+$blue-gradient: linear-gradient(180deg, #0F4C6F 0%, #0B3D59 100%);
+
+// Title
+
+%bold-80-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 106%;
+}
+
+%bold-65-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 115%;
+}
+
+%semibold-48-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 125%;
+}
+
+// Text
+
+%semibold-38-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 139%;
+}
+
+%semibold-32-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 144%;
+}
+
+%medium-30-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 130%;
+}
+
+%semibold-24-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+}
+
+%medium-24-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 133%;
+}
+
+%medium-23-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 139%;
+}
+
+%medium-22-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 109%;
+}
+
+%regular-22-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 109%;
+}
+
+%semibold-20-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+}
+
+%regular-20-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 125%;
+}
+
+%regular-18-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 168%;
+}
+
+%medium-17-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 141%;
+}
+
+%regular-17-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 141%;
+}
+
+%regular-16-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+%regular-15-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+}
+
+%semibold-14-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+}

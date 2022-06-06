@@ -1,0 +1,76 @@
+.swiper-nav {
+  position: static;
+  width: 100%;
+  height: 100%;
+
+  .swiper {
+    &-button {
+      &-wrap {
+        position: absolute;
+        bottom: 72px;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+      }
+
+      &-icon {
+        vertical-align: middle;
+        font-size: 0;
+        width: 32px;
+        height: 32px;
+      }
+
+      &-prev {
+        .swiper-button-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &-active-slide-num {
+      @extend %regular-20-gilroy;
+    }
+  }
+}
+
+.home-quiz__swiper {
+  width: 100%;
+  height: auto;
+  position: relative;
+  .swiper {
+    &-button {
+      &-wrap {
+        position: absolute;
+        bottom: 39px;
+        right: 39px;
+        display: flex;
+        gap: 15px;
+      }
+      &-prev,
+      &-next {
+        font-size: 0;
+        padding: 14px 17px;
+        background-color: $green;
+        border-radius: 6px;
+        height: min-content;
+        &.swiper-button-disabled {
+          display: none;
+        }
+      }
+      
+      &-prev {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+      &-icon {
+        vertical-align: middle;
+        font-size: 0;
+        height: 16px;
+        width: 30px;
+        color: $white;
+      }
+    }
+  }
+}

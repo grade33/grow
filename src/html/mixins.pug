@@ -1,0 +1,15 @@
+mixin btn(color,text,typeBool,Class)
+  - let type = typeBool ? 'button' : 'sumbit'
+  button.btn(class=Class + " btn__" + color, type=type)= text
+
+mixin btnVideo(Class)
+  button.btn-play(class=Class type="button")
+    span.btn-play__text Watch Video 
+    svg.btn-play__icon
+      use(xlink:href="@img/sprite.svg#video-play")
+
+mixin sectionTitle(text,Class)
+  .section-title(class=Class)
+    svg.section-title__icon
+      use(xlink:href="@img/sprite.svg#before-title-tree")
+    h2.section-title__heading= text

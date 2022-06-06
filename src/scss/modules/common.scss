@@ -1,0 +1,140 @@
+html body {
+  @extend %regular-17-gilroy;
+  color: $black;
+  background: $white;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.btn {
+  @extend %medium-17-gilroy;
+  padding: 15px 30px;
+  border-radius: 12px;
+
+  &__green {
+    background-color: $green;
+    color: $white;
+    transition: background-color .2s ease-in-out;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: $green2;
+    }
+  }
+
+  &__white {
+    color: $black;
+    background-color: $white;
+    transition: background-color .2s ease-in-out,
+      color .2s ease-in-out;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: $gray;
+      color: $black;
+    }
+  }
+
+  &-play {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    &__text {
+      @extend %medium-17-gilroy;
+      color: $black;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s ease-in-out;
+    }
+
+    &__icon {
+      width: 56px;
+      height: 56px;
+    }
+
+    &:hover {
+      .btn-play__text {
+        border-color: $black;
+      }
+    }
+  }
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__icon {
+    width: 24px;
+    height: 38px;
+  }
+
+  &__heading {
+    @extend %semibold-48-inter;
+  }
+}
+
+.radio {
+  &__custom {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid $gray4;
+    transition: border-color .2s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      background-color: transparent;
+      border-radius: 50%;
+      transition: background-color .2s ease-in-out;
+    }
+  }
+
+  &:checked + &__custom {
+    border-color: $green;
+    &::after {
+      background-color: $green;
+    }
+  }
+}
+
+.logo {
+  &__img {
+    max-width: 188px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    @extend %regular-17-gilroy;
+  }
+}
+
+.social {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}

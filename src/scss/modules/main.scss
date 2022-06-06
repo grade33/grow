@@ -1,0 +1,184 @@
+.header {
+  margin-top: 33px;
+  padding: 18px 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    flex: none;
+  }
+
+  &__nav {
+    margin-left: 80px;
+  }
+
+  &__social {
+    margin-left: auto;
+  }
+
+  &__user-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+.home {
+  &-hero {
+    background: $gray-gradient;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-image: url('@img/header/hero-bg.png');
+      background-repeat: no-repeat;
+      background-position: top right;
+    }
+
+    &__container {
+      position: relative;
+      height: 600px;
+      padding: 72px 0;
+    }
+
+    &__title {
+      @extend %bold-65-inter;
+      max-width: 697px;
+      margin-bottom: 19px;
+    }
+
+    &__desc {
+      @extend %regular-17-gilroy;
+      max-width: 348px;
+      margin-bottom: 30px;
+    }
+
+    &__btn {
+      &-wrap {
+        display: flex;
+        align-items: center;
+        gap: 45px;
+      }
+    }
+  }
+  &-benefits {
+    padding: 70px 0;
+    &__container {}
+    &__title {
+      margin-bottom: 42px;
+    }
+    &__list {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 58px 0;
+      max-width: 918px;
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    &__icon {
+      width: 84px;
+      height: 84px;
+      display: inline-block;
+      margin-bottom: 21px;
+    }
+    &__heading {
+      @extend %medium-30-inter;
+      margin-bottom: 10px;
+    }
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      &-text {
+        @extend %regular-16-gilroy;;
+      }
+      &-icon {
+        width: 15px;
+        color: $black;
+        height: 8px;
+      }
+    }
+  }
+  &-quiz {
+    background: $gray-gradient;
+    &__container {
+      display: flex;
+      gap: 54px;
+    }
+    &__video {
+      display: block;
+      width: 548px;
+      height: 633px;
+      object-fit: cover;
+    }
+    &__content {
+      padding-top: 70px;
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 37px;
+      &-icon {
+        flex: none;
+        width: 64px;
+        height: 64px;
+      }
+      &-heading {
+        @extend %semibold-38-inter;
+        max-width: 577px;
+      }
+    }
+    &__form {
+      &-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 21px;
+      }
+      &-label {
+        cursor: pointer;
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 15px;
+      }
+    }
+    &__item {
+      padding: 33px 38px 37px;
+      background-color: $white;
+      max-height: 341px;
+      box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      &-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @extend %medium-30-inter;
+        margin-bottom: 30px;
+        &-pagination {
+          color: $green;
+        }
+      }
+    }
+  }
+}

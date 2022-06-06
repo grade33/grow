@@ -1,0 +1,40 @@
+mixin header()
+  header.header
+    .container.header__container 
+      a.logo.header__logo(href="#") 
+        img.logo__img(src="@img/logo.png", alt="Логотип Grown Director")
+      nav.nav.header__nav 
+        ul.nav__list 
+          li.nav__item
+            a.nav__link(href="#") Products
+          li.nav__item
+            a.nav__link(href="#") Catalogue
+          li.nav__item
+            a.nav__link(href="#") About
+          li.nav__item
+            a.nav__link(href="#") Education
+          li.nav__item
+            a.nav__link(href="#") FAQ
+      .social.header__social 
+        ul.social__list 
+          li.social__item
+            a.social__link(href="#") 
+              svg.social__icon
+                use(xlink:href="@img/sprite.svg#facebook")
+          li.social__item
+            a.social__link(href="#") 
+              svg.social__icon
+                use(xlink:href="@img/sprite.svg#instagram")
+          li.social__item
+            a.social__link(href="#") 
+              svg.social__icon
+                use(xlink:href="@img/sprite.svg#linkedin")
+      ul.header__user-menu
+        li.header__user-menu-item
+          a.header__user-menu-link(href="#") 
+            svg.header__user-menu-icon
+              use(xlink:href="@img/sprite.svg#user")
+        li.header__user-menu-item
+          a.header__user-menu-link(href="#") 
+            svg.header__user-menu-icon
+              use(xlink:href="@img/sprite.svg#basket")
