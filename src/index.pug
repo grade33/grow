@@ -15,28 +15,28 @@ html(lang="ru")
       main.main 
         section.home-hero
           .container.home-hero__container
-            .slider-nav.home-hero__slider
-              ul.slider-nav__wrapper
-                li.slider-nav__slide.slider-nav__slide-1
+            .slider.slider-1.home-hero__slider
+              ul.slider__wrapper
+                li.slider__slide.slider__slide-1
                   .home-hero__text-block
                     h1.home-hero__title.col-7 Grow faster, bigger, easier with us
                     p.home-hero__desc.col-4 We've got you covered with fully automated remote environmental controller
                     .home-hero__btn-wrap 
-                      +btn('green','Select device',1,'home-hero__btn')
+                      +link('green','Select device','#','home-hero__btn')
                       +btnVideo('home-hero__btn-video')
-              .slider-nav__btn-wrap
-                button.slider-nav__btn.slider-nav__btn_prev
-                  svg.slider-nav__btn-icon
+              .slider__btn-wrap
+                button.slider__btn.slider__btn_prev
+                  svg.slider__btn-icon
                     use(xlink:href="@img/sprite.svg#chevron")
-                span.slider-nav__active-slide 3
-                button.slider-nav__btn.slider-nav__btn_next
-                  svg.slider-nav__btn-icon
+                span.slider__active-slide 3
+                button.slider__btn.slider__btn_next
+                  svg.slider__btn-icon
                     use(xlink:href="@img/sprite.svg#chevron")
         
         section.home-benefits
           .container.home-benefits__container
             +sectionTitle('Benefits of GrowDirector Pro','home-benefits__title')
-            ul.home-benefits__list 
+            ul.home-benefits__list.row
               -
                 const values = [
                   'Easy to use', 
@@ -52,54 +52,141 @@ html(lang="ru")
                   a.home-benefits__link(href="#")
                     span.home-benefits__link-text More information
                     svg.home-benefits__link-icon
-                      use(xlink:href="@img/sprite.svg#arrow-15")
+                      use(xlink:href="@img/sprite.svg#arrow-long")
         
-        section.home-quiz
+        section.quiz
           .container
-            .home-quiz__container
-              .home-quiz__video-block.col-6
-                button.home-quiz__video-btn(type="button")
-                  svg.home-quiz__video-icon
+            .quiz__container
+              .quiz__video-block.col-6
+                button.quiz__video-btn(type="button")
+                  svg.quiz__video-icon
                     use(xlink:href="@img/sprite.svg#video-play")
-                video.home-quiz__video(src="#" poster="@img/header/quiz-video-preview.jpg") 
-              .home-quiz__content
-                .home-quiz__title 
-                  svg.home-quiz__title-icon
+                video.quiz__video(src="#" poster="@img/quiz-video-preview.jpg") 
+              .quiz__content
+                .quiz__title 
+                  svg.quiz__title-icon
                     use(xlink:href="@img/sprite.svg#question-mark")
-                  h2.home-quiz__title-heading Just answer 5 questions and we'll find the right kit for you!
-                form.home-quiz__form
-                  .slider-quiz.home-quiz__slider
-                    ul.slider-quiz__wrapper
-                      li.slider-quiz__slide.home-quiz__slide
-                        h3.home-quiz__slide-title
-                          span.home-quiz__slide-title-pagination
-                            span.home-quiz__slide-title_pagination_this 1
+                  h2.quiz__title-heading Just answer 5 questions and we'll find the right kit for you!
+                form.quiz__form(action="#") 
+                  .slider.slider-2.quiz__slider
+                    ul.slider__wrapper
+                      li.slider__slide.quiz__slide
+                        h3.quiz__slider-title
+                          span.quiz__slider-title-pagination
+                            span.quiz__slider-title_pagination_this 1
                             | /
-                            span.home-quiz__slide-title_pagination_all 5
-                          span.home-quiz__slide-title-text How big is the grow area? 
-                        .home-quiz__form-content
-                          label.home-quiz__form-label
+                            span.quiz__slider-title_pagination_all 5
+                          span.quiz__slider-title-text How big is the grow area? 
+                        .quiz__form-content
+                          label.quiz__form-label
                             input.radio.visually-hidden(type="radio" checked name="quiz-first" value="1")
                             span.radio__custom
-                            span.home-quiz__form-text Large: &gt; 500
-                          label.home-quiz__form-label
+                            span.quiz__form-text Large: &gt; 500
+                          label.quiz__form-label
                             input.radio.visually-hidden(type="radio" name="quiz-first" value="2")
                             span.radio__custom
-                            span.home-quiz__form-text Medium: 100-500
-                          label.home-quiz__form-label
+                            span.quiz__form-text Medium: 100-500
+                          label.quiz__form-label
                             input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
                             span.radio__custom
-                            span.home-quiz__form-text Small: &lt; 100
-                        .slider-quiz__btn-wrap
-                          button.slider-quiz__btn.slider-quiz__btn_prev(type="button" disabled)
-                            svg.slider-quiz__btn-icon
-                              use(xlink:href="@img/sprite.svg#arrow-15")
-                          button.slider-quiz__btn.slider-quiz__btn_next(type="button" )
-                            svg.slider-quiz__btn-icon
-                              use(xlink:href="@img/sprite.svg#arrow-15")
+                            span.quiz__form-text Small: &lt; 100
+                        .slider__btn-wrap
+                          button.slider__btn.slider__btn_prev(type="button" disabled)
+                            svg.slider__btn-icon
+                              use(xlink:href="@img/sprite.svg#arrow-long")
+                          button.slider__btn.slider__btn_next(type="button" )
+                            svg.slider__btn-icon
+                              use(xlink:href="@img/sprite.svg#arrow-long")
 
+        section.product-list
+          .container.product-list__container
+            .product-list__top 
+              +sectionTitle('Bestsellers','product-list__title')
+              a.product-list__more(href="#") 
+                span.product-list__more-text All products
+                svg.product-list__more-icon
+                  use(xlink:href="@img/sprite.svg#arrow-long")
+            p.product-list__desc.col-4 Introducing our innovative and accessible devices to automate it all
+            ul.product-list__list.row
+              li.product-list__item.col-4
+                img.product-list__item-img(src="@img/product-1.png", alt="Product")
+                h3.product-list__item-title HydroDirector
+                strong.product-list__item-price $635
+                +link('green','Open a shop','#','product-list__item-btn')
+              li.product-list__item.col-4
+                img.product-list__item-img(src="@img/product-2.png", alt="Product")
+                h3.product-list__item-title DryContactDirector
+                strong.product-list__item-price $365
+                +link('green','Open a shop','#','product-list__item-btn')
+              li.product-list__item.col-4
+                img.product-list__item-img(src="@img/product-3.png", alt="Product")
+                h3.product-list__item-title SensorDirector
+                strong.product-list__item-price $365
+                +link('green','Open a shop','#','product-list__item-btn')
+            
+        section.subscribe-news
+          .container.subscribe-news__container 
+            .subscribe-news__text-block.col-6
+              h2.subscribe-news__title Subscribe to news
+              p.subscribe-news__desc Stay up to date with all discounts, promotions and updates - subscribe to the notification mailing list
+            form.subscribe-news__form(action="#").row
+              input.white.subscribe-news__input.col-5(type="email" placeholder="Your email")
+              +btn('green','Send',0,'subscribe-news__btn')
 
+        section.about-app
+          .container.about-app__container.row
+            .about-app__left
+              +sectionTitle('About the app','about-app__title')
+              .about-app__phone-wrap 
+                .about-app__phone
+            .col-1
+            .about-app__right.col-6
+              p.about-app__desc Control all the sensors and equipment in your greenhouse or grow room from your phone, tablet or laptop. All kinds of media can be automated: from hydroponics to soil and everything in between. Controls any sensor, like temperature, humidity, CO2, VPD, EC, pH, DO, ORP, PAR, LUX, soil moisture and EC, flow meter, and many more to come. You can control anything in your greenhouse (light, irrigation, ventilation, etc.).
+              ol.about-app__list.row
+                li.about-app__item.col-6
+                  h3.about-app__item-title Data analytics 
+                  p.about-app__item-desc Data are available in the form of excel tables and charts. Reports can be downloaded in a convenient format and integrated into pre-set growing recipes.
+                li.about-app__item.col-6
+                  h3.about-app__item-title Push notifications 
+                  p.about-app__item-desc Prevents and eliminates critical situations automatically.  Notifies you if there's a problem. 
+                li.about-app__item
+                  h3.about-app__item-title Simple to use
+                  p.about-app__item-desc User-friendly interface. Grow Director Pro can control up to 16,000 devices and merge them into one system, or divide them into different zones.
+              .about-app__app-wrap 
+                a.about-app__app(href="#") 
+                  img.about-app__app-img(src="@img/google-play.png", alt="Download App")
+                a.about-app__app(href="#") 
+                  img.about-app__app-img(src="@img/app-store.png", alt="Download App")
 
+        section.current-news
+          .container.current-news__container 
+            +sectionTitle('Current news from GrowDirector Pro','current-news__title')
+            .slider.slider-3.current-news__item
+              ul.slider__wrapper.row
+                li.slider__slide.current-news__item.col-3
+                  .current-news__item-img-wrap
+                    img.current-news__item-img(src="@img/current-news-1.jpg", alt="Novelty")
+                  h3.current-news__item-title Indoor Growing
+                li.slider__slide.current-news__item.col-3
+                  .current-news__item-img-wrap
+                    img.current-news__item-img(src="@img/current-news-2.jpg", alt="Novelty")
+                    .current-news__item-desc-wrap 
+                      p.current-news__item-desc Hydroponics is a modern method of growing plants in a closed and controlled ecological system. A large variety of plants do not ...
+                  h3.current-news__item-title Hydroponic Growing
+                li.slider__slide.current-news__item.col-3
+                  .current-news__item-img-wrap
+                    img.current-news__item-img(src="@img/current-news-3.jpg", alt="Novelty")
+                  h3.current-news__item-title Home-based urban agriculture
+                li.slider__slide.current-news__item.col-3
+                  .current-news__item-img-wrap
+                    img.current-news__item-img(src="@img/current-news-4.jpg", alt="Novelty")
+                  h3.current-news__item-title Greenhouse growing
+                li.slider__slide.current-news__item.col-3
+                  .current-news__item-img-wrap
+                    img.current-news__item-img(src="@img/current-news-5.jpg", alt="Novelty")
+                  h3.current-news__item-title Indoor Growing
+
+                  
 
 
 

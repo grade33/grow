@@ -11,8 +11,9 @@ html body {
 
 .btn {
   @extend %medium-17-gilroy;
-  padding: 15px 30px;
+  padding: 15px $btn-hz-p;
   border-radius: 12px;
+  width: fit-content;
 
   &__green {
     background-color: $green;
@@ -66,63 +67,30 @@ html body {
   }
 }
 
-// Слайдер - нужно будет заменить
-.slider-nav {
-  &__wrapper {
-    height: 100%;
-  }
-  &__btn {
-    &-wrap {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-    }
-    &_prev {
-      svg {
-        transform: rotate(180deg);
-      }
-    }
-    &-icon {
-      width: 32px;
-      height: 32px;
-    }
-  }
-  &__active-slide {
-    transform: translateY(-3px);
-    @extend %regular-20-gilroy;
-  }
-}
+input {
+  @extend %regular-17-gilroy;
+  color: $black;
+  padding: 10px 20px;
+  border: 1px solid $gray;
+  border-radius: 8px;
 
-.slider-quiz {
-  &__slide {
-    position: relative;
+  &::placeholder {
+    color: $gray;
   }
-  &__btn {
-    &-wrap {
-      position: absolute;
-      bottom: 39px;
-      right: 39px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
+
+  &.black {
+    border-color: $black;
+
+    &::placeholder {
+      color: $black;
     }
-    padding: 17px 15px;
-    background: $green;
-    border-radius: 6px;
-    &:disabled {
-      display: none;
-    }
-    &_prev {
-      svg {
-        transform: rotate(-180deg);
-      }
-    }
-    &-icon {
-      display: block;
-      width: 30px;
-      height: 16px;
+  }
+
+  &.white {
+    border-color: $white;
+    color: $white;
+
+    &::placeholder {
       color: $white;
     }
   }
@@ -166,8 +134,9 @@ html body {
     }
   }
 
-  &:checked + &__custom {
+  &:checked+&__custom {
     border-color: $green;
+
     &::after {
       background-color: $green;
     }
@@ -199,5 +168,87 @@ html body {
   &__icon {
     width: 24px;
     height: 24px;
+  }
+}
+
+// Слайдер - нужно будет заменить
+.slider {
+  &__wrapper {
+    display: flex;
+  }
+  &__slide {
+  }
+}
+
+.slider-1 {
+  .slider {
+    &__wrapper {
+      height: 100%;
+    }
+
+    &__btn {
+      &-wrap {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+      }
+
+      &_prev {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-icon {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    &__active-slide {
+      @extend %regular-20-gilroy;
+    }
+  }
+}
+
+.slider-2 {
+  .slider {
+    &__slide {
+      position: relative;
+    }
+
+    &__btn {
+      &-wrap {
+        position: absolute;
+        bottom: 39px;
+        right: 39px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      padding: 17px 15px;
+      background: $green;
+      border-radius: 6px;
+
+      &:disabled {
+        display: none;
+      }
+
+      &_prev {
+        svg {
+          transform: rotate(-180deg);
+        }
+      }
+
+      &-icon {
+        display: block;
+        width: 30px;
+        height: 16px;
+        color: $white;
+      }
+    }
   }
 }

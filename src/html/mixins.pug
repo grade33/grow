@@ -2,6 +2,10 @@ mixin btn(color,text,typeBool,Class)
   - let type = typeBool ? 'button' : 'sumbit'
   button.btn(class=Class + " btn__" + color, type=type)= text
 
+mixin link(color,text,goTo,Class)
+  - let type = typeBool ? 'button' : 'sumbit'
+  a.btn(class=Class + " btn__" + color, href=goTo)= text
+
 mixin btnVideo(Class)
   button.btn-play(class=Class type="button")
     span.btn-play__text Watch Video 
