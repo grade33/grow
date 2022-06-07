@@ -1523,7 +1523,7 @@ input.white::placeholder {
 }
 
 .no-webp .subscribe-news__container::before {
-  background: url("@img/subscribe-news-bg.png") no-repeat top right; }
+  background: url("../img/subscribe-news-bg.png") no-repeat top right; }
 
 .subscribe-news__container::before {
   content: "";
@@ -1581,7 +1581,7 @@ input.white::placeholder {
 }
 
 .no-webp .about-app__phone {
-  background: url("@img/phone.png") no-repeat center/contain; }
+  background: url("../img/phone.png") no-repeat center/contain; }
 
 .about-app__phone {
   padding-bottom: 204.23%;
@@ -1677,7 +1677,7 @@ input.white::placeholder {
 }
 
 .no-webp .current-news__item-img-wrap::before {
-  background: url("@img/current-news-frame.jpg") no-repeat center/contain; }
+  background: url("../img/current-news-frame.jpg") no-repeat center/contain; }
 
 .current-news__item-img-wrap::before {
   content: "";
@@ -1726,7 +1726,7 @@ input.white::placeholder {
 }
 
 .no-webp .home-hero .slider__slide-1::before {
-  background: url("@img/hero-bg.png") no-repeat top right/auto 100%; }
+  background: url("../img/hero-bg.png") no-repeat top right/auto 100%; }
 
 .home-hero .slider__slide-1::before {
   content: "";
@@ -3092,10 +3092,10 @@ input.white::placeholder {
   }
 }
 
-.webp .subscribe-news__container::before { background: url(@img/subscribe-news-bg.webp) no-repeat top right; }
+.webp .subscribe-news__container::before { background: url(../img/subscribe-news-bg.webp) no-repeat top right; }
 
-.webp .about-app__phone { background: url(@img/phone.webp) no-repeat center/contain; }
+.webp .about-app__phone { background: url(../img/phone.webp) no-repeat center/contain; }
 
-.webp .current-news__item-img-wrap::before { background: url(@img/current-news-frame.webp) no-repeat center/contain; }
+.webp .current-news__item-img-wrap::before { background: url(../img/current-news-frame.webp) no-repeat center/contain; }
 
-.webp .home-hero .slider__slide-1::before { background: url(@img/hero-bg.webp) no-repeat top right/auto 100%; }
+.webp .home-hero .slider__slide-1::before { background: url(../img/hero-bg.webp) no-repeat top right/auto 100%; }
