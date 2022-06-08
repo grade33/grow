@@ -1,0 +1,90 @@
+include ./html/mixins.pug
+include ./html/header.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Hydrodirector
+    link(rel="stylesheet", href="./css/style.min.css")
+    script(defer src="./js/app.min.js")
+  body.hydrodirector
+      include ./html/discount.pug
+      +header()
+
+      main.main 
+
+        section.product-main
+          .container.product-main__container
+            .product-main__info.col-10
+              .product-main__text-block
+                h1.product-main__title HydroDirector
+                p.product-main__desc Специализированный девайс для гидропонных систем всех типов. Подходит для автоматизации любых площадей от маленьких гроурумов до промышленных теплиц.
+                +link('white','Заказать','#','product-main__btn-buy')
+            img.product-main__img(src="@img/hydrodirector/hero-bg.png", alt="Hydrodirector")
+            p.product-main__text.col-10
+              | Вы можете объединять в одну систему и 
+              span.product-main__text_green одновременно контролировать от 3 до 16.000 девайсов, 
+              | что составляет в сумме 48.000 помп.
+            +link('green','Download manual','#','product-main__btn-download')
+
+        section.advantage
+          .container.advantage__container
+            img.advantage__bg(src="@img/hydrodirector/advantages.png", alt="")
+            +sectionTitle('Что он может?','advantage__title')
+            .advantage__list-wrap
+              .advantage__list
+                .advantage__item.col-5
+                  .advantage__icon-wrap
+                    img.advantage__icon(src="@img/advantages/advantage-1.svg", alt="")
+                  p.advantage__desc Контролировать подачу удобрений, воды или pH-балансирующих растворов в систему
+                .advantage__item.col-5
+                  .advantage__icon-wrap
+                    img.advantage__icon(src="@img/advantages/advantage-2.svg", alt="")
+                  p.advantage__desc Следить за уровнем Dissolved Oxygen (DO) в гидропонном растворесоздавать заданный баланс между pH oxidation-reduction potential
+                .advantage__item.col-5
+                  .advantage__icon-wrap
+                    img.advantage__icon(src="@img/advantages/advantage-3.svg", alt="")
+                  p.advantage__desc Отправлять уведомления о неполадках в системе и анализировать возможные причины их возникновения
+                .advantage__item.col-6
+                  .advantage__icon-wrap
+                    img.advantage__icon(src="@img/advantages/advantage-4.svg", alt="")
+                  p.advantage__desc Объединять в единую систему до 16 000 девайсов создавая невероятные возможности для автоматизации промышленных теплиц
+                .advantage__item.col-5
+                  .advantage__icon-wrap
+                    img.advantage__icon(src="@img/advantages/advantage-5.svg", alt="")
+                  p.advantage__desc Смешивать необходимые удобрения в нужных пропорциях согласно показателям EC сенсора
+                .advantage__items-wrap.row
+                  .advantage__item.col-4
+                    .advantage__icon-wrap
+                      img.advantage__icon(src="@img/advantages/advantage-6.svg", alt="")
+                    p.advantage__desc Собирать и хранить все данные в облаке
+                  .advantage__item.col-4
+                    .advantage__icon-wrap
+                      img.advantage__icon(src="@img/advantages/advantage-7.svg", alt="")
+                    p.advantage__desc Удаленно изменять настройки системы
+                  .advantage__item.col-4
+                    .advantage__icon-wrap
+                      img.advantage__icon(src="@img/advantages/advantage-8.svg", alt="")
+                    p.advantage__desc Поддерживать заданный уровень pH
+                    
+
+
+      include ./html/footer.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

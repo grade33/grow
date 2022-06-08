@@ -10,33 +10,58 @@ html body {
 }
 
 .btn {
+  display: inline-block;
   @extend %medium-17-gilroy;
-  padding: 15px $btn-hz-p;
-  border-radius: 12px;
+  text-align: center;
   width: fit-content;
+  padding: calc(15px - 1px) calc($btn-hz-p - 1px);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: background-color .2s ease-in-out,
+    color .2s ease-in-out,
+    border-color .2s ease-in-out;
+
+  &__text {
+    display: inline-block;
+    min-width: 139px;
+  }
 
   &__green {
     background-color: $green;
+    border-color: $green;
     color: $white;
-    transition: background-color .2s ease-in-out;
 
     &:hover,
     &:focus-visible,
     &:active {
       background-color: $green2;
+      border-color: $green2;
+    }
+  }
+
+  &__green-trs {
+    background-color: transparent;
+    color: $green;
+    border-color: $green;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: $green;
+      color: $white;
     }
   }
 
   &__white {
-    color: $black;
     background-color: $white;
-    transition: background-color .2s ease-in-out,
-      color .2s ease-in-out;
+    border-color: $white;
+    color: $black;
 
     &:hover,
     &:focus-visible,
     &:active {
       background-color: $gray;
+      border-color: $gray;
       color: $black;
     }
   }
@@ -67,7 +92,12 @@ html body {
   }
 }
 
-input {
+html h2 {
+  @extend %semibold-48-inter;
+}
+
+input,
+textarea {
   @extend %regular-17-gilroy;
   color: $black;
   padding: 10px 20px;
@@ -76,6 +106,10 @@ input {
 
   &::placeholder {
     color: $gray;
+  }
+
+  &.big {
+    padding: 15px 25px;
   }
 
   &.black {
@@ -96,12 +130,28 @@ input {
   }
 }
 
+.discount {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  width: 100%;
+  background-color: $gray;
+  color: $white;
+
+  &__text {
+    @extend %semibold-14-gilroy;
+  }
+}
+
 .section-title {
   display: flex;
   align-items: center;
   gap: 20px;
 
   &__icon {
+    color: $green;
     width: 24px;
     height: 38px;
   }
@@ -159,24 +209,28 @@ input {
 }
 
 .social {
-  &__list {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+  font-size: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-  &__icon {
-    width: 24px;
-    height: 24px;
+  &__img {
+    vertical-align: middle;
   }
 }
 
 // Слайдер - нужно будет заменить
 .slider {
+  position: relative;
+
   &__wrapper {
     display: flex;
   }
-  &__slide {
+
+  &__btn {
+    svg {
+      display: block;
+    }
   }
 }
 
@@ -193,6 +247,10 @@ input {
         bottom: 0;
         display: flex;
         align-items: center;
+      }
+
+      &:disabled {
+        opacity: .5;
       }
 
       &_prev {
@@ -232,6 +290,11 @@ input {
       padding: 17px 15px;
       background: $green;
       border-radius: 6px;
+      transition: background-color .2s ease-in-out;
+
+      &:hover {
+        background-color: $green2;
+      }
 
       &:disabled {
         display: none;
@@ -244,10 +307,126 @@ input {
       }
 
       &-icon {
-        display: block;
         width: 30px;
         height: 16px;
         color: $white;
+      }
+    }
+  }
+}
+
+.slider-3 {
+  .slider {
+    &__wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    &__btn {
+      &-wrap {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% + 30px);
+        margin-left: -15px;
+      }
+
+      padding: 17px 15px;
+      background: $green;
+      border-radius: 6px;
+      transition: opacity .3s ease-in-out,
+      visibility .3s ease-in-out;
+      transition: background-color .2s ease-in-out;
+
+      &:hover {
+        background-color: $green2;
+      }
+
+      &:disabled {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &_next {
+        margin-left: auto;
+      }
+
+      &_prev {
+        margin-right: auto;
+
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-icon {
+        width: 30px;
+        height: 16px;
+        color: $white;
+      }
+    }
+  }
+}
+
+.slider-4 {
+  .slider {
+    &__btn {
+      &-wrap {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% + 60px);
+        margin-left: -30px;
+      }
+
+      padding: 16px 14px;
+      background: $white;
+      border: 1px solid $green;
+      border-radius: 6px;
+      transition: opacity .3s ease-in-out,
+      visibility .3s ease-in-out;
+      transition: background-color .2s ease-in-out;
+      &:hover {
+        background-color: $green;
+
+        svg {
+          color: $white;
+        }
+      }
+
+      &:disabled {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &_next {
+        margin-left: auto;
+      }
+
+      &_prev {
+        margin-right: auto;
+
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-icon {
+        display: block;
+        width: 30px;
+        height: 16px;
+        color: $green;
+        transition: color .2s ease-in-out;
       }
     }
   }

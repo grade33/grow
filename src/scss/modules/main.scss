@@ -1,5 +1,4 @@
 .header {
-  margin-top: 33px;
   padding: 18px 0;
 
   &__container {
@@ -32,6 +31,44 @@
     }
   }
 }
+
+.footer {
+  &__container {
+    padding-top: 53px;
+    padding-bottom: 77px;
+  }
+
+  &__title {
+    @extend %semibold-20-gilroy;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-link {
+      @extend %semibold-20-gilroy;
+      color: $green;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
+
+// Sections
 
 .quiz {
   background: $gray-gradient;
@@ -132,7 +169,9 @@
   }
 }
 
-.product-list {
+.popular-products {
+  background: $gray-gradient;
+
   &__container {
     padding: 70px 0;
   }
@@ -175,33 +214,18 @@
       @extend %medium-30-inter;
       margin-bottom: 18px;
     }
-
-    &-btn {
-      padding-left: calc($btn-hz-p * 1.6);
-      padding-right: calc($btn-hz-p * 1.6);
-    }
   }
 }
 
 .subscribe-news {
-  background: $blue-gradient;
+  position: relative;
+  background: url('@img/subscribe-news-bg.png') no-repeat top right 6.22%, $blue-gradient;
   color: $white;
-
   &__container {
+    position: relative;
+    z-index: 1;
     padding-top: 55px;
     padding-bottom: 67px;
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('@img/subscribe-news-bg.png') no-repeat top right;
-      margin-right: calc((-100vw + 1110px) / 2 + 6.22%);
-    }
   }
 
   &__text-block {
@@ -219,8 +243,8 @@
   }
 
   &__btn {
-    padding-left: calc($btn-hz-p * 3);
-    padding-right: calc($btn-hz-p * 3);
+    padding-left: calc($btn-hz-p * 1.4);
+    padding-right: calc($btn-hz-p * 1.4);
   }
 }
 
@@ -293,35 +317,47 @@
 
 .current-news {
   background: $gray-gradient;
+
   &__container {
     padding: 70px 0;
   }
+
   &__title {
     margin-bottom: 28px;
   }
-  .slider__wrapper {
-    flex-wrap: nowrap;
+
+  .slider {
+    &__btn {
+      &-wrap {
+        top: 111px;
+        transform: none;
+      }
+    }
   }
+
   &__item {
     display: flex;
     flex-direction: column;
+
     &-img {
       &-wrap {
         position: relative;
         width: fit-content;
         margin-bottom: 16px;
+
         &::before {
           content: '';
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(-50%,-50%);
+          transform: translate(-50%, -50%);
           width: 106.67%;
           height: 106.67%;
           z-index: 0;
           background: url('@img/current-news-frame.jpg') no-repeat center / contain;
         }
       }
+
       position: relative;
       z-index: 3;
       border-radius: 12px;
@@ -351,23 +387,330 @@
   }
 }
 
+.review {
+  background: $green;
+  color: $white;
+
+  &__container {
+    padding: 70px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 43px;
+
+    svg {
+      color: inherit;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__slider {
+    padding: 0 19px;
+  }
+
+  .slider {
+    &__btn {
+      &-wrap {
+        width: calc(100% + 24px);
+        margin-left: -12px;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 41px 84px;
+    background: $white;
+    color: $black;
+    border: 1px solid #40AC6C;
+    border-radius: 12px;
+
+    &-person {
+      width: 17.6%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-avatar {
+      border-radius: 50%;
+      width: 88px;
+      height: 88px;
+      margin-bottom: 19px;
+    }
+
+    &-name {
+      @extend %semibold-24-inter;
+      margin-bottom: 4px;
+    }
+
+    &-content {
+      width: 70.4%;
+    }
+
+    &-title {
+      @extend %medium-30-inter;
+      margin-bottom: 24px;
+    }
+
+    &-more {
+      padding: 12px calc($btn-hz-p / 1.5);
+      display: block;
+    }
+  }
+}
+
+.partners {
+  position: relative;
+  background: $gray-gradient;
+  padding-top: 60px;
+  padding-bottom: 80px;
+
+  &__container {
+    position: relative;
+    padding-bottom: 56px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+    padding-left: 46px;
+    padding-right: 46px;
+  }
+
+  &__img {
+    &-wrap {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap-reverse;
+      align-items: center;
+      gap: 35px;
+    }
+
+  }
+
+  &__info {
+    position: absolute;
+    padding: 12px 7px 14px 20px;
+    z-index: 5;
+    bottom: -112px;
+    right: -92px;
+    @extend %regular-16-gilroy;
+    max-width: 222px;
+    background: $white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+    border-radius: 15px;
+  }
+}
+
+.contacts {
+  background: url('@img/contact-bg.png') no-repeat top left, $blue-gradient;
+  position: relative;
+  color: $white;
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    padding-top: 55px;
+    padding-bottom: 80px;
+  }
+
+  &__content {
+    margin-left: auto;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__desc {
+    margin-bottom: 34px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__field {
+    width: 100%;
+
+    &-wrap {
+      display: flex;
+      gap: 20px;
+    }
+
+  }
+
+  &__textarea {
+    height: 117px;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}
+
+.products {
+  padding: 70px 0;
+
+  &__title {
+    margin-bottom: 21px;
+  }
+
+  &__list {
+    gap: 95px 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__img {
+    &-wrap {
+      min-height: 236px
+    }
+
+  }
+
+  &__name {
+    @extend %semibold-24-inter;
+    margin-bottom: 15px;
+  }
+
+  &__price {
+    @extend %medium-30-inter;
+    margin-bottom: 18px;
+  }
+
+  &__btn {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+.product-main {
+  background: $gray-gradient;
+  padding-bottom: 70px;
+
+  &__info {
+    margin: 0 auto;
+    color: $white;
+    padding: 0 70px;
+    padding-top: 63px;
+    background: url('@img/hydrodirector/hero-ellipse.svg') no-repeat top center;
+  }
+
+  &__title {
+    @extend %bold-80-inter;
+  }
+
+  &__desc {
+    @extend %regular-20-gilroy;
+  }
+  &__img {
+    margin-bottom: 70px;
+  }
+  &__text {
+    @extend %semibold-38-inter;
+    margin-bottom: 30px;
+    &_green {
+      color: $green;
+    }
+  }
+  &__btn-download {
+    padding-left: calc($btn-hz-p * 1.26);
+    padding-right: calc($btn-hz-p * 1.26);
+  }
+}
+
+.advantage {
+  position: relative;
+  &__bg {
+    position: absolute;
+    top: -37px;
+    right: 0;
+  }
+  &__container {
+    padding: 70px 0;
+  }
+  &__title {
+    margin-bottom: 47px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0;
+    &-wrap {}
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  &__icon {
+    &-wrap {
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 84px;
+      height: 84px;
+      background: $green;
+      border-radius: 50%;
+    }
+  }
+}
+
+
+
+
+
+// Pages
+
 .home {
   &-hero {
     background: $gray-gradient;
 
     .slider {
-      position: relative;
       height: 600px;
 
       &__slide {
         height: 100%;
+        padding-top: 72px;
 
         &-1 {
           position: relative;
 
+          &>* {
+            position: relative;
+            z-index: 1;
+          }
+
           &::before {
             content: '';
             position: absolute;
+            z-index: 0;
             top: 0;
             right: 0;
             width: 100%;
@@ -377,8 +720,6 @@
             padding-right: calc((100vw - $container) / 2);
           }
         }
-
-        padding-top: 72px;
       }
 
       &__btn-wrap {
@@ -447,6 +788,47 @@
         width: 15px;
         height: 8px;
       }
+    }
+  }
+
+  .popular-products {
+    background: transparent;
+  }
+}
+
+.catalog {}
+
+.hydrodirector {
+  .product-main {
+    &__info {
+      min-height: 534px;
+    }
+
+    &__text-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__title {
+      margin-bottom: 19px;
+      margin-right: 60px;
+    }
+
+    &__desc {
+      max-width: 505px;
+      margin-left: auto;
+      margin-right: 60px;
+      margin-bottom: 40px;
+    }
+
+    &__btn-buy {
+      margin-left: auto;
+      margin-right: 80px;
+    }
+
+    &__img {
+      margin-top: -267px;
     }
   }
 }

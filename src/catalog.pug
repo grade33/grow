@@ -1,0 +1,85 @@
+include ./html/mixins.pug
+include ./html/header.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Каталог
+    link(rel="stylesheet", href="./css/style.min.css")
+    script(defer src="./js/app.min.js")
+  body.catalog
+      include ./html/discount.pug
+      +header()
+
+      main.main 
+        section.products
+          .container.products__container
+            +sectionTitle('Products','products__title')
+            ul.products__list.row
+              -
+                const products = [
+                  ['HydroDirector','$635'],
+                  ['DryContactDirector','$365'],
+                  ['SensorDirector','$365'],
+                  ['SocketDirector','$365'],
+                  ['DimmingDirector','$520'],
+                  ['ServerDirector','$1 335'],
+                  ['Temperature&Humidity sensor','$55'],
+                  ['Soil moisture sensor','$130'],
+                  ['LUX sensor','$130'],
+                  ['PAR sensor','$655'],
+                  ['pH sensor','$335'],
+                  ['EC sensor','$375'],
+                  ['DO sensor','$455'],
+                  ['ORP sensor','$455'],
+                  ['CO2','$130'],
+                  ['Flow Meter','$32']
+                ]
+              each value, idx in products
+                li.products__item.col-4
+                  .products__img-wrap
+                    img.products__img(src="@img/catalog-product-"+(idx + 1)+".jpg", alt="Product")
+                  strong.products__name= value[0]
+                  span.products__price= value[1]
+                  +link('green','Open a shop','#','products__btn')
+        
+        section.popular-products
+          .container.popular-products__container
+            .popular-products__top 
+              +sectionTitle('Готовое решение','popular-products__title')
+            ul.popular-products__list.row
+              li.popular-products__item.col-4
+                img.popular-products__item-img(src="@img/product-1.png", alt="Product")
+                strong.popular-products__item-title HydroDirector
+                span.popular-products__item-price $635
+                +link('green','Open a shop','#','popular-products__item-btn')
+              li.popular-products__item.col-4
+                img.popular-products__item-img(src="@img/product-2.png", alt="Product")
+                strong.popular-products__item-title DryContactDirector
+                span.popular-products__item-price $365
+                +link('green','Open a shop','#','popular-products__item-btn')
+              li.popular-products__item.col-4
+                img.popular-products__item-img(src="@img/product-3.png", alt="Product")
+                strong.popular-products__item-title SensorDirector
+                span.popular-products__item-price $365
+                +link('green','Open a shop','#','popular-products__item-btn')
+            
+      include ./html/footer.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

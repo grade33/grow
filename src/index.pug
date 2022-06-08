@@ -6,12 +6,13 @@ html(lang="ru")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
+    title Главная страница
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
-  body 
-    .home
+  body.home
+      include ./html/discount.pug
       +header()
+
       main.main 
         section.home-hero
           .container.home-hero__container
@@ -25,11 +26,11 @@ html(lang="ru")
                       +link('green','Select device','#','home-hero__btn')
                       +btnVideo('home-hero__btn-video')
               .slider__btn-wrap
-                button.slider__btn.slider__btn_prev
+                button.slider__btn.slider__btn_prev(type="button")
                   svg.slider__btn-icon
                     use(xlink:href="@img/sprite.svg#chevron")
                 span.slider__active-slide 3
-                button.slider__btn.slider__btn_next
+                button.slider__btn.slider__btn_next(type="button")
                   svg.slider__btn-icon
                     use(xlink:href="@img/sprite.svg#chevron")
         
@@ -98,34 +99,34 @@ html(lang="ru")
                             svg.slider__btn-icon
                               use(xlink:href="@img/sprite.svg#arrow-long")
 
-        section.product-list
-          .container.product-list__container
-            .product-list__top 
-              +sectionTitle('Bestsellers','product-list__title')
-              a.product-list__more(href="#") 
-                span.product-list__more-text All products
-                svg.product-list__more-icon
+        section.popular-products
+          .container.popular-products__container
+            .popular-products__top 
+              +sectionTitle('Bestsellers','popular-products__title')
+              a.popular-products__more(href="#") 
+                span.popular-products__more-text All products
+                svg.popular-products__more-icon
                   use(xlink:href="@img/sprite.svg#arrow-long")
-            p.product-list__desc.col-4 Introducing our innovative and accessible devices to automate it all
-            ul.product-list__list.row
-              li.product-list__item.col-4
-                img.product-list__item-img(src="@img/product-1.png", alt="Product")
-                h3.product-list__item-title HydroDirector
-                strong.product-list__item-price $635
-                +link('green','Open a shop','#','product-list__item-btn')
-              li.product-list__item.col-4
-                img.product-list__item-img(src="@img/product-2.png", alt="Product")
-                h3.product-list__item-title DryContactDirector
-                strong.product-list__item-price $365
-                +link('green','Open a shop','#','product-list__item-btn')
-              li.product-list__item.col-4
-                img.product-list__item-img(src="@img/product-3.png", alt="Product")
-                h3.product-list__item-title SensorDirector
-                strong.product-list__item-price $365
-                +link('green','Open a shop','#','product-list__item-btn')
+            p.popular-products__desc.col-4 Introducing our innovative and accessible devices to automate it all
+            ul.popular-products__list.row
+              li.popular-products__item.col-4
+                img.popular-products__item-img(src="@img/product-1.png", alt="Product")
+                strong.popular-products__item-title HydroDirector
+                span.popular-products__item-price $635
+                +link('green','Open a shop','#','popular-products__item-btn')
+              li.popular-products__item.col-4
+                img.popular-products__item-img(src="@img/product-2.png", alt="Product")
+                strong.popular-products__item-title DryContactDirector
+                span.popular-products__item-price $365
+                +link('green','Open a shop','#','popular-products__item-btn')
+              li.popular-products__item.col-4
+                img.popular-products__item-img(src="@img/product-3.png", alt="Product")
+                strong.popular-products__item-title SensorDirector
+                span.popular-products__item-price $365
+                +link('green','Open a shop','#','popular-products__item-btn')
             
         section.subscribe-news
-          .container.subscribe-news__container 
+          .container.subscribe-news__container
             .subscribe-news__text-block.col-6
               h2.subscribe-news__title Subscribe to news
               p.subscribe-news__desc Stay up to date with all discounts, promotions and updates - subscribe to the notification mailing list
@@ -185,10 +186,64 @@ html(lang="ru")
                   .current-news__item-img-wrap
                     img.current-news__item-img(src="@img/current-news-5.jpg", alt="Novelty")
                   h3.current-news__item-title Indoor Growing
+              .slider__btn-wrap
+                button.slider__btn.slider__btn_prev(type="button" disabled)
+                  svg.slider__btn-icon
+                    use(xlink:href="@img/sprite.svg#arrow-long")
+                button.slider__btn.slider__btn_next(type="button")
+                  svg.slider__btn-icon
+                    use(xlink:href="@img/sprite.svg#arrow-long")
+        
+        section.review
+          .container.review__container 
+            .review__text-block
+              +sectionTitle('Reviews','review__title')
+              p.review__desc Users love GrowDirector Pro, so that's the best proof.
+            .slider.slider-4.review__slider.col-10
+              ul.slider__wrapper
+                li.slider__slide.review__item 
+                  .review__item-person
+                    img.review__item-avatar(src="@img/avatar.png", alt="Face")
+                    strong.review__item-name David
+                    span.review__item-info from Youth Village explains
+                  .review__item-content
+                    h3.review__item-title Our two Hydroponic Boxes &amp; Grow Director 🎛️ are now installed at The Youth Village Learning Center 🙌
+                    +link('green-trs','Read more','#','review__item-more')
+              .slider__btn-wrap
+                button.slider__btn.slider__btn_prev(type="button")
+                  svg.slider__btn-icon
+                    use(xlink:href="@img/sprite.svg#arrow-long")
+                button.slider__btn.slider__btn_next(type="button")
+                  svg.slider__btn-icon
+                    use(xlink:href="@img/sprite.svg#arrow-long")
 
-                  
+        section.partners
+          .container.partners__container 
+            .partners__text-block.col-6
+              +sectionTitle('Partners who trust us','partners__title')
+              +link('green','Start a collaboration','#','partners__btn')
+            .partners__img-wrap.col-8
+              img.partners__img(src="@img/partner-5.png", alt="Partner Logo")
+              img.partners__img(src="@img/partner-4.png", alt="Partner Logo")
+              img.partners__img(src="@img/partner-3.png", alt="Partner Logo")
+              img.partners__img(src="@img/partner-2.svg", alt="Partner Logo")
+              img.partners__img(src="@img/partner-1.png", alt="Partner Logo")
+            p.partners__info It's great for hydroponics or whatever growing media you want to use.
 
-
+        section.contacts
+          .container.contacts__container.row
+            .contacts__content.col-7
+              h2.contacts__title Contact form
+              p.contacts__desc To ask any question? Leave your contact details for free consultation with rus. 
+              form.contacts__form(action="#") 
+                .contacts__field-wrap
+                  input.contacts__field.white.big(type="text" placeholder="Name")
+                  input.contacts__field.white.big(type="email" placeholder="Email")
+                textarea.contacts__field.contacts__textarea.white.big(name="question" placeholder="Add your question")
+                +btn('green','Callback',0,'contacts__btn')
+            .col-1
+      
+      include ./html/footer.pug
 
 
 

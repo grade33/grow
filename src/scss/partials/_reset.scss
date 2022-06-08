@@ -20,7 +20,7 @@ html {
   padding: 0;
 }
 
-html *,
+body *,
 *::after,
 *::before {
   box-sizing: border-box;
@@ -33,6 +33,10 @@ html *,
 ul,
 ol {
   list-style: none;
+}
+
+a,img,svg {
+  display: inline-block;
 }
 
 a {
@@ -64,7 +68,6 @@ textarea {
 }
 
 img {
-  display: inline-block;
   max-width: 100%;
   max-height: 100%;
   height: auto;
