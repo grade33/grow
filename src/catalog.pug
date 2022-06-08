@@ -40,7 +40,7 @@ html(lang="ru")
               each value, idx in products
                 li.products__item.col-4
                   .products__img-wrap
-                    img.products__img(src="@img/catalog-product-"+(idx + 1)+".jpg", alt="Product")
+                    img.products__img(src="@img/catalog/catalog-product-"+(idx + 1)+".jpg", alt="Product")
                   strong.products__name= value[0]
                   span.products__price= value[1]
                   +link('green','Open a shop','#','products__btn')
