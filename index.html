@@ -4,317 +4,395 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.min.css?_v=20220607074141">
-    <script defer src="./js/app.min.js?_v=20220607074141"></script>
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="./css/style.min.css?_v=20220608073201">
+    <script defer src="./js/app.min.js?_v=20220608073201"></script>
   </head>
-  <body> 
-    <div class="home">
-      <header class="header">
-        <div class="container header__container"><a class="logo header__logo" href="#"> <picture><source srcset="@img/logo.webp" type="image/webp"><img class="logo__img" src="@img/logo.png" alt="Логотип Grown Director"/></picture></a>
-          <nav class="nav header__nav"> 
-            <ul class="nav__list">
-              <li class="nav__item"><a class="nav__link" href="#">Products</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Catalogue</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">About</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Education</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">FAQ</a></li>
-            </ul>
-          </nav>
-          <div class="social header__social"> 
-            <ul class="social__list"> 
-              <li class="social__item"><a class="social__link" href="#"> 
-                  <svg class="social__icon">
-                    <use xlink:href="@img/sprite.svg#facebook"></use>
-                  </svg></a></li>
-              <li class="social__item"><a class="social__link" href="#"> 
-                  <svg class="social__icon">
-                    <use xlink:href="@img/sprite.svg#instagram"></use>
-                  </svg></a></li>
-              <li class="social__item"><a class="social__link" href="#"> 
-                  <svg class="social__icon">
-                    <use xlink:href="@img/sprite.svg#linkedin"></use>
-                  </svg></a></li>
-            </ul>
-          </div>
-          <ul class="header__user-menu">
-            <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
-                <svg class="header__user-menu-icon">
-                  <use xlink:href="@img/sprite.svg#user"></use>
-                </svg></a></li>
-            <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
-                <svg class="header__user-menu-icon">
-                  <use xlink:href="@img/sprite.svg#basket"></use>
-                </svg></a></li>
+  <body class="home">
+    <div class="discount"><span class="discount__text">15% discount on new items</span></div>
+    <header class="header">
+      <div class="container header__container"><a class="logo header__logo" href="#"> <picture><source srcset="@img/logo.webp" type="image/webp"><img class="logo__img" src="@img/logo.png" alt="Логотип Grown Director"/></picture></a>
+        <nav class="nav header__nav"> 
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="#">Products</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Catalogue</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">About</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Education</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">FAQ</a></li>
           </ul>
-        </div>
-      </header>
-      <main class="main"> 
-        <section class="home-hero">
-          <div class="container home-hero__container">
-            <div class="slider slider-1 home-hero__slider">
-              <ul class="slider__wrapper">
-                <li class="slider__slide slider__slide-1">
-                  <div class="home-hero__text-block">
-                    <h1 class="home-hero__title col-7">Grow faster, bigger, easier with us</h1>
-                    <p class="home-hero__desc col-4">We've got you covered with fully automated remote environmental controller</p>
-                    <div class="home-hero__btn-wrap"> <a class="btn home-hero__btn btn__green" href="#">Select device</a>
-                      <button class="btn-play home-hero__btn-video" type="button"><span class="btn-play__text">Watch Video </span>
-                        <svg class="btn-play__icon">
-                          <use xlink:href="@img/sprite.svg#video-play"></use>
-                        </svg>
-                      </button>
-                    </div>
+        </nav>
+        <ul class="social">
+          <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="@img/facebook.svg" alt="Social-icon"/></a></li>
+          <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="@img/instagram.svg" alt="Social-icon"/></a></li>
+          <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="@img/linkedin.svg" alt="Social-icon"/></a></li>
+        </ul>
+        <ul class="header__user-menu">
+          <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
+              <svg class="header__user-menu-icon">
+                <use xlink:href="@img/sprite.svg#user"></use>
+              </svg></a></li>
+          <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
+              <svg class="header__user-menu-icon">
+                <use xlink:href="@img/sprite.svg#basket"></use>
+              </svg></a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main"> 
+      <section class="home-hero">
+        <div class="container home-hero__container">
+          <div class="slider slider-1 home-hero__slider">
+            <ul class="slider__wrapper">
+              <li class="slider__slide slider__slide-1">
+                <div class="home-hero__text-block">
+                  <h1 class="home-hero__title col-7">Grow faster, bigger, easier with us</h1>
+                  <p class="home-hero__desc col-4">We've got you covered with fully automated remote environmental controller</p>
+                  <div class="home-hero__btn-wrap"> <a class="btn home-hero__btn btn__green" href="#"><span class="btn__text">Select device</span></a>
+                    <button class="btn-play home-hero__btn-video" type="button"><span class="btn-play__text">Watch Video </span>
+                      <svg class="btn-play__icon">
+                        <use xlink:href="@img/sprite.svg#video-play"></use>
+                      </svg>
+                    </button>
                   </div>
-                </li>
-              </ul>
-              <div class="slider__btn-wrap">
-                <button class="slider__btn slider__btn_prev">
-                  <svg class="slider__btn-icon">
-                    <use xlink:href="img/sprite.svg#chevron"></use>
-                  </svg>
-                </button><span class="slider__active-slide">3</span>
-                <button class="slider__btn slider__btn_next">
-                  <svg class="slider__btn-icon">
-                    <use xlink:href="img/sprite.svg#chevron"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="home-benefits">
-          <div class="container home-benefits__container">
-            <div class="section-title home-benefits__title">
-              <svg class="section-title__icon">
-                <use xlink:href="@img/sprite.svg#before-title-tree"></use>
-              </svg>
-              <h2 class="section-title__heading">Benefits of GrowDirector Pro</h2>
-            </div>
-            <ul class="home-benefits__list row">
-              <li class="home-benefits__item col-4">
-                <svg class="home-benefits__icon">
-                  <use xlink:href="img/sprite.svg#home-benefit-1"></use>
-                </svg>
-                <h3 class="home-benefits__heading">Easy to use</h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
-                  <svg class="home-benefits__link-icon">
-                    <use xlink:href="img/sprite.svg#arrow-long"></use>
-                  </svg></a>
-              </li>
-              <li class="home-benefits__item col-4">
-                <svg class="home-benefits__icon">
-                  <use xlink:href="img/sprite.svg#home-benefit-2"></use>
-                </svg>
-                <h3 class="home-benefits__heading">Access from anywhere</h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
-                  <svg class="home-benefits__link-icon">
-                    <use xlink:href="img/sprite.svg#arrow-long"></use>
-                  </svg></a>
-              </li>
-              <li class="home-benefits__item col-4">
-                <svg class="home-benefits__icon">
-                  <use xlink:href="img/sprite.svg#home-benefit-3"></use>
-                </svg>
-                <h3 class="home-benefits__heading">Set it fast</h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
-                  <svg class="home-benefits__link-icon">
-                    <use xlink:href="img/sprite.svg#arrow-long"></use>
-                  </svg></a>
-              </li>
-              <li class="home-benefits__item col-4">
-                <svg class="home-benefits__icon">
-                  <use xlink:href="img/sprite.svg#home-benefit-4"></use>
-                </svg>
-                <h3 class="home-benefits__heading">3-year warranty </h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
-                  <svg class="home-benefits__link-icon">
-                    <use xlink:href="img/sprite.svg#arrow-long"></use>
-                  </svg></a>
-              </li>
-              <li class="home-benefits__item col-4">
-                <svg class="home-benefits__icon">
-                  <use xlink:href="img/sprite.svg#home-benefit-5"></use>
-                </svg>
-                <h3 class="home-benefits__heading">Open API</h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
-                  <svg class="home-benefits__link-icon">
-                    <use xlink:href="img/sprite.svg#arrow-long"></use>
-                  </svg></a>
-              </li>
-              <li class="home-benefits__item col-4">
-                <svg class="home-benefits__icon">
-                  <use xlink:href="img/sprite.svg#home-benefit-6"></use>
-                </svg>
-                <h3 class="home-benefits__heading">Scalability</h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
-                  <svg class="home-benefits__link-icon">
-                    <use xlink:href="img/sprite.svg#arrow-long"></use>
-                  </svg></a>
+                </div>
               </li>
             </ul>
-          </div>
-        </section>
-        <section class="quiz">
-          <div class="container">
-            <div class="quiz__container">
-              <div class="quiz__video-block col-6">
-                <button class="quiz__video-btn" type="button">
-                  <svg class="quiz__video-icon">
-                    <use xlink:href="img/sprite.svg#video-play"></use>
-                  </svg>
-                </button>
-                <video class="quiz__video" src="#" poster="img/quiz-video-preview.jpg"> </video>
-              </div>
-              <div class="quiz__content">
-                <div class="quiz__title"> 
-                  <svg class="quiz__title-icon">
-                    <use xlink:href="img/sprite.svg#question-mark"></use>
-                  </svg>
-                  <h2 class="quiz__title-heading">Just answer 5 questions and we'll find the right kit for you!</h2>
-                </div>
-                <form class="quiz__form" action="#"> 
-                  <div class="slider slider-2 quiz__slider">
-                    <ul class="slider__wrapper">
-                      <li class="slider__slide quiz__slide">
-                        <h3 class="quiz__slider-title"><span class="quiz__slider-title-pagination"><span class="quiz__slider-title_pagination_this">1</span>/<span class="quiz__slider-title_pagination_all">5</span></span><span class="quiz__slider-title-text">How big is the grow area? </span></h3>
-                        <div class="quiz__form-content">
-                          <label class="quiz__form-label">
-                            <input class="radio visually-hidden" type="radio" checked name="quiz-first" value="1"><span class="radio__custom"></span><span class="quiz__form-text">Large: &gt; 500</span>
-                          </label>
-                          <label class="quiz__form-label">
-                            <input class="radio visually-hidden" type="radio" name="quiz-first" value="2"><span class="radio__custom"></span><span class="quiz__form-text">Medium: 100-500</span>
-                          </label>
-                          <label class="quiz__form-label">
-                            <input class="radio visually-hidden" type="radio" name="quiz-first" value="3"><span class="radio__custom"></span><span class="quiz__form-text">Small: &lt; 100</span>
-                          </label>
-                        </div>
-                        <div class="slider__btn-wrap">
-                          <button class="slider__btn slider__btn_prev" type="button" disabled>
-                            <svg class="slider__btn-icon">
-                              <use xlink:href="img/sprite.svg#arrow-long"></use>
-                            </svg>
-                          </button>
-                          <button class="slider__btn slider__btn_next" type="button">
-                            <svg class="slider__btn-icon">
-                              <use xlink:href="img/sprite.svg#arrow-long"></use>
-                            </svg>
-                          </button>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
+            <div class="slider__btn-wrap">
+              <button class="slider__btn slider__btn_prev" type="button">
+                <svg class="slider__btn-icon">
+                  <use xlink:href="img/sprite.svg#chevron"></use>
+                </svg>
+              </button><span class="slider__active-slide">3</span>
+              <button class="slider__btn slider__btn_next" type="button">
+                <svg class="slider__btn-icon">
+                  <use xlink:href="img/sprite.svg#chevron"></use>
+                </svg>
+              </button>
             </div>
           </div>
-        </section>
-        <section class="product-list">
-          <div class="container product-list__container">
-            <div class="product-list__top"> 
-              <div class="section-title product-list__title">
-                <svg class="section-title__icon">
-                  <use xlink:href="@img/sprite.svg#before-title-tree"></use>
-                </svg>
-                <h2 class="section-title__heading">Bestsellers</h2>
-              </div><a class="product-list__more" href="#"> <span class="product-list__more-text">All products</span>
-                <svg class="product-list__more-icon">
+        </div>
+      </section>
+      <section class="home-benefits">
+        <div class="container home-benefits__container">
+          <div class="section-title home-benefits__title">
+            <svg class="section-title__icon">
+              <use xlink:href="@img/sprite.svg#before-title-tree"></use>
+            </svg>
+            <h2 class="section-title__heading">Benefits of GrowDirector Pro</h2>
+          </div>
+          <ul class="home-benefits__list row">
+            <li class="home-benefits__item col-4">
+              <svg class="home-benefits__icon">
+                <use xlink:href="img/sprite.svg#home-benefit-1"></use>
+              </svg>
+              <h3 class="home-benefits__heading">Easy to use</h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
+                <svg class="home-benefits__link-icon">
                   <use xlink:href="img/sprite.svg#arrow-long"></use>
                 </svg></a>
-            </div>
-            <p class="product-list__desc col-4">Introducing our innovative and accessible devices to automate it all</p>
-            <ul class="product-list__list row">
-              <li class="product-list__item col-4"><picture><source srcset="img/product-1.webp" type="image/webp"><img class="product-list__item-img" src="img/product-1.png" alt="Product"></picture>
-                <h3 class="product-list__item-title">HydroDirector</h3><strong class="product-list__item-price">$635</strong><a class="btn product-list__item-btn btn__green" href="#">Open a shop</a>
-              </li>
-              <li class="product-list__item col-4"><picture><source srcset="img/product-2.webp" type="image/webp"><img class="product-list__item-img" src="img/product-2.png" alt="Product"></picture>
-                <h3 class="product-list__item-title">DryContactDirector</h3><strong class="product-list__item-price">$365</strong><a class="btn product-list__item-btn btn__green" href="#">Open a shop</a>
-              </li>
-              <li class="product-list__item col-4"><picture><source srcset="img/product-3.webp" type="image/webp"><img class="product-list__item-img" src="img/product-3.png" alt="Product"></picture>
-                <h3 class="product-list__item-title">SensorDirector</h3><strong class="product-list__item-price">$365</strong><a class="btn product-list__item-btn btn__green" href="#">Open a shop</a>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section class="subscribe-news">
-          <div class="container subscribe-news__container"> 
-            <div class="subscribe-news__text-block col-6">
-              <h2 class="subscribe-news__title">Subscribe to news</h2>
-              <p class="subscribe-news__desc">Stay up to date with all discounts, promotions and updates - subscribe to the notification mailing list</p>
-            </div>
-            <form class="subscribe-news__form row" action="#">
-              <input class="white subscribe-news__input col-5" type="email" placeholder="Your email">
-              <button class="btn subscribe-news__btn btn__green" type="sumbit">Send</button>
-            </form>
-          </div>
-        </section>
-        <section class="about-app">
-          <div class="container about-app__container row">
-            <div class="about-app__left">
-              <div class="section-title about-app__title">
-                <svg class="section-title__icon">
-                  <use xlink:href="@img/sprite.svg#before-title-tree"></use>
+            </li>
+            <li class="home-benefits__item col-4">
+              <svg class="home-benefits__icon">
+                <use xlink:href="img/sprite.svg#home-benefit-2"></use>
+              </svg>
+              <h3 class="home-benefits__heading">Access from anywhere</h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
+                <svg class="home-benefits__link-icon">
+                  <use xlink:href="img/sprite.svg#arrow-long"></use>
+                </svg></a>
+            </li>
+            <li class="home-benefits__item col-4">
+              <svg class="home-benefits__icon">
+                <use xlink:href="img/sprite.svg#home-benefit-3"></use>
+              </svg>
+              <h3 class="home-benefits__heading">Set it fast</h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
+                <svg class="home-benefits__link-icon">
+                  <use xlink:href="img/sprite.svg#arrow-long"></use>
+                </svg></a>
+            </li>
+            <li class="home-benefits__item col-4">
+              <svg class="home-benefits__icon">
+                <use xlink:href="img/sprite.svg#home-benefit-4"></use>
+              </svg>
+              <h3 class="home-benefits__heading">3-year warranty </h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
+                <svg class="home-benefits__link-icon">
+                  <use xlink:href="img/sprite.svg#arrow-long"></use>
+                </svg></a>
+            </li>
+            <li class="home-benefits__item col-4">
+              <svg class="home-benefits__icon">
+                <use xlink:href="img/sprite.svg#home-benefit-5"></use>
+              </svg>
+              <h3 class="home-benefits__heading">Open API</h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
+                <svg class="home-benefits__link-icon">
+                  <use xlink:href="img/sprite.svg#arrow-long"></use>
+                </svg></a>
+            </li>
+            <li class="home-benefits__item col-4">
+              <svg class="home-benefits__icon">
+                <use xlink:href="img/sprite.svg#home-benefit-6"></use>
+              </svg>
+              <h3 class="home-benefits__heading">Scalability</h3><a class="home-benefits__link" href="#"><span class="home-benefits__link-text">More information</span>
+                <svg class="home-benefits__link-icon">
+                  <use xlink:href="img/sprite.svg#arrow-long"></use>
+                </svg></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="quiz">
+        <div class="container">
+          <div class="quiz__container">
+            <div class="quiz__video-block col-6">
+              <button class="quiz__video-btn" type="button">
+                <svg class="quiz__video-icon">
+                  <use xlink:href="img/sprite.svg#video-play"></use>
                 </svg>
-                <h2 class="section-title__heading">About the app</h2>
-              </div>
-              <div class="about-app__phone-wrap"> 
-                <div class="about-app__phone"></div>
-              </div>
+              </button>
+              <video class="quiz__video" src="#" poster="img/quiz-video-preview.jpg"> </video>
             </div>
-            <div class="col-1"></div>
-            <div class="about-app__right col-6">
-              <p class="about-app__desc">Control all the sensors and equipment in your greenhouse or grow room from your phone, tablet or laptop. All kinds of media can be automated: from hydroponics to soil and everything in between. Controls any sensor, like temperature, humidity, CO2, VPD, EC, pH, DO, ORP, PAR, LUX, soil moisture and EC, flow meter, and many more to come. You can control anything in your greenhouse (light, irrigation, ventilation, etc.).</p>
-              <ol class="about-app__list row">
-                <li class="about-app__item col-6">
-                  <h3 class="about-app__item-title">Data analytics </h3>
-                  <p class="about-app__item-desc">Data are available in the form of excel tables and charts. Reports can be downloaded in a convenient format and integrated into pre-set growing recipes.</p>
-                </li>
-                <li class="about-app__item col-6">
-                  <h3 class="about-app__item-title">Push notifications </h3>
-                  <p class="about-app__item-desc">Prevents and eliminates critical situations automatically.  Notifies you if there's a problem. </p>
-                </li>
-                <li class="about-app__item">
-                  <h3 class="about-app__item-title">Simple to use</h3>
-                  <p class="about-app__item-desc">User-friendly interface. Grow Director Pro can control up to 16,000 devices and merge them into one system, or divide them into different zones.</p>
-                </li>
-              </ol>
-              <div class="about-app__app-wrap"> <a class="about-app__app" href="#"> <picture><source srcset="img/google-play.webp" type="image/webp"><img class="about-app__app-img" src="img/google-play.png" alt="Download App"></picture></a><a class="about-app__app" href="#"> <img class="about-app__app-img" src="img/app-store.png" alt="Download App"></a></div>
+            <div class="quiz__content">
+              <div class="quiz__title"> 
+                <svg class="quiz__title-icon">
+                  <use xlink:href="img/sprite.svg#question-mark"></use>
+                </svg>
+                <h2 class="quiz__title-heading">Just answer 5 questions and we'll find the right kit for you!</h2>
+              </div>
+              <form class="quiz__form" action="#"> 
+                <div class="slider slider-2 quiz__slider">
+                  <ul class="slider__wrapper">
+                    <li class="slider__slide quiz__slide">
+                      <h3 class="quiz__slider-title"><span class="quiz__slider-title-pagination"><span class="quiz__slider-title_pagination_this">1</span>/<span class="quiz__slider-title_pagination_all">5</span></span><span class="quiz__slider-title-text">How big is the grow area? </span></h3>
+                      <div class="quiz__form-content">
+                        <label class="quiz__form-label">
+                          <input class="radio visually-hidden" type="radio" checked name="quiz-first" value="1"><span class="radio__custom"></span><span class="quiz__form-text">Large: &gt; 500</span>
+                        </label>
+                        <label class="quiz__form-label">
+                          <input class="radio visually-hidden" type="radio" name="quiz-first" value="2"><span class="radio__custom"></span><span class="quiz__form-text">Medium: 100-500</span>
+                        </label>
+                        <label class="quiz__form-label">
+                          <input class="radio visually-hidden" type="radio" name="quiz-first" value="3"><span class="radio__custom"></span><span class="quiz__form-text">Small: &lt; 100</span>
+                        </label>
+                      </div>
+                      <div class="slider__btn-wrap">
+                        <button class="slider__btn slider__btn_prev" type="button" disabled>
+                          <svg class="slider__btn-icon">
+                            <use xlink:href="img/sprite.svg#arrow-long"></use>
+                          </svg>
+                        </button>
+                        <button class="slider__btn slider__btn_next" type="button">
+                          <svg class="slider__btn-icon">
+                            <use xlink:href="img/sprite.svg#arrow-long"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </form>
             </div>
           </div>
-        </section>
-        <section class="current-news">
-          <div class="container current-news__container"> 
-            <div class="section-title current-news__title">
+        </div>
+      </section>
+      <section class="popular-products">
+        <div class="container popular-products__container">
+          <div class="popular-products__top"> 
+            <div class="section-title popular-products__title">
               <svg class="section-title__icon">
                 <use xlink:href="@img/sprite.svg#before-title-tree"></use>
               </svg>
-              <h2 class="section-title__heading">Current news from GrowDirector Pro</h2>
+              <h2 class="section-title__heading">Bestsellers</h2>
+            </div><a class="popular-products__more" href="#"> <span class="popular-products__more-text">All products</span>
+              <svg class="popular-products__more-icon">
+                <use xlink:href="img/sprite.svg#arrow-long"></use>
+              </svg></a>
+          </div>
+          <p class="popular-products__desc col-4">Introducing our innovative and accessible devices to automate it all</p>
+          <ul class="popular-products__list row">
+            <li class="popular-products__item col-4"><picture><source srcset="img/product-1.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-1.png" alt="Product"></picture><strong class="popular-products__item-title">HydroDirector</strong><span class="popular-products__item-price">$635</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
+            </li>
+            <li class="popular-products__item col-4"><picture><source srcset="img/product-2.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-2.png" alt="Product"></picture><strong class="popular-products__item-title">DryContactDirector</strong><span class="popular-products__item-price">$365</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
+            </li>
+            <li class="popular-products__item col-4"><picture><source srcset="img/product-3.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-3.png" alt="Product"></picture><strong class="popular-products__item-title">SensorDirector</strong><span class="popular-products__item-price">$365</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="subscribe-news">
+        <div class="container subscribe-news__container">
+          <div class="subscribe-news__text-block col-6">
+            <h2 class="subscribe-news__title">Subscribe to news</h2>
+            <p class="subscribe-news__desc">Stay up to date with all discounts, promotions and updates - subscribe to the notification mailing list</p>
+          </div>
+          <form class="subscribe-news__form row" action="#">
+            <input class="white subscribe-news__input col-5" type="email" placeholder="Your email">
+            <button class="btn subscribe-news__btn btn__green" type="sumbit"><span class="btn__text">Send</span></button>
+          </form>
+        </div>
+      </section>
+      <section class="about-app">
+        <div class="container about-app__container row">
+          <div class="about-app__left">
+            <div class="section-title about-app__title">
+              <svg class="section-title__icon">
+                <use xlink:href="@img/sprite.svg#before-title-tree"></use>
+              </svg>
+              <h2 class="section-title__heading">About the app</h2>
             </div>
-            <div class="slider slider-3 current-news__item">
-              <ul class="slider__wrapper row">
-                <li class="slider__slide current-news__item col-3">
-                  <div class="current-news__item-img-wrap"><picture><source srcset="img/current-news-1.webp" type="image/webp"><img class="current-news__item-img" src="img/current-news-1.jpg" alt="Novelty"></picture></div>
-                  <h3 class="current-news__item-title">Indoor Growing</h3>
-                </li>
-                <li class="slider__slide current-news__item col-3">
-                  <div class="current-news__item-img-wrap"><picture><source srcset="img/current-news-2.webp" type="image/webp"><img class="current-news__item-img" src="img/current-news-2.jpg" alt="Novelty"></picture>
-                    <div class="current-news__item-desc-wrap"> 
-                      <p class="current-news__item-desc">Hydroponics is a modern method of growing plants in a closed and controlled ecological system. A large variety of plants do not ...</p>
-                    </div>
-                  </div>
-                  <h3 class="current-news__item-title">Hydroponic Growing</h3>
-                </li>
-                <li class="slider__slide current-news__item col-3">
-                  <div class="current-news__item-img-wrap"><picture><source srcset="img/current-news-3.webp" type="image/webp"><img class="current-news__item-img" src="img/current-news-3.jpg" alt="Novelty"></picture></div>
-                  <h3 class="current-news__item-title">Home-based urban agriculture</h3>
-                </li>
-                <li class="slider__slide current-news__item col-3">
-                  <div class="current-news__item-img-wrap"><picture><source srcset="img/current-news-4.webp" type="image/webp"><img class="current-news__item-img" src="img/current-news-4.jpg" alt="Novelty"></picture></div>
-                  <h3 class="current-news__item-title">Greenhouse growing</h3>
-                </li>
-                <li class="slider__slide current-news__item col-3">
-                  <div class="current-news__item-img-wrap"><picture><source srcset="img/current-news-5.webp" type="image/webp"><img class="current-news__item-img" src="img/current-news-5.jpg" alt="Novelty"></picture></div>
-                  <h3 class="current-news__item-title">Indoor Growing</h3>
-                </li>
-              </ul>
+            <div class="about-app__phone-wrap"> 
+              <div class="about-app__phone"></div>
             </div>
           </div>
-        </section>
-      </main>
-    </div>
+          <div class="col-1"></div>
+          <div class="about-app__right col-6">
+            <p class="about-app__desc">Control all the sensors and equipment in your greenhouse or grow room from your phone, tablet or laptop. All kinds of media can be automated: from hydroponics to soil and everything in between. Controls any sensor, like temperature, humidity, CO2, VPD, EC, pH, DO, ORP, PAR, LUX, soil moisture and EC, flow meter, and many more to come. You can control anything in your greenhouse (light, irrigation, ventilation, etc.).</p>
+            <ol class="about-app__list row">
+              <li class="about-app__item col-6">
+                <h3 class="about-app__item-title">Data analytics </h3>
+                <p class="about-app__item-desc">Data are available in the form of excel tables and charts. Reports can be downloaded in a convenient format and integrated into pre-set growing recipes.</p>
+              </li>
+              <li class="about-app__item col-6">
+                <h3 class="about-app__item-title">Push notifications </h3>
+                <p class="about-app__item-desc">Prevents and eliminates critical situations automatically.  Notifies you if there's a problem. </p>
+              </li>
+              <li class="about-app__item">
+                <h3 class="about-app__item-title">Simple to use</h3>
+                <p class="about-app__item-desc">User-friendly interface. Grow Director Pro can control up to 16,000 devices and merge them into one system, or divide them into different zones.</p>
+              </li>
+            </ol>
+            <div class="about-app__app-wrap"> <a class="about-app__app" href="#"> <picture><source srcset="img/google-play.webp" type="image/webp"><img class="about-app__app-img" src="img/google-play.png" alt="Download App"></picture></a><a class="about-app__app" href="#"> <img class="about-app__app-img" src="img/app-store.png" alt="Download App"></a></div>
+          </div>
+        </div>
+      </section>
+      <section class="current-news">
+        <div class="container current-news__container"> 
+          <div class="section-title current-news__title">
+            <svg class="section-title__icon">
+              <use xlink:href="@img/sprite.svg#before-title-tree"></use>
+            </svg>
+            <h2 class="section-title__heading">Current news from GrowDirector Pro</h2>
+          </div>
+          <div class="slider slider-3 current-news__item">
+            <ul class="slider__wrapper row">
+              <li class="slider__slide current-news__item col-3">
+                <div class="current-news__item-img-wrap"><picture><source srcset="img/current-news-1.webp" type="image/webp"><img class="current-news__item-img" src="img/current-news-1.jpg" alt="Novelty"></picture></div>
+                <h3 class="current-news__item-title">Indoor Growing</h3>
+              </li>
+              <li class="slider__slide current-news__item col-3">
+                <div class="current-news__item-img-wrap"><picture><source srcset="img/current-news-2.webp" type="image/webp"><img class="current-news__item-img" src="img/current-news-2.jpg" alt="Novelty"></picture>
+                  <div class="current-news__item-desc-wrap"> 
+                    <p class="current-news__item-desc">Hydroponics is a modern method of growing plants in a closed and controlled ecological system. A large variety of plants do not ...</p>
+                  </div>
+                </div>
+                <h3 class="current-news__item-title">Hydroponic Growing</h3>
+              </li>
+              <li class="slider__slide current-news__item col-3">
+                <div class="current-news__item-img-wrap"><picture><source srcset="img/current-news-3.webp" type="image/webp"><img class="current-news__item-img" src="img/current-news-3.jpg" alt="Novelty"></picture></div>
+                <h3 class="current-news__item-title">Home-based urban agriculture</h3>
+              </li>
+              <li class="slider__slide current-news__item col-3">
+                <div class="current-news__item-img-wrap"><picture><source srcset="img/current-news-4.webp" type="image/webp"><img class="current-news__item-img" src="img/current-news-4.jpg" alt="Novelty"></picture></div>
+                <h3 class="current-news__item-title">Greenhouse growing</h3>
+              </li>
+              <li class="slider__slide current-news__item col-3">
+                <div class="current-news__item-img-wrap"><picture><source srcset="img/current-news-5.webp" type="image/webp"><img class="current-news__item-img" src="img/current-news-5.jpg" alt="Novelty"></picture></div>
+                <h3 class="current-news__item-title">Indoor Growing</h3>
+              </li>
+            </ul>
+            <div class="slider__btn-wrap">
+              <button class="slider__btn slider__btn_prev" type="button" disabled>
+                <svg class="slider__btn-icon">
+                  <use xlink:href="img/sprite.svg#arrow-long"></use>
+                </svg>
+              </button>
+              <button class="slider__btn slider__btn_next" type="button">
+                <svg class="slider__btn-icon">
+                  <use xlink:href="img/sprite.svg#arrow-long"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="review">
+        <div class="container review__container"> 
+          <div class="review__text-block">
+            <div class="section-title review__title">
+              <svg class="section-title__icon">
+                <use xlink:href="@img/sprite.svg#before-title-tree"></use>
+              </svg>
+              <h2 class="section-title__heading">Reviews</h2>
+            </div>
+            <p class="review__desc">Users love GrowDirector Pro, so that's the best proof.</p>
+          </div>
+          <div class="slider slider-4 review__slider col-10">
+            <ul class="slider__wrapper">
+              <li class="slider__slide review__item"> 
+                <div class="review__item-person"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="review__item-avatar" src="img/avatar.png" alt="Face"></picture><strong class="review__item-name">David</strong><span class="review__item-info">from Youth Village explains</span></div>
+                <div class="review__item-content">
+                  <h3 class="review__item-title">Our two Hydroponic Boxes &amp; Grow Director 🎛️ are now installed at The Youth Village Learning Center 🙌</h3><a class="btn review__item-more btn__green-trs" href="#"><span class="btn__text">Read more</span></a>
+                </div>
+              </li>
+            </ul>
+            <div class="slider__btn-wrap">
+              <button class="slider__btn slider__btn_prev" type="button">
+                <svg class="slider__btn-icon">
+                  <use xlink:href="img/sprite.svg#arrow-long"></use>
+                </svg>
+              </button>
+              <button class="slider__btn slider__btn_next" type="button">
+                <svg class="slider__btn-icon">
+                  <use xlink:href="img/sprite.svg#arrow-long"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="partners">
+        <div class="container partners__container"> 
+          <div class="partners__text-block col-6">
+            <div class="section-title partners__title">
+              <svg class="section-title__icon">
+                <use xlink:href="@img/sprite.svg#before-title-tree"></use>
+              </svg>
+              <h2 class="section-title__heading">Partners who trust us</h2>
+            </div><a class="btn partners__btn btn__green" href="#"><span class="btn__text">Start a collaboration</span></a>
+          </div>
+          <div class="partners__img-wrap col-8"><picture><source srcset="img/partner-5.webp" type="image/webp"><img class="partners__img" src="img/partner-5.png" alt="Partner Logo"></picture><img class="partners__img" src="img/partner-4.png" alt="Partner Logo"><img class="partners__img" src="img/partner-3.png" alt="Partner Logo"><img class="partners__img" src="img/partner-2.svg" alt="Partner Logo"><img class="partners__img" src="img/partner-1.png" alt="Partner Logo"></div>
+          <p class="partners__info">It's great for hydroponics or whatever growing media you want to use.</p>
+        </div>
+      </section>
+      <section class="contacts">
+        <div class="container contacts__container row">
+          <div class="contacts__content col-7">
+            <h2 class="contacts__title">Contact form</h2>
+            <p class="contacts__desc">To ask any question? Leave your contact details for free consultation with rus. </p>
+            <form class="contacts__form" action="#"> 
+              <div class="contacts__field-wrap">
+                <input class="contacts__field white big" type="text" placeholder="Name">
+                <input class="contacts__field white big" type="email" placeholder="Email">
+              </div>
+              <textarea class="contacts__field contacts__textarea white big" name="question" placeholder="Add your question"></textarea>
+              <button class="btn contacts__btn btn__green" type="sumbit"><span class="btn__text">Callback</span></button>
+            </form>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer__container row"><a class="logo footer__logo col-3" href="#"> <picture><source srcset="@img/logo.webp" type="image/webp"><img class="logo__img" src="@img/logo.png" alt="Логотип Grown Director"></picture></a>
+        <div class="footer__contacts col-3"><strong class="footer__title">Contact us:</strong>
+          <div class="footer__contacts-item"><span class="footer__contacts-title">Telephone:</span><a class="footer__contacts-link" href="tel:+79826612823">+7 (982) 661-28-23</a></div>
+          <div class="footer__contacts-item"><span class="footer__contacts-title">Email:</span><a class="footer__contacts-link" href="mailto:naskr4317@yandex.ru">naskr4317@yandex.ru</a></div>
+        </div>
+        <div class="footer__social col-3"><strong class="footer__title">Follow us on social media: </strong>
+          <ul class="social footer__social-list">
+            <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="@img/facebook.svg" alt="Social-icon"></a></li>
+            <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="@img/instagram.svg" alt="Social-icon"></a></li>
+            <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="@img/linkedin.svg" alt="Social-icon"></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
