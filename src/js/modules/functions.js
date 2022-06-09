@@ -14,3 +14,21 @@ export function isWebp() {
     document.documentElement.classList.add(className);
   });
 }
+
+export function isBurger() {
+  const burgerBtn = document.querySelector('.burger')
+  const menu = document.querySelector('.menu')
+  const popup = menu.parentElement
+  burgerBtn.addEventListener('click', () => {
+    burgerBtn.classList.toggle('burger_active')
+    popup.classList.toggle('popup_active')
+    menu.classList.toggle('menu_active')
+  })
+  popup.addEventListener('click', (e) => {
+    if (!e.target.closest('.menu')) {
+      burgerBtn.classList.remove('burger_active')
+      popup.classList.remove('popup_active')
+      menu.classList.remove('menu_active')
+    }
+  })
+}

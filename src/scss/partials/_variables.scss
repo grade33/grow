@@ -15,157 +15,408 @@ $gray-gradient: linear-gradient(180deg, #EDEFF3 0%, #EDEDED 100%);
 $blue-gradient: linear-gradient(180deg, #0F4C6F 0%, #0B3D59 100%);
 
 // Title
+$small-1199: 0.85;
+$small-991: 0.75;
+$small-767: 0.65;
+$small-576: 0.5;
 
 %bold-80-inter {
+  $fsz: 80px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 80px;
   line-height: 106%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %bold-65-inter {
+  $fsz: 65px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 65px;
   line-height: 115%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %semibold-48-inter {
+  $fsz: 48px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
   line-height: 125%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 // Text
 
 %semibold-38-inter {
+  $fsz: 38px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 38px;
   line-height: 139%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %semibold-32-inter {
+  $fsz: 32px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 144%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %medium-30-inter {
+  $fsz: 30px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
   line-height: 130%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %semibold-24-inter {
+  $fsz: 24px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 133%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %medium-24-inter {
+  $fsz: 24px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 133%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %medium-23-gilroy {
+  $fsz: 23px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 23px;
   line-height: 139%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %medium-22-gilroy {
+  $fsz: 22px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
   line-height: 109%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %regular-22-gilroy {
+  $fsz: 22px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
   line-height: 109%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %semibold-20-gilroy {
+  $fsz: 20px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %regular-20-gilroy {
+  $fsz: 20px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 125%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
-%regular-18-inter {
+%regular-19-inter {
+  $fsz: 19px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 19px;
   line-height: 168%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %medium-17-gilroy {
+  $fsz: 17px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
   line-height: 141%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %regular-17-gilroy {
+  $fsz: 17px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 141%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %regular-16-gilroy {
+  $fsz: 16px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %regular-15-gilroy {
+  $fsz: 15px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 160%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }
 
 %semibold-14-gilroy {
+  $fsz: 14px;
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 150%;
+  @media (max-width: 1199px) {
+    font-size: calc($fsz * $small-1199);
+  }
+  @media (max-width: 991px) {
+    font-size: calc($fsz * $small-991);
+  }
+  @media (max-width: 767px) {
+    font-size: calc($fsz * $small-767);
+  }
+  @media (ma-width: 575px) {
+    font-size: calc($fsz * $small-576);
+  }
 }

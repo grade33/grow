@@ -1,11 +1,14 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+
+// Bootstrap
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/grid";
+@import "bootstrap/scss/containers";
 
-@import "./partials/variables";
-@import "./partials/mixins";
 @import "./normalize.css/normalize";
 @import "./partials/reset";
 @import "./partials/fonts";

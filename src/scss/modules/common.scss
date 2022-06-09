@@ -5,8 +5,116 @@ html body {
 }
 
 .container {
-  max-width: $container;
   margin: 0 auto;
+}
+
+.burger {
+  box-sizing: content-box;
+  position: relative;
+  z-index: 25;
+  min-width: 24px;
+  height: 17px;
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+
+  &__item {
+    position: absolute;
+    left: 0;
+    &:first-child {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:last-child {
+      bottom: 0;
+    }
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: $black;
+    transition: opacity .3s ease-in-out,
+    visibility .3s ease-in-out,
+    top .3s ease-in-out,
+    left .3s ease-in-out,
+    transform .3s ease-in-out;
+  }
+
+  &_active {
+    .burger__item {
+      top: 50%;
+      left: 0;
+      &:nth-child(2) {
+        visibility: hidden;
+        opacity: 0;
+      }
+      
+      &:first-child {
+        transform: translateY(-50%) rotate(45deg);
+      }
+      &:last-child {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+  }
+}
+.popup {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background: rgba($black, .6);
+  transition: opacity .3s ease-in-out,
+  visibility .3s ease-in-out;
+  &_active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.menu {
+  padding-left: 5%;
+  padding-top: 30px;
+  width: 60vw;
+  height: 100vh;
+  background: $white;
+  overflow: auto;
+  transform: translateX(-100%);
+  transition: transform .3s ease-in-out;
+  &_active {
+    transform: translateX(0);
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .nav__list,
+  .header__social,
+  .header__user-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    gap: 25px;
+  }
+  .header__user-menu {
+    margin-bottom: 20px;
+  }
+  .header__social {
+    flex-direction: row;
+    order: 1;
+  }
+
+  @media (min-width: 992px) {
+    display: none;
+  }
 }
 
 .btn {
@@ -84,7 +192,9 @@ html body {
       color: $green;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible,
+    &:active {
       .btn-play__text {
         border-color: $black;
       }
@@ -151,6 +261,7 @@ textarea {
   gap: 20px;
 
   &__icon {
+    flex: none;
     color: $green;
     width: 24px;
     height: 38px;
@@ -214,6 +325,10 @@ textarea {
   align-items: center;
   gap: 12px;
 
+  &__item {
+    flex: none;
+  }
+
   &__img {
     vertical-align: middle;
   }
@@ -228,6 +343,9 @@ textarea {
   }
 
   &__btn {
+    &-wrap {
+      z-index: 2;
+    }
     svg {
       display: block;
     }
@@ -243,10 +361,18 @@ textarea {
     &__btn {
       &-wrap {
         position: absolute;
-        left: 0;
+        left: 50%;
         bottom: 0;
+        transform: translateX(-50%);
         display: flex;
         align-items: center;
+        width: 100%;
+      }
+
+      &:hover,
+      &:focus-visible,
+      &:active {
+        color: $green;
       }
 
       &:disabled {
@@ -262,10 +388,12 @@ textarea {
       &-icon {
         width: 32px;
         height: 32px;
+        transition: color .2s ease-in-out;
       }
     }
 
     &__active-slide {
+      transform: translateY(1px);
       @extend %regular-20-gilroy;
     }
   }
@@ -292,7 +420,9 @@ textarea {
       border-radius: 6px;
       transition: background-color .2s ease-in-out;
 
-      &:hover {
+      &:hover,
+      &:focus-visible,
+      &:active {
         background-color: $green2;
       }
 
@@ -343,7 +473,9 @@ textarea {
       visibility .3s ease-in-out;
       transition: background-color .2s ease-in-out;
 
-      &:hover {
+      &:hover,
+      &:focus-visible,
+      &:active {
         background-color: $green2;
       }
 
@@ -396,7 +528,10 @@ textarea {
       transition: opacity .3s ease-in-out,
       visibility .3s ease-in-out;
       transition: background-color .2s ease-in-out;
-      &:hover {
+
+      &:hover,
+      &:focus-visible,
+      &:active {
         background-color: $green;
 
         svg {

@@ -10,22 +10,23 @@ html(lang="ru")
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
   body.home
-      include ./html/discount.pug
+      +discount
       +header()
 
       main.main 
-        section.home-hero
-          .container.home-hero__container
-            .slider.slider-1.home-hero__slider
+        section.presentation
+          .container.presentation__container
+            .slider.slider-1.presentation__slider
               ul.slider__wrapper
-                li.slider__slide.slider__slide-1
-                  .home-hero__text-block
-                    h1.home-hero__title.col-7 Grow faster, bigger, easier with us
-                    p.home-hero__desc.col-4 We've got you covered with fully automated remote environmental controller
-                    .home-hero__btn-wrap 
-                      +link('green','Select device','#','home-hero__btn')
-                      +btnVideo('home-hero__btn-video')
-              .slider__btn-wrap
+                li.slider__slide
+                  img.presentation__bg(src="@img/presentation-bg.png", alt="")
+                  .presentation__text-block
+                    h1.presentation__title.col-xl-7.col-md-8.col-sm-10.col Grow faster, bigger, easier with us
+                    p.presentation__desc.col-xl-4.col-md-5.col-sm-7.col We've got you covered with fully automated remote environmental controller
+                    .presentation__btn-wrap 
+                      +link('green','Select device','#','presentation__btn')
+                      +btnVideo('presentation__btn-video')
+              .container.slider__btn-wrap
                 button.slider__btn.slider__btn_prev(type="button")
                   svg.slider__btn-icon
                     use(xlink:href="@img/sprite.svg#chevron")
@@ -34,10 +35,10 @@ html(lang="ru")
                   svg.slider__btn-icon
                     use(xlink:href="@img/sprite.svg#chevron")
         
-        section.home-benefits
-          .container.home-benefits__container
-            +sectionTitle('Benefits of GrowDirector Pro','home-benefits__title')
-            ul.home-benefits__list.row
+        section.benefits
+          .container.benefits__container
+            +sectionTitle('Benefits of GrowDirector Pro','benefits__title')
+            ul.benefits__list.row
               -
                 const values = [
                   'Easy to use', 
@@ -46,19 +47,19 @@ html(lang="ru")
                   'Open API', 'Scalability'
                 ]
               each val, idx in values
-                li.home-benefits__item.col-4
-                  svg.home-benefits__icon
+                li.benefits__item.col-sm-4.col-6
+                  svg.benefits__icon
                     use(xlink:href="@img/sprite.svg#home-benefit-" + (+idx + 1))
-                  h3.home-benefits__heading= val
-                  a.home-benefits__link(href="#")
-                    span.home-benefits__link-text More information
-                    svg.home-benefits__link-icon
+                  h3.benefits__heading= val
+                  a.benefits__link(href="#")
+                    span.benefits__link-text More information
+                    svg.benefits__link-icon
                       use(xlink:href="@img/sprite.svg#arrow-long")
         
         section.quiz
           .container
             .quiz__container
-              .quiz__video-block.col-6
+              .quiz__video-block
                 button.quiz__video-btn(type="button")
                   svg.quiz__video-icon
                     use(xlink:href="@img/sprite.svg#video-play")
@@ -138,8 +139,7 @@ html(lang="ru")
           .container.about-app__container.row
             .about-app__left
               +sectionTitle('About the app','about-app__title')
-              .about-app__phone-wrap 
-                .about-app__phone
+              img.about-app__phone(src="@img/phone.png", alt="")
             .col-1
             .about-app__right.col-6
               p.about-app__desc Control all the sensors and equipment in your greenhouse or grow room from your phone, tablet or laptop. All kinds of media can be automated: from hydroponics to soil and everything in between. Controls any sensor, like temperature, humidity, CO2, VPD, EC, pH, DO, ORP, PAR, LUX, soil moisture and EC, flow meter, and many more to come. You can control anything in your greenhouse (light, irrigation, ventilation, etc.).

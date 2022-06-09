@@ -10,7 +10,7 @@ html(lang="ru")
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
   body.catalog
-      include ./html/discount.pug
+      +discount
       +header()
 
       main.main 
@@ -45,27 +45,9 @@ html(lang="ru")
                   span.products__price= value[1]
                   +link('green','Open a shop','#','products__btn')
         
-        section.popular-products
-          .container.popular-products__container
-            .popular-products__top 
-              +sectionTitle('Готовое решение','popular-products__title')
-            ul.popular-products__list.row
-              li.popular-products__item.col-4
-                img.popular-products__item-img(src="@img/product-1.png", alt="Product")
-                strong.popular-products__item-title HydroDirector
-                span.popular-products__item-price $635
-                +link('green','Open a shop','#','popular-products__item-btn')
-              li.popular-products__item.col-4
-                img.popular-products__item-img(src="@img/product-2.png", alt="Product")
-                strong.popular-products__item-title DryContactDirector
-                span.popular-products__item-price $365
-                +link('green','Open a shop','#','popular-products__item-btn')
-              li.popular-products__item.col-4
-                img.popular-products__item-img(src="@img/product-3.png", alt="Product")
-                strong.popular-products__item-title SensorDirector
-                span.popular-products__item-price $365
-                +link('green','Open a shop','#','popular-products__item-btn')
-            
+        +sectionPopularProducts('Готовое решение')
+
+ 
       include ./html/footer.pug
 
 

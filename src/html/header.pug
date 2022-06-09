@@ -15,7 +15,7 @@ mixin header()
             a.nav__link(href="#") Education
           li.nav__item
             a.nav__link(href="#") FAQ
-      ul.social
+      ul.social.header__social
         li.social__item
           a.social__link(href="#") 
             img.social__img(src="@img/facebook.svg", alt="Social-icon")
@@ -34,3 +34,45 @@ mixin header()
           a.header__user-menu-link(href="#") 
             svg.header__user-menu-icon
               use(xlink:href="@img/sprite.svg#basket")
+      
+      button.burger(type="button")
+        span.burger__item
+        span.burger__item
+        span.burger__item
+      .popup
+        .menu
+          .container.menu__container
+            nav.nav.header__nav 
+              ul.nav__list
+                li.nav__item
+                  a.nav__link(href="#") Products
+                li.nav__item
+                  a.nav__link(href="#") Catalogue
+                li.nav__item
+                  a.nav__link(href="#") About
+                li.nav__item
+                  a.nav__link(href="#") Education
+                li.nav__item
+                  a.nav__link(href="#") FAQ
+            ul.social.header__social
+              li.social__item
+                a.social__link(href="#") 
+                  img.social__img(src="@img/facebook.svg", alt="Social-icon")
+              li.social__item
+                a.social__link(href="#") 
+                  img.social__img(src="@img/instagram.svg", alt="Social-icon")
+              li.social__item
+                a.social__link(href="#") 
+                  img.social__img(src="@img/linkedin.svg", alt="Social-icon")
+            ul.header__user-menu
+              li.header__user-menu-item
+                a.header__user-menu-link(href="#") 
+                  svg.header__user-menu-icon
+                    use(xlink:href="@img/sprite.svg#user")
+              li.header__user-menu-item
+                a.header__user-menu-link(href="#") 
+                  svg.header__user-menu-icon
+                    use(xlink:href="@img/sprite.svg#basket")
+          
+        
+
