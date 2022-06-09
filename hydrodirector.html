@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hydrodirector</title>
-    <link rel="stylesheet" href="./css/style.min.css?_v=20220608074353">
-    <script defer src="./js/app.min.js?_v=20220608074353"></script>
+    <link rel="stylesheet" href="./css/style.min.css?_v=20220609072428">
+    <script defer src="./js/app.min.js?_v=20220609072428"></script>
   </head>
   <body class="hydrodirector">
     <div class="discount"><span class="discount__text">15% discount on new items</span></div>
@@ -21,7 +21,7 @@
             <li class="nav__item"><a class="nav__link" href="#">FAQ</a></li>
           </ul>
         </nav>
-        <ul class="social">
+        <ul class="social header__social">
           <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/facebook.svg" alt="Social-icon"/></a></li>
           <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/instagram.svg" alt="Social-icon"/></a></li>
           <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/linkedin.svg" alt="Social-icon"/></a></li>
@@ -36,66 +36,229 @@
                 <use xlink:href="img/sprite.svg#basket"></use>
               </svg></a></li>
         </ul>
+        <button class="burger" type="button"><span class="burger__item"></span><span class="burger__item"></span><span class="burger__item"></span></button>
+        <div class="popup">
+          <div class="menu">
+            <div class="container menu__container">
+              <nav class="nav header__nav"> 
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="nav__link" href="#">Products</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">Catalogue</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">About</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">Education</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">FAQ</a></li>
+                </ul>
+              </nav>
+              <ul class="social header__social">
+                <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/facebook.svg" alt="Social-icon"/></a></li>
+                <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/instagram.svg" alt="Social-icon"/></a></li>
+                <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/linkedin.svg" alt="Social-icon"/></a></li>
+              </ul>
+              <ul class="header__user-menu">
+                <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
+                    <svg class="header__user-menu-icon">
+                      <use xlink:href="img/sprite.svg#user"></use>
+                    </svg></a></li>
+                <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
+                    <svg class="header__user-menu-icon">
+                      <use xlink:href="img/sprite.svg#basket"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
     <main class="main"> 
-      <section class="product-main">
-        <div class="container product-main__container">
-          <div class="product-main__info col-10">
-            <div class="product-main__text-block">
-              <h1 class="product-main__title">HydroDirector</h1>
-              <p class="product-main__desc">Специализированный девайс для гидропонных систем всех типов. Подходит для автоматизации любых площадей от маленьких гроурумов до промышленных теплиц.</p><a class="btn product-main__btn-buy btn__white" href="#"><span class="btn__text">Заказать</span></a>
-            </div>
-          </div><picture><source srcset="img/hydrodirector/hero-bg.webp" type="image/webp"><img class="product-main__img" src="img/hydrodirector/hero-bg.png" alt="Hydrodirector"></picture>
-          <p class="product-main__text col-10">Вы можете объединять в одну систему и <span class="product-main__text_green">одновременно контролировать от 3 до 16.000 девайсов, </span>что составляет в сумме 48.000 помп.</p><a class="btn product-main__btn-download btn__green" href="#"><span class="btn__text">Download manual</span></a>
+      <section class="device-about">
+        <div class="container device-about__container">
+          <div class="device-about__info">
+            <h1 class="device-about__title">HydroDirector</h1>
+            <p class="device-about__desc">Специализированный девайс для гидропонных систем всех типов. Подходит для автоматизации любых площадей от маленьких гроурумов до промышленных теплиц.</p><a class="btn device-about__btn-buy btn__white" href="#"><span class="btn__text">Заказать</span></a>
+          </div><picture><source srcset="img/hydrodirector/hero-bg.webp" type="image/webp"><img class="device-about__device" src="img/hydrodirector/hero-bg.png" alt="Hydrodirector"></picture>
+          <p class="device-about__text">Вы можете объединять в одну систему и <span class="device-about__text_green">одновременно контролировать от 3 до 16.000 девайсов, </span>что составляет в сумме 48.000 помп.</p><a class="btn device-about__btn-download btn__green" href="#"><span class="btn__text">Download manual</span></a>
         </div>
       </section>
-      <section class="advantage">
-        <div class="container advantage__container"><picture><source srcset="img/hydrodirector/advantages.webp" type="image/webp"><img class="advantage__bg" src="img/hydrodirector/advantages.png" alt=""></picture>
-          <div class="section-title advantage__title">
+      <section class="device-advantages">
+        <div class="container device-advantages__container"><picture><source srcset="img/hydrodirector/advantages.webp" type="image/webp"><img class="device-advantages__bg" src="img/hydrodirector/advantages.png" alt=""></picture>
+          <div class="section-title device-advantages__title">
             <svg class="section-title__icon">
               <use xlink:href="img/sprite.svg#before-title-tree"></use>
             </svg>
             <h2 class="section-title__heading">Что он может?</h2>
           </div>
-          <div class="advantage__list-wrap">
-            <div class="advantage__list">
-              <div class="advantage__item col-5">
-                <div class="advantage__icon-wrap"><img class="advantage__icon" src="img/advantages/advantage-1.svg" alt=""></div>
-                <p class="advantage__desc">Контролировать подачу удобрений, воды или pH-балансирующих растворов в систему</p>
+          <div class="device-advantages__list-wrap">
+            <div class="device-advantages__list">
+              <div class="device-advantages__item col-5">
+                <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-1.svg" alt=""></div>
+                <p class="device-advantages__desc">Контролировать подачу удобрений, воды или pH-балансирующих растворов в систему</p>
               </div>
-              <div class="advantage__item col-5">
-                <div class="advantage__icon-wrap"><img class="advantage__icon" src="img/advantages/advantage-2.svg" alt=""></div>
-                <p class="advantage__desc">Следить за уровнем Dissolved Oxygen (DO) в гидропонном растворесоздавать заданный баланс между pH oxidation-reduction potential</p>
+              <div class="device-advantages__item col-5">
+                <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-2.svg" alt=""></div>
+                <p class="device-advantages__desc">Следить за уровнем Dissolved Oxygen (DO) в гидропонном растворесоздавать заданный баланс между pH oxidation-reduction potential</p>
               </div>
-              <div class="advantage__item col-5">
-                <div class="advantage__icon-wrap"><img class="advantage__icon" src="img/advantages/advantage-3.svg" alt=""></div>
-                <p class="advantage__desc">Отправлять уведомления о неполадках в системе и анализировать возможные причины их возникновения</p>
+              <div class="device-advantages__item col-5">
+                <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-3.svg" alt=""></div>
+                <p class="device-advantages__desc">Отправлять уведомления о неполадках в системе и анализировать возможные причины их возникновения</p>
               </div>
-              <div class="advantage__item col-6">
-                <div class="advantage__icon-wrap"><img class="advantage__icon" src="img/advantages/advantage-4.svg" alt=""></div>
-                <p class="advantage__desc">Объединять в единую систему до 16 000 девайсов создавая невероятные возможности для автоматизации промышленных теплиц</p>
+              <div class="device-advantages__item col-6">
+                <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-4.svg" alt=""></div>
+                <p class="device-advantages__desc">Объединять в единую систему до 16 000 девайсов создавая невероятные возможности для автоматизации промышленных теплиц</p>
               </div>
-              <div class="advantage__item col-5">
-                <div class="advantage__icon-wrap"><img class="advantage__icon" src="img/advantages/advantage-5.svg" alt=""></div>
-                <p class="advantage__desc">Смешивать необходимые удобрения в нужных пропорциях согласно показателям EC сенсора</p>
+              <div class="device-advantages__item col-5">
+                <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-5.svg" alt=""></div>
+                <p class="device-advantages__desc">Смешивать необходимые удобрения в нужных пропорциях согласно показателям EC сенсора</p>
               </div>
-              <div class="advantage__items-wrap row">
-                <div class="advantage__item col-4">
-                  <div class="advantage__icon-wrap"><img class="advantage__icon" src="img/advantages/advantage-6.svg" alt=""></div>
-                  <p class="advantage__desc">Собирать и хранить все данные в облаке</p>
+              <div class="device-advantages__items-wrap row">
+                <div class="device-advantages__item col-4">
+                  <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-6.svg" alt=""></div>
+                  <p class="device-advantages__desc">Собирать и хранить все данные в облаке</p>
                 </div>
-                <div class="advantage__item col-4">
-                  <div class="advantage__icon-wrap"><img class="advantage__icon" src="img/advantages/advantage-7.svg" alt=""></div>
-                  <p class="advantage__desc">Удаленно изменять настройки системы</p>
+                <div class="device-advantages__item col-4">
+                  <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-7.svg" alt=""></div>
+                  <p class="device-advantages__desc">Удаленно изменять настройки системы</p>
                 </div>
-                <div class="advantage__item col-4">
-                  <div class="advantage__icon-wrap"><img class="advantage__icon" src="img/advantages/advantage-8.svg" alt=""></div>
-                  <p class="advantage__desc">Поддерживать заданный уровень pH</p>
+                <div class="device-advantages__item col-4">
+                  <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-8.svg" alt=""></div>
+                  <p class="device-advantages__desc">Поддерживать заданный уровень pH</p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section class="pluggable-sensors">
+        <div class="container pluggable-sensors__container"> 
+          <h2 class="pluggable-sensors__title">Подключаемые сенсоры:</h2>
+          <ul class="pluggable-sensors__list row">
+            <li class="pluggable-sensors__item col-3">
+              <div class="pluggable-sensors__icon-wrap"> <picture><source srcset="img/pluggable-sensors/sensor-1.webp" type="image/webp"><img class="pluggable-sensors__img" src="img/pluggable-sensors/sensor-1.png" alt="pluggable-sensors sensors"></picture></div><strong class="pluggable-sensors__name">Ph</strong>
+            </li>
+            <li class="pluggable-sensors__item col-3">
+              <div class="pluggable-sensors__icon-wrap"> <picture><source srcset="img/pluggable-sensors/sensor-1.webp" type="image/webp"><img class="pluggable-sensors__img" src="img/pluggable-sensors/sensor-1.png" alt="pluggable-sensors sensors"></picture>
+                <p class="pluggable-sensors__item-info">EAir temp &amp; humidity &amp; VPD</p>
+              </div><strong class="pluggable-sensors__name">EC</strong>
+            </li>
+            <li class="pluggable-sensors__item col-3">
+              <div class="pluggable-sensors__icon-wrap"> <picture><source srcset="img/pluggable-sensors/sensor-2.webp" type="image/webp"><img class="pluggable-sensors__img" src="img/pluggable-sensors/sensor-2.png" alt="pluggable-sensors sensors"></picture></div><strong class="pluggable-sensors__name">DO</strong>
+            </li>
+            <li class="pluggable-sensors__item col-3">
+              <div class="pluggable-sensors__icon-wrap"> <picture><source srcset="img/pluggable-sensors/sensor-3.webp" type="image/webp"><img class="pluggable-sensors__img" src="img/pluggable-sensors/sensor-3.png" alt="pluggable-sensors sensors"></picture></div><strong class="pluggable-sensors__name">ORP</strong>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="device-info">
+        <div class="container device-info__container"><picture><source srcset="img/hydrodirector/device.webp" type="image/webp"><img class="device-info__bg" src="img/hydrodirector/device.png" alt=""></picture>
+          <h2 class="device-info__title">Каждый девайс оснащён:</h2>
+          <ul class="device-info__list row">
+            <li class="device-info__item">
+              <div class="device-info__desc">
+                <p class="device-info__text">Тремя мощными помпами, способными перекачивать объем до 12 л в час каждая</p>
+              </div>
+            </li>
+            <li class="device-info__item">
+              <div class="device-info__desc">
+                <p class="device-info__text">Встроенным уникальным софтом,который позволяет очень просто задавать сложные настройки и контролировать их, предотвращая ошибки пользователя </p>
+              </div>
+            </li>
+            <li class="device-info__item">
+              <div class="device-info__desc">
+                <p class="device-info__text">На нижней части располагается 3 разъема для подключения сенсоров (вы можете комбинировать сенсоры на своё усмотрение)</p>
+                <div class="device-info__tooltip">
+                  <button class="device-info__tooltip-btn" type="button">?</button>
+                  <div class="device-info__tooltip-info">
+                    <ol>
+                      <li>EC + temp</li>
+                      <li>pH</li>
+                      <li>DO или ORP</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="device-info__item">
+              <div class="device-info__desc">
+                <p class="device-info__text">Держатель для крепления к вертикальным поверхностям</p>
+              </div>
+            </li>
+            <li class="device-info__item">
+              <div class="device-info__desc">
+                <p class="device-info__text">Проводом для подключения в сеть __V системой Wi-Fi MESH connection для установления соединения с вашим телефоном, лэптопом или планшетом</p>
+              </div>
+            </li>
+            <li class="device-info__item">
+              <div class="device-info__desc">
+                <p class="device-info__text">12 метровая гибкая трубка для подключения помп к резервуарам с жидкостями объемом до 10.000 л</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="application">
+        <div class="container application__container row">
+          <div class="application__text-block col-8">
+            <div class="application__desc">Настраивается данный аппаратчерез удобное приложение, где вы можете <span class="application__desc_green">отследить историю ваших действий, изменить заданные параметры </span>в любой точке мира при наличии вайфай соединения в месте подключения девайса. </div><a class="btn application__btn btn__green" href="#"><span class="btn__text">Посмотреть в каталоге</span></a>
+          </div>
+          <div class="application__phone-wrap col-4"><picture><source srcset="img/phone.webp" type="image/webp"><img class="application__phone" src="img/phone.png" alt=""/></picture></div>
+        </div>
+      </section>
+      <section class="device-connecting">
+        <div class="device-connecting__bg-wrap"><img class="device-connecting__bg" src="img/hydrodirector/connecting.svg" alt=""/></div>
+        <div class="container device-connecting__container row">
+          <p class="device-connecting__desc col-6">Hydrodirector&nbsp; может подключаться в сеть как самостоятельное одиночное устройство, так и объединяться в единую систему с любыми другими устройствами гроудиректор через мобильное приложение.
+          </p>
+        </div>
+      </section>
+      <section class="device-characteristics"> 
+        <div class="container device-characteristics__container">
+          <h2 class="device-characteristics__title">Основные характеристики</h2>
+          <ul class="device-characteristics__list row">
+            <li class="device-characteristics__item col-3">
+              <h3 class="device-characteristics__item-title">Вес:</h3>
+              <p class="device-characteristics__item-desc">Здесь будет характеристика аппарата</p>
+            </li>
+            <li class="device-characteristics__item col-3">
+              <h3 class="device-characteristics__item-title">Габариты:</h3>
+              <p class="device-characteristics__item-desc">Здесь будет характеристика аппарата</p>
+            </li>
+            <li class="device-characteristics__item col-3">
+              <h3 class="device-characteristics__item-title">Мощность:</h3>
+              <p class="device-characteristics__item-desc">Здесь будет характеристика аппарата</p>
+            </li>
+            <li class="device-characteristics__item col-3">
+              <h3 class="device-characteristics__item-title">Гарантия:</h3>
+              <p class="device-characteristics__item-desc">Здесь будет характеристика аппарата</p>
+            </li>
+          </ul><a class="btn device-characteristics__btn btn__white" href="#"><span class="btn__text">Заказать Hydrodirector</span></a>
+        </div>
+      </section>
+      <section class="device-installation">
+        <div class="container device-installation__container">
+          <div class="device-installation__text-block col-6"><strong class="device-installation__title">Установка:</strong>
+            <p class="device-installation__desc">Монтируется с помощью специального держателя к вертикальным поверхностям.</p>
+          </div>
+          <div class="device-installation__bg-wrap"><picture><source srcset="img/hydrodirector/installation.webp" type="image/webp"><img class="device-installation__bg" src="img/hydrodirector/installation.png" alt=""/></picture></div>
+        </div>
+      </section>
+      <section class="popular-products">
+        <div class="container popular-products__container">
+          <div class="popular-products__top"> 
+            <div class="section-title popular-products__title">
+              <svg class="section-title__icon">
+                <use xlink:href="img/sprite.svg#before-title-tree"></use>
+              </svg>
+              <h2 class="section-title__heading">Этот девайс идеально сочетается с:</h2>
+            </div>
+          </div>
+          <ul class="popular-products__list row">
+            <li class="popular-products__item col-4"><picture><source srcset="img/product-1.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-1.png" alt="Product"/></picture><strong class="popular-products__item-title">HydroDirector</strong><span class="popular-products__item-price">$635</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
+            </li>
+            <li class="popular-products__item col-4"><picture><source srcset="img/product-2.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-2.png" alt="Product"/></picture><strong class="popular-products__item-title">DryContactDirector</strong><span class="popular-products__item-price">$365</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
+            </li>
+            <li class="popular-products__item col-4"><picture><source srcset="img/product-3.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-3.png" alt="Product"/></picture><strong class="popular-products__item-title">SensorDirector</strong><span class="popular-products__item-price">$365</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
+            </li>
+          </ul>
         </div>
       </section>
     </main>

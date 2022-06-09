@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
-    <link rel="stylesheet" href="./css/style.min.css?_v=20220608074353">
-    <script defer src="./js/app.min.js?_v=20220608074353"></script>
+    <link rel="stylesheet" href="./css/style.min.css?_v=20220609072428">
+    <script defer src="./js/app.min.js?_v=20220609072428"></script>
   </head>
   <body class="catalog">
     <div class="discount"><span class="discount__text">15% discount on new items</span></div>
@@ -21,7 +21,7 @@
             <li class="nav__item"><a class="nav__link" href="#">FAQ</a></li>
           </ul>
         </nav>
-        <ul class="social">
+        <ul class="social header__social">
           <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/facebook.svg" alt="Social-icon"/></a></li>
           <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/instagram.svg" alt="Social-icon"/></a></li>
           <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/linkedin.svg" alt="Social-icon"/></a></li>
@@ -36,6 +36,37 @@
                 <use xlink:href="img/sprite.svg#basket"></use>
               </svg></a></li>
         </ul>
+        <button class="burger" type="button"><span class="burger__item"></span><span class="burger__item"></span><span class="burger__item"></span></button>
+        <div class="popup">
+          <div class="menu">
+            <div class="container menu__container">
+              <nav class="nav header__nav"> 
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="nav__link" href="#">Products</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">Catalogue</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">About</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">Education</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">FAQ</a></li>
+                </ul>
+              </nav>
+              <ul class="social header__social">
+                <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/facebook.svg" alt="Social-icon"/></a></li>
+                <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/instagram.svg" alt="Social-icon"/></a></li>
+                <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/linkedin.svg" alt="Social-icon"/></a></li>
+              </ul>
+              <ul class="header__user-menu">
+                <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
+                    <svg class="header__user-menu-icon">
+                      <use xlink:href="img/sprite.svg#user"></use>
+                    </svg></a></li>
+                <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
+                    <svg class="header__user-menu-icon">
+                      <use xlink:href="img/sprite.svg#basket"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
     <main class="main"> 
@@ -110,11 +141,11 @@
             </div>
           </div>
           <ul class="popular-products__list row">
-            <li class="popular-products__item col-4"><picture><source srcset="img/product-1.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-1.png" alt="Product"></picture><strong class="popular-products__item-title">HydroDirector</strong><span class="popular-products__item-price">$635</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
+            <li class="popular-products__item col-4"><picture><source srcset="img/product-1.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-1.png" alt="Product"/></picture><strong class="popular-products__item-title">HydroDirector</strong><span class="popular-products__item-price">$635</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
             </li>
-            <li class="popular-products__item col-4"><picture><source srcset="img/product-2.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-2.png" alt="Product"></picture><strong class="popular-products__item-title">DryContactDirector</strong><span class="popular-products__item-price">$365</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
+            <li class="popular-products__item col-4"><picture><source srcset="img/product-2.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-2.png" alt="Product"/></picture><strong class="popular-products__item-title">DryContactDirector</strong><span class="popular-products__item-price">$365</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
             </li>
-            <li class="popular-products__item col-4"><picture><source srcset="img/product-3.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-3.png" alt="Product"></picture><strong class="popular-products__item-title">SensorDirector</strong><span class="popular-products__item-price">$365</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
+            <li class="popular-products__item col-4"><picture><source srcset="img/product-3.webp" type="image/webp"><img class="popular-products__item-img" src="img/product-3.png" alt="Product"/></picture><strong class="popular-products__item-title">SensorDirector</strong><span class="popular-products__item-price">$365</span><a class="btn popular-products__item-btn btn__green" href="#"><span class="btn__text">Open a shop</span></a>
             </li>
           </ul>
         </div>
