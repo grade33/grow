@@ -9,9 +9,12 @@
 @import "bootstrap/scss/grid";
 @import "bootstrap/scss/containers";
 
+
 @import "./normalize.css/normalize";
 @import "./partials/reset";
 @import "./partials/fonts";
 
+
+@import "./vendor/choices";
 @import "./modules/common";
 @import "./modules/main";

@@ -1,0 +1,61 @@
+include ./html/mixins.pug
+include ./html/header.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Корзина
+    link(rel="stylesheet", href="./css/style.min.css")
+    script(defer src="./js/app.min.js")
+  body.cart-page
+      +discount
+      +header()
+
+      main.main 
+
+        section.cart
+          .container.cart__container 
+            +sectionTitle('Cart','cart__title')
+            .cart__content
+              ul.cart__list 
+                li.cart__item 
+                  .cart__img-wrap 
+                    img.cart__img(src="@img/card/card-1.png", alt="Cart Product Img")
+                  form.cart__text-block 
+                    .cart__item-top
+                      h3.cart__name HydroDirector PRO
+                      span.cart__price $635
+                    .cart__item-center
+                      .cart__quantity
+                        label.cart__quantity-text(for="cart-quantity") Quantity:
+                        select#cart-quantity.select-2
+                          option(value="1") 1
+                          option(value="2" selected) 2
+                          option(value="3") 3
+                          option(value="4") 4
+                          option(value="5") 5
+                      button.cart__remove-btn(type="button") Remove
+                    .cart__item-bottom
+                      input.cart__coupon-field(type="text" placeholder="Coupon code")
+                      +btn('gray','Apply coupon',1,'cart__coupon-btn')
+              form.order.cart__order(action="#") 
+                .order__text-block
+                  strong.order__title Order Summary
+                  .order__row
+                    span.order__row-title Subtotal:
+                    span.order__row-text $1270
+                  .order__row
+                    span.order__row-title Shipping:
+                    span.order__row-text.order__row-text_small Enter your address to view shipping options.
+                      button.order__calculate-btn(type="button") Calculate shipping
+                  .order__row
+                    span.order__row-title Total:
+                    span.order__row-text $1270
+                .order__pay
+                  +link('green','Proceed to checkout','#','order__pay-btn order__pay-btn_green')
+                  span.order__pay-text or
+                  a.btn.btn__trs.order__pay-btn.order__pay-btn_trs(href="#")
+                    img(src="@img/paypal.svg", alt="Paypal")
+      include ./html/footer.pug

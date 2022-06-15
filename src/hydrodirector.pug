@@ -9,117 +9,117 @@ html(lang="ru")
     title Hydrodirector
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
-  body.hydrodirector
+  body.hydrodirector-page
       +discount
       +header()
 
       main.main 
 
-        section.device-about
-          .container.device-about__container
-            .device-about__info
-              h1.device-about__title HydroDirector
-              p.device-about__desc Специализированный девайс для гидропонных систем всех типов. Подходит для автоматизации любых площадей от маленьких гроурумов до промышленных теплиц.
+        section.device-hero
+          .container.device-hero__container
+            .device-hero__ellipse-wrap
+              img.device-hero__ellipse(src="@img/hydrodirector/hero-ellipse.svg", alt="")
+            .device-hero__info
+              h1.device-hero__title.col-10 HydroDirector
+              p.device-hero__desc.col-lg-12.col-md-8.col-sm-7.col-10 Специализированный девайс для гидропонных систем всех типов. Подходит для автоматизации любых площадей от маленьких гроурумов до промышленных теплиц.
               +link('white','Заказать','#','device-about__btn-buy')
-            img.device-about__device(src="@img/hydrodirector/hero-bg.png", alt="Hydrodirector")
-            p.device-about__text
+            img.device-hero__device(src="@img/hydrodirector/hero-bg.png", alt="Hydrodirector")
+            p.device-hero__text
               | Вы можете объединять в одну систему и 
-              span.device-about__text_green одновременно контролировать от 3 до 16.000 девайсов, 
-              | что составляет в сумме 48.000 помп.
+              span.device-hero__text_green  одновременно контролировать от 3 до 16.000 девайсов,
+              |  что составляет в сумме 48.000 помп.
             +link('green','Download manual','#','device-about__btn-download')
 
         section.device-advantages
           .container.device-advantages__container
             img.device-advantages__bg(src="@img/hydrodirector/advantages.png", alt="")
             +sectionTitle('Что он может?','device-advantages__title')
-            .device-advantages__list-wrap
-              .device-advantages__list
-                .device-advantages__item.col-5
-                  .device-advantages__icon-wrap
-                    img.device-advantages__icon(src="@img/device-advantages/advantage-1.svg", alt="")
-                  p.device-advantages__desc Контролировать подачу удобрений, воды или pH-балансирующих растворов в систему
-                .device-advantages__item.col-5
-                  .device-advantages__icon-wrap
-                    img.device-advantages__icon(src="@img/device-advantages/advantage-2.svg", alt="")
-                  p.device-advantages__desc Следить за уровнем Dissolved Oxygen (DO) в гидропонном растворесоздавать заданный баланс между pH oxidation-reduction potential
-                .device-advantages__item.col-5
-                  .device-advantages__icon-wrap
-                    img.device-advantages__icon(src="@img/device-advantages/advantage-3.svg", alt="")
-                  p.device-advantages__desc Отправлять уведомления о неполадках в системе и анализировать возможные причины их возникновения
-                .device-advantages__item.col-6
-                  .device-advantages__icon-wrap
-                    img.device-advantages__icon(src="@img/device-advantages/advantage-4.svg", alt="")
-                  p.device-advantages__desc Объединять в единую систему до 16 000 девайсов создавая невероятные возможности для автоматизации промышленных теплиц
-                .device-advantages__item.col-5
-                  .device-advantages__icon-wrap
-                    img.device-advantages__icon(src="@img/device-advantages/advantage-5.svg", alt="")
-                  p.device-advantages__desc Смешивать необходимые удобрения в нужных пропорциях согласно показателям EC сенсора
-                .device-advantages__items-wrap.row
-                  .device-advantages__item.col-4
-                    .device-advantages__icon-wrap
-                      img.device-advantages__icon(src="@img/device-advantages/advantage-6.svg", alt="")
-                    p.device-advantages__desc Собирать и хранить все данные в облаке
-                  .device-advantages__item.col-4
-                    .device-advantages__icon-wrap
-                      img.device-advantages__icon(src="@img/device-advantages/advantage-7.svg", alt="")
-                    p.device-advantages__desc Удаленно изменять настройки системы
-                  .device-advantages__item.col-4
-                    .device-advantages__icon-wrap
-                      img.device-advantages__icon(src="@img/device-advantages/advantage-8.svg", alt="")
-                    p.device-advantages__desc Поддерживать заданный уровень pH
+            ul.device-advantages__list.row
+              li.device-advantages__item.col-lg-5
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-1.svg", alt="")
+                p.device-advantages__desc Контролировать подачу удобрений, воды или pH-балансирующих растворов в систему
+              li.device-advantages__item.col-lg-5
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-2.svg", alt="")
+                p.device-advantages__desc Следить за уровнем Dissolved Oxygen (DO) в гидропонном растворесоздавать заданный баланс между pH oxidation-reduction potential
+              li.device-advantages__item.col-lg-5
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-3.svg", alt="")
+                p.device-advantages__desc Отправлять уведомления о неполадках в системе и анализировать возможные причины их возникновения
+              li.device-advantages__item.col-lg-5
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-4.svg", alt="")
+                p.device-advantages__desc Объединять в единую систему до 16 000 девайсов создавая невероятные возможности для автоматизации промышленных теплиц
+              li.device-advantages__item.col-lg-5
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-5.svg", alt="")
+                p.device-advantages__desc Смешивать необходимые удобрения в нужных пропорциях согласно показателям EC сенсора
+              li.device-advantages__item.device-advantages__item_row
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-6.svg", alt="")
+                p.device-advantages__desc Собирать и хранить все данные в облаке
+              li.device-advantages__item.device-advantages__item_row
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-7.svg", alt="")
+                p.device-advantages__desc Удаленно изменять настройки системы
+              li.device-advantages__item.device-advantages__item_row
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-8.svg", alt="")
+                p.device-advantages__desc Поддерживать заданный уровень pH
                     
         section.pluggable-sensors
           .container.pluggable-sensors__container 
             h2.pluggable-sensors__title Подключаемые сенсоры:
             ul.pluggable-sensors__list.row
-              li.pluggable-sensors__item.col-3
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
                 .pluggable-sensors__icon-wrap 
                   img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-1.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name Ph
-              li.pluggable-sensors__item.col-3
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
                 .pluggable-sensors__icon-wrap 
                   img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-1.png", alt="pluggable-sensors sensors")
                   p.pluggable-sensors__item-info EAir temp &amp; humidity &amp; VPD
                 strong.pluggable-sensors__name EC
-              li.pluggable-sensors__item.col-3
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
                 .pluggable-sensors__icon-wrap 
                   img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-2.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name DO
-              li.pluggable-sensors__item.col-3
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
                 .pluggable-sensors__icon-wrap 
                   img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-3.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name ORP
 
-        section.device-info
-          .container.device-info__container
-            img.device-info__bg(src="@img/hydrodirector/device.png", alt="")
-            h2.device-info__title Каждый девайс оснащён:
-            ul.device-info__list.row
-              li.device-info__item
-                .device-info__desc
-                  p.device-info__text Тремя мощными помпами, способными перекачивать объем до 12 л в час каждая
-              li.device-info__item
-                .device-info__desc
-                  p.device-info__text Встроенным уникальным софтом,который позволяет очень просто задавать сложные настройки и контролировать их, предотвращая ошибки пользователя 
-              li.device-info__item
-                .device-info__desc
-                  p.device-info__text На нижней части располагается 3 разъема для подключения сенсоров (вы можете комбинировать сенсоры на своё усмотрение)
-                  .device-info__tooltip
-                    button.device-info__tooltip-btn(type="button") ?
-                    .device-info__tooltip-info
+        section.device-equipped
+          .container.device-equipped__container
+            img.device-equipped__bg(src="@img/hydrodirector/device.png", alt="")
+            h2.device-equipped__title Каждый девайс оснащён:
+            .device-equipped__list.row
+              .device-equipped__item
+                .device-equipped__desc
+                  p.device-equipped__text Тремя мощными помпами, способными перекачивать объем до 12 л в час каждая
+              .device-equipped__item
+                .device-equipped__desc
+                  p.device-equipped__text Встроенным уникальным софтом,который позволяет очень просто задавать сложные настройки и контролировать их, предотвращая ошибки пользователя 
+              .device-equipped__item
+                .device-equipped__desc
+                  p.device-equipped__text На нижней части располагается 3 разъема для подключения сенсоров (вы можете комбинировать сенсоры на своё усмотрение)
+                  .device-equipped__tooltip
+                    button.device-equipped__tooltip-btn(type="button") ?
+                    .device-equipped__tooltip-info
                       ol
                         li EC + temp
                         li pH
                         li DO или ORP
-              li.device-info__item
-                .device-info__desc
-                  p.device-info__text Держатель для крепления к вертикальным поверхностям
-              li.device-info__item
-                .device-info__desc
-                  p.device-info__text Проводом для подключения в сеть __V системой Wi-Fi MESH connection для установления соединения с вашим телефоном, лэптопом или планшетом
-              li.device-info__item
-                .device-info__desc
-                  p.device-info__text 12 метровая гибкая трубка для подключения помп к резервуарам с жидкостями объемом до 10.000 л
+              .device-equipped__item
+                .device-equipped__desc
+                  p.device-equipped__text Держатель для крепления к вертикальным поверхностям
+              .device-equipped__item
+                .device-equipped__desc
+                  p.device-equipped__text Проводом для подключения в сеть __V системой Wi-Fi MESH connection для установления соединения с вашим телефоном, лэптопом или планшетом
+              .device-equipped__item
+                .device-equipped__desc
+                  p.device-equipped__text 12 метровая гибкая трубка для подключения помп к резервуарам с жидкостями объемом до 10.000 л
 
         +sectionApplication('Настраивается данный аппарат')
 
@@ -132,19 +132,3 @@ html(lang="ru")
         +sectionPopularProducts('Этот девайс идеально сочетается с:')
 
       include ./html/footer.pug
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

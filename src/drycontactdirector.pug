@@ -1,0 +1,100 @@
+include ./html/mixins.pug
+include ./html/header.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title DryContactDirector
+    link(rel="stylesheet", href="./css/style.min.css")
+    script(defer src="./js/app.min.js")
+  body.drycontactdirector-page
+      +discount
+      +header()
+
+      main.main 
+
+        section.device-hero
+          .container.device-hero__container
+            .device-hero__ellipse-wrap
+              img.device-hero__ellipse(src="@img/drycontactdirector/hero-ellipse.svg", alt="")
+            .device-hero__info.device-hero__info_black
+              h1.device-hero__title DryContactDirector
+              p.device-hero__desc.col-12.col-sm-6.col-md-12 Подключай и контролируй устройства разной мощности через один девайс с удаленным доступом.
+              +link('green','Заказать','#','device-about__btn-buy')
+            img.device-hero__device(src="@img/drycontactdirector/hero-bg.png", alt="Hydrodirector")
+            p.device-hero__text
+              | Идеальное решение для профессиональных теплиц
+              span.device-hero__text_green  с большим количеством устройств
+              |  or for multiple low voltage devices such as irrigation etc.!
+            +link('green','Download manual','#','device-about__btn-download')
+
+        section.device-advantages
+          .container.device-advantages__container
+            img.device-advantages__bg(src="@img/drycontactdirector/advantages.png", alt="")
+            +sectionTitle('Что он может?','device-advantages__title')
+            ul.device-advantages__list.row
+              li.device-advantages__item.device-advantages__item_row
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-3.svg", alt="")
+                p.device-advantages__desc 4 разъема для подключения dry contacts могут объединять в одну систему до 64 000 
+              li.device-advantages__item.device-advantages__item_row
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-11.svg", alt="")
+                p.device-advantages__desc Удаленно передает данные о работе устройств и их состоянии
+              li.device-advantages__item.device-advantages__item_row
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-5.svg", alt="")
+                p.device-advantages__desc Задает всевозможные настройки и автоматизирует работу подключенных устройств 
+              li.device-advantages__item.device-advantages__item_row
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-4.svg", alt="")
+                p.device-advantages__desc Управляет линейно подключенными устройствами. 
+              li.device-advantages__item.device-advantages__item_row
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-7.svg", alt="")
+                p.device-advantages__desc Can be used in an electrical cabinet
+              li.device-advantages__item.device-advantages__item_row
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-12.svg", alt="")
+                p.device-advantages__desc Отслеживают неисправности приборов и отправляют уведомления на ваше мобильное устройство.
+              li.device-advantages__item.col-lg-4
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-13.svg", alt="")
+                p.device-advantages__desc Controls a heavy-duty machine, or other pieces of equipment that can be powered by it. We can control AC high or step down your high-voltage relays to run low-voltage equipment with our relay module. 
+              li.device-advantages__item.col-lg-4
+                .device-advantages__icon-wrap
+                  img.device-advantages__icon(src="@img/device-advantages/advantage-14.svg", alt="")
+                p.device-advantages__desc С помощью приложения через этот девайс все подключенные устройства объединяются в единую систему и функционируют согласно заданным настройкам для поддержания заданных параметров.
+    
+        section.device-equipped
+          .container.device-equipped__container
+            img.device-equipped__bg(src="@img/drycontactdirector/device.png", alt="")
+            h2.device-equipped__title Каждый девайс оснащён:
+            ul.device-equipped__list.device-equipped__list_flex.row
+              li.device-equipped__item.col-lg-4.col-md-6
+                .device-equipped__desc
+                  p.device-equipped__text 4 разъемами для подключения dry contacts
+              li.device-equipped__item.col-lg-4.col-md-6
+                .device-equipped__desc
+                  p.device-equipped__text Проводом для подключения в сеть 16A
+              li.device-equipped__item.col-lg-4.col-md-6
+                .device-equipped__desc
+                  p.device-equipped__text Держатель для крепления к вертикальным поверхностям
+              li.device-equipped__item.col-md-6
+                .device-equipped__desc
+                  p.device-equipped__text Встроенным уникальным софтом,который позволяет очень просто задавать сложные настройки и контролировать их, предотвращая ошибки пользователя
+              li.device-equipped__item.col-md-6
+                .device-equipped__desc
+                  p.device-equipped__text Системой Wi-Fi MESH connection для установления соединения с вашим телефоном, лэптопом или планшетом
+
+        +sectionApplication('DrycontactDirector настраивается и связывается с другими устройствами')
+
+        +sectionDeviceCharacteristics
+
+        +sectionDeviceInstallation('@img/drycontactdirector/installation.png')
+
+        +sectionPopularProducts('Этот девайс идеально сочетается с:')
+
+      include ./html/footer.pug

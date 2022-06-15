@@ -1,0 +1,85 @@
+include ./html/mixins.pug
+include ./html/header.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Корзина
+    link(rel="stylesheet", href="./css/style.min.css")
+    script(defer src="./js/app.min.js")
+  body.checkout-page
+      +discount
+      +header()
+
+      main.main 
+
+        section.checkout
+          .container.checkout__container 
+            +sectionTitle('Checkout','checkout__title')
+            .checkout__content.row
+              form.checkout__form.col-xl-5.col-lg-6(action="#")
+                .checkout__form-main
+                  h3.checkout__form-title Billing details
+                  label.checkout__field-wrap 
+                    span.checkout__label First name *
+                    input.checkout__field(type="text")
+                  label.checkout__field-wrap 
+                    span.checkout__label Last name *
+                    input.checkout__field(type="text")
+                  label.checkout__field-wrap 
+                    span.checkout__label Company name (optional)
+                    input.checkout__field(type="text")
+                  label.checkout__field-wrap 
+                    span.checkout__label Country / Region *
+                    select.select
+                      option(value="") Armenia
+                      option(value="armenia") Armenia
+                      option(value="russia") Russia
+                      option(value="israel") Israel
+                  label.checkout__field-wrap 
+                    span.checkout__label Street address *
+                    input.checkout__field(type="text" placeholder="House number and street name")
+                    input.checkout__field(type="text" placeholder="Apartmen, suite, unit, etc. (optinal)")
+                  label.checkout__field-wrap.checkout__field-wrap_short
+                    span.checkout__label Postcode / ZIP *
+                    input.checkout__field(type="number")
+                  label.checkout__field-wrap.checkout__field-wrap_short
+                    span.checkout__label Town / City *
+                    input.checkout__field(type="text")
+                  label.checkout__field-wrap.checkout__field-wrap_short
+                    span.checkout__label Phone *
+                    input.checkout__field(type="tel")
+                  label.checkout__field-wrap.checkout__field-wrap_short
+                    span.checkout__label Email address *
+                    input.checkout__field(type="email")
+                .checkout__form-bottom
+                  h3.checkout__form-title Billing details
+                  label.checkout__field-wrap 
+                      span.checkout__label Ship to a different address?
+                      textarea.checkout__field.checkout__textarea(placeholder="Notes about your order, e. g. spesical notes for delivery")
+              form.order.checkout__order.col-lg-5(action="#") 
+                .order__text-block
+                  strong.order__title Order Summary
+                  .order__row
+                    span.order__row-title Subtotal:
+                    span.order__row-text $1270
+                  .order__row
+                    span.order__row-title Shipping:
+                    span.order__row-text.order__row-text_small Enter your address to view shipping options.
+                      button.order__calculate-btn(type="button") Calculate shipping
+                  .order__row
+                    span.order__row-title Total:
+                    span.order__row-text $1270
+                .order__pay
+                  +link('green','Proceed to checkout','#','order__pay-btn order__pay-btn_green')
+                  span.order__pay-text or
+                  a.btn.btn__trs.order__pay-btn.order__pay-btn_trs(href="#")
+                    img(src="@img/paypal.svg", alt="Paypal")
+                label.order__data
+                  input.checkbox.visually-hidden(type="checkbox" name="personal-data")
+                  span.checkbox__custom
+                  span.order__data-text Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.
+      
+      include ./html/footer.pug

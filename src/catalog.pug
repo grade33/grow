@@ -9,15 +9,15 @@ html(lang="ru")
     title Каталог
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
-  body.catalog
+  body.catalog-page
       +discount
       +header()
 
       main.main 
-        section.products
-          .container.products__container
-            +sectionTitle('Products','products__title')
-            ul.products__list.row
+        section.catalog-products
+          .container.catalog-products__container
+            +sectionTitle('Products','catalog-products__title')
+            ul.catalog-products__list.catalog-products__list_flex.row
               -
                 const products = [
                   ['HydroDirector','$635'],
@@ -38,30 +38,14 @@ html(lang="ru")
                   ['Flow Meter','$32']
                 ]
               each value, idx in products
-                li.products__item.col-4
-                  .products__img-wrap
-                    img.products__img(src="@img/catalog/catalog-product-"+(idx + 1)+".jpg", alt="Product")
-                  strong.products__name= value[0]
-                  span.products__price= value[1]
-                  +link('green','Open a shop','#','products__btn')
+                li.catalog-products__item.col-lg-4.col-6
+                  .catalog-products__img-wrap
+                    img.catalog-products__img(src="@img/catalog/catalog-product-"+(idx + 1)+".jpg", alt="Product")
+                  strong.catalog-products__name= value[0]
+                  span.catalog-products__price= value[1]
+                  +link('green','Open a shop','#','catalog-products__btn')
         
         +sectionPopularProducts('Готовое решение')
 
  
       include ./html/footer.pug
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

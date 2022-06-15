@@ -32,3 +32,19 @@ export function isBurger() {
     }
   })
 }
+
+
+export function isAccordion() {
+  document.querySelectorAll('.acc').forEach(acc => {
+    const accBtn = acc.querySelector('.acc__trigger')
+    const accPanel =  acc.querySelector('.acc__panel')
+    accBtn.addEventListener('click', function() {
+      acc.classList.toggle('acc_active')
+      if (accPanel.style.maxHeight) {
+        accPanel.style.maxHeight = null;
+      } else {
+        accPanel.style.maxHeight = accPanel.scrollHeight + "px";
+      }
+    })
+  })
+}

@@ -1,0 +1,64 @@
+include ./html/mixins.pug
+include ./html/header.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title FAQ
+    link(rel="stylesheet", href="./css/style.min.css")
+    script(defer src="./js/app.min.js")
+  body.faq-page
+      +discount
+      +header()
+
+      main.main 
+
+        section.faq
+          .container.faq__container
+            .faq__top 
+              +sectionTitle('FAQ','faq__title')
+              form.faq__search
+                input.faq__search-field(type="text" placeholder="Search")
+                button.faq__search-btn(type="button")
+                  svg.faq__search-icon
+                    use(xlink:href="@img/sprite.svg#search")
+            ul.faq__list 
+              -
+                let titles = [
+                  "Can I have a Demo of GrowDirector?",
+                  "Why should I buy GrowDirector?",
+                  "Is it good for hydroponics?",
+                  "Hydroponics: How many dosing pumps can I connect?",
+                  "What is the maximum size of the water reservoir that GrowDriector can handle?",
+                  "How does GrowDirector's wireless solution work? ",
+                  "Where can I purchase GrowDirector?",
+                  "What kind of security protocol do you use for wireless communication?",
+                  "Please give me more reason to purchase GrowDirector",
+                  "What GrowDirector can do?",
+                  "Where GrowDirector can be used?",
+                  "What equipment can be connected to GrowDirector?",
+                  "What kind notification can I receive on my mobile?",
+                  "What operations I can do from my phone?",
+                  "Do you have access though the web interface?",
+                  "What happens if I lost internet in my grow room?",
+                  "What happens if power if OFF?",
+                  "I have a problem, what to do?",
+                  "I have a question and I didn't find an answer here, whom can I ask?"
+                ]
+              each title in titles
+                li.faq__item.acc
+                  h3.acc__head
+                    button.acc__trigger(type="button")
+                      span.faq__item-title= title
+                      svg.acc__icon.acc__icon_open
+                        use(xlink:href="@img/sprite.svg#open-btn")
+                      svg.acc__icon.acc__icon_close
+                        use(xlink:href="@img/sprite.svg#close-btn")
+                  .acc__panel
+                    p.faq__item-desc Yes, of course! Use this link …
+
+            .faq__btn-download-wrap
+              +link('green','Download manual','#','faq__btn-download')
+      include ./html/footer.pug

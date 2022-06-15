@@ -1,0 +1,77 @@
+include ./html/mixins.pug
+include ./html/header.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Новости
+    link(rel="stylesheet", href="./css/style.min.css")
+    script(defer src="./js/app.min.js")
+  body.news-page
+      +discount
+      +header()
+
+      main.main 
+
+        section.news
+          .container.news__container 
+            +sectionTitle('Knowledge Hub','news__title')
+            ul.news__list.row
+              li.news__item.col-lg-4.col-sm-6.col-12
+                .news__img-wrap 
+                  img.news__img(src="@img/news/news-1.jpg", alt="")
+                h3.news__item-title Your guide to passive hydroponic system – what you need to know?
+                p.news__desc Hydroponic growing systems are a far better option than traditional growing methods. Hydroponic methods ensure the most efficient use of water and increase production. But ...
+                +moreLink('Read more','#','news__more')
+              li.news__item.col-lg-4.col-sm-6.col-12
+                .news__img-wrap 
+                  img.news__img(src="@img/news/news-2.jpg", alt="")
+                h3.news__item-title Nutrients for hydroponic farming – what your plant needs?
+                p.news__desc You know that growing plants hydroponically is impossible without the proper nutrients. This method of growing helps save water while producing more yield. If you ...
+                +moreLink('Read more','#','news__more')
+              li.news__item.col-lg-4.col-sm-6.col-12
+                .news__img-wrap 
+                  img.news__img(src="@img/news/news-3.jpg", alt="")
+                h3.news__item-title What equipment is needed for commercial hydroponics – is there a benefit?
+                p.news__desc As a commercial farmer, you know that choosing the right hydroponic system is vital to your success. Let's take a look at some of the ...
+                +moreLink('Read more','#','news__more')
+              li.news__item.col-lg-4.col-sm-6.col-12
+                .news__img-wrap 
+                  img.news__img(src="@img/news/news-1.jpg", alt="")
+                h3.news__item-title Your guide to passive hydroponic system – what you need to know?
+                p.news__desc Hydroponic growing systems are a far better option than traditional growing methods. Hydroponic methods ensure the most efficient use of water and increase production. But ...
+                +moreLink('Read more','#','news__more')
+              li.news__item.col-lg-4.col-sm-6.col-12
+                .news__img-wrap 
+                  img.news__img(src="@img/news/news-2.jpg", alt="")
+                h3.news__item-title Nutrients for hydroponic farming – what your plant needs?
+                p.news__desc You know that growing plants hydroponically is impossible without the proper nutrients. This method of growing helps save water while producing more yield. If you ...
+                +moreLink('Read more','#','news__more')
+              li.news__item.col-lg-4.col-sm-6.col-12
+                .news__img-wrap 
+                  img.news__img(src="@img/news/news-3.jpg", alt="")
+                h3.news__item-title What equipment is needed for commercial hydroponics – is there a benefit?
+                p.news__desc As a commercial farmer, you know that choosing the right hydroponic system is vital to your success. Let's take a look at some of the ...
+                +moreLink('Read more','#','news__more')
+              li.news__item.col-lg-4.col-sm-6.col-12
+                .news__img-wrap 
+                  img.news__img(src="@img/news/news-1.jpg", alt="")
+                h3.news__item-title Your guide to passive hydroponic system – what you need to know?
+                p.news__desc Hydroponic growing systems are a far better option than traditional growing methods. Hydroponic methods ensure the most efficient use of water and increase production. But ...
+                +moreLink('Read more','#','news__more')
+              li.news__item.col-lg-4.col-sm-6.col-12
+                .news__img-wrap 
+                  img.news__img(src="@img/news/news-2.jpg", alt="")
+                h3.news__item-title Nutrients for hydroponic farming – what your plant needs?
+                p.news__desc You know that growing plants hydroponically is impossible without the proper nutrients. This method of growing helps save water while producing more yield. If you ...
+                +moreLink('Read more','#','news__more')
+              li.news__item.col-lg-4.col-sm-6.col-12
+                .news__img-wrap 
+                  img.news__img(src="@img/news/news-3.jpg", alt="")
+                h3.news__item-title What equipment is needed for commercial hydroponics – is there a benefit?
+                p.news__desc As a commercial farmer, you know that choosing the right hydroponic system is vital to your success. Let's take a look at some of the ...
+                +moreLink('Read more','#','news__more')
+        
+      include ./html/footer.pug

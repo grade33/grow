@@ -14,6 +14,18 @@ mixin btnVideo(Class)
     svg.btn-play__icon
       use(xlink:href="@img/sprite.svg#video-play")
 
+mixin moreLink(text,href,Class)
+  a.more(href=href, class=Class) 
+    span.more__text=text
+    svg.more__icon
+      use(xlink:href="@img/sprite.svg#arrow-long")
+
+mixin counter(Class)
+  .counter(class=Class)
+    button.counter__btn.counter__btn_minus(type="button") -
+    span.counter__value 1
+    button.counter__btn.counter__btn_plus(type="button") +
+
 mixin sectionTitle(text,Class)
   .section-title(class=Class)
     svg.section-title__icon
@@ -25,74 +37,74 @@ mixin discount
   .discount
     span.discount__text 15% discount on new items
 
+
+
 mixin sectionPopularProducts(title)
   section.popular-products
     .container.popular-products__container
       .popular-products__top 
         +sectionTitle(title,'popular-products__title')
       ul.popular-products__list.row
-        li.popular-products__item.col-4
+        li.popular-products__item.col-md-4.col-sm-6.col-12
           img.popular-products__item-img(src="@img/product-1.png", alt="Product")
           strong.popular-products__item-title HydroDirector
           span.popular-products__item-price $635
           +link('green','Open a shop','#','popular-products__item-btn')
-        li.popular-products__item.col-4
+        li.popular-products__item.col-md-4.col-sm-6.col-12
           img.popular-products__item-img(src="@img/product-2.png", alt="Product")
           strong.popular-products__item-title DryContactDirector
           span.popular-products__item-price $365
           +link('green','Open a shop','#','popular-products__item-btn')
-        li.popular-products__item.col-4
+        li.popular-products__item.col-md-4.col-sm-6.col-12
           img.popular-products__item-img(src="@img/product-3.png", alt="Product")
           strong.popular-products__item-title SensorDirector
           span.popular-products__item-price $365
           +link('green','Open a shop','#','popular-products__item-btn')
            
-
 mixin sectionApplication(text)
   section.application
     .container.application__container.row
-      .application__text-block.col-8
+      .application__text-block.col-md-8
         .application__desc=text
-          | через удобное приложение, где вы можете 
+          | &nbsp;через удобное приложение, где вы можете 
           span.application__desc_green отследить историю ваших действий, изменить заданные параметры 
           | в любой точке мира при наличии вайфай соединения в месте подключения девайса. 
         +link('green','Посмотреть в каталоге','#','application__btn')
-      .application__phone-wrap.col-4
+      .application__phone-wrap.col-md-4.col-4
         img.application__phone(src="@img/phone.png", alt="")
+
+mixin sectionDeviceConnecting(device,url)
+  section.device-connecting
+    .device-connecting__bg-wrap
+      img.device-connecting__bg(src=url, alt="")
+    .container.device-connecting__container.row
+      p.device-connecting__desc.col-xl-6.col-lg-7.col-md-8
+        = device 
+        | &nbsp; может подключаться в сеть как самостоятельное одиночное устройство, так и объединяться в единую систему с любыми другими устройствами гроудиректор через мобильное приложение.
 
 mixin sectionDeviceCharacteristics
   section.device-characteristics 
     .container.device-characteristics__container
       h2.device-characteristics__title Основные характеристики
       ul.device-characteristics__list.row
-        li.device-characteristics__item.col-3
+        li.device-characteristics__item.col-lg-3.col-sm-4.col-6
           h3.device-characteristics__item-title Вес:
           p.device-characteristics__item-desc Здесь будет характеристика аппарата
-        li.device-characteristics__item.col-3
+        li.device-characteristics__item.col-lg-3.col-sm-4.col-6
           h3.device-characteristics__item-title Габариты:
           p.device-characteristics__item-desc Здесь будет характеристика аппарата
-        li.device-characteristics__item.col-3
+        li.device-characteristics__item.col-lg-3.col-sm-4.col-6
           h3.device-characteristics__item-title Мощность:
           p.device-characteristics__item-desc Здесь будет характеристика аппарата
-        li.device-characteristics__item.col-3
+        li.device-characteristics__item.col-lg-3.col-sm-4.col-6
           h3.device-characteristics__item-title Гарантия:
           p.device-characteristics__item-desc Здесь будет характеристика аппарата
       +link('white','Заказать Hydrodirector','#','device-characteristics__btn')
-      
-mixin sectionDeviceConnecting(device,url)
-  section.device-connecting
-    .device-connecting__bg-wrap
-      img.device-connecting__bg(src=url, alt="")
-    .container.device-connecting__container.row
-      p.device-connecting__desc.col-6
-        = device 
-        | &nbsp; может подключаться в сеть как самостоятельное одиночное устройство, так и объединяться в единую систему с любыми другими устройствами гроудиректор через мобильное приложение.
-
 
 mixin sectionDeviceInstallation(url)
   section.device-installation
     .container.device-installation__container
-      .device-installation__text-block.col-6
+      .device-installation__text-block.col-md-6
         strong.device-installation__title Установка:
         p.device-installation__desc Монтируется с помощью специального держателя к вертикальным поверхностям.
       .device-installation__bg-wrap
