@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hydrodirector</title>
+    <title>SocketDirector</title>
     <link rel="stylesheet" href="./css/style.min.css?_v=20220615054401">
     <script defer src="./js/app.min.js?_v=20220615054401"></script>
   </head>
-  <body class="hydrodirector-page">
+  <body class="socketdirector-page">
     <div class="discount"><span class="discount__text">15% discount on new items</span></div>
     <header class="header">
       <div class="container header__container"><a class="logo header__logo" href="#"> <picture><source srcset="img/logo.webp" type="image/webp"><img class="logo__img" src="img/logo.png" alt="Логотип Grown Director"/></picture></a>
@@ -71,17 +71,18 @@
     </header>
     <main class="main"> 
       <section class="device-hero">
-        <div class="container device-hero__container">
-          <div class="device-hero__ellipse-wrap"><img class="device-hero__ellipse" src="img/hydrodirector/hero-ellipse.svg" alt=""></div>
-          <div class="device-hero__info">
-            <h1 class="device-hero__title col-10">HydroDirector</h1>
-            <p class="device-hero__desc col-lg-12 col-md-8 col-sm-7 col-10">Специализированный девайс для гидропонных систем всех типов. Подходит для автоматизации любых площадей от маленьких гроурумов до промышленных теплиц.</p><a class="btn device-about__btn-buy btn__white" href="#"><span class="btn__text">Заказать</span></a>
-          </div><picture><source srcset="img/hydrodirector/hero-bg.webp" type="image/webp"><img class="device-hero__device" src="img/hydrodirector/hero-bg.png" alt="Hydrodirector"></picture>
-          <p class="device-hero__text">Вы можете объединять в одну систему и <span class="device-hero__text_green"> одновременно контролировать от 3 до 16.000 девайсов,</span> что составляет в сумме 48.000 помп.</p><a class="btn device-about__btn-download btn__green" href="#"><span class="btn__text">Download manual</span></a>
+        <div class="container device-hero__container row">
+          <div class="device-hero__ellipse-wrap"><img class="device-hero__ellipse" src="img/drycontactdirector/hero-ellipse.svg" alt=""></div>
+          <div class="col-md-2"></div>
+          <div class="device-hero__info device-hero__info_black col-md-7 col-12">
+            <h1 class="device-hero__title">SocketDirector</h1>
+            <p class="device-hero__desc col-12 col-sm-6 col-md-12">Экономь время - автоматизируй работу электрических приборов и управляй ими удаленно с помощью этого девайса.</p><a class="btn device-about__btn-buy btn__green" href="#"><span class="btn__text">Заказать</span></a>
+          </div><picture><source srcset="img/socketdirector/hero-bg.webp" type="image/webp"><img class="device-hero__device" src="img/socketdirector/hero-bg.png" alt="Hydrodirector"></picture>
+          <p class="device-hero__text">Идеальное решение для профессиональных теплиц<span class="device-hero__text_green"> с большим количеством устройств</span> or for multiple low voltage devices such as irrigation etc.!</p><a class="btn device-about__btn-download btn__green" href="#"><span class="btn__text">Download manual</span></a>
         </div>
       </section>
-      <section class="device-advantages">
-        <div class="container device-advantages__container"><picture><source srcset="img/hydrodirector/advantages.webp" type="image/webp"><img class="device-advantages__bg" src="img/hydrodirector/advantages.png" alt=""></picture>
+      <section class="device-advantages"><img class="device-advantages__bg" src="img/socketdirector/advantages.svg" alt="">
+        <div class="container device-advantages__container">
           <div class="section-title device-advantages__title">
             <svg class="section-title__icon">
               <use xlink:href="img/sprite.svg#before-title-tree"></use>
@@ -89,122 +90,71 @@
             <h2 class="section-title__heading">Что он может?</h2>
           </div>
           <ul class="device-advantages__list row">
-            <li class="device-advantages__item col-lg-5">
-              <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-1.svg" alt=""></div>
-              <p class="device-advantages__desc">Контролировать подачу удобрений, воды или pH-балансирующих растворов в систему</p>
+            <li class="device-advantages__item device-advantages__item_row">
+              <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-13.svg" alt=""></div>
+              <p class="device-advantages__desc">Сan control any device 110-220v.</p>
             </li>
-            <li class="device-advantages__item col-lg-5">
-              <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-2.svg" alt=""></div>
-              <p class="device-advantages__desc">Следить за уровнем Dissolved Oxygen (DO) в гидропонном растворесоздавать заданный баланс между pH oxidation-reduction potential</p>
-            </li>
-            <li class="device-advantages__item col-lg-5">
-              <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-3.svg" alt=""></div>
-              <p class="device-advantages__desc">Отправлять уведомления о неполадках в системе и анализировать возможные причины их возникновения</p>
-            </li>
-            <li class="device-advantages__item col-lg-5">
+            <li class="device-advantages__item device-advantages__item_row">
               <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-4.svg" alt=""></div>
-              <p class="device-advantages__desc">Объединять в единую систему до 16 000 девайсов создавая невероятные возможности для автоматизации промышленных теплиц</p>
+              <p class="device-advantages__desc">Объединять до 32 000 устройств в одну систему</p>
             </li>
-            <li class="device-advantages__item col-lg-5">
+            <li class="device-advantages__item device-advantages__item_row">
               <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-5.svg" alt=""></div>
-              <p class="device-advantages__desc">Смешивать необходимые удобрения в нужных пропорциях согласно показателям EC сенсора</p>
+              <p class="device-advantages__desc">Удаленно передает данные о работе устройств и их состоянии. </p>
             </li>
-            <li class="device-advantages__item device-advantages__item_row">
-              <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-6.svg" alt=""></div>
-              <p class="device-advantages__desc">Собирать и хранить все данные в облаке</p>
+            <li class="device-advantages__item col-lg-4">
+              <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-12.svg" alt=""></div>
+              <p class="device-advantages__desc">Отслеживают неисправности приборов и отправляют уведомления на ваше мобильное устройство.</p>
             </li>
-            <li class="device-advantages__item device-advantages__item_row">
+            <li class="device-advantages__item col-lg-4">
+              <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-14.svg" alt=""></div>
+              <p class="device-advantages__desc">С помощью приложения через этот девайс все подключенные устройства объединяются в единую систему и функционируют согласно заданным настройкам для поддержания заданных параметров. </p>
+            </li>
+            <li class="device-advantages__item col-lg-4">
               <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-7.svg" alt=""></div>
-              <p class="device-advantages__desc">Удаленно изменять настройки системы</p>
-            </li>
-            <li class="device-advantages__item device-advantages__item_row">
-              <div class="device-advantages__icon-wrap"><img class="device-advantages__icon" src="img/device-advantages/advantage-8.svg" alt=""></div>
-              <p class="device-advantages__desc">Поддерживать заданный уровень pH</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="pluggable-sensors">
-        <div class="container pluggable-sensors__container"> 
-          <h2 class="pluggable-sensors__title">Подключаемые сенсоры:</h2>
-          <ul class="pluggable-sensors__list row">
-            <li class="pluggable-sensors__item col-lg-3 col-md-4 col-sm-6 col-12">
-              <div class="pluggable-sensors__icon-wrap"> <picture><source srcset="img/pluggable-sensors/sensor-1.webp" type="image/webp"><img class="pluggable-sensors__img" src="img/pluggable-sensors/sensor-1.png" alt="pluggable-sensors sensors"></picture></div><strong class="pluggable-sensors__name">Ph</strong>
-            </li>
-            <li class="pluggable-sensors__item col-lg-3 col-md-4 col-sm-6 col-12">
-              <div class="pluggable-sensors__icon-wrap"> <picture><source srcset="img/pluggable-sensors/sensor-1.webp" type="image/webp"><img class="pluggable-sensors__img" src="img/pluggable-sensors/sensor-1.png" alt="pluggable-sensors sensors"></picture>
-                <p class="pluggable-sensors__item-info">EAir temp &amp; humidity &amp; VPD</p>
-              </div><strong class="pluggable-sensors__name">EC</strong>
-            </li>
-            <li class="pluggable-sensors__item col-lg-3 col-md-4 col-sm-6 col-12">
-              <div class="pluggable-sensors__icon-wrap"> <picture><source srcset="img/pluggable-sensors/sensor-2.webp" type="image/webp"><img class="pluggable-sensors__img" src="img/pluggable-sensors/sensor-2.png" alt="pluggable-sensors sensors"></picture></div><strong class="pluggable-sensors__name">DO</strong>
-            </li>
-            <li class="pluggable-sensors__item col-lg-3 col-md-4 col-sm-6 col-12">
-              <div class="pluggable-sensors__icon-wrap"> <picture><source srcset="img/pluggable-sensors/sensor-3.webp" type="image/webp"><img class="pluggable-sensors__img" src="img/pluggable-sensors/sensor-3.png" alt="pluggable-sensors sensors"></picture></div><strong class="pluggable-sensors__name">ORP</strong>
+              <p class="device-advantages__desc">Задает всевозможные настройки и автоматизирует работу подключенных устройств. </p>
             </li>
           </ul>
         </div>
       </section>
       <section class="device-equipped">
-        <div class="container device-equipped__container"><picture><source srcset="img/hydrodirector/device.webp" type="image/webp"><img class="device-equipped__bg" src="img/hydrodirector/device.png" alt=""></picture>
+        <div class="container device-equipped__container"><picture><source srcset="img/drycontactdirector/device.webp" type="image/webp"><img class="device-equipped__bg" src="img/drycontactdirector/device.png" alt=""></picture>
           <h2 class="device-equipped__title">Каждый девайс оснащён:</h2>
-          <div class="device-equipped__list row">
-            <div class="device-equipped__item">
+          <ul class="device-equipped__list row">
+            <li class="device-equipped__item">
               <div class="device-equipped__desc">
-                <p class="device-equipped__text">Тремя мощными помпами, способными перекачивать объем до 12 л в час каждая</p>
+                <p class="device-equipped__text">2 встроенными розетками для подключения электрических устройств (3 типа розеток на выбор - US, EU, UK)</p>
               </div>
-            </div>
-            <div class="device-equipped__item">
+            </li>
+            <li class="device-equipped__item">
               <div class="device-equipped__desc">
-                <p class="device-equipped__text">Встроенным уникальным софтом,который позволяет очень просто задавать сложные настройки и контролировать их, предотвращая ошибки пользователя </p>
+                <p class="device-equipped__text">Проводом для подключения в сеть 110/230V.</p>
               </div>
-            </div>
-            <div class="device-equipped__item">
+            </li>
+            <li class="device-equipped__item">
               <div class="device-equipped__desc">
-                <p class="device-equipped__text">На нижней части располагается 3 разъема для подключения сенсоров (вы можете комбинировать сенсоры на своё усмотрение)</p>
-                <div class="device-equipped__tooltip">
-                  <button class="device-equipped__tooltip-btn" type="button">?</button>
-                  <div class="device-equipped__tooltip-info">
-                    <ol>
-                      <li>EC + temp</li>
-                      <li>pH</li>
-                      <li>DO или ORP</li>
-                    </ol>
-                  </div>
-                </div>
+                <p class="device-equipped__text">Системой Wi-Fi MESH connection для установления соединения с вашим телефоном, лэптопом или планшетом</p>
               </div>
-            </div>
-            <div class="device-equipped__item">
+            </li>
+            <li class="device-equipped__item">
               <div class="device-equipped__desc">
                 <p class="device-equipped__text">Держатель для крепления к вертикальным поверхностям</p>
               </div>
-            </div>
-            <div class="device-equipped__item">
+            </li>
+            <li class="device-equipped__item">
               <div class="device-equipped__desc">
-                <p class="device-equipped__text">Проводом для подключения в сеть __V системой Wi-Fi MESH connection для установления соединения с вашим телефоном, лэптопом или планшетом</p>
+                <p class="device-equipped__text">Встроенным уникальным софтом,который позволяет очень просто задавать сложные настройки и контролировать их, предотвращая ошибки пользователя.</p>
               </div>
-            </div>
-            <div class="device-equipped__item">
-              <div class="device-equipped__desc">
-                <p class="device-equipped__text">12 метровая гибкая трубка для подключения помп к резервуарам с жидкостями объемом до 10.000 л</p>
-              </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </section>
       <section class="application">
         <div class="container application__container row">
           <div class="application__text-block col-md-8">
-            <div class="application__desc">Настраивается данный аппарат&nbsp;через удобное приложение, где вы можете <span class="application__desc_green">отследить историю ваших действий, изменить заданные параметры </span>в любой точке мира при наличии вайфай соединения в месте подключения девайса. </div><a class="btn application__btn btn__green" href="#"><span class="btn__text">Посмотреть в каталоге</span></a>
+            <div class="application__desc">SocketDirector настраивается и связывается с другими устройствами&nbsp;через удобное приложение, где вы можете <span class="application__desc_green">отследить историю ваших действий, изменить заданные параметры </span>в любой точке мира при наличии вайфай соединения в месте подключения девайса. </div><a class="btn application__btn btn__green" href="#"><span class="btn__text">Посмотреть в каталоге</span></a>
           </div>
           <div class="application__phone-wrap col-md-4 col-4"><picture><source srcset="img/phone.webp" type="image/webp"><img class="application__phone" src="img/phone.png" alt=""/></picture></div>
-        </div>
-      </section>
-      <section class="device-connecting">
-        <div class="device-connecting__bg-wrap"><img class="device-connecting__bg" src="img/hydrodirector/connecting.svg" alt=""/></div>
-        <div class="container device-connecting__container row">
-          <p class="device-connecting__desc col-xl-6 col-lg-7 col-md-8">Hydrodirector&nbsp; может подключаться в сеть как самостоятельное одиночное устройство, так и объединяться в единую систему с любыми другими устройствами гроудиректор через мобильное приложение.
-          </p>
         </div>
       </section>
       <section class="device-characteristics"> 
@@ -235,7 +185,7 @@
           <div class="device-installation__text-block col-md-6"><strong class="device-installation__title">Установка:</strong>
             <p class="device-installation__desc">Монтируется с помощью специального держателя к вертикальным поверхностям.</p>
           </div>
-          <div class="device-installation__bg-wrap"><picture><source srcset="img/hydrodirector/installation.webp" type="image/webp"><img class="device-installation__bg" src="img/hydrodirector/installation.png" alt=""/></picture></div>
+          <div class="device-installation__bg-wrap"><picture><source srcset="img/socketdirector/installation.webp" type="image/webp"><img class="device-installation__bg" src="img/socketdirector/installation.png" alt=""/></picture></div>
         </div>
       </section>
       <section class="popular-products">

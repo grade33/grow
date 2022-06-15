@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="./css/style.min.css?_v=20220615054401">
+    <script defer src="./js/app.min.js?_v=20220615054401"></script>
+  </head>
+  <body class="cart-page">
+    <div class="discount"><span class="discount__text">15% discount on new items</span></div>
+    <header class="header">
+      <div class="container header__container"><a class="logo header__logo" href="#"> <picture><source srcset="img/logo.webp" type="image/webp"><img class="logo__img" src="img/logo.png" alt="Логотип Grown Director"/></picture></a>
+        <nav class="nav header__nav"> 
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="#">Products</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Catalogue</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">About</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Education</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">FAQ</a></li>
+          </ul>
+        </nav>
+        <ul class="social header__social">
+          <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/facebook.svg" alt="Social-icon"/></a></li>
+          <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/instagram.svg" alt="Social-icon"/></a></li>
+          <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/linkedin.svg" alt="Social-icon"/></a></li>
+        </ul>
+        <ul class="header__user-menu">
+          <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
+              <svg class="header__user-menu-icon">
+                <use xlink:href="img/sprite.svg#user"></use>
+              </svg></a></li>
+          <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
+              <svg class="header__user-menu-icon">
+                <use xlink:href="img/sprite.svg#basket"></use>
+              </svg></a></li>
+        </ul>
+        <button class="burger" type="button"><span class="burger__item"></span><span class="burger__item"></span><span class="burger__item"></span></button>
+        <div class="popup">
+          <div class="menu">
+            <div class="container menu__container">
+              <nav class="nav header__nav"> 
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="nav__link" href="#">Products</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">Catalogue</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">About</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">Education</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">FAQ</a></li>
+                </ul>
+              </nav>
+              <ul class="social header__social">
+                <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/facebook.svg" alt="Social-icon"/></a></li>
+                <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/instagram.svg" alt="Social-icon"/></a></li>
+                <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/linkedin.svg" alt="Social-icon"/></a></li>
+              </ul>
+              <ul class="header__user-menu">
+                <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
+                    <svg class="header__user-menu-icon">
+                      <use xlink:href="img/sprite.svg#user"></use>
+                    </svg></a></li>
+                <li class="header__user-menu-item"><a class="header__user-menu-link" href="#"> 
+                    <svg class="header__user-menu-icon">
+                      <use xlink:href="img/sprite.svg#basket"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main"> 
+      <section class="cart">
+        <div class="container cart__container"> 
+          <div class="section-title cart__title">
+            <svg class="section-title__icon">
+              <use xlink:href="img/sprite.svg#before-title-tree"></use>
+            </svg>
+            <h2 class="section-title__heading">Cart</h2>
+          </div>
+          <div class="cart__content">
+            <ul class="cart__list"> 
+              <li class="cart__item"> 
+                <div class="cart__img-wrap"> <picture><source srcset="img/card/card-1.webp" type="image/webp"><img class="cart__img" src="img/card/card-1.png" alt="Cart Product Img"></picture></div>
+                <form class="cart__text-block"> 
+                  <div class="cart__item-top">
+                    <h3 class="cart__name">HydroDirector PRO</h3><span class="cart__price">$635</span>
+                  </div>
+                  <div class="cart__item-center">
+                    <div class="cart__quantity">
+                      <label class="cart__quantity-text" for="cart-quantity">Quantity:</label>
+                      <select class="select-2" id="cart-quantity">
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                    <button class="cart__remove-btn" type="button">Remove</button>
+                  </div>
+                  <div class="cart__item-bottom">
+                    <input class="cart__coupon-field" type="text" placeholder="Coupon code">
+                    <button class="btn cart__coupon-btn btn__gray" type="button"><span class="btn__text">Apply coupon</span></button>
+                  </div>
+                </form>
+              </li>
+            </ul>
+            <form class="order cart__order" action="#"> 
+              <div class="order__text-block"><strong class="order__title">Order Summary</strong>
+                <div class="order__row"><span class="order__row-title">Subtotal:</span><span class="order__row-text">$1270</span></div>
+                <div class="order__row"><span class="order__row-title">Shipping:</span><span class="order__row-text order__row-text_small">Enter your address to view shipping options.
+                    <button class="order__calculate-btn" type="button">Calculate shipping</button></span></div>
+                <div class="order__row"><span class="order__row-title">Total:</span><span class="order__row-text">$1270</span></div>
+              </div>
+              <div class="order__pay"><a class="btn order__pay-btn order__pay-btn_green btn__green" href="#"><span class="btn__text">Proceed to checkout</span></a><span class="order__pay-text">or</span><a class="btn btn__trs order__pay-btn order__pay-btn_trs" href="#"><img src="img/paypal.svg" alt="Paypal"></a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__container row"><a class="logo footer__logo col-xl-3 col-lg-4 col-sm-6 col-12" href="#"> <picture><source srcset="img/logo.webp" type="image/webp"><img class="logo__img" src="img/logo.png" alt="Логотип Grown Director"></picture></a>
+          <div class="footer__contacts col-xl-3 col-lg-4 col-sm-6 col-12"><strong class="footer__title">Contact us:</strong>
+            <div class="footer__contacts-item"><span class="footer__contacts-title">Telephone:</span><a class="footer__contacts-link" href="tel:+79826612823">+7 (982) 661-28-23</a></div>
+            <div class="footer__contacts-item"><span class="footer__contacts-title">Email:</span><a class="footer__contacts-link" href="mailto:naskr4317@yandex.ru">naskr4317@yandex.ru</a></div>
+          </div>
+          <div class="footer__social col-xl-3 col-lg-4 col-sm-6 col-12"><strong class="footer__title">Follow us on social media: </strong>
+            <ul class="social footer__social-list">
+              <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/facebook.svg" alt="Social-icon"></a></li>
+              <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/instagram.svg" alt="Social-icon"></a></li>
+              <li class="social__item"><a class="social__link" href="#"> <img class="social__img" src="img/linkedin.svg" alt="Social-icon"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

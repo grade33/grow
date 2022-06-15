@@ -1,4 +1,4 @@
-.device-about__title {
+.device-hero__title {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -25,7 +25,9 @@ html h2 {
   line-height: 125%;
 }
 
-.device-about__text,
+.device-info__price,
+.device-info__name,
+.device-hero__text,
 .quiz__title-heading {
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -44,12 +46,16 @@ html h2 {
   line-height: 144%;
 }
 
+.cart__name,
+.cart__price,
+.offer-sensors__price,
 .device-characteristics__item-title,
-.products__price,
+.catalog-products__price,
 .review__item-title,
 .popular-products__item-price,
-.quiz__slider-title,
-.benefits__heading {
+.quiz__item-title,
+.benefits__heading,
+.order__title {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -57,7 +63,9 @@ html h2 {
   line-height: 130%;
 }
 
-.products__name,
+.faq__item-title,
+.news__item-title,
+.catalog-products__name,
 .review__item-name,
 .about-app__item-title::before,
 .popular-products__item-title {
@@ -68,6 +76,8 @@ html h2 {
   line-height: 133%;
 }
 
+.checkout__form-title,
+.offer-sensors__name,
 .current-news__item-title,
 .about-app__item-title {
   font-family: "Inter", sans-serif;
@@ -77,7 +87,7 @@ html h2 {
   line-height: 133%;
 }
 
-.device-info__text {
+.device-equipped__text {
   font-family: "Gilroy", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -85,7 +95,8 @@ html h2 {
   line-height: 139%;
 }
 
-.pluggable-sensors__name {
+.pluggable-sensors__name,
+.order__row {
   font-family: "Gilroy", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -93,7 +104,9 @@ html h2 {
   line-height: 109%;
 }
 
-.quiz__form-text {
+.device-info__field-wrap .choices,
+.quiz__form-text,
+.counter__value {
   font-family: "Gilroy", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -110,13 +123,25 @@ html h2 {
   line-height: 140%;
 }
 
-.device-about__desc,
+.cart__quantity,
+.device-hero__desc,
 .slider-1 .slider__active-slide {
   font-family: "Gilroy", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 125%;
+}
+
+.device-info__list-title,
+.device-info__about-title,
+.device-info__form,
+.more {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 168%;
 }
 
 .pluggable-sensors__item-info,
@@ -129,11 +154,11 @@ html h2 {
   line-height: 141%;
 }
 
+.checkout__field-wrap,
 .popular-products__more,
 .presentation__desc,
 .nav__list,
-input,
-textarea,
+.order__row-text_small,
 html body {
   font-family: "Gilroy", sans-serif;
   font-style: normal;
@@ -151,7 +176,8 @@ html body {
   line-height: 150%;
 }
 
-.current-news__item-desc-wrap {
+.current-news__item-desc-wrap,
+.order__data-text {
   font-family: "Gilroy", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -159,7 +185,7 @@ html body {
   line-height: 160%;
 }
 
-.device-info__tooltip-btn,
+.device-equipped__tooltip-btn,
 .discount__text {
   font-family: "Gilroy", sans-serif;
   font-style: normal;
@@ -1059,6 +1085,374 @@ input[type=search]::-webkit-search-results-decoration {
   font-style: normal;
 }
 
+/* ===============================
+=            Choices            =
+=============================== */
+
+.choices {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.choices:focus {
+  outline: none;
+}
+
+.choices:last-child {
+  margin-bottom: 0;
+}
+
+.choices.is-open {
+  overflow: visible;
+}
+
+.choices.is-disabled .choices__inner,
+.choices.is-disabled .choices__input {
+  background-color: #eaeaea;
+  cursor: not-allowed;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.choices.is-disabled .choices__item {
+  cursor: not-allowed;
+}
+
+.choices [hidden] {
+  display: none !important;
+}
+
+.choices[data-type*=select-one] {
+  cursor: pointer;
+}
+
+.choices[data-type*=select-one] .choices__input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  margin: 0;
+}
+
+.choices[data-type*=select-one] .choices__button {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjMDAwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yLjU5Mi4wNDRsMTguMzY0IDE4LjM2NC0yLjU0OCAyLjU0OEwuMDQ0IDIuNTkyeiIvPjxwYXRoIGQ9Ik0wIDE4LjM2NEwxOC4zNjQgMGwyLjU0OCAyLjU0OEwyLjU0OCAyMC45MTJ6Ii8+PC9nPjwvc3ZnPg==");
+  padding: 0;
+  background-size: 8px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -10px;
+  margin-right: 25px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10em;
+  opacity: 0.25;
+}
+
+.choices[data-type*=select-one] .choices__button:hover,
+.choices[data-type*=select-one] .choices__button:focus {
+  opacity: 1;
+}
+
+.choices[data-type*=select-one] .choices__button:focus {
+  -webkit-box-shadow: 0 0 0 2px #00bcd4;
+  box-shadow: 0 0 0 2px #00bcd4;
+}
+
+.choices[data-type*=select-one] .choices__item[data-value=""] .choices__button {
+  display: none;
+}
+
+.choices[data-type*=select-one]::after {
+  content: url("../img/select-chevron.svg");
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 16px;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.choices[data-type*=select-one].is-open::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+  -ms-transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.choices[data-type*=select-one][dir=rtl]::after {
+  left: 11.5px;
+  right: auto;
+}
+
+.choices[data-type*=select-one][dir=rtl] .choices__button {
+  right: auto;
+  left: 0;
+  margin-left: 25px;
+  margin-right: 0;
+}
+
+.choices[data-type*=select-multiple] .choices__inner,
+.choices[data-type*=text] .choices__inner {
+  cursor: text;
+}
+
+.choices[data-type*=select-multiple] .choices__button,
+.choices[data-type*=text] .choices__button {
+  position: relative;
+  display: inline-block;
+  margin-top: 0;
+  margin-right: -4px;
+  margin-bottom: 0;
+  margin-left: 8px;
+  padding-left: 16px;
+  border-left: 1px solid #008fa1;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yLjU5Mi4wNDRsMTguMzY0IDE4LjM2NC0yLjU0OCAyLjU0OEwuMDQ0IDIuNTkyeiIvPjxwYXRoIGQ9Ik0wIDE4LjM2NEwxOC4zNjQgMGwyLjU0OCAyLjU0OEwyLjU0OCAyMC45MTJ6Ii8+PC9nPjwvc3ZnPg==");
+  background-size: 8px;
+  width: 8px;
+  line-height: 1;
+  opacity: 0.75;
+  border-radius: 0;
+}
+
+.choices[data-type*=select-multiple] .choices__button:hover,
+.choices[data-type*=select-multiple] .choices__button:focus,
+.choices[data-type*=text] .choices__button:hover,
+.choices[data-type*=text] .choices__button:focus {
+  opacity: 1;
+}
+
+.choices__inner {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #777777;
+  border-radius: 8px;
+  background: transparent;
+  padding: 10px 37px 9px 18px;
+  min-height: unset;
+}
+
+.is-open .choices__inner {
+  border-radius: 8px 8px 0 0;
+}
+
+.choices__list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.choices__list--single {
+  display: inline-block;
+  width: 100%;
+}
+
+[dir=rtl] .choices__list--single {
+  padding-right: 4px;
+  padding-left: 16px;
+}
+
+.choices__list--single .choices__item {
+  width: 100%;
+}
+
+.choices__list--multiple {
+  display: inline;
+}
+
+.choices__list--multiple .choices__item {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 20px;
+  padding: 4px 10px;
+  margin-right: 3.75px;
+  margin-bottom: 3.75px;
+  background-color: #00bcd4;
+  border: 1px solid #00a5bb;
+  color: #fff;
+  word-break: break-all;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.choices__list--multiple .choices__item[data-deletable] {
+  padding-right: 5px;
+}
+
+[dir=rtl] .choices__list--multiple .choices__item {
+  margin-right: 0;
+  margin-left: 3.75px;
+}
+
+.choices__list--multiple .choices__item.is-highlighted {
+  background-color: #00a5bb;
+  border: 1px solid #008fa1;
+}
+
+.is-disabled .choices__list--multiple .choices__item {
+  background-color: #aaaaaa;
+  border: 1px solid #919191;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  visibility: hidden;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  margin-top: -1px;
+  overflow: hidden;
+  word-break: break-all;
+  will-change: visibility;
+  border: 1px solid #777777;
+  border-radius: 0 0 8px 8px;
+}
+
+.is-active.choices__list--dropdown,
+.is-active.choices__list[aria-expanded] {
+  visibility: visible;
+}
+
+.is-flipped .choices__list--dropdown,
+.is-flipped .choices__list[aria-expanded] {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: -1px;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.choices__list--dropdown .choices__list,
+.choices__list[aria-expanded] .choices__list {
+  position: relative;
+  max-height: 300px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+}
+
+.choices__list--dropdown .choices__item,
+.choices__list[aria-expanded] .choices__item {
+  position: relative;
+}
+
+[dir=rtl] .choices__list--dropdown .choices__item,
+[dir=rtl] .choices__list[aria-expanded] .choices__item {
+  text-align: right;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+  background-color: #f2f2f2;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted::after,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted::after {
+  opacity: 0.5;
+}
+
+.choices__item {
+  cursor: default;
+  font: inherit;
+  background: #FEFEFE;
+}
+
+.choices__item--choice {
+  padding: 10px 37px 9px 18px;
+}
+
+.choices__item--selectable {
+  cursor: pointer;
+}
+
+.choices__item--disabled {
+  cursor: not-allowed;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 0.5;
+}
+
+.choices__heading {
+  padding: 10px;
+  border-bottom: 1px solid #f7f7f7;
+  color: gray;
+}
+
+.choices__button {
+  text-indent: -9999px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.choices__button:focus {
+  outline: none;
+}
+
+.choices__input {
+  display: inline-block;
+  vertical-align: baseline;
+  background-color: #f9f9f9;
+  margin-bottom: 5px;
+  border: 0;
+  border-radius: 0;
+  max-width: 100%;
+  padding: 4px 0 4px 2px;
+}
+
+.choices__input:focus {
+  outline: 0;
+}
+
+.choices__input::-webkit-search-decoration,
+.choices__input::-webkit-search-cancel-button,
+.choices__input::-webkit-search-results-button,
+.choices__input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.choices__input::-ms-clear,
+.choices__input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+[dir=rtl] .choices__input {
+  padding-right: 2px;
+  padding-left: 0;
+}
+
+.choices__placeholder {
+  color: #777777;
+}
+
+.choices__item--choice.choices__placeholder {
+  display: none;
+}
+
+/* =====  End of Choices  ====== */
+
 html body {
   color: #202020;
   background: #FEFEFE;
@@ -1151,6 +1545,7 @@ html body {
 .menu {
   padding-left: 5%;
   padding-top: 30px;
+  padding-bottom: 30px;
   width: 60vw;
   height: 100vh;
   background: #FEFEFE;
@@ -1205,6 +1600,8 @@ html body {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;
   order: 1;
@@ -1227,6 +1624,18 @@ html body {
 .btn__text {
   display: inline-block;
   min-width: 139px;
+}
+
+.btn__trs {
+  background-color: transparent;
+  color: #202020;
+  border-color: #777777;
+}
+
+.btn__trs:hover,
+.btn__trs:focus-visible,
+.btn__trs:active {
+  background-color: #D6D6D6;
 }
 
 .btn__green {
@@ -1266,7 +1675,22 @@ html body {
 .btn__white:active {
   background-color: #777777;
   border-color: #777777;
+  color: #FEFEFE;
+}
+
+.btn__gray {
+  padding: 8px 17.75px;
+  background-color: #D6D6D6;
+  border-color: #D6D6D6;
   color: #202020;
+}
+
+.btn__gray:hover,
+.btn__gray:focus-visible,
+.btn__gray:active {
+  background-color: #777777;
+  border-color: #777777;
+  color: #FEFEFE;
 }
 
 .btn-play {
@@ -1299,10 +1723,66 @@ html body {
   border-color: #202020;
 }
 
+.more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.more__icon {
+  width: 30px;
+  height: 16px;
+  color: #40AC6C;
+}
+
+.counter {
+  height: 43px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid #777777;
+  border-radius: 8px;
+}
+
+.counter__btn {
+  padding: 9px 18px;
+  font-size: 28px;
+  font-family: "Gilroy";
+  line-height: 24px;
+}
+
+.counter__btn_minus {
+  border-right: 1px solid #777777;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.counter__btn_plus {
+  border-radius: 0px 8px 8px 0px;
+  border-left: 1px solid #777777;
+}
+
+.counter__value {
+  padding: 0px 25px;
+}
+
 input,
 textarea {
   color: #202020;
-  padding: 10px 20px;
+  padding: 8px 20px;
+  padding-top: 9px;
   border: 1px solid #777777;
   border-radius: 8px;
 }
@@ -1330,7 +1810,8 @@ textarea::placeholder {
 
 input.big,
 textarea.big {
-  padding: 15px 25px;
+  padding: 14px 25px;
+  padding-top: 15px;
 }
 
 input.black,
@@ -1384,6 +1865,50 @@ input.white::-ms-input-placeholder, textarea.white::-ms-input-placeholder {
 input.white::placeholder,
 textarea.white::placeholder {
   color: #FEFEFE;
+}
+
+.acc_active .acc__icon_open {
+  display: none;
+}
+
+.acc_active .acc__icon_close {
+  display: block;
+}
+
+.acc__trigger {
+  padding: 27px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 15px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: left;
+  width: 100%;
+}
+
+.acc__panel {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease-out;
+  -o-transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out;
+}
+
+.acc__icon {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  width: 41px;
+  height: 41px;
+}
+
+.acc__icon_close {
+  display: none;
 }
 
 .discount {
@@ -1454,6 +1979,146 @@ textarea.white::placeholder {
 
 .radio:checked + .radio__custom::after {
   background-color: #40AC6C;
+}
+
+.checkbox__custom {
+  position: relative;
+  display: inline-block;
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  border: 1px solid #202020;
+  -webkit-transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  -o-transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.checkbox__custom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.checkbox:checked + .checkbox__custom {
+  border-color: #40AC6C;
+  background-color: #40AC6C;
+}
+
+.checkbox:checked + .checkbox__custom::after {
+  content: url("../img/check.svg");
+}
+
+.order {
+  -webkit-box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.13);
+  box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.13);
+  border-radius: 12px;
+  background: #FEFEFE;
+  padding: 30px;
+}
+
+.order__text-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 37px;
+}
+
+.order__title {
+  margin-bottom: 4px;
+}
+
+.order__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 48px;
+}
+
+.order__row-title {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  width: 105px;
+}
+
+.order__row-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.order__calculate-btn {
+  text-decoration: underline;
+  color: #40AC6C;
+}
+
+.order__pay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.order__pay-btn {
+  width: 100%;
+  height: 60px;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.order__pay-text {
+  text-align: center;
+}
+
+.order__data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.order__data .checkbox__custom {
+  margin-top: 5px;
 }
 
 .logo__img {
@@ -1574,8 +2239,8 @@ textarea.white::placeholder {
 
 .slider-2 .slider__btn-wrap {
   position: absolute;
-  bottom: 39px;
-  right: 39px;
+  bottom: 5px;
+  right: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1802,6 +2467,7 @@ textarea.white::placeholder {
 }
 
 .footer__container {
+  gap: 40px;
   padding-top: 53px;
   padding-bottom: 77px;
 }
@@ -1845,7 +2511,6 @@ textarea.white::placeholder {
 
 .presentation {
   position: relative;
-  height: 600px;
   background: -webkit-gradient(linear, left top, left bottom, from(#EDEFF3), to(#EDEDED));
   background: -o-linear-gradient(top, #EDEFF3 0%, #EDEDED 100%);
   background: linear-gradient(180deg, #EDEFF3 0%, #EDEDED 100%);
@@ -1853,6 +2518,7 @@ textarea.white::placeholder {
 
 .presentation__container {
   padding-top: 72px;
+  padding-bottom: 226px;
 }
 
 .presentation__bg {
@@ -1895,7 +2561,8 @@ textarea.white::placeholder {
 }
 
 .benefits__container {
-  padding: 72px 0;
+  padding-top: 72px;
+  padding-bottom: 72px;
 }
 
 .benefits__title {
@@ -1979,7 +2646,7 @@ textarea.white::placeholder {
   flex: none;
   width: 548px;
   height: 100%;
-  margin-left: calc((-100vw + 1110px) / 2);
+  margin-left: calc((-100vw + 1134px) / 2);
 }
 
 .quiz__video-btn {
@@ -2007,9 +2674,9 @@ textarea.white::placeholder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 30px;
   margin-bottom: 37px;
 }
@@ -2023,7 +2690,21 @@ textarea.white::placeholder {
   height: 64px;
 }
 
-.quiz__slider-title {
+.quiz .slider__btn-wrap {
+  bottom: 39px;
+  right: 39px;
+}
+
+.quiz__item {
+  width: 100%;
+  padding: 33px 38px 37px;
+  background: #FEFEFE;
+  border-radius: 12px;
+  -webkit-box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.08);
+}
+
+.quiz__item-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2034,17 +2715,8 @@ textarea.white::placeholder {
   margin-bottom: 30px;
 }
 
-.quiz__slider-title-pagination {
+.quiz__item-title-pagination {
   color: #40AC6C;
-}
-
-.quiz__slide {
-  width: 100%;
-  padding: 33px 38px 37px;
-  background: #FEFEFE;
-  border-radius: 12px;
-  -webkit-box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.08);
-  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.08);
 }
 
 .quiz__form-content {
@@ -2076,7 +2748,8 @@ textarea.white::placeholder {
 }
 
 .popular-products__container {
-  padding: 70px 0;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .popular-products__top {
@@ -2102,6 +2775,10 @@ textarea.white::placeholder {
   gap: 18px;
 }
 
+.popular-products__more_adaptive {
+  margin-bottom: 10px;
+}
+
 .popular-products__more-icon {
   width: 30px;
   height: 16px;
@@ -2110,6 +2787,14 @@ textarea.white::placeholder {
 
 .popular-products__desc {
   margin-bottom: 20px;
+}
+
+.popular-products__list {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .popular-products__item {
@@ -2163,6 +2848,7 @@ textarea.white::placeholder {
   display: -ms-flexbox;
   display: flex;
   gap: 18px;
+  margin: 0;
 }
 
 .subscribe-news__btn {
@@ -2186,9 +2872,12 @@ textarea.white::placeholder {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+}
+
+.about-app__phone_adaptive {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 .about-app__title {
@@ -2196,6 +2885,7 @@ textarea.white::placeholder {
 }
 
 .about-app__right {
+  margin-left: auto;
   padding-top: 17px;
 }
 
@@ -2226,14 +2916,22 @@ textarea.white::placeholder {
   color: #40AC6C;
 }
 
+.about-app__app {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+}
+
 .about-app__app-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px 40px;
 }
 
 .current-news {
@@ -2243,18 +2941,12 @@ textarea.white::placeholder {
 }
 
 .current-news__container {
-  padding: 70px 0;
+  padding-top: 70px;
+  padding-bottom: 150px;
 }
 
 .current-news__title {
   margin-bottom: 28px;
-}
-
-.current-news .slider__btn-wrap {
-  top: 111px;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
 }
 
 .current-news__item {
@@ -2265,6 +2957,13 @@ textarea.white::placeholder {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.current-news__item__inner {
+  position: relative;
 }
 
 .current-news__item-img {
@@ -2279,7 +2978,6 @@ textarea.white::placeholder {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin-bottom: 16px;
 }
 
 .no-webp .current-news__item-img-wrap::before {
@@ -2311,13 +3009,20 @@ textarea.white::placeholder {
   border-bottom-right-radius: 12px;
 }
 
+.current-news__item-title {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 16px);
+}
+
 .review {
   background: #40AC6C;
   color: #FEFEFE;
 }
 
 .review__container {
-  padding: 70px 0;
+  padding-top: 70px;
+  padding-bottom: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2375,10 +3080,11 @@ textarea.white::placeholder {
   color: #202020;
   border: 1px solid #40AC6C;
   border-radius: 12px;
+  gap: 20px;
 }
 
 .review__item-person {
-  width: 17.6%;
+  max-width: 126px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2390,12 +3096,14 @@ textarea.white::placeholder {
 
 .review__item-avatar {
   border-radius: 50%;
+  min-width: 88px;
   width: 88px;
   height: 88px;
   margin-bottom: 19px;
 }
 
 .review__item-name {
+  display: block;
   margin-bottom: 4px;
 }
 
@@ -2409,7 +3117,6 @@ textarea.white::placeholder {
 
 .review__item-more {
   padding: 12px 20px;
-  display: block;
 }
 
 .partners {
@@ -2424,6 +3131,7 @@ textarea.white::placeholder {
 .partners__container {
   position: relative;
   padding-bottom: 56px;
+  gap: 30px;
 }
 
 .partners__title {
@@ -2459,7 +3167,7 @@ textarea.white::placeholder {
   padding: 12px 7px 14px 20px;
   z-index: 5;
   bottom: -112px;
-  right: -92px;
+  right: -8.3%;
   max-width: 222px;
   background: #FEFEFE;
   -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
@@ -2526,19 +3234,19 @@ textarea.white::placeholder {
   width: 100%;
 }
 
-.products {
+.catalog-products {
   padding: 70px 0;
 }
 
-.products__title {
+.catalog-products__title {
   margin-bottom: 21px;
 }
 
-.products__list {
+.catalog-products__list {
   gap: 95px 0;
 }
 
-.products__item {
+.catalog-products__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2552,56 +3260,78 @@ textarea.white::placeholder {
   text-align: center;
 }
 
-.products__img-wrap {
-  min-height: 236px;
-}
-
-.products__name {
+.catalog-products__name {
+  margin-top: auto;
   margin-bottom: 15px;
 }
 
-.products__price {
+.catalog-products__price {
   margin-bottom: 18px;
 }
 
-.products__btn {
+.catalog-products__btn {
   padding-left: 50px;
   padding-right: 50px;
 }
 
-.device-about {
+.device-hero {
   background: -webkit-gradient(linear, left top, left bottom, from(#EDEFF3), to(#EDEDED));
   background: -o-linear-gradient(top, #EDEFF3 0%, #EDEDED 100%);
   background: linear-gradient(180deg, #EDEFF3 0%, #EDEDED 100%);
   padding-bottom: 70px;
 }
 
-.device-about__container {
+.device-hero__container {
+  position: relative;
   padding-top: 63px;
-  background-position: top center;
-  background-repeat: no-repeat;
 }
 
-.device-about__info {
+.device-hero__ellipse {
+  width: 100%;
+}
+
+.device-hero__ellipse-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.device-hero__info {
+  position: relative;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #FEFEFE;
+}
+
+.device-hero__info_black {
+  color: #202020;
+}
+
+.device-hero__device {
   position: relative;
   z-index: 1;
-  color: #FEFEFE;
-  margin: 0 auto;
-}
-
-.device-about__device {
+  display: block;
   margin-bottom: 70px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-.device-about__text {
+.device-hero__text {
   margin-bottom: 30px;
 }
 
-.device-about__text_green {
+.device-hero__text_green {
   color: #40AC6C;
 }
 
-.device-about__btn-download {
+.device-hero__btn-download {
   padding-left: 37.8px;
   padding-right: 37.8px;
 }
@@ -2617,25 +3347,28 @@ textarea.white::placeholder {
 }
 
 .device-advantages__container {
-  padding: 70px 0;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .device-advantages__title {
+  position: relative;
+  z-index: 1;
   margin-bottom: 47px;
 }
 
 .device-advantages__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+  grid-template-columns: repeat(12, 1fr);
   gap: 50px 0;
 }
 
 .device-advantages__item {
+  grid-column: 1/-1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2643,6 +3376,11 @@ textarea.white::placeholder {
   -ms-flex-align: center;
   align-items: center;
   gap: 25px;
+}
+
+.device-advantages__item_row {
+  -ms-grid-column-span: 4;
+  grid-column: 4 span;
 }
 
 .device-advantages__icon-wrap {
@@ -2693,9 +3431,16 @@ textarea.white::placeholder {
 
 .pluggable-sensors__list {
   width: 100%;
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  gap: 55px 0;
 }
 
 .pluggable-sensors__item {
@@ -2744,17 +3489,17 @@ textarea.white::placeholder {
   margin-bottom: 36px;
 }
 
-.device-info {
+.device-equipped {
   background: #40AC6C;
   color: #FEFEFE;
 }
 
-.device-info__bg {
+.device-equipped__bg {
+  margin-top: -110px;
   margin-bottom: 60px;
-  margin-top: -100px;
 }
 
-.device-info__container {
+.device-equipped__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2765,21 +3510,32 @@ textarea.white::placeholder {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-bottom: 130px;
+  padding-bottom: 80px;
 }
 
-.device-info__title {
+.device-equipped__title {
   margin-bottom: 45px;
 }
 
-.device-info__list {
+.device-equipped__list {
   display: block;
-  -moz-column-count: 3;
   -webkit-column-count: 3;
+  -moz-column-count: 3;
   column-count: 3;
 }
 
-.device-info__item {
+.device-equipped__list_flex {
+  -webkit-column-count: unset;
+  -moz-column-count: unset;
+  column-count: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.device-equipped__item {
   -moz-column-break-inside: avoid;
   -webkit-column-break-inside: avoid;
   column-break-inside: avoid;
@@ -2790,9 +3546,10 @@ textarea.white::placeholder {
   -ms-flex-align: start;
   align-items: flex-start;
   gap: 15px;
+  margin-bottom: 50px;
 }
 
-.device-info__item::before {
+.device-equipped__item::before {
   content: "";
   -webkit-box-flex: 0;
   -ms-flex: none;
@@ -2806,28 +3563,24 @@ textarea.white::placeholder {
   background: #FEFEFE;
 }
 
-.device-info__item:nth-child(2n-1) {
-  margin-bottom: 50px;
-}
-
-.device-info__text {
+.device-equipped__text {
   display: inline;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
-.device-info__tooltip {
+.device-equipped__tooltip {
   -webkit-transform: translateY(-3px);
   -ms-transform: translateY(-3px);
   transform: translateY(-3px);
   vertical-align: middle;
-  margin-left: 15px;
+  margin-left: 7px;
   display: inline-block;
   position: relative;
 }
 
-.device-info__tooltip-btn {
+.device-equipped__tooltip-btn {
   position: relative;
   z-index: 1;
   -webkit-box-flex: 0;
@@ -2849,14 +3602,14 @@ textarea.white::placeholder {
   border-radius: 50%;
 }
 
-.device-info__tooltip-btn:hover + div,
-.device-info__tooltip-btn:focus-visible + div,
-.device-info__tooltip-btn:active + div {
+.device-equipped__tooltip-btn:hover + div,
+.device-equipped__tooltip-btn:focus-visible + div,
+.device-equipped__tooltip-btn:active + div {
   visibility: visible;
   opacity: 1;
 }
 
-.device-info__tooltip-info {
+.device-equipped__tooltip-info {
   position: absolute;
   top: 5px;
   left: 6px;
@@ -2875,11 +3628,11 @@ textarea.white::placeholder {
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-.device-info__tooltip-info ol {
+.device-equipped__tooltip-info ol {
   counter-reset: tooltip-list;
 }
 
-.device-info__tooltip-info li::before {
+.device-equipped__tooltip-info li::before {
   counter-increment: tooltip-list;
   content: counter(tooltip-list) ". ";
 }
@@ -2887,6 +3640,7 @@ textarea.white::placeholder {
 .application__container {
   padding-top: 70px;
   padding-bottom: 70px;
+  gap: 40px 0;
 }
 
 .application__desc {
@@ -2920,7 +3674,8 @@ textarea.white::placeholder {
 }
 
 .device-connecting__container {
-  padding: 70px 0;
+  padding-top: 70px;
+  padding-bottom: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2972,6 +3727,7 @@ textarea.white::placeholder {
 
 .device-characteristics__list {
   margin-bottom: 50px;
+  gap: 30px 0;
 }
 
 .device-characteristics__item-title {
@@ -3017,18 +3773,51 @@ textarea.white::placeholder {
   color: #40AC6C;
 }
 
-.home .popular-products {
-  background: transparent;
+.device-info__content {
+  padding-top: 63px;
+  padding-bottom: 70px;
+  gap: 40px 0;
 }
 
-.hydrodirector .device-about__container {
-  background-image: url("../img/hydrodirector/hero-ellipse.svg");
+.device-info__view {
+  padding-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.hydrodirector .device-about__info {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+.device-info__view-main {
+  border: 1px solid #777777;
+  border-radius: 12px;
+}
+
+.device-info__view-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+}
+
+.device-info__view-item {
+  cursor: pointer;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  height: 173px;
+  border: 1px solid #777777;
+  border-radius: 12px;
+}
+
+.device-info__view-img {
+  width: 100%;
+}
+
+.device-info__text-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3038,51 +3827,697 @@ textarea.white::placeholder {
   flex-direction: column;
 }
 
-.hydrodirector .device-about__title {
-  margin-bottom: 19px;
-  margin-right: 53px;
+.device-info__name {
+  margin-bottom: 16px;
 }
 
-.hydrodirector .device-about__desc {
+.device-info__price {
+  margin-bottom: 20px;
+}
+
+.device-info__form {
+  margin-bottom: 40px;
+}
+
+.device-info__fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px 65px;
+  margin-bottom: 40px;
+  margin-bottom: 30px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.device-info__field-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.device-info__field-wrap .choices {
+  max-width: 145px;
+}
+
+.device-info__field-wrap .choices__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 43px;
+}
+
+.device-info__label {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.device-info__form-btn {
+  width: 100%;
+}
+
+.device-info__about {
+  margin-bottom: 30px;
+}
+
+.device-info__about-title {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.device-info__more {
+  margin-bottom: 32px;
+}
+
+.device-info__list-wrap {
+  margin-bottom: 46px;
+}
+
+.device-info__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.device-info__item::before {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  content: "";
+  margin-left: 4px;
+  margin-right: 11px;
+  width: 4px;
+  height: 4px;
+  background: #202020;
+  border-radius: 50%;
+  -webkit-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  transform: translateY(10px);
+}
+
+.device-info__app-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 36px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.offer-sensors {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EDEFF3), to(#EDEDED));
+  background: -o-linear-gradient(top, #EDEFF3 0%, #EDEDED 100%);
+  background: linear-gradient(180deg, #EDEFF3 0%, #EDEDED 100%);
+}
+
+.offer-sensors__container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.offer-sensors__title {
+  margin-bottom: 40px;
+}
+
+.offer-sensors__list {
+  gap: 50px 0;
+}
+
+.offer-sensors__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  min-height: 482px;
+}
+
+.offer-sensors__img-wrap {
+  height: 207px;
+  margin-bottom: 13px;
+}
+
+.offer-sensors__name {
+  margin-bottom: 15px;
+}
+
+.offer-sensors__price {
+  margin-bottom: 10px;
+}
+
+.offer-sensors__counter {
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+.delivery__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.delivery__desc {
+  margin-top: 17px;
+}
+
+.cart__container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.cart__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 62px;
+}
+
+.cart__title {
+  margin-bottom: 38px;
+}
+
+.cart__list {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cart__item {
+  min-height: 178px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px 37px;
+}
+
+.cart__item-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.cart__item-center {
+  margin-bottom: 34px;
+}
+
+.cart__item-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+.cart__item-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.cart__img {
+  width: 100%;
+  height: 100%;
+}
+
+.cart__img-wrap {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  max-width: 215px;
+  border: 1px solid #D6D6D6;
+  border-radius: 12px;
+}
+
+.cart__text-block {
+  padding-top: 2px;
+  padding-bottom: 11px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.cart__quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.cart__quantity .choices[data-type*=select-one]::after {
+  right: 0;
+}
+
+.cart__quantity .choices::after {
+  -webkit-transform: translateY(calc(-50% - 2px));
+  -ms-transform: translateY(calc(-50% - 2px));
+  transform: translateY(calc(-50% - 2px));
+}
+
+.cart__quantity .choices__inner {
+  padding: 0;
+  border: none;
+  padding-left: 5px;
+  padding-right: 27px;
+}
+
+.cart__quantity .choices__item--choice {
+  padding: 5px 3px;
+  padding-left: 5px;
+}
+
+.cart__quantity .choices__list {
+  border-radius: 0;
+}
+
+.cart__remove-btn {
+  text-decoration: underline;
+}
+
+.cart__coupon-field {
+  width: 190px;
+  height: 100%;
+}
+
+.checkout__container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.checkout__title {
+  margin-bottom: 30px;
+}
+
+.checkout__content {
+  gap: 60px 0;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.checkout__form-main,
+.checkout__form-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.checkout__form-main {
+  margin-bottom: 44px;
+}
+
+.checkout__field {
+  width: 100%;
+}
+
+.checkout__field-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.checkout__field-wrap_short {
+  padding-right: 65px;
+}
+
+.checkout__textarea {
+  padding-top: 16px;
+  height: 82px;
+}
+
+.news {
+  background: #f5f5f5;
+}
+
+.news__container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.news__title {
+  margin-bottom: 36px;
+}
+
+.news__list {
+  gap: 58px 0;
+}
+
+.news__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 553px;
+}
+
+.news__item-title {
+  margin-bottom: 16px;
+}
+
+.news__img {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.news__img-wrap {
+  width: 100%;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.news__img-wrap::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 104%;
+  height: 104%;
+  z-index: 0;
+  background: url("../img/news/news-frame.svg") no-repeat center/contain;
+}
+
+.news__desc {
+  max-height: 120px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  margin-bottom: 18px;
+}
+
+.news__more {
+  margin-top: auto;
+}
+
+.faq__container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.faq__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 40px 30px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.faq__search {
+  position: relative;
+}
+
+.faq__search-field {
+  padding-right: 50px;
+  width: 190px;
+}
+
+.faq__search-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 100%;
+  padding-right: 15px;
+  padding-left: 10px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.faq__search-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.faq__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.faq__item {
+  margin-top: -1px;
+  border-top: 1px solid #777777;
+  border-bottom: 1px solid #777777;
+}
+
+.faq__item-desc {
+  margin-bottom: 31px;
+}
+
+.faq__btn-download-wrap {
+  text-align: center;
+}
+
+.home-page .popular-products {
+  background: transparent;
+}
+
+.hydrodirector-page .device-hero__ellipse-wrap {
+  width: 83.3%;
+}
+
+.hydrodirector-page .device-hero__info {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.hydrodirector-page .device-hero__title {
+  margin-bottom: 19px;
+  margin-right: 9%;
+}
+
+.hydrodirector-page .device-hero__desc {
   max-width: 505px;
   margin-bottom: 40px;
   -ms-flex-item-align: end;
   align-self: flex-end;
-  margin-right: -112px;
+  margin-right: -19%;
 }
 
-.hydrodirector .device-about__btn-buy {
+.hydrodirector-page .device-hero__btn-buy {
   -ms-flex-item-align: end;
   align-self: flex-end;
-  margin-right: -43px;
+  margin-right: -7.3%;
 }
 
-.hydrodirector .device-about__device {
+.hydrodirector-page .device-hero__device {
   margin-top: -96px;
 }
 
-.hydrodirector .pluggable-sensors__container {
-  padding-bottom: 184px;
-}
-
-.hydrodirector .device-info__bg {
-  margin-top: -100px;
-  margin-bottom: 60px;
-}
-
-.hydrodirector .device-info__container {
-  padding-bottom: 130px;
-}
-
-.hydrodirector .device-connecting__bg-wrap {
+.hydrodirector-page .device-connecting__bg-wrap {
   height: calc(100% + 110px + 24px);
   margin-top: -110px;
   margin-bottom: -24px;
 }
 
-.hydrodirector .device-installation__bg-wrap {
+.hydrodirector-page .device-installation__bg-wrap {
   margin-top: -98px;
   margin-bottom: -22px;
+}
+
+.sensordirector-page .device-hero__ellipse-wrap {
+  width: calc(100% + 66px);
+}
+
+.sensordirector-page .device-hero__title {
+  margin-bottom: 26px;
+}
+
+.sensordirector-page .device-hero__title-wrap {
+  margin-right: 40px;
+}
+
+.sensordirector-page .device-hero__desc {
+  max-width: 342px;
+}
+
+.sensordirector-page .device-connecting__bg-wrap {
+  height: calc(100% + 85px - 21px);
+  margin-top: -85px;
+  margin-bottom: 21px;
+}
+
+.sensordirector-page .device-installation__bg-wrap {
+  margin-top: -190px;
+  margin-bottom: -35px;
+}
+
+.drycontactdirector-page .device-hero__ellipse-wrap {
+  width: 89.3%;
+}
+
+.drycontactdirector-page .device-hero__info {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.drycontactdirector-page .device-hero__title {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  margin-bottom: 19px;
+}
+
+.drycontactdirector-page .device-hero__desc {
+  max-width: 365px;
+  margin-bottom: 40px;
+  margin-right: 25.68%;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.drycontactdirector-page .device-hero__btn-buy {
+  margin-right: 16.67%;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.drycontactdirector-page .device-hero__device {
+  margin-top: -96px;
+}
+
+.drycontactdirector-page .device-advantages {
+  margin-bottom: 190px;
+}
+
+.drycontactdirector-page .device-advantages__container {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.drycontactdirector-page .device-advantages__bg {
+  top: unset;
+  right: -42px;
+  bottom: -40px;
+}
+
+.drycontactdirector-page .device-installation__bg-wrap {
+  margin-top: -84px;
+  margin-bottom: -22px;
+}
+
+.socketdirector-page .device-hero__ellipse-wrap {
+  width: 89.3%;
+}
+
+.socketdirector-page .device-hero__info {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.socketdirector-page .device-hero__title {
+  margin-bottom: 19px;
+}
+
+.socketdirector-page .device-hero__desc {
+  margin-bottom: 40px;
+}
+
+.socketdirector-page .device-hero__device {
+  margin-left: auto;
+  margin-top: -41px;
+}
+
+.socketdirector-page .device-advantages__container {
+  padding-bottom: 277px;
+}
+
+.socketdirector-page .device-advantages__list {
+  justify-items: end;
+}
+
+.socketdirector-page .device-advantages__bg {
+  right: unset;
+  left: 0;
+  top: 284px;
+}
+
+.socketdirector-page .device-installation__bg-wrap {
+  margin-top: -97px;
+  margin-bottom: -29px;
 }
 
 @media (min-width: 576px) {
@@ -3343,6 +4778,37 @@ textarea.white::placeholder {
   .container-sm,
   .container {
     max-width: 540px;
+  }
+
+  .popular-products__more_adaptive {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .choices__list--dropdown .choices__item--selectable::after,
+  .choices__list[aria-expanded] .choices__item--selectable::after {
+    content: attr(data-select-text);
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  [dir=rtl] .choices__list--dropdown .choices__item--selectable,
+  [dir=rtl] .choices__list[aria-expanded] .choices__item--selectable {
+    text-align: right;
+    padding-left: 100px;
+    padding-right: 10px;
+  }
+
+  [dir=rtl] .choices__list--dropdown .choices__item--selectable::after,
+  [dir=rtl] .choices__list[aria-expanded] .choices__item--selectable::after {
+    right: auto;
+    left: 10px;
   }
 }
 
@@ -3605,6 +5071,10 @@ textarea.white::placeholder {
   .container-sm,
   .container {
     max-width: 720px;
+  }
+
+  .about-app__phone_adaptive {
+    display: none;
   }
 }
 
@@ -4139,7 +5609,11 @@ textarea.white::placeholder {
   .container-md,
   .container-sm,
   .container {
-    max-width: 1110px;
+    max-width: 1134px;
+  }
+
+  .device-info__view-main {
+    height: 497px;
   }
 }
 
@@ -4162,6 +5636,8 @@ textarea.white::placeholder {
   }
 
   .quiz__video-block {
+    max-width: 548px;
+    width: 100%;
     margin: 0;
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
@@ -4174,111 +5650,7 @@ textarea.white::placeholder {
 }
 
 @media (max-width: 1199px) {
-  .device-about__title {
-    font-size: 68px;
-  }
-
-  .presentation__title {
-    font-size: 55.25px;
-  }
-
-  .about-app__title,
-  .subscribe-news__title,
-  .section-title__heading,
-  html h2 {
-    font-size: 40.8px;
-  }
-
-  .device-about__text,
-  .quiz__title-heading {
-    font-size: 32.3px;
-  }
-
-  .device-installation__text-block,
-  .device-connecting__desc,
-  .application__desc {
-    font-size: 27.2px;
-  }
-
-  .device-characteristics__item-title,
-  .products__price,
-  .review__item-title,
-  .popular-products__item-price,
-  .quiz__slider-title,
-  .benefits__heading {
-    font-size: 25.5px;
-  }
-
-  .products__name,
-  .review__item-name,
-  .about-app__item-title::before,
-  .popular-products__item-title {
-    font-size: 20.4px;
-  }
-
-  .current-news__item-title,
-  .about-app__item-title {
-    font-size: 20.4px;
-  }
-
-  .device-info__text {
-    font-size: 19.55px;
-  }
-
-  .pluggable-sensors__name {
-    font-size: 18.7px;
-  }
-
-  .quiz__form-text {
-    font-size: 18.7px;
-  }
-
-  .footer__contacts-link,
-  .footer__title {
-    font-size: 17px;
-  }
-
-  .device-about__desc,
-  .slider-1 .slider__active-slide {
-    font-size: 17px;
-  }
-
-  .pluggable-sensors__item-info,
-  .btn-play__text,
-  .btn {
-    font-size: 14.45px;
-  }
-
-  .popular-products__more,
-  .presentation__desc,
-  .nav__list,
-  input,
-  textarea,
-  html body {
-    font-size: 14.45px;
-  }
-
-  .partners__info,
-  .benefits__link-text {
-    font-size: 13.6px;
-  }
-
-  .current-news__item-desc-wrap {
-    font-size: 12.75px;
-  }
-
-  .device-info__tooltip-btn,
-  .discount__text {
-    font-size: 11.9px;
-  }
-
-  .header__nav {
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 991px) {
-  .device-about__title {
+  .device-hero__title {
     font-size: 60px;
   }
 
@@ -4293,7 +5665,203 @@ textarea.white::placeholder {
     font-size: 36px;
   }
 
-  .device-about__text,
+  .device-info__price,
+  .device-info__name,
+  .device-hero__text,
+  .quiz__title-heading {
+    font-size: 32.3px;
+  }
+
+  .device-installation__text-block,
+  .device-connecting__desc,
+  .application__desc {
+    font-size: 27.2px;
+  }
+
+  .cart__name,
+  .cart__price,
+  .offer-sensors__price,
+  .device-characteristics__item-title,
+  .catalog-products__price,
+  .review__item-title,
+  .popular-products__item-price,
+  .quiz__item-title,
+  .benefits__heading,
+  .order__title {
+    font-size: 25.5px;
+  }
+
+  .faq__item-title,
+  .news__item-title,
+  .catalog-products__name,
+  .review__item-name,
+  .about-app__item-title::before,
+  .popular-products__item-title {
+    font-size: 20.4px;
+  }
+
+  .checkout__form-title,
+  .offer-sensors__name,
+  .current-news__item-title,
+  .about-app__item-title {
+    font-size: 20.4px;
+  }
+
+  .device-equipped__text {
+    font-size: 19.55px;
+  }
+
+  .pluggable-sensors__name,
+  .order__row {
+    font-size: 18.7px;
+  }
+
+  .device-info__field-wrap .choices,
+  .quiz__form-text,
+  .counter__value {
+    font-size: 18.7px;
+  }
+
+  .footer__contacts-link,
+  .footer__title {
+    font-size: 17px;
+  }
+
+  .cart__quantity,
+  .device-hero__desc,
+  .slider-1 .slider__active-slide {
+    font-size: 17px;
+  }
+
+  .device-info__list-title,
+  .device-info__about-title,
+  .device-info__form,
+  .more {
+    font-size: 16.15px;
+  }
+
+  .pluggable-sensors__item-info,
+  .btn-play__text,
+  .btn {
+    font-size: 14.45px;
+  }
+
+  .checkout__field-wrap,
+  .popular-products__more,
+  .presentation__desc,
+  .nav__list,
+  .order__row-text_small,
+  html body {
+    font-size: 14.45px;
+  }
+
+  .partners__info,
+  .benefits__link-text {
+    font-size: 13.6px;
+  }
+
+  .current-news__item-desc-wrap,
+  .order__data-text {
+    font-size: 12.75px;
+  }
+
+  .device-equipped__tooltip-btn,
+  .discount__text {
+    font-size: 11.9px;
+  }
+
+  .header__nav {
+    margin-left: 0;
+  }
+
+  .subscribe-news {
+    background-position: top right -20%;
+    background-size: 50% auto;
+  }
+
+  .subscribe-news__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .subscribe-news__form > * {
+    width: 70%;
+    height: 45px;
+  }
+
+  .contacts {
+    background-position: top left -20%;
+    background-size: 40% auto;
+  }
+
+  .device-hero__device {
+    width: 70%;
+  }
+
+  .device-advantages__bg {
+    top: 50% !important;
+    -webkit-transform: translateY(-60%);
+    -ms-transform: translateY(-60%);
+    transform: translateY(-60%);
+    width: 50% !important;
+  }
+
+  .device-connecting__bg-wrap {
+    top: 50% !important;
+    -webkit-transform: translateY(-50%) !important;
+    -ms-transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
+    width: 40%;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .delivery__desc {
+    margin-top: 0;
+  }
+
+  .cart__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .news__item {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 1199px) and (max-width: 575px) {
+  .subscribe-news__form > * {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .device-hero__title {
+    font-size: 52px;
+  }
+
+  .presentation__title {
+    font-size: 42.25px;
+  }
+
+  .about-app__title,
+  .subscribe-news__title,
+  .section-title__heading,
+  html h2 {
+    font-size: 31.2px;
+  }
+
+  .device-info__price,
+  .device-info__name,
+  .device-hero__text,
   .quiz__title-heading {
     font-size: 28.5px;
   }
@@ -4304,36 +5872,47 @@ textarea.white::placeholder {
     font-size: 24px;
   }
 
+  .cart__name,
+  .cart__price,
+  .offer-sensors__price,
   .device-characteristics__item-title,
-  .products__price,
+  .catalog-products__price,
   .review__item-title,
   .popular-products__item-price,
-  .quiz__slider-title,
-  .benefits__heading {
+  .quiz__item-title,
+  .benefits__heading,
+  .order__title {
     font-size: 22.5px;
   }
 
-  .products__name,
+  .faq__item-title,
+  .news__item-title,
+  .catalog-products__name,
   .review__item-name,
   .about-app__item-title::before,
   .popular-products__item-title {
     font-size: 18px;
   }
 
+  .checkout__form-title,
+  .offer-sensors__name,
   .current-news__item-title,
   .about-app__item-title {
     font-size: 18px;
   }
 
-  .device-info__text {
+  .device-equipped__text {
     font-size: 17.25px;
   }
 
-  .pluggable-sensors__name {
+  .pluggable-sensors__name,
+  .order__row {
     font-size: 16.5px;
   }
 
-  .quiz__form-text {
+  .device-info__field-wrap .choices,
+  .quiz__form-text,
+  .counter__value {
     font-size: 16.5px;
   }
 
@@ -4342,9 +5921,17 @@ textarea.white::placeholder {
     font-size: 15px;
   }
 
-  .device-about__desc,
+  .cart__quantity,
+  .device-hero__desc,
   .slider-1 .slider__active-slide {
     font-size: 15px;
+  }
+
+  .device-info__list-title,
+  .device-info__about-title,
+  .device-info__form,
+  .more {
+    font-size: 14.25px;
   }
 
   .pluggable-sensors__item-info,
@@ -4353,11 +5940,11 @@ textarea.white::placeholder {
     font-size: 12.75px;
   }
 
+  .checkout__field-wrap,
   .popular-products__more,
   .presentation__desc,
   .nav__list,
-  input,
-  textarea,
+  .order__row-text_small,
   html body {
     font-size: 12.75px;
   }
@@ -4367,11 +5954,12 @@ textarea.white::placeholder {
     font-size: 12px;
   }
 
-  .current-news__item-desc-wrap {
+  .current-news__item-desc-wrap,
+  .order__data-text {
     font-size: 11.25px;
   }
 
-  .device-info__tooltip-btn,
+  .device-equipped__tooltip-btn,
   .discount__text {
     font-size: 10.5px;
   }
@@ -4388,117 +5976,134 @@ textarea.white::placeholder {
     display: none;
   }
 
+  .presentation__container {
+    padding-bottom: 113px;
+  }
+
   .presentation .slider__btn-wrap {
     bottom: 42px;
+  }
+
+  .partners__img-wrap {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: static;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .contacts__field-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .device-advantages__bg {
+    display: none;
+  }
+
+  .device-advantages__item {
+    -ms-grid-column-span: 6;
+    grid-column: 6 span;
+  }
+
+  .device-equipped__list_flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: wrap;
+    flex-direction: wrap;
+  }
+
+  .device-equipped__list {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
+  .device-connecting__bg-wrap {
+    width: 30%;
+  }
+
+  .device-installation__bg-wrap {
+    margin: 0 !important;
+  }
+
+  .device-info__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .hydrodirector-page .device-hero__ellipse-wrap {
+    width: 100%;
+  }
+
+  .hydrodirector-page .device-hero__desc {
+    margin-right: -6%;
+  }
+
+  .hydrodirector-page .device-hero__btn-buy {
+    margin-right: -3%;
+  }
+
+  .hydrodirector-page .device-hero__device {
+    margin-top: -60px;
+  }
+
+  .sensordirector-page .device-hero__ellipse-wrap {
+    width: 130%;
+  }
+
+  .drycontactdirector-page .device-hero__ellipse-wrap {
+    width: 100%;
+  }
+
+  .drycontactdirector-page .device-hero__desc {
+    margin-right: 15.68%;
+  }
+
+  .drycontactdirector-page .device-hero__btn-buy {
+    margin-right: 6.67%;
+  }
+
+  .drycontactdirector-page .device-hero__device {
+    margin-top: -60px;
+  }
+
+  .socketdirector-page .device-hero__ellipse-wrap {
+    width: 100%;
+  }
+
+  .socketdirector-page .device-hero__info {
+    margin-bottom: 30px;
+  }
+
+  .socketdirector-page .device-hero__device {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 991px) and (max-width: 575px) {
+  .hydrodirector-page .device-hero__ellipse-wrap {
+    height: 400px;
+  }
+
+  .drycontactdirector-page .device-hero__ellipse-wrap {
+    height: 400px;
+  }
+
+  .socketdirector-page .device-hero__ellipse-wrap {
+    height: 400px;
   }
 }
 
 @media (max-width: 767px) {
-  .device-about__title {
-    font-size: 52px;
-  }
-
-  .presentation__title {
-    font-size: 42.25px;
-  }
-
-  .about-app__title,
-  .subscribe-news__title,
-  .section-title__heading,
-  html h2 {
-    font-size: 31.2px;
-  }
-
-  .device-about__text,
-  .quiz__title-heading {
-    font-size: 24.7px;
-  }
-
-  .device-installation__text-block,
-  .device-connecting__desc,
-  .application__desc {
-    font-size: 20.8px;
-  }
-
-  .device-characteristics__item-title,
-  .products__price,
-  .review__item-title,
-  .popular-products__item-price,
-  .quiz__slider-title,
-  .benefits__heading {
-    font-size: 19.5px;
-  }
-
-  .products__name,
-  .review__item-name,
-  .about-app__item-title::before,
-  .popular-products__item-title {
-    font-size: 15.6px;
-  }
-
-  .current-news__item-title,
-  .about-app__item-title {
-    font-size: 15.6px;
-  }
-
-  .device-info__text {
-    font-size: 14.95px;
-  }
-
-  .pluggable-sensors__name {
-    font-size: 14.3px;
-  }
-
-  .quiz__form-text {
-    font-size: 14.3px;
-  }
-
-  .footer__contacts-link,
-  .footer__title {
-    font-size: 13px;
-  }
-
-  .device-about__desc,
-  .slider-1 .slider__active-slide {
-    font-size: 13px;
-  }
-
-  .pluggable-sensors__item-info,
-  .btn-play__text,
-  .btn {
-    font-size: 11.05px;
-  }
-
-  .popular-products__more,
-  .presentation__desc,
-  .nav__list,
-  input,
-  textarea,
-  html body {
-    font-size: 11.05px;
-  }
-
-  .partners__info,
-  .benefits__link-text {
-    font-size: 10.4px;
-  }
-
-  .current-news__item-desc-wrap {
-    font-size: 9.75px;
-  }
-
-  .device-info__tooltip-btn,
-  .discount__text {
-    font-size: 9.1px;
-  }
-
-  .presentation__bg {
-    display: none;
-  }
-}
-
-@media (ma-width: 575px) {
-  .device-about__title {
+  .device-hero__title {
     font-size: 40px;
   }
 
@@ -4513,7 +6118,412 @@ textarea.white::placeholder {
     font-size: 24px;
   }
 
-  .device-about__text,
+  .device-info__price,
+  .device-info__name,
+  .device-hero__text,
+  .quiz__title-heading {
+    font-size: 24.7px;
+  }
+
+  .device-installation__text-block,
+  .device-connecting__desc,
+  .application__desc {
+    font-size: 20.8px;
+  }
+
+  .cart__name,
+  .cart__price,
+  .offer-sensors__price,
+  .device-characteristics__item-title,
+  .catalog-products__price,
+  .review__item-title,
+  .popular-products__item-price,
+  .quiz__item-title,
+  .benefits__heading,
+  .order__title {
+    font-size: 19.5px;
+  }
+
+  .faq__item-title,
+  .news__item-title,
+  .catalog-products__name,
+  .review__item-name,
+  .about-app__item-title::before,
+  .popular-products__item-title {
+    font-size: 15.6px;
+  }
+
+  .checkout__form-title,
+  .offer-sensors__name,
+  .current-news__item-title,
+  .about-app__item-title {
+    font-size: 15.6px;
+  }
+
+  .device-equipped__text {
+    font-size: 14.95px;
+  }
+
+  .pluggable-sensors__name,
+  .order__row {
+    font-size: 14.3px;
+  }
+
+  .device-info__field-wrap .choices,
+  .quiz__form-text,
+  .counter__value {
+    font-size: 14.3px;
+  }
+
+  .footer__contacts-link,
+  .footer__title {
+    font-size: 13px;
+  }
+
+  .cart__quantity,
+  .device-hero__desc,
+  .slider-1 .slider__active-slide {
+    font-size: 13px;
+  }
+
+  .device-info__list-title,
+  .device-info__about-title,
+  .device-info__form,
+  .more {
+    font-size: 12.35px;
+  }
+
+  .pluggable-sensors__item-info,
+  .btn-play__text,
+  .btn {
+    font-size: 11.05px;
+  }
+
+  .checkout__field-wrap,
+  .popular-products__more,
+  .presentation__desc,
+  .nav__list,
+  .order__row-text_small,
+  html body {
+    font-size: 11.05px;
+  }
+
+  .partners__info,
+  .benefits__link-text {
+    font-size: 10.4px;
+  }
+
+  .current-news__item-desc-wrap,
+  .order__data-text {
+    font-size: 9.75px;
+  }
+
+  .device-equipped__tooltip-btn,
+  .discount__text {
+    font-size: 9.1px;
+  }
+
+  .slider__btn-wrap {
+    display: none !important;
+  }
+
+  .presentation__bg {
+    display: none;
+  }
+
+  .quiz__title-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .quiz__item {
+    padding: 20px;
+  }
+
+  .about-app__phone {
+    display: none;
+  }
+
+  .about-app__phone_adaptive {
+    display: block;
+  }
+
+  .review__slider {
+    padding: 0;
+  }
+
+  .review__item {
+    padding: 20px 42px;
+  }
+
+  .partners__info {
+    right: 5%;
+  }
+
+  .contacts {
+    background: -webkit-gradient(linear, left top, left bottom, from(#0F4C6F), to(#0B3D59));
+    background: -o-linear-gradient(top, #0F4C6F 0%, #0B3D59 100%);
+    background: linear-gradient(180deg, #0F4C6F 0%, #0B3D59 100%);
+  }
+
+  .device-equipped__list {
+    -webkit-column-count: unset;
+    -moz-column-count: unset;
+    column-count: unset;
+  }
+
+  .application__phone-wrap {
+    margin: 0;
+  }
+
+  .device-connecting__bg-wrap {
+    display: none;
+  }
+
+  .device-installation__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 30px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .device-installation__text-block {
+    padding: 0;
+  }
+
+  .device-installation__bg-wrap {
+    width: 60%;
+  }
+
+  .device-info__view-item {
+    height: 140px;
+  }
+
+  .cart__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .cart__img-wrap {
+    max-width: 100%;
+  }
+
+  .hydrodirector-page .device-hero__title {
+    margin-right: 0;
+  }
+
+  .hydrodirector-page .device-hero__desc {
+    margin-right: 0;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+  }
+
+  .hydrodirector-page .device-hero__btn-buy {
+    margin-right: 6%;
+  }
+}
+
+@media (max-width: 575px) {
+  .btn {
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .btn__text {
+    min-width: unset;
+    white-space: nowrap;
+  }
+
+  .acc__icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .order {
+    padding: 15px;
+  }
+
+  .order__row {
+    gap: 24px;
+  }
+
+  .order__row-title {
+    width: 75px;
+  }
+
+  .popular-products__more {
+    display: none;
+  }
+
+  .popular-products__more_adaptive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+
+  .popular-products__desc {
+    margin-bottom: 30px;
+  }
+
+  .subscribe-news {
+    background: -webkit-gradient(linear, left top, left bottom, from(#0F4C6F), to(#0B3D59));
+    background: -o-linear-gradient(top, #0F4C6F 0%, #0B3D59 100%);
+    background: linear-gradient(180deg, #0F4C6F 0%, #0B3D59 100%);
+  }
+
+  .review__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .review__item-avatar {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .review__item-content {
+    width: 100%;
+  }
+
+  .catalog-products__list {
+    gap: 30px 0;
+  }
+
+  .device-hero__ellipse {
+    height: 100%;
+  }
+
+  .device-hero__ellipse-wrap {
+    width: 100% !important;
+    height: 350px;
+  }
+
+  .device-hero__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .device-hero__device {
+    width: 100%;
+    margin: 0 auto 20px auto !important;
+  }
+
+  .device-advantages__item {
+    -ms-grid-column-span: 12;
+    grid-column: 12 span;
+  }
+
+  .device-equipped__bg {
+    margin-top: -60px;
+  }
+
+  .application__phone-wrap {
+    margin: 0 auto;
+  }
+
+  .device-info__view-list {
+    display: none;
+  }
+
+  .delivery__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hydrodirector-page .device-hero__desc {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .hydrodirector-page .device-hero__btn-buy {
+    margin-right: 0;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+  }
+
+  .drycontactdirector-page .device-hero__desc {
+    margin: 0;
+    -ms-flex-item-align: unset;
+    -ms-grid-row-align: unset;
+    align-self: unset;
+  }
+
+  .drycontactdirector-page .device-hero__btn-buy {
+    margin: 0;
+    -ms-flex-item-align: unset;
+    -ms-grid-row-align: unset;
+    align-self: unset;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .device-info__view-item {
+    height: 140px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .socketdirector-page .device-hero__info {
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (ma-width: 575px) {
+  .device-hero__title {
+    font-size: 32px;
+  }
+
+  .presentation__title {
+    font-size: 26px;
+  }
+
+  .about-app__title,
+  .subscribe-news__title,
+  .section-title__heading,
+  html h2 {
+    font-size: 19.2px;
+  }
+
+  .device-info__price,
+  .device-info__name,
+  .device-hero__text,
   .quiz__title-heading {
     font-size: 19px;
   }
@@ -4524,36 +6534,47 @@ textarea.white::placeholder {
     font-size: 16px;
   }
 
+  .cart__name,
+  .cart__price,
+  .offer-sensors__price,
   .device-characteristics__item-title,
-  .products__price,
+  .catalog-products__price,
   .review__item-title,
   .popular-products__item-price,
-  .quiz__slider-title,
-  .benefits__heading {
+  .quiz__item-title,
+  .benefits__heading,
+  .order__title {
     font-size: 15px;
   }
 
-  .products__name,
+  .faq__item-title,
+  .news__item-title,
+  .catalog-products__name,
   .review__item-name,
   .about-app__item-title::before,
   .popular-products__item-title {
     font-size: 12px;
   }
 
+  .checkout__form-title,
+  .offer-sensors__name,
   .current-news__item-title,
   .about-app__item-title {
     font-size: 12px;
   }
 
-  .device-info__text {
+  .device-equipped__text {
     font-size: 11.5px;
   }
 
-  .pluggable-sensors__name {
+  .pluggable-sensors__name,
+  .order__row {
     font-size: 11px;
   }
 
-  .quiz__form-text {
+  .device-info__field-wrap .choices,
+  .quiz__form-text,
+  .counter__value {
     font-size: 11px;
   }
 
@@ -4562,9 +6583,17 @@ textarea.white::placeholder {
     font-size: 10px;
   }
 
-  .device-about__desc,
+  .cart__quantity,
+  .device-hero__desc,
   .slider-1 .slider__active-slide {
     font-size: 10px;
+  }
+
+  .device-info__list-title,
+  .device-info__about-title,
+  .device-info__form,
+  .more {
+    font-size: 9.5px;
   }
 
   .pluggable-sensors__item-info,
@@ -4573,11 +6602,11 @@ textarea.white::placeholder {
     font-size: 8.5px;
   }
 
+  .checkout__field-wrap,
   .popular-products__more,
   .presentation__desc,
   .nav__list,
-  input,
-  textarea,
+  .order__row-text_small,
   html body {
     font-size: 8.5px;
   }
@@ -4587,11 +6616,12 @@ textarea.white::placeholder {
     font-size: 8px;
   }
 
-  .current-news__item-desc-wrap {
+  .current-news__item-desc-wrap,
+  .order__data-text {
     font-size: 7.5px;
   }
 
-  .device-info__tooltip-btn,
+  .device-equipped__tooltip-btn,
   .discount__text {
     font-size: 7px;
   }
