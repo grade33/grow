@@ -18,12 +18,12 @@ html(lang="ru")
         section.cart
           .container.cart__container 
             +sectionTitle('Cart','cart__title')
-            .cart__content
+            form.cart__content
               ul.cart__list 
                 li.cart__item 
                   .cart__img-wrap 
                     img.cart__img(src="@img/card/card-1.png", alt="Cart Product Img")
-                  form.cart__text-block 
+                  .cart__text-block 
                     .cart__item-top
                       h3.cart__name HydroDirector PRO
                       span.cart__price $635
@@ -40,7 +40,7 @@ html(lang="ru")
                     .cart__item-bottom
                       input.cart__coupon-field(type="text" placeholder="Coupon code")
                       +btn('gray','Apply coupon',1,'cart__coupon-btn')
-              form.order.cart__order(action="#") 
+              .order.cart__order(action="#") 
                 .order__text-block
                   strong.order__title Order Summary
                   .order__row
@@ -54,8 +54,9 @@ html(lang="ru")
                     span.order__row-title Total:
                     span.order__row-text $1270
                 .order__pay
-                  +link('green','Proceed to checkout','#','order__pay-btn order__pay-btn_green')
+                  +link('green','Proceed to checkout','./checkout.html','order__pay-btn order__pay-btn_green')
                   span.order__pay-text or
                   a.btn.btn__trs.order__pay-btn.order__pay-btn_trs(href="#")
                     img(src="@img/paypal.svg", alt="Paypal")
+      
       include ./html/footer.pug

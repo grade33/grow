@@ -24,8 +24,8 @@ html(lang="ru")
                     h1.presentation__title.col-xl-7.col-md-8.col-sm-10.col Grow faster, bigger, easier with us
                     p.presentation__desc.col-xl-4.col-md-5.col-sm-7.col We've got you covered with fully automated remote environmental controller
                     .presentation__btn-wrap 
-                      +link('green','Select device','#','presentation__btn')
-                      +btnVideo('presentation__btn-video')
+                      +link('green','Select device','./catalog.html','presentation__btn')
+                      +linkVideo('presentation__btn-video', '#video')
               .container.slider__btn-wrap
                 button.slider__btn.slider__btn_prev(type="button")
                   svg.slider__btn-icon
@@ -59,7 +59,7 @@ html(lang="ru")
         section.quiz
           .container
             .quiz__container
-              .quiz__video-block
+              .quiz__video-block#video
                 button.quiz__video-btn(type="button")
                   svg.quiz__video-icon
                     use(xlink:href="@img/sprite.svg#video-play")
@@ -104,7 +104,7 @@ html(lang="ru")
           .container.popular-products__container
             .popular-products__top 
               +sectionTitle('Bestsellers','popular-products__title')
-              a.popular-products__more(href="#") 
+              a.popular-products__more(href="./catalog.html") 
                 span.popular-products__more-text All products
                 svg.popular-products__more-icon
                   use(xlink:href="@img/sprite.svg#arrow-long")
@@ -118,17 +118,17 @@ html(lang="ru")
                 img.popular-products__item-img(src="@img/product-1.png", alt="Product")
                 strong.popular-products__item-title HydroDirector
                 span.popular-products__item-price $635
-                +link('green','Open a shop','#','popular-products__item-btn')
+                +link('green','Open a shop','./product-page.html','popular-products__item-btn')
               li.popular-products__item.col-md-4.col-sm-6.col-12
                 img.popular-products__item-img(src="@img/product-2.png", alt="Product")
                 strong.popular-products__item-title DryContactDirector
                 span.popular-products__item-price $365
-                +link('green','Open a shop','#','popular-products__item-btn')
+                +link('green','Open a shop','./product-page.html','popular-products__item-btn')
               li.popular-products__item.col-md-4.col-sm-6.col-12
                 img.popular-products__item-img(src="@img/product-3.png", alt="Product")
                 strong.popular-products__item-title SensorDirector
                 span.popular-products__item-price $365
-                +link('green','Open a shop','#','popular-products__item-btn')
+                +link('green','Open a shop','./product-page.html','popular-products__item-btn')
             
         section.subscribe-news
           .container.subscribe-news__container
@@ -171,29 +171,29 @@ html(lang="ru")
             .slider.slider-3.current-news__item
               ul.slider__wrapper.row
                 li.slider__slide.current-news__item.col-lg-3.col-md-4.col-sm-6
-                  .current-news__item__inner
+                  a.current-news__item__inner(href="./news.html")
                     .current-news__item-img-wrap
                       img.current-news__item-img(src="@img/current-news-1.jpg", alt="Novelty")
                     h3.current-news__item-title Indoor Growing
                 li.slider__slide.current-news__item.col-lg-3.col-md-4.col-sm-6
-                  .current-news__item__inner
+                  a.current-news__item__inner(href="./news.html")
                     .current-news__item-img-wrap
                       img.current-news__item-img(src="@img/current-news-2.jpg", alt="Novelty")
                       .current-news__item-desc-wrap 
                         p.current-news__item-desc Hydroponics is a modern method of growing plants in a closed and controlled ecological system. A large variety of plants do not ...
                     h3.current-news__item-title Hydroponic Growing
                 li.slider__slide.current-news__item.col-lg-3.col-md-4.col-sm-6
-                  .current-news__item__inner
+                  a.current-news__item__inner(href="./news.html")
                     .current-news__item-img-wrap
                       img.current-news__item-img(src="@img/current-news-3.jpg", alt="Novelty")
                     h3.current-news__item-title Home-based urban agriculture
                 li.slider__slide.current-news__item.col-lg-3.col-md-4.col-sm-6
-                  .current-news__item__inner
+                  a.current-news__item__inner(href="./news.html")
                     .current-news__item-img-wrap
                       img.current-news__item-img(src="@img/current-news-4.jpg", alt="Novelty")
                     h3.current-news__item-title Greenhouse growing
                 li.slider__slide.current-news__item.col-lg-3.col-md-4.col-sm-6
-                  .current-news__item__inner
+                  a.current-news__item__inner(href="./news.html")
                     .current-news__item-img-wrap
                       img.current-news__item-img(src="@img/current-news-5.jpg", alt="Novelty")
                     h3.current-news__item-title Indoor Growing

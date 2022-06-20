@@ -1,20 +1,47 @@
 mixin header()
   header.header
     .container.header__container
-      a.logo.header__logo(href="#") 
+      a.logo.header__logo(href="./index.html") 
         img.logo__img(src="@img/logo.png", alt="Логотип Grown Director")
       nav.nav.header__nav 
         ul.nav__list
           li.nav__item
-            a.nav__link(href="#") Products
+            button.nav__link(type="button") Products
+            .product-menu
+              .container.product-menu__container
+                .slider.slider-5.product-menu__slider
+                  ul.slider__wrapper
+                    li.slider__slide
+                      a.product-menu__link(href="./hydrodirector.html") 
+                        img.product-menu__img(src="@img/menu-products/product-1.png", alt="Device")
+                        span.product-menu__name HydroDirector
+                    li.slider__slide
+                      a.product-menu__link(href="./drycontactdirector.html") 
+                        img.product-menu__img(src="@img/menu-products/product-2.png", alt="Device")
+                        span.product-menu__name DryContactDirector
+                    li.slider__slide
+                      a.product-menu__link(href="./sensordirector.html") 
+                        img.product-menu__img(src="@img/menu-products/product-3.png", alt="Device")
+                        span.product-menu__name SensorDirector
+                    li.slider__slide
+                      a.product-menu__link(href="./socketdirector.html") 
+                        img.product-menu__img(src="@img/menu-products/product-4.png", alt="Device")
+                        span.product-menu__name SocketDirector
+                  .slider__btn-wrap
+                    button.slider__btn.slider__btn_prev(type="button" disabled)
+                      svg.slider__btn-icon
+                        use(xlink:href="@img/sprite.svg#arrow-long")
+                    button.slider__btn.slider__btn_next(type="button" )
+                      svg.slider__btn-icon
+                        use(xlink:href="@img/sprite.svg#arrow-long")
           li.nav__item
-            a.nav__link(href="#") Catalogue
+            a.nav__link(href="./catalog.html") Catalogue
           li.nav__item
             a.nav__link(href="#") About
           li.nav__item
             a.nav__link(href="#") Education
           li.nav__item
-            a.nav__link(href="#") FAQ
+            a.nav__link(href="./faq.html") FAQ
       ul.social.header__social
         li.social__item
           a.social__link(href="#") 
@@ -31,7 +58,7 @@ mixin header()
             svg.header__user-menu-icon
               use(xlink:href="@img/sprite.svg#user")
         li.header__user-menu-item
-          a.header__user-menu-link(href="#") 
+          a.header__user-menu-link(href="./cart.html") 
             svg.header__user-menu-icon
               use(xlink:href="@img/sprite.svg#basket")
       
@@ -40,7 +67,6 @@ mixin header()
         span.burger__item
         span.burger__item
       .popup
-        
         .menu
           .container.menu__container
             nav.nav.header__nav 
@@ -74,4 +100,3 @@ mixin header()
                 a.header__user-menu-link(href="#") 
                   svg.header__user-menu-icon
                     use(xlink:href="@img/sprite.svg#basket")
-  

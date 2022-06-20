@@ -25,6 +25,7 @@
         display: none;
       }
     }
+
   }
 
   &__social {
@@ -2064,7 +2065,6 @@
       }
     }
   }
-
   .device-connecting {
     &__bg {
       &-wrap {
@@ -2074,7 +2074,6 @@
       }
     }
   }
-
   .device-installation {
     &__bg {
       &-wrap {
@@ -2139,7 +2138,6 @@
       }
     }
   }
-
   .device-connecting {
     &__bg {
       &-wrap {
@@ -2149,7 +2147,6 @@
       }
     }
   }
-
   .device-installation {
     &__bg {
       &-wrap {
@@ -2224,7 +2221,28 @@
       }
     }
   }
-
+  .device-advantages {
+    margin-bottom: 190px;
+  
+    &__container {
+      position: relative;
+      padding-bottom: 0;
+    }
+  
+    &__bg {
+      top: unset;
+      right: -42px;
+      bottom: -40px;
+    }
+  }
+  .device-installation {
+    &__bg {
+      &-wrap {
+        margin-top: -84px;
+        margin-bottom: -22px;
+      }
+    }
+  }
 }
 
 .socketdirector-page {
@@ -2313,29 +2331,6 @@
   }
 }
 
-.device-advantages {
-  margin-bottom: 190px;
 
-  &__container {
-    position: relative;
-    padding-bottom: 0;
-  }
-
-  &__bg {
-    top: unset;
-    right: -42px;
-    bottom: -40px;
-  }
-}
-
-.device-installation {
-  &__bg {
-    &-wrap {
-      margin-top: -84px;
-      margin-bottom: -22px;
-    }
-  }
-
-}
 
 

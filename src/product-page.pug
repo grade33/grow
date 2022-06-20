@@ -9,7 +9,7 @@ html(lang="ru")
     title Карточка товара
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
-  body.card-page
+  body.product-page
       +discount
       +header()
 
@@ -71,21 +71,21 @@ html(lang="ru")
                 strong.offer-sensors__name Temperature&amp;Humidity sensor
                 span.offer-sensors__price $55
                 +counter('offer-sensors__counter')
-                +link('green','Add to card','#','offer-sensors__btn')
+                +btn('green','Add to card',1,'offer-sensors__btn')
               li.offer-sensors__item.col-md-4
                 .offer-sensors__img-wrap
                   img.offer-sensors__img(src="@img/offer-sensors/sensor-2.png", alt="Sensor")
                 strong.offer-sensors__name Soil moisture sensor
                 span.offer-sensors__price $130
                 +counter('offer-sensors__counter')
-                +link('green','Add to card','#','offer-sensors__btn')
+                +btn('green','Add to card',1,'offer-sensors__btn')
               li.offer-sensors__item.col-md-4
                 .offer-sensors__img-wrap
                   img.offer-sensors__img(src="@img/offer-sensors/sensor-3.png", alt="Sensor")
                 strong.offer-sensors__name LUX sensor
                 span.offer-sensors__price $130
                 +counter('offer-sensors__counter')
-                +link('green','Add to card','#','offer-sensors__btn')
+                +btn('green','Add to card',1,'offer-sensors__btn')
         
         section.delivery
           .container.delivery__container

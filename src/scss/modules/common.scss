@@ -22,16 +22,20 @@ html body {
   &__item {
     position: absolute;
     left: 0;
+
     &:first-child {
       top: 0;
     }
+
     &:nth-child(2) {
       top: 50%;
       transform: translateY(-50%);
     }
+
     &:last-child {
       bottom: 0;
     }
+
     display: block;
     width: 100%;
     height: 1px;
@@ -47,17 +51,100 @@ html body {
     .burger__item {
       top: 50%;
       left: 0;
+
       &:nth-child(2) {
         visibility: hidden;
         opacity: 0;
       }
-      
+
       &:first-child {
         transform: translateY(-50%) rotate(45deg);
       }
+
       &:last-child {
         transform: translateY(-50%) rotate(-45deg);
       }
+    }
+  }
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__icon {
+    flex: none;
+    color: $green;
+    width: 24px;
+    height: 38px;
+  }
+
+  &__heading {
+    @extend %semibold-48-inter;
+  }
+}
+
+.radio {
+  &__custom {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid $gray4;
+    transition: border-color .2s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      background-color: transparent;
+      border-radius: 50%;
+      transition: background-color .2s ease-in-out;
+    }
+  }
+
+  &:checked+&__custom {
+    border-color: $green;
+
+    &::after {
+      background-color: $green;
+    }
+  }
+}
+
+.checkbox {
+  &__custom {
+    position: relative;
+    display: inline-block;
+    flex: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+    border: 1px solid $black;
+    transition: border-color .2s ease-in-out,
+      background-color .2s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: background-color .2s ease-in-out;
+    }
+  }
+
+  &:checked+&__custom {
+    border-color: $green;
+    background-color: $green;
+
+    &::after {
+      content: url('@img/check.svg');
     }
   }
 }
@@ -73,7 +160,8 @@ html body {
   z-index: 20;
   background: rgba($black, .6);
   transition: opacity .3s ease-in-out,
-  visibility .3s ease-in-out;
+    visibility .3s ease-in-out;
+
   &_active {
     visibility: visible;
     opacity: 1;
@@ -89,10 +177,15 @@ html body {
   background: $white;
   overflow: auto;
   transform: translateX(-100%);
-  transition: transform .3s ease-in-out;
+  visibility: hidden;
+  transition: transform .3s ease-in-out,
+    visibility .3s ease-in-out;
+
   &_active {
+    visibility: visible;
     transform: translateX(0);
   }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -107,9 +200,11 @@ html body {
     margin: 0;
     gap: 25px;
   }
+
   .header__user-menu {
     margin-bottom: 20px;
   }
+
   .header__social {
     flex-direction: row;
     flex-wrap: wrap;
@@ -132,14 +227,17 @@ html body {
   transition: background-color .2s ease-in-out,
     color .2s ease-in-out,
     border-color .2s ease-in-out;
+
   @media (max-width: 575px) {
     width: 100%;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
   &__text {
     display: inline-block;
     min-width: 139px;
+
     @media (max-width: 575px) {
       min-width: unset;
       white-space: nowrap;
@@ -246,6 +344,7 @@ html body {
   align-items: center;
   gap: 18px;
   @extend %regular-18-inter;
+
   &__icon {
     width: 30px;
     height: 16px;
@@ -261,21 +360,25 @@ html body {
   align-items: center;
   border: 1px solid $gray;
   border-radius: 8px;
+
   &__btn {
     padding: 9px 18px;
     font-size: 28px;
     font-family: 'Gilroy';
     line-height: 24px;
+
     &_minus {
       border-right: 1px solid $gray;
       border-radius: 8px 0px 0px 8px;
     }
+
     &_plus {
       border-radius: 0px 8px 8px 0px;
       border-left: 1px solid $gray;
     }
-    
+
   }
+
   &__value {
     padding: 0px 25px;
     @extend %regular-22-gilroy;
@@ -321,17 +424,51 @@ textarea {
   }
 }
 
+.product-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding-top: 42px;
+  padding-bottom: 52px;
+  background: $white;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease-in-out,
+    visibility .3s ease-in-out;
+
+  .slider {
+    &__wrapper {
+      gap: 54px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+
+  &__name {
+    @extend %semibold-21-gilroy;
+  }
+}
+
 .acc {
   &_active {
     .acc__icon {
       &_open {
         display: none;
       }
+
       &_close {
         display: block;
       }
     }
   }
+
   &__trigger {
     padding: 27px 0;
     display: flex;
@@ -341,19 +478,23 @@ textarea {
     text-align: left;
     width: 100%;
   }
+
   &__panel {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
   }
+
   &__icon {
     flex: none;
     width: 41px;
     height: 41px;
+
     @media (max-width: 575px) {
       width: 25px;
       height: 25px;
     }
+
     &_close {
       display: none;
     }
@@ -375,138 +516,69 @@ textarea {
   }
 }
 
-.section-title {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-
-  &__icon {
-    flex: none;
-    color: $green;
-    width: 24px;
-    height: 38px;
-  }
-
-  &__heading {
-    @extend %semibold-48-inter;
-  }
-}
-
-.radio {
-  &__custom {
-    position: relative;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 1px solid $gray4;
-    transition: border-color .2s ease-in-out;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 8px;
-      height: 8px;
-      background-color: transparent;
-      border-radius: 50%;
-      transition: background-color .2s ease-in-out;
-    }
-  }
-
-  &:checked+&__custom {
-    border-color: $green;
-
-    &::after {
-      background-color: $green;
-    }
-  }
-}
-
-.checkbox {
-  &__custom {
-    position: relative;
-    display: inline-block;
-    flex: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 4px;
-    border: 1px solid $black;
-    transition: border-color .2s ease-in-out,
-    background-color .2s ease-in-out;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: background-color .2s ease-in-out;
-    }
-  }
-
-  &:checked+&__custom {
-    border-color: $green;
-    background-color: $green;
-
-    &::after {
-      content: url('@img/check.svg');
-    }
-  }
-}
-
 .order {
   box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.13);
   border-radius: 12px;
   background: $white;
   padding: 30px;
+
   @media (max-width: 575px) {
     padding: 15px;
   }
+
   &__text-block {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-bottom: 37px;
   }
+
   &__title {
     @extend %medium-30-inter;
     margin-bottom: 4px;
   }
+
   &__row {
     display: flex;
     gap: 48px;
     @extend %medium-22-gilroy;
+
     @media (max-width: 575px) {
       gap: 24px;
     }
+
     &-title {
       flex: none;
       width: 105px;
+
       @media (max-width: 575px) {
         width: 75px;
       }
     }
+
     &-text {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 11px;
+
       &_small {
         @extend %regular-17-gilroy;
 
       }
     }
   }
+
   &__calculate-btn {
     text-decoration: underline;
     color: $green;
   }
+
   &__pay {
     display: flex;
     flex-direction: column;
     gap: 7px;
+
     &-btn {
       width: 100%;
       height: 60px;
@@ -516,18 +588,22 @@ textarea {
       align-items: center;
       justify-content: center;
     }
+
     &-text {
       text-align: center;
     }
   }
+
   &__data {
     display: flex;
     align-items: flex-start;
     gap: 12px;
     margin-top: 18px;
+
     .checkbox__custom {
       margin-top: 5px;
     }
+
     &-text {
       @extend %regular-15-gilroy;
     }
@@ -546,6 +622,12 @@ textarea {
     align-items: center;
     gap: 32px;
     @extend %regular-17-gilroy;
+  }
+
+  &__link:hover+.product-menu,
+  .product-menu:hover {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -575,10 +657,12 @@ textarea {
   &__btn {
     &-wrap {
       z-index: 2;
+
       @media (max-width: 767px) {
         display: none !important;
       }
     }
+
     svg {
       display: block;
     }
@@ -795,6 +879,59 @@ textarea {
         height: 16px;
         color: $green;
         transition: color .2s ease-in-out;
+      }
+    }
+  }
+}
+
+.slider-5 {
+  .slider {
+    &__wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    &__btn {
+      &-wrap {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      padding: 17px 15px;
+      background: $green;
+      border-radius: 6px;
+      transition: opacity .3s ease-in-out,
+      visibility .3s ease-in-out;
+      transition: background-color .2s ease-in-out;
+
+      &:hover,
+      &:focus-visible,
+      &:active {
+        background-color: $green2;
+      }
+
+      &:disabled {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &_prev {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-icon {
+        width: 30px;
+        height: 16px;
+        color: $white;
       }
     }
   }

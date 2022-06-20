@@ -18,8 +18,8 @@ html(lang="ru")
         section.checkout
           .container.checkout__container 
             +sectionTitle('Checkout','checkout__title')
-            .checkout__content.row
-              form.checkout__form.col-xl-5.col-lg-6(action="#")
+            form.checkout__content.row
+              .checkout__form.col-xl-5.col-lg-6(action="#")
                 .checkout__form-main
                   h3.checkout__form-title Billing details
                   label.checkout__field-wrap 
@@ -59,7 +59,7 @@ html(lang="ru")
                   label.checkout__field-wrap 
                       span.checkout__label Ship to a different address?
                       textarea.checkout__field.checkout__textarea(placeholder="Notes about your order, e. g. spesical notes for delivery")
-              form.order.checkout__order.col-lg-5(action="#") 
+              .order.checkout__order.col-lg-5(action="#") 
                 .order__text-block
                   strong.order__title Order Summary
                   .order__row
@@ -73,7 +73,7 @@ html(lang="ru")
                     span.order__row-title Total:
                     span.order__row-text $1270
                 .order__pay
-                  +link('green','Proceed to checkout','#','order__pay-btn order__pay-btn_green')
+                  +link('green','Pay with your credit card','#','order__pay-btn order__pay-btn_green')
                   span.order__pay-text or
                   a.btn.btn__trs.order__pay-btn.order__pay-btn_trs(href="#")
                     img(src="@img/paypal.svg", alt="Paypal")
