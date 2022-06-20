@@ -19,17 +19,16 @@ html(lang="ru")
           .container.device-hero__container.row
             .device-hero__ellipse-wrap
               img.device-hero__ellipse(src="@img/drycontactdirector/hero-ellipse.svg", alt="")
-            .col-md-2
-            .device-hero__info.device-hero__info_black.col-md-7.col-12
+            .device-hero__info.device-hero__info_black
               h1.device-hero__title SocketDirector
-              p.device-hero__desc.col-12.col-sm-6.col-md-12 Экономь время - автоматизируй работу электрических приборов и управляй ими удаленно с помощью этого девайса.
-              +link('green','Заказать','#','device-about__btn-buy')
+              p.device-hero__desc.col-lg-12.col-sm-9.col-12 Экономь время - автоматизируй работу электрических приборов и управляй ими удаленно с помощью этого девайса.
+              +link('green','Заказать','#','device-hero__btn-buy')
             img.device-hero__device(src="@img/socketdirector/hero-bg.png", alt="Hydrodirector")
             p.device-hero__text
               | Идеальное решение для профессиональных теплиц
               span.device-hero__text_green  с большим количеством устройств
               |  or for multiple low voltage devices such as irrigation etc.!
-            +link('green','Download manual','#','device-about__btn-download')
+            +link('green','Download manual','#','device-hero__btn-download')
 
         section.device-advantages
           img.device-advantages__bg(src="@img/socketdirector/advantages.svg", alt="")

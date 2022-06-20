@@ -946,6 +946,7 @@
     }
 
     @media (max-width: 575px) {
+      text-align: center;
       flex-direction: column;
       align-items: center;
       gap: 20px;
@@ -1454,6 +1455,7 @@
     &-main {
       border: 1px solid $gray;
       border-radius: 12px;
+
       @media (min-width: 1200px) {
         height: 497px;
       }
@@ -1462,6 +1464,7 @@
     &-list {
       display: flex;
       gap: 24px;
+
       @media (max-width: 575px) {
         display: none;
       }
@@ -1524,6 +1527,7 @@
     .choices {
       max-width: 145px;
       @extend %regular-22-gilroy;
+
       &__inner {
         display: flex;
         align-items: center;
@@ -1649,6 +1653,7 @@
     align-items: flex-start;
     padding-top: 70px;
     padding-bottom: 70px;
+
     @media (max-width: 575px) {
       flex-direction: column;
       gap: 20px;
@@ -1659,6 +1664,7 @@
 
   &__desc {
     margin-top: 17px;
+
     @media (max-width: 1199px) {
       margin-top: 0;
     }
@@ -1674,6 +1680,7 @@
   &__content {
     display: flex;
     gap: 62px;
+
     @media (max-width: 1199px) {
       flex-direction: column;
     }
@@ -1694,9 +1701,11 @@
     min-height: 178px;
     display: flex;
     gap: 15px 37px;
+
     @media (max-width: 767px) {
       flex-direction: column;
     }
+
     &-top {
       display: flex;
       align-items: center;
@@ -1726,6 +1735,7 @@
       max-width: 215px;
       border: 1px solid $gray2;
       border-radius: 12px;
+
       @media (max-width: 767px) {
         max-width: 100%;
       }
@@ -2008,53 +2018,37 @@
 
     &__info {
       flex-direction: column;
+      padding: 0 20%;
+
+      @media (max-width: 1199px) {
+        padding: 0 15%;
+      }
+
+      @media (max-width: 991px) {
+        padding: 0 10%;
+      }
+      @media (max-width: 575px) {
+        padding: 0;
+      }
     }
 
     &__title {
-      margin-bottom: 19px;
-      margin-right: 9%;
-
-      @media (max-width: 767px) {
-        margin-right: 0;
+      @media (min-width: 576px) {
+        margin-bottom: 19px;
       }
     }
 
     &__desc {
       max-width: 505px;
-      margin-bottom: 40px;
-      align-self: flex-end;
-      margin-right: -19%;
-
-      @media (max-width: 991px) {
-        margin-right: -6%;
-      }
-
-      @media (max-width: 767px) {
-        margin-right: 0;
-        align-self: center;
-      }
-
-      @media (max-width: 575px) {
-        margin-right: 0;
-        margin-bottom: 20px;
+      @media (min-width: 576px) {
+        align-self: flex-end;
+        margin-bottom: 40px;
       }
     }
 
     &__btn-buy {
-      align-self: flex-end;
-      margin-right: -7.3%;
-
-      @media (max-width: 991px) {
-        margin-right: -3%;
-      }
-
-      @media (max-width: 767px) {
-        margin-right: 6%;
-      }
-
-      @media (max-width: 575px) {
-        margin-right: 0;
-        align-self: center;
+      @media (min-width: 576px) {
+        align-self: flex-end;
       }
     }
 
@@ -2063,6 +2057,10 @@
 
       @media (max-width: 991px) {
         margin-top: -60px;
+      }
+
+      @media (max-width: 767px) {
+        margin-top: 0;
       }
     }
   }
@@ -2099,16 +2097,46 @@
       }
     }
 
-    &__title {
-      margin-bottom: 26px;
+    &__info {
+      padding: 0 7.5%;
 
+      @media (max-width: 1199px) {
+        padding: 0 5%;
+      }
+
+      @media (max-width: 991px) {
+        padding: 0 3.5%;
+      }
+      @media (max-width: 575px) {
+        padding: 0;
+      }
+    }
+
+    &__title {
       &-wrap {
-        margin-right: 40px;
+        @media (min-width: 576px) {
+          margin-right: 40px;
+        }
+        @media (max-width: 575px) {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          width: 100%;
+        }
+      }
+      @media (min-width: 576px) {
+        margin-bottom: 26px;
       }
     }
 
     &__desc {
       max-width: 342px;
+    }
+
+    &__device {
+      @media (min-width: 576px) {
+        margin-top: 22px;
+      }
     }
   }
 
@@ -2150,41 +2178,38 @@
 
     &__info {
       flex-direction: column;
+      padding: 0 20%;
+
+      @media (max-width: 1199px) {
+        padding: 0 15%;
+      }
+
+      @media (max-width: 991px) {
+        padding: 0 10%;
+      }
+
+      @media (max-width: 575px) {
+        padding: 0;
+      }
     }
 
-
     &__title {
-      align-self: center;
-      margin-bottom: 19px;
+      @media (min-width: 576px) {
+        margin-bottom: 19px;
+      }
     }
 
     &__desc {
       max-width: 365px;
-      margin-bottom: 40px;
-      margin-right: 25.68%;
-      align-self: flex-end;
-
-      @media (max-width: 991px) {
-        margin-right: 15.68%;
-      }
-
-      @media (max-width: 575px) {
-        margin: 0;
-        align-self: unset;
+      @media (min-width: 576px) {
+        align-self: flex-end;
+        margin-bottom: 40px;
       }
     }
 
     &__btn-buy {
-      margin-right: 16.67%;
-      align-self: flex-end;
-
-      @media (max-width: 991px) {
-        margin-right: 6.67%;
-      }
-
-      @media (max-width: 575px) {
-        margin: 0;
-        align-self: unset;
+      @media (min-width: 576px) {
+        align-self: flex-end;
       }
     }
 
@@ -2194,32 +2219,12 @@
       @media (max-width: 991px) {
         margin-top: -60px;
       }
-    }
-  }
-
-  .device-advantages {
-    margin-bottom: 190px;
-
-    &__container {
-      position: relative;
-      padding-bottom: 0;
-    }
-
-    &__bg {
-      top: unset;
-      right: -42px;
-      bottom: -40px;
-    }
-  }
-
-  .device-installation {
-    &__bg {
-      &-wrap {
-        margin-top: -84px;
-        margin-bottom: -22px;
+      @media (max-width: 767px) {
+        margin-top: 0;
       }
     }
   }
+
 }
 
 .socketdirector-page {
@@ -2240,25 +2245,36 @@
 
     &__info {
       flex-direction: column;
+      padding: 0 20%;
+
+      @media (max-width: 1199px) {
+        padding: 0 15%;
+      }
+
+      @media (max-width: 991px) {
+        padding: 0 10%;
+      }
+
+      @media (max-width: 575px) {
+        padding: 0;
+      }
 
       @media (max-width: 991px) {
         margin-bottom: 30px;
       }
-
-      @media (max-width: 767px) and (min-width: 576px) {
-        margin-left: auto;
-        margin-right: auto;
-        align-items: center;
-      }
     }
 
     &__title {
-      margin-bottom: 19px;
+      @media (min-width: 576px) {
+        margin-bottom: 19px;
+      }
     }
 
     &__desc {
-      margin-bottom: 40px;
-
+      max-width: 615px;
+      @media (min-width: 576px) {
+        margin-bottom: 40px;
+      }
     }
 
     &__device {
@@ -2296,3 +2312,30 @@
     }
   }
 }
+
+.device-advantages {
+  margin-bottom: 190px;
+
+  &__container {
+    position: relative;
+    padding-bottom: 0;
+  }
+
+  &__bg {
+    top: unset;
+    right: -42px;
+    bottom: -40px;
+  }
+}
+
+.device-installation {
+  &__bg {
+    &-wrap {
+      margin-top: -84px;
+      margin-bottom: -22px;
+    }
+  }
+
+}
+
+
