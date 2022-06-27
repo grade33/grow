@@ -1,0 +1,24 @@
+include ./html/mixins.pug
+include ./html/header.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Корзина
+    link(rel="stylesheet", href="./css/style.min.css")
+    script(defer src="./js/app.min.js")
+  body.cart-page
+      +discount
+
+      main.main
+        .popup.popup_active
+          .modal
+            .successful-purchase
+              .container.successful-purchase__container
+                img.successful-purchase__logo(src="@img/logo.png", alt="Logo")
+                h2.successful-purchase__title Спасибо, что выбрали нас! 
+                p.successful-purchase__desc Проверьте почту - туда уже пришло подтверждение заказа.
+                +link('green','Смотреть другие товары','./catalog.html','successful-purchase__link-catalog')
+                +moreLink('Вернуться на главную','./index.html','successful-purchase__link-home')

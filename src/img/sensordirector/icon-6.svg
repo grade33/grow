@@ -1,0 +1,21 @@
+<svg width="130" height="225" viewBox="0 0 130 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_219_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="130" height="225">
+<rect width="130" height="225" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_219_120)">
+<line x1="59.777" y1="94.7682" x2="33.5182" y2="0.133569" stroke="#40AC6C"/>
+<circle cx="65" cy="160" r="64.5" stroke="#40AC6C"/>
+<path d="M64.8187 145.148C56.6187 145.148 49.9707 151.796 49.9707 159.996C49.9707 168.196 56.6187 174.844 64.8187 174.844" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M37.2168 160H42.8408" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44.7305 179.538L48.7065 175.562" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64.8184 187.535V181.914" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44.7305 140.461L48.7065 144.437" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64.8184 132.469V138.09" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M75.9804 132.469V187.535" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M88.7964 136.054H75.9804" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M83.3324 147.984H75.9804" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M88.7964 159.914H75.9804" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M83.3324 171.851H75.9804" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M88.7964 183.781H75.9804" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

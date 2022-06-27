@@ -7,7 +7,6 @@ html body {
 .container {
   margin: 0 auto;
 }
-
 .burger {
   box-sizing: content-box;
   position: relative;
@@ -166,6 +165,13 @@ html body {
     visibility: visible;
     opacity: 1;
   }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .menu {
@@ -344,6 +350,7 @@ html body {
   align-items: center;
   gap: 18px;
   @extend %regular-18-inter;
+  width: fit-content;
 
   &__icon {
     width: 30px;
@@ -933,6 +940,45 @@ textarea {
         height: 16px;
         color: $white;
       }
+    }
+  }
+}
+
+.successful-purchase {
+  text-align: center;
+  padding: 39px 67px;
+  background: $white;
+  border-radius: 12px;
+  @media (max-width: 575px) {
+    padding: 15px 20px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content  ;
+    @media (max-width: 575px) {
+      width: unset;
+      width: 80vw;
+    }
+  }
+  &__logo {
+    margin-bottom: 35px;
+  }
+  &__title {
+    margin-bottom: 12px;
+    @extend %semibold-32-inter;
+  }
+  &__desc {
+    margin-bottom: 44px;
+    @extend %regular-17-gilroy;
+  }
+  &__link {
+    &-catalog {
+      margin-bottom: 14px;
+    }
+    &-home {
+      margin: 0 auto;
     }
   }
 }

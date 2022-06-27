@@ -23,7 +23,14 @@ html(lang="ru")
               h1.device-hero__title HydroDirector
               p.device-hero__desc.col-xl-12.col-md-8.col-sm-10.col-12 Специализированный девайс для гидропонных систем всех типов. Подходит для автоматизации любых площадей от маленьких гроурумов до промышленных теплиц.
               +link('white','Заказать','product-page.html','device-hero__btn-buy')
-            img.device-hero__device(src="@img/hydrodirector/hero-bg.png", alt="Hydrodirector")
+            .device-hero__device 
+              img.device-hero__device-img(src="@img/hydrodirector/hero-bg.png", alt="Hydrodirector")
+              .device-hero__device-icon-wrap
+                img.device-hero__device-icon.device-hero__device-icon_1(src="@img/hydrodirector/icon-1.svg", alt="Hydrodirector")
+                img.device-hero__device-icon.device-hero__device-icon_2(src="@img/hydrodirector/icon-2.svg", alt="Hydrodirector icon")
+                img.device-hero__device-icon.device-hero__device-icon_3(src="@img/hydrodirector/icon-3.svg", alt="Hydrodirector icon")
+                img.device-hero__device-icon.device-hero__device-icon_4(src="@img/hydrodirector/icon-4.svg", alt="Hydrodirector icon")
+                img.device-hero__device-icon.device-hero__device-icon_5(src="@img/hydrodirector/icon-5.svg", alt="Hydrodirector icon")
             p.device-hero__text
               | Вы можете объединять в одну систему и 
               span.device-hero__text_green  одновременно контролировать от 3 до 16.000 девайсов,

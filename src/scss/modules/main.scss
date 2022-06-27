@@ -2028,6 +2028,7 @@
       @media (max-width: 991px) {
         padding: 0 10%;
       }
+
       @media (max-width: 575px) {
         padding: 0;
       }
@@ -2041,6 +2042,7 @@
 
     &__desc {
       max-width: 505px;
+
       @media (min-width: 576px) {
         align-self: flex-end;
         margin-bottom: 40px;
@@ -2054,6 +2056,7 @@
     }
 
     &__device {
+      position: relative;
       margin-top: -96px;
 
       @media (max-width: 991px) {
@@ -2063,8 +2066,38 @@
       @media (max-width: 767px) {
         margin-top: 0;
       }
+
+      &-img {}
+
+      &-icon {
+        &-wrap {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+        }
+        &_1 {
+          margin-top: -91px;
+        }
+
+        &_2 {
+          margin-top: -75px;
+        }
+
+        &_3 {
+          margin-top: -60px;
+        }
+
+        &_4 {
+          margin-top: -58px;
+        }
+
+        &_5 {
+          margin-top: -90px;
+        }
+      }
     }
   }
+
   .device-connecting {
     &__bg {
       &-wrap {
@@ -2074,6 +2107,7 @@
       }
     }
   }
+
   .device-installation {
     &__bg {
       &-wrap {
@@ -2106,6 +2140,7 @@
       @media (max-width: 991px) {
         padding: 0 3.5%;
       }
+
       @media (max-width: 575px) {
         padding: 0;
       }
@@ -2116,6 +2151,7 @@
         @media (min-width: 576px) {
           margin-right: 40px;
         }
+
         @media (max-width: 575px) {
           display: flex;
           flex-direction: column;
@@ -2123,6 +2159,7 @@
           width: 100%;
         }
       }
+
       @media (min-width: 576px) {
         margin-bottom: 26px;
       }
@@ -2135,9 +2172,47 @@
     &__device {
       @media (min-width: 576px) {
         margin-top: 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      &-img {
+        justify-content: center;
+        width: fit-content;
+      }
+
+      &-icon {
+        &-wrap {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+        }
+        &_1 {
+          margin-top: -190px;
+        }
+
+        &_2 {
+          margin-top: -97px;
+        }
+
+        &_3,
+        &_4 {
+          margin-top: -10px;
+        }
+
+        &_5 {
+          margin-top: -15px;
+        }
+        &_6 {
+          margin-top: -38px;
+        }
+        &_7 {
+          margin-top: -120px;
+        }
       }
     }
   }
+
   .device-connecting {
     &__bg {
       &-wrap {
@@ -2147,6 +2222,7 @@
       }
     }
   }
+
   .device-installation {
     &__bg {
       &-wrap {
@@ -2198,6 +2274,7 @@
 
     &__desc {
       max-width: 365px;
+
       @media (min-width: 576px) {
         align-self: flex-end;
         margin-bottom: 40px;
@@ -2216,25 +2293,28 @@
       @media (max-width: 991px) {
         margin-top: -60px;
       }
+
       @media (max-width: 767px) {
         margin-top: 0;
       }
     }
   }
+
   .device-advantages {
     margin-bottom: 190px;
-  
+
     &__container {
       position: relative;
       padding-bottom: 0;
     }
-  
+
     &__bg {
       top: unset;
       right: -42px;
       bottom: -40px;
     }
   }
+
   .device-installation {
     &__bg {
       &-wrap {
@@ -2290,6 +2370,7 @@
 
     &__desc {
       max-width: 615px;
+
       @media (min-width: 576px) {
         margin-bottom: 40px;
       }
@@ -2330,7 +2411,3 @@
     }
   }
 }
-
-
-
-

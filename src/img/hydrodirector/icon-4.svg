@@ -1,0 +1,15 @@
+<svg width="130" height="219" viewBox="0 0 130 219" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_219_90" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="130" height="219">
+<rect width="130" height="219" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_219_90)">
+<line x1="59.17" y1="87.7184" x2="14.5549" y2="0.227073" stroke="#40AC6C"/>
+<circle cx="65.0002" cy="154" r="64.5" stroke="#40AC6C"/>
+<path d="M38 141.57C44.6107 141.57 44.6107 147.277 51.224 147.277C57.8346 147.277 57.8346 141.57 64.448 141.57C71.0612 141.57 71.0612 147.277 77.672 147.277C84.2828 147.277 84.2852 141.57 90.896 141.57" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M38 173.812C44.6107 173.812 44.6107 179.519 51.224 179.519C57.8346 179.519 57.8346 173.812 64.448 173.812C71.0612 173.812 71.0612 179.519 77.672 179.519C84.2828 179.519 84.2852 173.812 90.896 173.812" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M38 132C44.6107 132 44.6107 137.707 51.224 137.707C57.8346 137.707 57.8346 132 64.448 132C71.0612 132 71.0612 137.707 77.672 137.707C84.2828 137.707 84.2852 132 90.896 132" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M46.9118 167.601C49.7571 167.601 52.0638 165.294 52.0638 162.449C52.0638 159.604 49.7571 157.297 46.9118 157.297C44.0664 157.297 41.7598 159.604 41.7598 162.449C41.7598 165.294 44.0664 167.601 46.9118 167.601Z" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M82.8241 167.601C85.6693 167.601 87.9761 165.294 87.9761 162.449C87.9761 159.604 85.6693 157.297 82.8241 157.297C79.9785 157.297 77.6721 159.604 77.6721 162.449C77.6721 165.294 79.9785 167.601 82.8241 167.601Z" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64.4469 161.437C67.2924 161.437 69.5988 159.13 69.5988 156.285C69.5988 153.439 67.2924 151.133 64.4469 151.133C61.6016 151.133 59.2949 153.439 59.2949 156.285C59.2949 159.13 61.6016 161.437 64.4469 161.437Z" stroke="#40AC6C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
