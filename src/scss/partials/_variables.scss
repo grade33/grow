@@ -1,5 +1,9 @@
+:root {
+  --rem: 13;
+}
+
 $container: calc(1110px + 24px);
-$btn-hz-p: 30px; 
+$btn-hz-p: calc(30 / var(--rem) * 1rem);
 
 $green: #40AC6C;
 $green2: #29864F;
@@ -26,11 +30,11 @@ $fsz-title-767: 0.5;
 $fsz-title-576: 0.4;
 
 %bold-80-inter {
-  $fsz: 80px;
+  $fsz: calc(80 / var(--rem) * 1rem);
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 80px;
+  font-size: $fsz;
   line-height: 106%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-title-1199);
@@ -47,11 +51,11 @@ $fsz-title-576: 0.4;
 }
 
 %bold-65-inter {
-  $fsz: 65px;
+  $fsz: calc(65 / var(--rem) * 1rem);
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 65px;
+  font-size: $fsz;
   line-height: 115%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-title-1199);
@@ -68,11 +72,11 @@ $fsz-title-576: 0.4;
 }
 
 %semibold-48-inter {
-  $fsz: 48px;
+  $fsz: calc(48 / var(--rem) * 1rem);
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 48px;
+  font-size: $fsz;
   line-height: 125%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-title-1199);
@@ -91,11 +95,11 @@ $fsz-title-576: 0.4;
 // Text
 
 %semibold-38-inter {
-  $fsz: 38px;
+  $fsz: calc(38 / var(--rem) * 1rem);
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 38px;
+  font-size: $fsz;
   line-height: 139%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -112,11 +116,11 @@ $fsz-title-576: 0.4;
 }
 
 %semibold-32-inter {
-  $fsz: 32px;
+  $fsz: calc(32 / var(--rem) * 1rem);
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 32px;
+  font-size: $fsz;
   line-height: 144%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -133,11 +137,11 @@ $fsz-title-576: 0.4;
 }
 
 %medium-30-inter {
-  $fsz: 30px;
+  $fsz: calc(30 / var(--rem) * 1rem);
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
+  font-size: $fsz;
   line-height: 130%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -154,11 +158,11 @@ $fsz-title-576: 0.4;
 }
 
 %semibold-24-inter {
-  $fsz: 24px;
+  $fsz: calc(24 / var(--rem) * 1rem);
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
+  font-size: $fsz;
   line-height: 133%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -175,11 +179,11 @@ $fsz-title-576: 0.4;
 }
 
 %medium-24-inter {
-  $fsz: 24px;
+  $fsz: calc(24 / var(--rem) * 1rem);
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: $fsz;
   line-height: 133%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -196,11 +200,11 @@ $fsz-title-576: 0.4;
 }
 
 %medium-23-gilroy {
-  $fsz: 23px;
+  $fsz: calc(23 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 23px;
+  font-size: $fsz;
   line-height: 139%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -217,11 +221,11 @@ $fsz-title-576: 0.4;
 }
 
 %medium-22-gilroy {
-  $fsz: 22px;
+  $fsz: calc(22 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
+  font-size: $fsz;
   line-height: 109%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -238,11 +242,11 @@ $fsz-title-576: 0.4;
 }
 
 %regular-22-gilroy {
-  $fsz: 22px;
+  $fsz: calc(22 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
+  font-size: $fsz;
   line-height: 109%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -259,11 +263,11 @@ $fsz-title-576: 0.4;
 }
 
 %semibold-21-gilroy {
-  $fsz: 21px;
+  $fsz: calc(21 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 21px;
+  font-size: $fsz;
   line-height: 140%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -280,11 +284,11 @@ $fsz-title-576: 0.4;
 }
 
 %semibold-20-gilroy {
-  $fsz: 20px;
+  $fsz: calc(20 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: $fsz;
   line-height: 140%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -301,11 +305,11 @@ $fsz-title-576: 0.4;
 }
 
 %regular-20-gilroy {
-  $fsz: 20px;
+  $fsz: calc(20 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: $fsz;
   line-height: 125%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -322,11 +326,11 @@ $fsz-title-576: 0.4;
 }
 
 %regular-18-inter {
-  $fsz: 19px;
+  $fsz: calc(19 / var(--rem) * 1rem);
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 19px;
+  font-size: $fsz;
   line-height: 168%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -343,11 +347,11 @@ $fsz-title-576: 0.4;
 }
 
 %medium-17-gilroy {
-  $fsz: 17px;
+  $fsz: calc(17 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 17px;
+  font-size: $fsz;
   line-height: 141%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -364,11 +368,11 @@ $fsz-title-576: 0.4;
 }
 
 %regular-17-gilroy {
-  $fsz: 17px;
+  $fsz: calc(17 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 17px;
+  font-size: $fsz;
   line-height: 141%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -385,11 +389,11 @@ $fsz-title-576: 0.4;
 }
 
 %regular-16-gilroy {
-  $fsz: 16px;
+  $fsz: calc(16 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: $fsz;
   line-height: 150%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -406,11 +410,11 @@ $fsz-title-576: 0.4;
 }
 
 %regular-15-gilroy {
-  $fsz: 15px;
+  $fsz: calc(15 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: $fsz;
   line-height: 160%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);
@@ -427,11 +431,11 @@ $fsz-title-576: 0.4;
 }
 
 %semibold-14-gilroy {
-  $fsz: 14px;
+  $fsz: calc(14 / var(--rem) * 1rem);
   font-family: 'Gilroy', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
+  font-size: $fsz;
   line-height: 150%;
   @media (max-width: 1199px) {
     font-size: calc($fsz * $fsz-1199);

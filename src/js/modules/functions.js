@@ -37,8 +37,8 @@ export function isBurger() {
 export function isAccordion() {
   document.querySelectorAll('.acc').forEach(acc => {
     const accBtn = acc.querySelector('.acc__trigger')
-    const accPanel =  acc.querySelector('.acc__panel')
-    accBtn.addEventListener('click', function() {
+    const accPanel = acc.querySelector('.acc__panel')
+    accBtn.addEventListener('click', function () {
       acc.classList.toggle('acc_active')
       if (accPanel.style.maxHeight) {
         accPanel.style.maxHeight = null;
@@ -46,5 +46,18 @@ export function isAccordion() {
         accPanel.style.maxHeight = accPanel.scrollHeight + "px";
       }
     })
+  })
+}
+
+export function isMenuProductItems() {
+  const btn = document.querySelector('.nav__link_product')
+  const menu = document.querySelector('.menu__product-menu')
+  btn.addEventListener('click', function () {
+    menu.classList.toggle('menu__product-menu_active')
+    if (menu.style.maxHeight) {
+      menu.style.maxHeight = null;
+    } else {
+      menu.style.maxHeight = menu.scrollHeight + "px";
+    }
   })
 }

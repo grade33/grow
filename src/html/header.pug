@@ -72,7 +72,16 @@ mixin header()
             nav.nav.header__nav 
               ul.nav__list
                 li.nav__item
-                  a.nav__link(href="#") Products
+                  button.nav__link.nav__link_product(type="button") Products
+                  ul.menu__product-menu
+                    li.menu__product-menu-item
+                      a.menu__product-menu-link(href="./hydrodirector.html") HydroDirector 
+                    li.menu__product-menu-item
+                      a.menu__product-menu-link(href="./drycontactdirector.html") DryContactDirector
+                    li.menu__product-menu-item
+                      a.menu__product-menu-link(href="./sensordirector.html") SensorDirector
+                    li.menu__product-menu-item
+                      a.menu__product-menu-link(href="./socketdirector.html") SocketDirector
                 li.nav__item
                   a.nav__link(href="#") Catalogue
                 li.nav__item

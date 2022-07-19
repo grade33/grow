@@ -4,4 +4,6 @@ import bootstrap from 'bootstrap'
 functions.isWebp();
 functions.isBurger();
 functions.isAccordion();
+functions.isMenuProductItems();
+
 
