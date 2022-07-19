@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hydrodirector</title>
-    <link rel="stylesheet" href="./css/style.min.css?_v=20220627064305">
-    <script defer src="./js/app.min.js?_v=20220627064305"></script>
+    <link rel="stylesheet" href="./css/style.min.css?_v=20220719234006">
+    <script defer src="./js/app.min.js?_v=20220719234006"></script>
   </head>
   <body class="hydrodirector-page">
     <div class="discount"><span class="discount__text">15% discount on new items</span></div>
@@ -68,7 +68,15 @@
             <div class="container menu__container">
               <nav class="nav header__nav"> 
                 <ul class="nav__list">
-                  <li class="nav__item"><a class="nav__link" href="#">Products</a></li>
+                  <li class="nav__item">
+                    <button class="nav__link nav__link_product" type="button">Products</button>
+                    <ul class="menu__product-menu">
+                      <li class="menu__product-menu-item"><a class="menu__product-menu-link" href="./hydrodirector.html">HydroDirector </a></li>
+                      <li class="menu__product-menu-item"><a class="menu__product-menu-link" href="./drycontactdirector.html">DryContactDirector</a></li>
+                      <li class="menu__product-menu-item"><a class="menu__product-menu-link" href="./sensordirector.html">SensorDirector</a></li>
+                      <li class="menu__product-menu-item"><a class="menu__product-menu-link" href="./socketdirector.html">SocketDirector</a></li>
+                    </ul>
+                  </li>
                   <li class="nav__item"><a class="nav__link" href="#">Catalogue</a></li>
                   <li class="nav__item"><a class="nav__link" href="#">About</a></li>
                   <li class="nav__item"><a class="nav__link" href="#">Education</a></li>
@@ -104,7 +112,13 @@
             <p class="device-hero__desc col-xl-12 col-md-8 col-sm-10 col-12">Специализированный девайс для гидропонных систем всех типов. Подходит для автоматизации любых площадей от маленьких гроурумов до промышленных теплиц.</p><a class="btn device-hero__btn-buy btn__white" href="product-page.html"><span class="btn__text">Заказать</span></a>
           </div>
           <div class="device-hero__device"> <picture><source srcset="img/hydrodirector/hero-bg.webp" type="image/webp"><img class="device-hero__device-img" src="img/hydrodirector/hero-bg.png" alt="Hydrodirector"></picture>
-            <div class="device-hero__device-icon-wrap"><img class="device-hero__device-icon device-hero__device-icon_1" src="img/hydrodirector/icon-1.svg" alt="Hydrodirector"><img class="device-hero__device-icon device-hero__device-icon_2" src="img/hydrodirector/icon-2.svg" alt="Hydrodirector icon"><img class="device-hero__device-icon device-hero__device-icon_3" src="img/hydrodirector/icon-3.svg" alt="Hydrodirector icon"><img class="device-hero__device-icon device-hero__device-icon_4" src="img/hydrodirector/icon-4.svg" alt="Hydrodirector icon"><img class="device-hero__device-icon device-hero__device-icon_5" src="img/hydrodirector/icon-5.svg" alt="Hydrodirector icon"></div>
+            <div class="device-hero__device-icon-wrap">
+              <button class="device-hero__device-tooltip-btn device-hero__device-icon_1" type="button"><img src="img/hydrodirector/icon-1.svg" alt="Hydrodirector"><span class="device-hero__device-tooltip-content"><span>EAir temp &amp; humidity &amp; VPD</span></span></button>
+              <button class="device-hero__device-tooltip-btn device-hero__device-icon_2" type="button"><img src="img/hydrodirector/icon-2.svg" alt="Hydrodirector icon"><span class="device-hero__device-tooltip-content"><span>EAir temp &amp; humidity &amp; VPD</span></span></button>
+              <button class="device-hero__device-tooltip-btn device-hero__device-icon_3" type="button"><img src="img/hydrodirector/icon-3.svg" alt="Hydrodirector icon"><span class="device-hero__device-tooltip-content"><span>EAir temp &amp; humidity &amp; VPD</span></span></button>
+              <button class="device-hero__device-tooltip-btn device-hero__device-icon_4" type="button"><img src="img/hydrodirector/icon-4.svg" alt="Hydrodirector icon"><span class="device-hero__device-tooltip-content"><span>EAir temp &amp; humidity &amp; VPD</span></span></button>
+              <button class="device-hero__device-tooltip-btn device-hero__device-icon_5" type="button"><img src="img/hydrodirector/icon-5.svg" alt="Hydrodirector icon"><span class="device-hero__device-tooltip-content"><span>EAir temp &amp; humidity &amp; VPD</span></span></button>
+            </div>
           </div>
           <p class="device-hero__text">Вы можете объединять в одну систему и <span class="device-hero__text_green"> одновременно контролировать от 3 до 16.000 девайсов,</span> что составляет в сумме 48.000 помп.</p><a class="btn device-hero__btn-download btn__green" href="#"><span class="btn__text">Download manual</span></a>
         </div>
