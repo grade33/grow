@@ -260,7 +260,7 @@ $grid-breakpoints: (xs: 0,
   @extend %medium-17-gilroy;
   text-align: center;
   width: fit-content;
-  padding: calc((15px - 1px)  / var(--rem) * 1rem) calc(($btn-hz-p - 1px)  / var(--rem) * 1rem);
+  padding: calc((15 - 1) / var(--rem) * 1rem) calc($btn-hz-p - (1 / var(--rem) * 1rem));
   border: calc(1 / var(--rem) * 1rem) solid transparent;
   border-radius: calc(12 / var(--rem) * 1rem);
   transition: background-color .2s ease-in-out,
@@ -336,7 +336,7 @@ $grid-breakpoints: (xs: 0,
   }
 
   &__gray {
-    padding: calc((9px - 1px)  / var(--rem) * 1rem) calc(($btn-hz-p / 1.6 - 1px)  / var(--rem) * 1rem);
+    padding: calc((9 - 1)  / var(--rem) * 1rem) calc($btn-hz-p / 1.6 - (1 / var(--rem) * 1rem));
     background-color: $gray2;
     border-color: $gray2;
     color: $black;

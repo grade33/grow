@@ -693,7 +693,7 @@
     gap: calc(20 / var(--rem) * 1rem);
 
     @media (max-width: 767px) {
-      padding: calc(20 / var(--rem) * 1rem) 42px;
+      padding: calc(20 / var(--rem) * 1rem) calc(42 / var(--rem) * 1rem);
     }
 
     @media (max-width: 575px) {
@@ -742,7 +742,7 @@
     }
 
     &-more {
-      padding: calc(12 / var(--rem) * 1rem) calc(($btn-hz-p / 1.5)  / var(--rem) * 1rem);
+      padding: calc(12 / var(--rem) * 1rem) calc($btn-hz-p / 1.5);
     }
   }
 }
@@ -1550,7 +1550,7 @@
 
   &__fields {
     display: flex;
-    gap: calc(20 / var(--rem) * 1rem) 65px;
+    gap: calc(20 / var(--rem) * 1rem) calc(65 / var(--rem) * 1rem);
     margin-bottom: calc(40 / var(--rem) * 1rem);
     margin-bottom: calc(30 / var(--rem) * 1rem);
     flex-wrap: wrap;
@@ -2436,7 +2436,7 @@
       margin-top: calc(-41 / var(--rem) * 1rem);
 
       @media (max-width: 991px) {
-        margin-top: 0px;
+        margin-top: 0;
       }
     }
   }
