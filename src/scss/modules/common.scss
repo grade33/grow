@@ -98,8 +98,8 @@ $grid-breakpoints: (xs: 0,
 .radio {
   &__custom {
     position: relative;
-    width: var(--rem);
-    height: var(--rem);
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     border: calc(1 / var(--rem) * 1rem) solid $gray4;
     transition: border-color .2s ease-in-out;
