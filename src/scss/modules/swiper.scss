@@ -1,0 +1,294 @@
+.swiper {
+  width: 100%;
+  &__btn {
+    &-wrap {
+      z-index: 2;
+
+      @media (max-width: $sm) {
+        display: none !important;
+      }
+    }
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+.swiper-1 {
+  width: 100%;
+  height: 600px;
+  @media (max-width: $md) {
+    height: 500px;
+  }
+
+  .swiper {
+    &__btn {
+      &-wrap {
+        position: absolute;
+        left: 50%;
+        bottom: calc(72 / var(--rem) * 1rem);
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        @media (max-width: $lg) {
+          bottom: calc(42 / var(--rem) * 1rem);
+        }
+        @media (max-width: $sm) {
+          bottom: calc(24 / var(--rem) * 1rem);
+        }
+      }
+
+      &:hover,
+      &:focus-visible,
+      &:active {
+        color: var(--green);
+      }
+
+      &:disabled {
+        opacity: .5;
+      }
+
+      &_prev {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-icon {
+        width: calc(32 / var(--rem) * 1rem);
+        height: calc(32 / var(--rem) * 1rem);
+        transition: color .2s ease-in-out;
+      }
+    }
+
+    &__active-slide {
+      transform: translateY(calc(1 / var(--rem) * 1rem));
+      @include regular-20-gilroy;
+    }
+  }
+}
+
+.swiper-2 {
+  .swiper {
+    &__btn {
+      &-wrap {
+        position: absolute;
+        bottom: calc(5 / var(--rem) * 1rem);
+        right: calc(5 / var(--rem) * 1rem);
+        display: flex;
+        align-items: center;
+        gap: calc(15 / var(--rem) * 1rem);
+
+        bottom: calc(39 / var(--rem) * 1rem);
+        right: calc(39 / var(--rem) * 1rem);
+      }
+
+      padding: calc(17 / var(--rem) * 1rem) calc(15 / var(--rem) * 1rem);
+      background: var(--green);
+      border-radius: calc(6 / var(--rem) * 1rem);
+      transition: background-color .2s ease-in-out,
+      opacity .2s ease-in-out,
+      visibility .2s ease-in-out;
+      
+      &:hover,
+      &:focus-visible,
+      &:active {
+        background-color: var(--green2);
+      }
+
+      &:disabled,
+      &.swiper-button-disabled {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &_prev {
+        svg {
+          transform: rotate(-180deg);
+        }
+      }
+
+      &-icon {
+        width: calc(30 / var(--rem) * 1rem);
+        height: calc(16 / var(--rem) * 1rem);
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.swiper-3 {
+  overflow: unset;
+  .swiper {
+    &__btn {
+      &-wrap {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% + calc(30 / var(--rem) * 1rem));
+        margin-left: calc(-15 / var(--rem) * 1rem);
+      }
+
+      padding: calc(17 / var(--rem) * 1rem) calc(15 / var(--rem) * 1rem);
+      background: var(--green);
+      border-radius: calc(6 / var(--rem) * 1rem);
+      transition: opacity .3s ease-in-out,
+      visibility .3s ease-in-out;
+      transition: background-color .2s ease-in-out;
+
+      &:hover,
+      &:focus-visible,
+      &:active {
+        background-color: var(--green2);
+      }
+
+      &_next {
+        margin-left: auto;
+      }
+
+      &_prev {
+        margin-right: auto;
+
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-icon {
+        width: calc(30 / var(--rem) * 1rem);
+        height: calc(16 / var(--rem) * 1rem);
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.swiper-4 {
+  padding: 0 calc(31 / var(--rem) * 1rem);
+  @media (min-width: calc($lg + 0.02px)) {
+    width: 100%;
+  }
+
+  @media (max-width: $sm) {
+    padding: 0;
+  }
+
+  .swiper {
+    &__btn {
+      &-wrap {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100%);
+      }
+
+      padding: calc(16 / var(--rem) * 1rem) calc(14 / var(--rem) * 1rem);
+      background: var(--white);
+      border: calc(1 / var(--rem) * 1rem) solid var(--green);
+      border-radius: calc(6 / var(--rem) * 1rem);
+      transition: opacity .3s ease-in-out,
+      visibility .3s ease-in-out;
+      transition: background-color .2s ease-in-out;
+
+      &:hover,
+      &:focus-visible,
+      &:active {
+        background-color: var(--green);
+
+        svg {
+          color: var(--white);
+        }
+      }
+
+      &:disabled {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &_next {
+        margin-left: auto;
+      }
+
+      &_prev {
+        margin-right: auto;
+
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-icon {
+        display: block;
+        width: calc(30 / var(--rem) * 1rem);
+        height: calc(16 / var(--rem) * 1rem);
+        color: var(--green);
+        transition: color .2s ease-in-out;
+      }
+    }
+  }
+}
+
+.swiper-5 {
+  width: 980px;
+  position: relative;
+  z-index: 7;
+  &-block {
+    .swiper {
+      &__btn {
+        &-wrap {
+          position: absolute;
+          z-index: 5;
+          top: 65px;
+          left: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+  
+        padding: calc(17 / var(--rem) * 1rem) calc(15 / var(--rem) * 1rem);
+        background: var(--green);
+        border-radius: calc(6 / var(--rem) * 1rem);
+        transition: opacity .3s ease-in-out,
+        visibility .3s ease-in-out;
+        transition: background-color .2s ease-in-out;
+  
+        &:hover,
+        &:focus-visible,
+        &:active {
+          background-color: var(--green2);
+        }
+  
+        &:disabled {
+          visibility: hidden;
+          opacity: 0;
+        }
+  
+        &_prev {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+  
+        &-icon {
+          width: calc(30 / var(--rem) * 1rem);
+          height: calc(16 / var(--rem) * 1rem);
+          color: var(--white);
+        }
+      }
+    }
+  }
+}

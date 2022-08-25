@@ -1,5 +1,5 @@
 include ./html/mixins.pug
-include ./html/header.pug
+
 doctype html
 html(lang="ru")
   head
@@ -10,14 +10,13 @@ html(lang="ru")
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
   body.faq-page
-      +discount
-      +header()
+      include ./html/header.pug
 
       main.main 
 
         section.faq
           .container.faq__container
-            .faq__top 
+            .faq__top(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
               +sectionTitle('FAQ','faq__title')
               form.faq__search
                 input.faq__search-field(type="text" placeholder="Search")
@@ -48,7 +47,7 @@ html(lang="ru")
                   "I have a question and I didn't find an answer here, whom can I ask?"
                 ]
               each title in titles
-                li.faq__item.acc
+                li.faq__item.acc(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                   h3.acc__head
                     button.acc__trigger(type="button")
                       span.faq__item-title= title
@@ -59,6 +58,6 @@ html(lang="ru")
                   .acc__panel
                     p.faq__item-desc Yes, of course! Use this link …
 
-            .faq__btn-download-wrap
+            .faq__btn-download-wrap(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
               +link('green','Download manual','#','faq__btn-download')
       include ./html/footer.pug

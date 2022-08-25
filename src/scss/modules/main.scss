@@ -7,6 +7,10 @@
     align-items: center;
     gap: calc(65 / var(--rem) * 1rem);
     justify-content: space-between;
+
+    @media (max-width: $xxl) {
+      gap: 0;
+    }
   }
 
   &__logo {
@@ -16,12 +20,12 @@
   &__nav {
     margin-left: calc(80 / var(--rem) * 1rem);
 
-    @media (max-width: 1199px) {
+    @media (max-width: $xxl) {
       margin-left: 0;
     }
 
     .header__container>& {
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         display: none;
       }
     }
@@ -31,20 +35,25 @@
   &__social {
     margin-left: auto;
 
+    @media (max-width: $xxl) {
+      margin: 0;
+    }
+
     .header__container>& {
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         display: none;
       }
     }
   }
 
   &__user-menu {
+    flex: none;
     display: flex;
     align-items: center;
     gap: calc(12 / var(--rem) * 1rem);
 
     .header__container>& {
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         display: none;
       }
     }
@@ -64,7 +73,7 @@
   }
 
   &__title {
-    @extend %semibold-20-gilroy;
+    @include semibold-20-gilroy;
   }
 
   &__contacts {
@@ -79,8 +88,8 @@
     }
 
     &-link {
-      @extend %semibold-20-gilroy;
-      color: $green;
+      @include semibold-20-gilroy;
+      color: var(--green);
     }
   }
 
@@ -94,46 +103,24 @@
 
 
 // Sections
-
 .presentation {
-  position: relative;
+  background: var(--gray-gradient);
 
-  background: $gray-gradient;
-
-  &__container {
-    padding-top: calc(72 / var(--rem) * 1rem);
-    padding-bottom: calc(226 / var(--rem) * 1rem);
-
-    @media (max-width: 991px) {
-      padding-bottom: calc(113 / var(--rem) * 1rem);
-    }
+  &__item {
+    padding-top: 72px;
   }
 
   &__bg {
-    @media (max-width: 1399px) {
-      width: 50%;
-    }
-
-    @media (max-width: 767px) {
-      display: none;
-    }
-
     position: absolute;
     top: 0;
     right: 0;
-  }
 
-  .slider {
-    position: static;
+    @media (max-width: $xxl) {
+      width: 50%;
+    }
 
-    &__btn {
-      &-wrap {
-        bottom: calc(72 / var(--rem) * 1rem);
-
-        @media (max-width: 991px) {
-          bottom: calc(42 / var(--rem) * 1rem);
-        }
-      }
+    @media (max-width: $md) {
+      display: none;
     }
   }
 
@@ -143,12 +130,12 @@
   }
 
   &__title {
-    @extend %bold-65-inter;
+    @include bold-65-inter;
     margin-bottom: calc(19 / var(--rem) * 1rem);
   }
 
   &__desc {
-    @extend %regular-17-gilroy;
+    @include regular-17-gilroy;
     margin-bottom: calc(30 / var(--rem) * 1rem);
   }
 
@@ -188,7 +175,7 @@
   }
 
   &__heading {
-    @extend %medium-30-inter;
+    @include medium-30-inter;
     margin-bottom: calc(10 / var(--rem) * 1rem);
   }
 
@@ -199,11 +186,11 @@
     gap: calc(12 / var(--rem) * 1rem);
 
     &-text {
-      @extend %regular-16-gilroy;
+      @include regular-16-gilroy;
     }
 
     &-icon {
-      color: $black;
+      color: var(--black);
       width: calc(15 / var(--rem) * 1rem);
       height: calc(8 / var(--rem) * 1rem);
     }
@@ -211,10 +198,10 @@
 }
 
 .quiz {
-  background: $gray-gradient;
+  background: var(--gray-gradient);
   height: calc(633 / var(--rem) * 1rem);
 
-  @media (max-width: 1399px) {
+  @media (max-width: $xxl) {
     height: auto;
     padding-top: calc(70 / var(--rem) * 1rem);
     padding-bottom: calc(70 / var(--rem) * 1rem);
@@ -225,7 +212,7 @@
     align-items: center;
     gap: calc(54 / var(--rem) * 1rem);
 
-    @media (max-width: 1399px) {
+    @media (max-width: $xxl) {
       flex-direction: column;
     }
   }
@@ -237,9 +224,9 @@
       flex: none;
       width: calc(548 / var(--rem) * 1rem);
       height: 100%;
-      margin-left: calc((-100vw + $container) / 2);
+      margin-left: calc((-100vw + var(--cont-this)) / 2);
 
-      @media (max-width: 1399px) {
+      @media (max-width: $xxl) {
         max-width: calc(548 / var(--rem) * 1rem);
         width: 100%;
         margin: 0;
@@ -258,7 +245,7 @@
     &-icon {
       width: calc(89 / var(--rem) * 1rem);
       height: calc(89 / var(--rem) * 1rem);
-      color: $white;
+      color: var(--white);
     }
 
     display: block;
@@ -270,7 +257,7 @@
     max-width: calc(650 / var(--rem) * 1rem);
     margin-left: auto;
 
-    @media (max-width: 1399px) {
+    @media (max-width: $xxl) {
       max-width: 100%;
     }
   }
@@ -282,39 +269,30 @@
     margin-bottom: calc(37 / var(--rem) * 1rem);
 
     &-icon {
-      stroke: $white;
+      stroke: var(--white);
       flex: none;
       width: calc(64 / var(--rem) * 1rem);
       height: calc(64 / var(--rem) * 1rem);
 
-      @media (max-width: 767px) {
+      @media (max-width: $md) {
         width: calc(50 / var(--rem) * 1rem);
         height: calc(50 / var(--rem) * 1rem);
       }
     }
 
     &-heading {
-      @extend %semibold-38-inter;
-    }
-  }
-
-  .slider {
-    &__btn {
-      &-wrap {
-        bottom: calc(39 / var(--rem) * 1rem);
-        right: calc(39 / var(--rem) * 1rem);
-      }
+      @include semibold-38-inter;
     }
   }
 
   &__item {
     width: 100%;
     padding: calc(33 / var(--rem) * 1rem) calc(38 / var(--rem) * 1rem) calc(37 / var(--rem) * 1rem);
-    background: $white;
+    background: var(--white);
     border-radius: calc(12 / var(--rem) * 1rem);
     box-shadow: calc(1 / var(--rem) * 1rem) calc(1 / var(--rem) * 1rem) calc(12 / var(--rem) * 1rem) rgba(0, 0, 0, 0.08);
 
-    @media (max-width: 767px) {
+    @media (max-width: $md) {
       padding: calc(20 / var(--rem) * 1rem);
     }
 
@@ -322,11 +300,15 @@
       display: flex;
       align-items: flex-start;
       gap: calc(10 / var(--rem) * 1rem);
-      @extend %medium-30-inter;
+      @include medium-30-inter;
       margin-bottom: calc(30 / var(--rem) * 1rem);
 
+      @media (max-width: $sm) {
+        flex-direction: column;
+      }
+
       &-pagination {
-        color: $green;
+        color: var(--green);
       }
     }
   }
@@ -335,7 +317,14 @@
     &-content {
       display: flex;
       flex-direction: column;
-      gap: calc(21 / var(--rem) * 1rem);
+      flex-wrap: wrap;
+      align-content: flex-start;
+      max-height: calc(204 / var(--rem) * 1rem);
+      gap: calc(21 / var(--rem) * 1rem) calc(70 / var(--rem) * 1rem);
+
+      @media (max-width: $sm) {
+        max-height: unset;
+      }
     }
 
     &-label {
@@ -346,13 +335,27 @@
     }
 
     &-text {
-      @extend %regular-22-gilroy;
+      @include regular-22-gilroy;
+    }
+
+    &-field {
+      &-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: calc(18 / var(--rem) * 1rem);
+
+        &>* {
+          height: 50px;
+        }
+      }
+
+      flex-grow: 1;
     }
   }
 }
 
 .popular-products {
-  background: $gray-gradient;
+  background: var(--gray-gradient);
 
   &__container {
     padding-top: calc(70 / var(--rem) * 1rem);
@@ -370,18 +373,18 @@
     display: flex;
     align-items: center;
     gap: calc(18 / var(--rem) * 1rem);
-    @extend %regular-17-gilroy;
+    @include regular-17-gilroy;
 
-    @media (max-width: 575px) {
+    @media (max-width: $sm) {
       display: none;
     }
 
     &_adaptive {
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         display: none;
       }
 
-      @media (max-width: 575px) {
+      @media (max-width: $sm) {
         display: flex;
         justify-content: flex-end;
       }
@@ -392,14 +395,14 @@
     &-icon {
       width: calc(30 / var(--rem) * 1rem);
       height: calc(16 / var(--rem) * 1rem);
-      color: $green;
+      color: var(--green);
     }
   }
 
   &__desc {
     margin-bottom: calc(20 / var(--rem) * 1rem);
 
-    @media (max-width: 575px) {
+    @media (max-width: $sm) {
       margin-bottom: calc(30 / var(--rem) * 1rem);
     }
   }
@@ -408,7 +411,7 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    @media (max-width: 767px) {}
+    @media (max-width: $md) {}
   }
 
   &__item {
@@ -417,12 +420,12 @@
     align-items: center;
 
     &-title {
-      @extend %semibold-24-inter;
+      @include semibold-24-inter;
       margin-bottom: calc(11 / var(--rem) * 1rem);
     }
 
     &-price {
-      @extend %medium-30-inter;
+      @include medium-30-inter;
       margin-bottom: calc(18 / var(--rem) * 1rem);
     }
   }
@@ -430,16 +433,16 @@
 
 .subscribe-news {
   position: relative;
-  background: url('@img/subscribe-news-bg.png') no-repeat top right 6.22%, $blue-gradient;
-  color: $white;
+  background: url('@img/subscribe-news-bg.png') no-repeat top right 6.22%, var(--blue-gradient);
+  color: var(--white);
 
-  @media (max-width: 1199px) {
+  @media (max-width: $xl) {
     background-position: top right -20%;
     background-size: 50% auto;
   }
 
-  @media (max-width: 575px) {
-    background: $blue-gradient;
+  @media (max-width: $sm) {
+    background: var(--blue-gradient);
   }
 
   &__container {
@@ -454,7 +457,7 @@
   }
 
   &__title {
-    @extend %semibold-48-inter;
+    @include semibold-48-inter;
     margin-bottom: calc(8 / var(--rem) * 1rem);
   }
 
@@ -463,14 +466,14 @@
     gap: calc(18 / var(--rem) * 1rem);
     margin: 0;
 
-    @media (max-width: 1199px) {
+    @media (max-width: $xl) {
       flex-direction: column;
 
       &>* {
         width: 70%;
         height: calc(45 / var(--rem) * 1rem);
 
-        @media (max-width: 575px) {
+        @media (max-width: $sm) {
           width: 100%;
         }
       }
@@ -478,8 +481,8 @@
   }
 
   &__btn {
-    padding-left: calc($btn-hz-p * 1.4);
-    padding-right: calc($btn-hz-p * 1.4);
+    padding-left: calc(var(--btn-hz-p) * 1.4);
+    padding-right: calc(var(--btn-hz-p) * 1.4);
   }
 }
 
@@ -496,7 +499,7 @@
   }
 
   &__phone {
-    @media (max-width: 767px) {
+    @media (max-width: $md) {
       display: none;
     }
 
@@ -505,18 +508,18 @@
       margin: 0 auto;
       margin-top: calc(30 / var(--rem) * 1rem);
 
-      @media (min-width: 768px) {
+      @media (min-width: calc($md + 0.02px)) {
         display: none;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: $md) {
         display: block;
       }
     }
   }
 
   &__title {
-    @extend %semibold-48-inter;
+    @include semibold-48-inter;
     margin-bottom: calc(47 / var(--rem) * 1rem)
   }
 
@@ -527,7 +530,7 @@
 
   &__desc {
     margin-bottom: calc(45 / var(--rem) * 1rem);
-    
+
   }
 
   &__list {
@@ -542,13 +545,13 @@
       display: flex;
       align-items: center;
       gap: calc(13 / var(--rem) * 1rem);
-      @extend %medium-24-inter;
+      @include medium-24-inter;
       margin-bottom: calc(8 / var(--rem) * 1rem);
 
       &::before {
         content: "0"counter(css-counter);
-        @extend %semibold-24-inter;
-        color: $green;
+        @include semibold-24-inter;
+        color: var(--green);
       }
     }
   }
@@ -566,7 +569,7 @@
 }
 
 .current-news {
-  background: $gray-gradient;
+  background: var(--gray-gradient);
 
   &__container {
     padding-top: calc(70 / var(--rem) * 1rem);
@@ -580,7 +583,8 @@
   &__item {
     display: flex;
     flex-direction: column;
-    width: fit-content;
+
+
 
     &__inner {
       position: relative;
@@ -589,7 +593,7 @@
     &-img {
       &-wrap {
         position: relative;
-        width: fit-content;
+        width: 100%;
 
         &::before {
           content: '';
@@ -608,6 +612,11 @@
       z-index: 3;
       border-radius: calc(12 / var(--rem) * 1rem);
       display: block;
+      width: 100%;
+      border-radius: 12px;
+      @media (max-width: $sm) {
+        border-radius: 30px;
+      }
     }
 
     &-desc {
@@ -617,10 +626,10 @@
         bottom: 0;
         left: 0;
         right: 0;
-        @extend %regular-15-gilroy;
+        @include regular-15-gilroy;
         margin: 0 auto;
         padding: calc(12 / var(--rem) * 1rem);
-        background: $white;
+        background: var(--white);
         border-bottom-left-radius: calc(12 / var(--rem) * 1rem);
         border-bottom-right-radius: calc(12 / var(--rem) * 1rem);
       }
@@ -631,14 +640,14 @@
       position: absolute;
       left: 0;
       top: calc(100% + (16 / var(--rem) * 1rem));
-      @extend %medium-24-inter;
+      @include medium-24-inter;
     }
   }
 }
 
 .review {
-  background: $green;
-  color: $white;
+  background: var(--green);
+  color: var(--white);
 
   &__container {
     padding-top: calc(70 / var(--rem) * 1rem);
@@ -664,39 +673,21 @@
     margin-bottom: calc(20 / var(--rem) * 1rem);
   }
 
-  &__slider {
-    padding: 0 calc(19 / var(--rem) * 1rem);
-
-    @media (max-width: 767px) {
-      padding: 0;
-    }
-  }
-
-  .slider {
-    &__btn {
-      &-wrap {
-        width: calc(100% + (24 / var(--rem) * 1rem));
-        margin-left: calc(-12 / var(--rem) * 1rem);
-      }
-    }
-  }
-
   &__item {
     display: flex;
     justify-content: space-between;
     text-align: left;
     padding: calc(41 / var(--rem) * 1rem) calc(84 / var(--rem) * 1rem);
-    background: $white;
-    color: $black;
+    background: var(--white);
+    color: var(--black);
     border: calc(1 / var(--rem) * 1rem) solid #40AC6C;
     border-radius: calc(12 / var(--rem) * 1rem);
     gap: calc(20 / var(--rem) * 1rem);
-
-    @media (max-width: 767px) {
+    @media (max-width: $md) {
       padding: calc(20 / var(--rem) * 1rem) calc(42 / var(--rem) * 1rem);
     }
 
-    @media (max-width: 575px) {
+    @media (max-width: $md) {
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -716,7 +707,7 @@
       height: calc(88 / var(--rem) * 1rem);
       margin-bottom: calc(19 / var(--rem) * 1rem);
 
-      @media (max-width: 575px) {
+      @media (max-width: $md) {
         margin-left: auto;
         margin-right: auto;
       }
@@ -724,32 +715,32 @@
 
     &-name {
       display: block;
-      @extend %semibold-24-inter;
+      @include semibold-24-inter;
       margin-bottom: calc(4 / var(--rem) * 1rem);
     }
 
     &-content {
       width: 70.4%;
 
-      @media (max-width: 575px) {
+      @media (max-width: $md) {
         width: 100%;
       }
     }
 
     &-title {
-      @extend %medium-30-inter;
+      @include medium-30-inter;
       margin-bottom: calc(24 / var(--rem) * 1rem);
     }
 
     &-more {
-      padding: calc(12 / var(--rem) * 1rem) calc($btn-hz-p / 1.5);
+      padding: calc(12 / var(--rem) * 1rem) calc(var(--btn-hz-p) / 1.5);
     }
   }
 }
 
 .partners {
   position: relative;
-  background: $gray-gradient;
+  background: var(--gray-gradient);
   padding-top: calc(60 / var(--rem) * 1rem);
   padding-bottom: calc(80 / var(--rem) * 1rem);
 
@@ -779,7 +770,7 @@
       align-items: center;
       gap: calc(35 / var(--rem) * 1rem);
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         justify-content: center;
         position: static;
         flex-direction: row;
@@ -794,30 +785,30 @@
     z-index: 5;
     bottom: calc(-112 / var(--rem) * 1rem);
     right: -8.3%;
-    @extend %regular-16-gilroy;
+    @include regular-16-gilroy;
     max-width: calc(222 / var(--rem) * 1rem);
-    background: $white;
+    background: var(--white);
     box-shadow: calc(2 / var(--rem) * 1rem) calc(2 / var(--rem) * 1rem) calc(10 / var(--rem) * 1rem) rgba(0, 0, 0, 0.13);
     border-radius: calc(15 / var(--rem) * 1rem);
 
-    @media (max-width: 767px) {
+    @media (max-width: $md) {
       right: 5%;
     }
   }
 }
 
 .contacts {
-  background: url('@img/contact-bg.png') no-repeat top left, $blue-gradient;
+  background: url('@img/contact-bg.png') no-repeat top left, var(--blue-gradient);
   position: relative;
-  color: $white;
+  color: var(--white);
 
-  @media (max-width: 1199px) {
+  @media (max-width: $xl) {
     background-position: top left -20%;
     background-size: 40% auto;
   }
 
-  @media (max-width: 767px) {
-    background: $blue-gradient;
+  @media (max-width: $md) {
+    background: var(--blue-gradient);
   }
 
   &__container {
@@ -852,7 +843,7 @@
       display: flex;
       gap: calc(20 / var(--rem) * 1rem);
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         flex-direction: column;
       }
     }
@@ -878,7 +869,7 @@
   &__list {
     gap: calc(95 / var(--rem) * 1rem) 0;
 
-    @media (max-width: 575px) {
+    @media (max-width: $sm) {
       gap: calc(30 / var(--rem) * 1rem) 0;
     }
   }
@@ -892,12 +883,12 @@
 
   &__name {
     margin-top: auto;
-    @extend %semibold-24-inter;
+    @include semibold-24-inter;
     margin-bottom: calc(15 / var(--rem) * 1rem);
   }
 
   &__price {
-    @extend %medium-30-inter;
+    @include medium-30-inter;
     margin-bottom: calc(18 / var(--rem) * 1rem);
   }
 
@@ -908,7 +899,7 @@
 }
 
 .device-hero {
-  background: $gray-gradient;
+  background: var(--gray-gradient);
   padding-bottom: calc(70 / var(--rem) * 1rem);
 
   &__container {
@@ -927,7 +918,7 @@
 
     width: 100%;
 
-    @media (max-width: 575px) {
+    @media (max-width: $sm) {
       &-wrap {
         width: 100% !important;
         height: calc(350 / var(--rem) * 1rem);
@@ -941,13 +932,13 @@
     position: relative;
     z-index: 2;
     display: flex;
-    color: $white;
+    color: var(--white);
 
     &_black {
-      color: $black;
+      color: var(--black);
     }
 
-    @media (max-width: 575px) {
+    @media (max-width: $sm) {
       text-align: center;
       flex-direction: column;
       align-items: center;
@@ -957,11 +948,11 @@
   }
 
   &__title {
-    @extend %bold-80-inter;
+    @include bold-80-inter;
   }
 
   &__desc {
-    @extend %regular-20-gilroy;
+    @include regular-20-gilroy;
   }
 
   &__device {
@@ -971,11 +962,11 @@
     margin-bottom: calc(70 / var(--rem) * 1rem);
     width: fit-content;
 
-    @media (max-width: 1199px) {
+    @media (max-width: $xl) {
       width: 70%;
     }
 
-    @media (max-width: 575px) {
+    @media (max-width: $sm) {
       width: 100%;
       margin: 0 auto calc(20 / var(--rem) * 1rem) auto !important;
     }
@@ -983,30 +974,33 @@
     &-tooltip {
       &-btn {
         position: relative;
-        &:hover  {
+
+        &:hover {
           .device-hero__device-tooltip-content {
             visibility: visible;
             opacity: 1;
           }
         }
       }
+
       &-content {
         position: absolute;
         z-index: 1;
         width: calc(150 / var(--rem) * 1rem);
         top: calc(100% - calc(23 / var(--rem) * 1rem));
         right: 0;
-        @extend %medium-17-gilroy;
+        @include medium-17-gilroy;
         text-align: left;
         padding: calc(11 / var(--rem) * 1rem) calc(15 / var(--rem) * 1rem) calc(13 / var(--rem) * 1rem);
-        background: $white;
+        background: var(--white);
         box-shadow: calc(2 / var(--rem) * 1rem) calc(2 / var(--rem) * 1rem) calc(10 / var(--rem) * 1rem) rgba(0, 0, 0, 0.13);
         border-radius: calc(15 / var(--rem) * 1rem);
         visibility: hidden;
         opacity: 0;
         transition: opacity .3s ease-in-out,
-        visibility .3s ease-in-out;
-        @media (max-width: 575px) {
+          visibility .3s ease-in-out;
+
+        @media (max-width: $sm) {
           width: calc(70 / var(--rem) * 1rem);
           padding: calc(5 / var(--rem) * 1rem) calc(7 / var(--rem) * 1rem);
           border-radius: calc(9 / var(--rem) * 1rem);
@@ -1017,17 +1011,17 @@
   }
 
   &__text {
-    @extend %semibold-38-inter;
+    @include semibold-38-inter;
     margin-bottom: calc(30 / var(--rem) * 1rem);
 
     &_green {
-      color: $green;
+      color: var(--green);
     }
   }
 
   &__btn-download {
-    padding-left: calc($btn-hz-p * 1.26);
-    padding-right: calc($btn-hz-p * 1.26);
+    padding-left: calc(var(--btn-hz-p) * 1.26);
+    padding-right: calc(var(--btn-hz-p) * 1.26);
   }
 }
 
@@ -1039,18 +1033,19 @@
     top: calc(-37 / var(--rem) * 1rem);
     right: 0;
 
-    @media (max-width: 1199px) {
+    @media (max-width: $xl) {
       top: 50% !important;
       transform: translateY(-60%);
       width: 50% !important;
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: $lg) {
       display: none;
     }
   }
 
   &__container {
+    position: relative;
     padding-top: calc(70 / var(--rem) * 1rem);
     padding-bottom: calc(70 / var(--rem) * 1rem);
   }
@@ -1079,12 +1074,18 @@
       grid-column: 4 span;
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: $lg) {
       grid-column: 6 span;
     }
 
-    @media (max-width: 575px) {
+    @media (max-width: $md) {
       grid-column: 12 span;
+    }
+
+    &_line {
+      @media (max-width: $lg) {
+        grid-column: 12 span;
+      }
     }
   }
 
@@ -1097,15 +1098,15 @@
       justify-content: center;
       width: calc(84 / var(--rem) * 1rem);
       height: calc(84 / var(--rem) * 1rem);
-      background: $green;
+      background: var(--green);
       border-radius: 50%;
     }
   }
 }
 
 .pluggable-sensors {
-  background: $blue-gradient;
-  color: $white;
+  background: var(--blue-gradient);
+  color: var(--white);
 
   &__container {
     display: flex;
@@ -1136,13 +1137,13 @@
     &-info {
       position: absolute;
       top: 0;
-      right:calc(-50 / var(--rem) * 1rem);
+      right: calc(-50 / var(--rem) * 1rem);
       z-index: 3;
-      @extend %medium-17-gilroy;
+      @include medium-17-gilroy;
       max-width: calc(150 / var(--rem) * 1rem);
       padding: calc(11 / var(--rem) * 1rem) calc(15 / var(--rem) * 1rem) calc(13 / var(--rem) * 1rem) calc(15 / var(--rem) * 1rem);
-      background: $white;
-      color: $black;
+      background: var(--white);
+      color: var(--black);
       box-shadow: calc(2 / var(--rem) * 1rem) calc(2 / var(--rem) * 1rem) calc(10 / var(--rem) * 1rem) rgba(0, 0, 0, 0.13);
       border-radius: calc(15 / var(--rem) * 1rem);
     }
@@ -1156,8 +1157,8 @@
       justify-content: center;
       width: calc(200 / var(--rem) * 1rem);
       height: calc(200 / var(--rem) * 1rem);
-      background: $white;
-      border: calc(1 / var(--rem) * 1rem) solid $green;
+      background: var(--white);
+      border: calc(1 / var(--rem) * 1rem) solid var(--green);
       border-radius: 50%;
       margin-bottom: calc(36 / var(--rem) * 1rem);
     }
@@ -1165,19 +1166,19 @@
   }
 
   &__name {
-    @extend %medium-22-gilroy;
+    @include medium-22-gilroy;
   }
 }
 
 .device-equipped {
-  background: $green;
-  color: $white;
+  background: var(--green);
+  color: var(--white);
 
   &__bg {
     margin-top: calc(-110 / var(--rem) * 1rem);
     margin-bottom: calc(60 / var(--rem) * 1rem);
 
-    @media (max-width: 575px) {
+    @media (max-width: $sm) {
       margin-top: calc(-60 / var(--rem) * 1rem);
     }
   }
@@ -1202,17 +1203,17 @@
       display: flex;
       flex-wrap: wrap;
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         flex-direction: wrap;
 
       }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: $lg) {
       column-count: 2;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: $md) {
       column-count: unset;
     }
 
@@ -1234,7 +1235,7 @@
       width: calc(15 / var(--rem) * 1rem);
       height: calc(15 / var(--rem) * 1rem);
       border-radius: 50%;
-      background: $white;
+      background: var(--white);
     }
 
   }
@@ -1242,7 +1243,7 @@
   &__text {
     display: inline;
     width: fit-content;
-    @extend %medium-23-gilroy;
+    @include medium-23-gilroy;
   }
 
   &__tooltip {
@@ -1261,10 +1262,10 @@
       align-items: center;
       width: calc(18 / var(--rem) * 1rem);
       height: calc(18 / var(--rem) * 1rem);
-      background: $white;
-      color: $black;
+      background: var(--white);
+      color: var(--black);
       border-radius: 50%;
-      @extend %semibold-14-gilroy;
+      @include semibold-14-gilroy;
 
       &:hover,
       &:focus-visible,
@@ -1282,8 +1283,8 @@
       left: calc(6 / var(--rem) * 1rem);
       z-index: 0;
       width: calc(160 / var(--rem) * 1rem);
-      background: $white;
-      color: $black;
+      background: var(--white);
+      color: var(--black);
       padding: calc(13 / var(--rem) * 1rem) calc(23 / var(--rem) * 1rem) calc(13 / var(--rem) * 1rem) calc(15 / var(--rem) * 1rem);
       box-shadow: calc(2 / var(--rem) * 1rem) calc(2 / var(--rem) * 1rem) calc(10 / var(--rem) * 1rem) rgba(0, 0, 0, 0.13);
       border-radius: calc(15 / var(--rem) * 1rem);
@@ -1312,11 +1313,11 @@
   }
 
   &__desc {
-    @extend %semibold-32-inter;
+    @include semibold-32-inter;
     margin-bottom: calc(30 / var(--rem) * 1rem);
 
     &_green {
-      color: $green;
+      color: var(--green);
     }
   }
 
@@ -1324,21 +1325,22 @@
     &-wrap {
       margin-top: calc(-130 / var(--rem) * 1rem);
 
-      @media (max-width: 767px) {
+      @media (max-width: $md) {
         margin: 0;
       }
 
-      @media (max-width: 575px) {
+      @media (max-width: $sm) {
         margin: 0 auto;
       }
     }
 
+    display: block;
     margin-left: auto;
   }
 }
 
 .device-connecting {
-  background: $gray-gradient;
+  background: var(--gray-gradient);
   position: relative;
 
   &__bg {
@@ -1348,7 +1350,7 @@
       left: 0;
       height: 100%;
 
-      @media (max-width: 1199px) {
+      @media (max-width: $xl) {
         top: 50% !important;
         transform: translateY(-50%) !important;
         width: 40%;
@@ -1357,11 +1359,11 @@
         margin-bottom: 0 !important;
       }
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         width: 30%;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: $md) {
         display: none;
       }
     }
@@ -1377,7 +1379,7 @@
   &__desc {
     margin-left: auto;
     position: relative;
-    @extend %semibold-32-inter;
+    @include semibold-32-inter;
 
     &::before {
       content: url('@img/device-connecting-icon.svg');
@@ -1389,8 +1391,8 @@
 }
 
 .device-characteristics {
-  background: $blue-gradient;
-  color: $white;
+  background: var(--blue-gradient);
+  color: var(--white);
 
   &__container {
     display: flex;
@@ -1411,12 +1413,13 @@
   }
 
   &__item {
+
     &-title {
       display: flex;
       align-items: flex-start;
       gap: calc(15 / var(--rem) * 1rem);
       margin-bottom: calc(21 / var(--rem) * 1rem);
-      @extend %medium-30-inter;
+      @include medium-30-inter;
 
       &::before {
         content: '';
@@ -1424,7 +1427,7 @@
         transform: translateY(calc(8 / var(--rem) * 1rem));
         width: calc(15 / var(--rem) * 1rem);
         height: calc(15 / var(--rem) * 1rem);
-        background: $white;
+        background: var(--white);
         border-radius: 50%;
       }
     }
@@ -1436,7 +1439,7 @@
     display: flex;
     align-items: center;
 
-    @media (max-width: 767px) {
+    @media (max-width: $md) {
       flex-direction: column;
       align-items: center;
       gap: calc(30 / var(--rem) * 1rem);
@@ -1448,24 +1451,24 @@
   &__text-block {
     padding-top: calc(80 / var(--rem) * 1rem);
     padding-bottom: calc(141 / var(--rem) * 1rem);
-    @extend %semibold-32-inter;
+    @include semibold-32-inter;
 
-    @media (max-width: 767px) {
+    @media (max-width: $md) {
       padding: 0;
     }
   }
 
   &__title {
-    color: $green;
+    color: var(--green);
   }
 
   &__bg {
     &-wrap {
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         margin: 0 !important;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: $md) {
         width: 60%;
       }
     }
@@ -1478,7 +1481,7 @@
     padding-bottom: calc(70 / var(--rem) * 1rem);
     gap: calc(40 / var(--rem) * 1rem) 0;
 
-    @media (max-width: 991px) {
+    @media (max-width: $lg) {
       flex-direction: column;
     }
   }
@@ -1490,10 +1493,10 @@
     gap: calc(25 / var(--rem) * 1rem);
 
     &-main {
-      border: calc(1 / var(--rem) * 1rem) solid $gray;
+      border: calc(1 / var(--rem) * 1rem) solid var(--gray);
       border-radius: calc(12 / var(--rem) * 1rem);
 
-      @media (min-width: 1200px) {
+      @media (min-width: calc($xl + 0.02px)) {
         height: calc(497 / var(--rem) * 1rem);
       }
     }
@@ -1502,7 +1505,7 @@
       display: flex;
       gap: calc(24 / var(--rem) * 1rem);
 
-      @media (max-width: 575px) {
+      @media (max-width: $sm) {
         display: none;
       }
     }
@@ -1511,14 +1514,14 @@
       cursor: pointer;
       flex-grow: 1;
       height: calc(173 / var(--rem) * 1rem);
-      border: calc(1 / var(--rem) * 1rem) solid $gray;
+      border: calc(1 / var(--rem) * 1rem) solid var(--gray);
       border-radius: calc(12 / var(--rem) * 1rem);
 
-      @media (max-width: 1199px) and (min-width: 992px) {
+      @media (max-width: $xl) and (min-width: calc($lg + 0.02px)) {
         height: calc(140 / var(--rem) * 1rem);
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: $md) {
         height: calc(140 / var(--rem) * 1rem);
       }
     }
@@ -1534,17 +1537,17 @@
   }
 
   &__name {
-    @extend %semibold-38-inter;
+    @include semibold-38-inter;
     margin-bottom: calc(16 / var(--rem) * 1rem);
   }
 
   &__price {
-    @extend %semibold-38-inter;
+    @include semibold-38-inter;
     margin-bottom: calc(20 / var(--rem) * 1rem);
   }
 
   &__form {
-    @extend %regular-18-inter;
+    @include regular-18-inter;
     margin-bottom: calc(40 / var(--rem) * 1rem);
   }
 
@@ -1560,17 +1563,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: calc(30 / var(--rem) * 1rem);
-
-    .choices {
-      max-width: calc(145 / var(--rem) * 1rem);
-      @extend %regular-22-gilroy;
-
-      &__inner {
-        display: flex;
-        align-items: center;
-        height: calc(43 / var(--rem) * 1rem);
-      }
-    }
   }
 
   &__label {
@@ -1586,7 +1578,7 @@
     margin-bottom: calc(30 / var(--rem) * 1rem);
 
     &-title {
-      @extend %regular-18-inter;
+      @include regular-18-inter;
       display: inline-block;
       margin-bottom: calc(10 / var(--rem) * 1rem);
     }
@@ -1602,7 +1594,7 @@
     }
 
     &-title {
-      @extend %regular-18-inter;
+      @include regular-18-inter;
     }
   }
 
@@ -1617,7 +1609,7 @@
       margin-right: calc(11 / var(--rem) * 1rem);
       width: calc(4 / var(--rem) * 1rem);
       height: calc(4 / var(--rem) * 1rem);
-      background: $black;
+      background: var(--black);
       border-radius: 50%;
       transform: translateY(calc(10 / var(--rem) * 1rem));
     }
@@ -1635,7 +1627,7 @@
 }
 
 .offer-sensors {
-  background: $gray-gradient;
+  background: var(--gray-gradient);
 
   &__container {
     padding-top: calc(70 / var(--rem) * 1rem);
@@ -1667,12 +1659,12 @@
   }
 
   &__name {
-    @extend %medium-24-inter;
+    @include medium-24-inter;
     margin-bottom: calc(15 / var(--rem) * 1rem);
   }
 
   &__price {
-    @extend %medium-30-inter;
+    @include medium-30-inter;
     margin-bottom: calc(10 / var(--rem) * 1rem);
   }
 
@@ -1681,7 +1673,6 @@
     margin-bottom: calc(24 / var(--rem) * 1rem);
   }
 
-  &__btn {}
 }
 
 .delivery {
@@ -1691,18 +1682,16 @@
     padding-top: calc(70 / var(--rem) * 1rem);
     padding-bottom: calc(70 / var(--rem) * 1rem);
 
-    @media (max-width: 575px) {
+    @media (max-width: $sm) {
       flex-direction: column;
       gap: calc(20 / var(--rem) * 1rem);
     }
   }
 
-  &__title {}
-
   &__desc {
     margin-top: calc(17 / var(--rem) * 1rem);
 
-    @media (max-width: 1199px) {
+    @media (max-width: $xl) {
       margin-top: 0;
     }
   }
@@ -1718,7 +1707,7 @@
     display: flex;
     gap: calc(62 / var(--rem) * 1rem);
 
-    @media (max-width: 1199px) {
+    @media (max-width: $xl) {
       flex-direction: column;
     }
   }
@@ -1739,7 +1728,7 @@
     display: flex;
     gap: calc(15 / var(--rem) * 1rem) calc(37 / var(--rem) * 1rem);
 
-    @media (max-width: 767px) {
+    @media (max-width: $md) {
       flex-direction: column;
     }
 
@@ -1770,10 +1759,10 @@
     &-wrap {
       flex: none;
       max-width: calc(215 / var(--rem) * 1rem);
-      border: calc(1 / var(--rem) * 1rem) solid $gray2;
+      border: calc(1 / var(--rem) * 1rem) solid var(--gray2);
       border-radius: calc(12 / var(--rem) * 1rem);
 
-      @media (max-width: 767px) {
+      @media (max-width: $md) {
         max-width: 100%;
       }
     }
@@ -1791,39 +1780,13 @@
 
   &__name,
   &__price {
-    @extend %medium-30-inter;
+    @include medium-30-inter;
   }
 
   &__quantity {
     display: flex;
     gap: calc(20 / var(--rem) * 1rem);
-    @extend %regular-20-gilroy;
-
-    .choices {
-      &[data-type*=select-one]::after {
-        right: 0;
-      }
-
-      &::after {
-        transform: translateY(calc(-50% - calc(2 / var(--rem) * 1rem)));
-      }
-
-      &__inner {
-        padding: 0;
-        border: none;
-        padding-left: calc(5 / var(--rem) * 1rem);
-        padding-right: calc(27 / var(--rem) * 1rem);
-      }
-
-      &__item--choice {
-        padding: calc(5 / var(--rem) * 1rem) calc(3 / var(--rem) * 1rem);
-        padding-left: calc(5 / var(--rem) * 1rem);
-      }
-
-      &__list {
-        border-radius: 0;
-      }
-    }
+    @include regular-20-gilroy;
   }
 
   &__remove-btn {
@@ -1869,13 +1832,13 @@
     }
 
     &-title {
-      @extend %medium-24-inter;
+      @include medium-24-inter;
     }
   }
 
   &__field {
     &-wrap {
-      @extend %regular-17-gilroy;
+      @include regular-17-gilroy;
       display: flex;
       flex-direction: column;
       gap: calc(11 / var(--rem) * 1rem);
@@ -1892,8 +1855,6 @@
     padding-top: calc(16 / var(--rem) * 1rem);
     height: calc(82 / var(--rem) * 1rem);
   }
-
-  &__order {}
 }
 
 .news {
@@ -1917,12 +1878,12 @@
     flex-direction: column;
     min-height: calc(553 / var(--rem) * 1rem);
 
-    @media (max-width: 1199px) {
+    @media (max-width: $xl) {
       min-height: auto;
     }
 
     &-title {
-      @extend %semibold-24-inter;
+      @include semibold-24-inter;
       margin-bottom: calc(16 / var(--rem) * 1rem);
     }
   }
@@ -2010,11 +1971,11 @@
 
   &__item {
     margin-top: calc(-1 / var(--rem) * 1rem);
-    border-top: calc(1 / var(--rem) * 1rem) solid $gray;
-    border-bottom: calc(1 / var(--rem) * 1rem) solid $gray;
+    border-top: calc(1 / var(--rem) * 1rem) solid var(--gray);
+    border-bottom: calc(1 / var(--rem) * 1rem) solid var(--gray);
 
     &-title {
-      @extend %semibold-24-inter;
+      @include semibold-24-inter;
     }
 
     &-desc {
@@ -2030,7 +1991,6 @@
 }
 
 // Pages
-
 .home-page {
   .popular-products {
     background: transparent;
@@ -2043,10 +2003,10 @@
       &-wrap {
         width: 83.3%;
 
-        @media (max-width: 991px) {
+        @media (max-width: $lg) {
           width: 100%;
 
-          @media (max-width: 575px) {
+          @media (max-width: $sm) {
             height: calc(350 / var(--rem) * 1rem);
           }
         }
@@ -2057,21 +2017,21 @@
       flex-direction: column;
       padding: 0 20%;
 
-      @media (max-width: 1199px) {
+      @media (max-width: $xl) {
         padding: 0 15%;
       }
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         padding: 0 10%;
       }
 
-      @media (max-width: 575px) {
+      @media (max-width: $sm) {
         padding: 0;
       }
     }
 
     &__title {
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         margin-bottom: calc(19 / var(--rem) * 1rem);
       }
     }
@@ -2079,14 +2039,14 @@
     &__desc {
       max-width: calc(505 / var(--rem) * 1rem);
 
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         align-self: flex-end;
         margin-bottom: calc(40 / var(--rem) * 1rem);
       }
     }
 
     &__btn-buy {
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         align-self: flex-end;
       }
     }
@@ -2095,11 +2055,11 @@
       position: relative;
       margin-top: calc(-96 / var(--rem) * 1rem);
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         margin-top: calc(-60 / var(--rem) * 1rem);
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: $md) {
         margin-top: 0;
       }
 
@@ -2162,11 +2122,11 @@
       &-wrap {
         width: calc(100% + calc(66 / var(--rem) * 1rem));
 
-        @media (max-width: 991px) {
+        @media (max-width: $lg) {
           width: 130%;
         }
 
-        @media (max-width: 575px) {
+        @media (max-width: $sm) {
           height: calc(300 / var(--rem) * 1rem);
         }
       }
@@ -2175,26 +2135,26 @@
     &__info {
       padding: 0 7.5%;
 
-      @media (max-width: 1199px) {
+      @media (max-width: $xl) {
         padding: 0 5%;
       }
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         padding: 0 3.5%;
       }
 
-      @media (max-width: 575px) {
+      @media (max-width: $sm) {
         padding: 0;
       }
     }
 
     &__title {
       &-wrap {
-        @media (min-width: 576px) {
+        @media (min-width: calc($sm + 0.02px)) {
           margin-right: calc(40 / var(--rem) * 1rem);
         }
 
-        @media (max-width: 575px) {
+        @media (max-width: $sm) {
           display: flex;
           flex-direction: column;
           gap: calc(20 / var(--rem) * 1rem);
@@ -2202,7 +2162,7 @@
         }
       }
 
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         margin-bottom: calc(26 / var(--rem) * 1rem);
       }
     }
@@ -2216,11 +2176,11 @@
       flex-direction: column;
       align-items: center;
 
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         margin-top: calc(22 / var(--rem) * 1rem);
       }
 
-      @media (max-width: 1199px) and (min-width: 576px) {
+      @media (max-width: $xl) and (min-width: calc($sm + 0.02px)) {
         width: 85%;
       }
 
@@ -2294,10 +2254,10 @@
       &-wrap {
         width: 89.3%;
 
-        @media (max-width: 991px) {
+        @media (max-width: $lg) {
           width: 100%;
 
-          @media (max-width: 575px) {
+          @media (max-width: $sm) {
             height: calc(400 / var(--rem) * 1rem);
           }
         }
@@ -2308,21 +2268,21 @@
       flex-direction: column;
       padding: 0 20%;
 
-      @media (max-width: 1199px) {
+      @media (max-width: $xl) {
         padding: 0 15%;
       }
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         padding: 0 10%;
       }
 
-      @media (max-width: 575px) {
+      @media (max-width: $sm) {
         padding: 0;
       }
     }
 
     &__title {
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         margin-bottom: calc(19 / var(--rem) * 1rem);
       }
     }
@@ -2330,14 +2290,14 @@
     &__desc {
       max-width: calc(365 / var(--rem) * 1rem);
 
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         align-self: flex-end;
         margin-bottom: calc(40 / var(--rem) * 1rem);
       }
     }
 
     &__btn-buy {
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         align-self: flex-end;
       }
     }
@@ -2345,11 +2305,11 @@
     &__device {
       margin-top: calc(-96 / var(--rem) * 1rem);
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         margin-top: calc(-60 / var(--rem) * 1rem);
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: $md) {
         margin-top: 0;
       }
     }
@@ -2359,13 +2319,13 @@
     margin-bottom: calc(190 / var(--rem) * 1rem);
 
     &__container {
-      position: relative;
       padding-bottom: 0;
     }
 
     &__bg {
-      top: unset;
-      right: calc(-42 / var(--rem) * 1rem);
+      top: unset !important;
+      transform: unset;
+      right: calc(35 / var(--rem) * 1rem);
       bottom: calc(-40 / var(--rem) * 1rem);
     }
   }
@@ -2386,10 +2346,10 @@
       &-wrap {
         width: 89.3%;
 
-        @media (max-width: 991px) {
+        @media (max-width: $lg) {
           width: 100%;
 
-          @media (max-width: 575px) {
+          @media (max-width: $sm) {
             height: calc(400 / var(--rem) * 1rem);
           }
         }
@@ -2400,25 +2360,25 @@
       flex-direction: column;
       padding: 0 20%;
 
-      @media (max-width: 1199px) {
+      @media (max-width: $xl) {
         padding: 0 15%;
       }
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         padding: 0 10%;
       }
 
-      @media (max-width: 575px) {
+      @media (max-width: $sm) {
         padding: 0;
       }
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         margin-bottom: calc(30 / var(--rem) * 1rem);
       }
     }
 
     &__title {
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         margin-bottom: calc(19 / var(--rem) * 1rem);
       }
     }
@@ -2426,7 +2386,7 @@
     &__desc {
       max-width: calc(615 / var(--rem) * 1rem);
 
-      @media (min-width: 576px) {
+      @media (min-width: calc($sm + 0.02px)) {
         margin-bottom: calc(40 / var(--rem) * 1rem);
       }
     }
@@ -2435,7 +2395,7 @@
       margin-left: auto;
       margin-top: calc(-41 / var(--rem) * 1rem);
 
-      @media (max-width: 991px) {
+      @media (max-width: $lg) {
         margin-top: 0;
       }
     }

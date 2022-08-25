@@ -1,5 +1,5 @@
 include ./html/mixins.pug
-include ./html/header.pug
+
 doctype html
 html(lang="ru")
   head
@@ -10,8 +10,7 @@ html(lang="ru")
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
   body.sensordirector-page
-      +discount
-      +header()
+      include ./html/header.pug
 
       main.main 
 
@@ -19,13 +18,16 @@ html(lang="ru")
           .container.device-hero__container
             .device-hero__ellipse-wrap
               img.device-hero__ellipse(src="@img/sensordirector/hero-ellipse.svg", alt="")
-            .device-hero__info
+            .device-hero__info(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
               .device-hero__title-wrap
                 h1.device-hero__title SensorDirector
                 +link('white','Заказать','product-page.html','device-hero__btn-buy')
               p.device-hero__desc Создай идеальные условия для выращивания: Контролируй и настраивай все сенсоры через одно устройство с помощью нашего приложения! 
-            .device-hero__device 
-              img.device-hero__device-img(src="@img/sensordirector/hero-bg.png", alt="sensordirector")
+            .device-hero__device(data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out") 
+              picture
+                source(srcset="@img/sensordirector/hero-bg.webp" type="image/webp")
+                source(srcset="@img/sensordirector/hero-bg.png" type="image/png" )
+                img.device-hero__device-img(src="@img/sensordirector/hero-bg.png", alt="sensordirector")
               .device-hero__device-icon-wrap
                 button.device-hero__device-tooltip-btn.device-hero__device-icon_1(type="button")
                   img(src="@img/sensordirector/icon-1.svg", alt="sensordirector")
@@ -55,100 +57,127 @@ html(lang="ru")
                   img(src="@img/sensordirector/icon-7.svg", alt="sensordirector icon")
                   span.device-hero__device-tooltip-content
                     span EAir temp &amp; humidity &amp; VPD
-            p.device-hero__text
+            p.device-hero__text(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
               | С помощью 
               span.device-hero__text_green  SensorDirector вы можете объединить до 64 000 IOT wireless сенсоров в одну систему,
               |  что дает неограниченные возможности и перспективы для вашей теплицы.
-            +link('green','Download manual','#','device-hero__btn-download')
+            +link('green','Download manual','#','device-hero__btn-download', 'fade-up', '500', 'ease-in-out', '0')
 
         section.device-advantages
+          picture
+            source(srcset="@img/sensordirector/advantages.webp" type="image/webp")
+            source(srcset="@img/sensordirector/advantages.png" type="image/png" )
+            img.device-advantages__bg(src="@img/sensordirector/advantages.png", alt="" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out")
           .container.device-advantages__container
-            img.device-advantages__bg(src="@img/sensordirector/advantages.png", alt="")
-            +sectionTitle('Что он может?','device-advantages__title')
+            +sectionTitle('Что он может?','device-advantages__title', 'fade-right', '500', 'ease-in-out', '0')
             ul.device-advantages__list.row
-              li.device-advantages__item.col-lg-5
+              li.device-advantages__item.col-lg-5(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-3.svg", alt="")
                 p.device-advantages__desc Удаленно передавать данные с подключенных сенсоров в приложение на вашем мобильном устройстве
-              li.device-advantages__item.col-lg-5
+              li.device-advantages__item.col-lg-5(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-4.svg", alt="")
                 p.device-advantages__desc Помогает автоматически настроить работу всех систем в совокупности для поддержания заданных показателей сенсоров для теплицы.
-              li.device-advantages__item.col-lg-5
+              li.device-advantages__item.col-lg-5(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-9.svg", alt="")
                 p.device-advantages__desc Умеет работать даже, если связь с сенсором потеряна
-              li.device-advantages__item.col-lg-5
+              li.device-advantages__item.col-lg-5(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-6.svg", alt="")
                 p.device-advantages__desc Создавать отдельные климатические зоны с различными условиями выращивания
-              li.device-advantages__item.col-lg-8
+              li.device-advantages__item.device-advantages__item_line.col-lg-8(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-10.svg", alt="")
                 p.device-advantages__desc Автоматически отслеживать и предотвращать аварийные ситуации с помощью отправки уведомлений онлайн на ваше мобильное устройство, минимизировать их последствия. Также определяет тип возможных поломок благодаря системе искусственного интеллекта.
         
         section.pluggable-sensors
           .container.pluggable-sensors__container 
-            h2.pluggable-sensors__title Подключаемые сенсоры:
+            h2.pluggable-sensors__title(data-aos="fade-down" data-aos-duration="500" data-aos-easing="ease-in-out") Подключаемые сенсоры:
             ul.pluggable-sensors__list.row
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-2.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-2.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-2.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-2.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name LUX
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-3.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-3.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-3.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-3.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name PAR sensors
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-1.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-1.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-1.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-1.png", alt="pluggable-sensors sensors")
                   p.pluggable-sensors__item-info EAir temp &amp; humidity &amp; VPD
                 strong.pluggable-sensors__name Flow meter
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-1.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-1.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-1.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-1.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name Soil EC
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-6.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-6.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-6.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-6.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name CO2
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-5.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-5.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-5.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-5.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name Soil moisture
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-4.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-4.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-4.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-4.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name Air temp &amp; humidity &amp; VPD
               
         section.device-equipped
           .container.device-equipped__container
-            img.device-equipped__bg(src="@img/sensordirector/device.png", alt="")
-            h2.device-equipped__title Каждый девайс оснащён:
+            picture
+              source(srcset="@img/sensordirector/device.webp" type="image/webp")
+              source(srcset="@img/sensordirector/device.png" type="image/png" )
+              img.device-equipped__bg(src="@img/sensordirector/device.png", alt="" data-aos="fade-down" data-aos-duration="500" data-aos-easing="ease-in-out")
+            h2.device-equipped__title(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out") Каждый девайс оснащён:
             ul.device-equipped__list.device-equipped__list_flex.row
-              li.device-equipped__item.col-lg-4.col-md-6
+              li.device-equipped__item.col-lg-4.col-md-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text 4 разъема для подключения сенсоров (вы можете комбинировать сенсоры на своё усмотрение)
-              li.device-equipped__item.col-lg-4.col-md-6
+              li.device-equipped__item.col-lg-4.col-md-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text Держатель для крепления к вертикальным поверхностям
-              li.device-equipped__item.col-lg-4.col-md-6
+              li.device-equipped__item.col-lg-4.col-md-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text Системой Wi-Fi MESH connection для установления 
-              li.device-equipped__item.col-md-6
+              li.device-equipped__item.col-md-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text Встроенным уникальным софтом,который позволяет очень просто задавать сложные настройки и контролировать их, и предотвращать ошибки пользователя 
-              li.device-equipped__item.col-md-6
+              li.device-equipped__item.col-md-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text Системой Wi-Fi MESH connection для установления соединения с вашим телефоном, лэптопом или планшетом
 
         +sectionApplication('Sensor Director настраивается и связывается с другими устройствами')
 
-        +sectionDeviceConnecting('Sensor Director','@img/sensordirector/connecting.png')
+        +sectionDeviceConnecting('Sensor Director','@img/sensordirector/connecting', 'png', 'png')
 
         +sectionDeviceCharacteristics
 
-        +sectionDeviceInstallation('@img/sensordirector/installation.png')
+        +sectionDeviceInstallation('@img/sensordirector/installation', 'png', 'png')
 
         +sectionPopularProducts('Этот девайс идеально сочетается с:')
 

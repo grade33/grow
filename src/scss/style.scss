@@ -1,20 +1,20 @@
-@import "./partials/variables";
-@import "./partials/mixins";
+// Variables
+@import './partials/variables';
+@import './partials/mixins';
 
-// Bootstrap
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/root";
-@import "bootstrap/scss/grid";
-@import "bootstrap/scss/containers";
+// Reset
+@import 'normalize.css/normalize';
+@import './partials/reset';
+@import './partials/fonts';
 
+// Swiper, AOS, Select, Grid
+@import 'swiper/swiper';
+@import './modules/swiper';
+@import "choices.js/src/styles/choices";
+@import './modules/choices';
+@import "./partials/grid";
+@import 'aos/dist/aos';
 
-@import "./normalize.css/normalize";
-@import "./partials/reset";
-@import "./partials/fonts";
-
-
-@import "./vendor/choices";
-@import "./modules/common";
-@import "./modules/main";
+// Main
+@import './modules/common';
+@import './modules/main';

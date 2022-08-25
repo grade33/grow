@@ -1,5 +1,5 @@
 include ./html/mixins.pug
-include ./html/header.pug
+
 doctype html
 html(lang="ru")
   head
@@ -10,34 +10,60 @@ html(lang="ru")
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
   body.home-page
-      +discount
-      +header()
+      include ./html/header.pug
 
       main.main
         section.presentation
-          .container.presentation__container
-            .slider.slider-1.presentation__slider
-              ul.slider__wrapper
-                li.slider__slide
-                  img.presentation__bg(src="@img/presentation-bg.png", alt="")
-                  .presentation__text-block
+          .swiper.swiper-1
+            ul.swiper-wrapper
+              li.swiper-slide
+                .container.presentation__item
+                  picture
+                    source(srcset="@img/presentation-bg.webp" type="image/webp")
+                    source(srcset="@img/presentation-bg.png" type="image/png" )
+                    img.presentation__bg(src="@img/presentation-bg.png", alt="")
+                  .presentation__text-block(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                     h1.presentation__title.col-xl-7.col-md-8.col-sm-10.col Grow faster, bigger, easier with us
                     p.presentation__desc.col-xl-4.col-md-5.col-sm-7.col We've got you covered with fully automated remote environmental controller
                     .presentation__btn-wrap 
                       +link('green','Select device','./catalog.html','presentation__btn')
                       +linkVideo('presentation__btn-video', '#video')
-              .container.slider__btn-wrap
-                button.slider__btn.slider__btn_prev(type="button")
-                  svg.slider__btn-icon
-                    use(xlink:href="@img/sprite.svg#chevron")
-                span.slider__active-slide 3
-                button.slider__btn.slider__btn_next(type="button")
-                  svg.slider__btn-icon
-                    use(xlink:href="@img/sprite.svg#chevron")
-        
+              li.swiper-slide
+                .container.presentation__item
+                  picture
+                    source(srcset="@img/presentation-bg.webp" type="image/webp")
+                    source(srcset="@img/presentation-bg.png" type="image/png" )
+                    img.presentation__bg(src="@img/presentation-bg.png", alt="")
+                  .presentation__text-block(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
+                    h1.presentation__title.col-xl-7.col-md-8.col-sm-10.col Grow faster, bigger, easier with us
+                    p.presentation__desc.col-xl-4.col-md-5.col-sm-7.col We've got you covered with fully automated remote environmental controller
+                    .presentation__btn-wrap 
+                      +link('green','Select device','./catalog.html','presentation__btn')
+                      +linkVideo('presentation__btn-video', '#video')
+              li.swiper-slide
+                .container.presentation__item
+                  picture
+                    source(srcset="@img/presentation-bg.webp" type="image/webp")
+                    source(srcset="@img/presentation-bg.png" type="image/png" )
+                    img.presentation__bg(src="@img/presentation-bg.png", alt="")
+                  .presentation__text-block(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
+                    h1.presentation__title.col-xl-7.col-md-8.col-sm-10.col Grow faster, bigger, easier with us
+                    p.presentation__desc.col-xl-4.col-md-5.col-sm-7.col We've got you covered with fully automated remote environmental controller
+                    .presentation__btn-wrap 
+                      +link('green','Select device','./catalog.html','presentation__btn')
+                      +linkVideo('presentation__btn-video', '#video')
+            .container.swiper__btn-wrap
+              button.swiper-button-prev.swiper__btn.swiper__btn_prev(type="button")
+                svg.swiper__btn-icon
+                  use(xlink:href="@img/sprite.svg#chevron")
+              .swiper-pagination.swiper__active-slide
+              button.swiper-button-next.swiper__btn.swiper__btn_next(type="button")
+                svg.swiper__btn-icon
+                  use(xlink:href="@img/sprite.svg#chevron")
+
         section.benefits
           .container.benefits__container
-            +sectionTitle('Benefits of GrowDirector Pro','benefits__title')
+            +sectionTitle('Benefits of GrowDirector Pro','benefits__title', 'fade-up', '500', 'ease-in-out', '0')
             ul.benefits__list.row
               -
                 const values = [
@@ -47,7 +73,7 @@ html(lang="ru")
                   'Open API', 'Scalability'
                 ]
               each val, idx in values
-                li.benefits__item.col-sm-4.col-6
+                li.benefits__item.col-md-4.col-sm-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200")
                   svg.benefits__icon
                     use(xlink:href="@img/sprite.svg#home-benefit-" + (+idx + 1))
                   h3.benefits__heading= val
@@ -59,92 +85,243 @@ html(lang="ru")
         section.quiz
           .container
             .quiz__container
-              .quiz__video-block#video
+              .quiz__video-block#video(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200")
                 button.quiz__video-btn(type="button")
                   svg.quiz__video-icon
                     use(xlink:href="@img/sprite.svg#video-play")
                 video.quiz__video(src="#" poster="@img/quiz-video-preview.jpg") 
-              .quiz__content
+              .quiz__content(data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .quiz__title 
                   svg.quiz__title-icon
                     use(xlink:href="@img/sprite.svg#question-mark")
                   h2.quiz__title-heading Just answer 5 questions and we'll find the right kit for you!
                 form.quiz__form(action="#") 
-                  .slider.slider-2.quiz__slider
-                    ul.slider__wrapper
-                      li.slider__slide.quiz__item
-                        h3.quiz__item-title
-                          span.quiz__item-title-pagination
-                            span.quiz__item-title_pagination_this 1
-                            | /
-                            span.quiz__item-title_pagination_all 5
-                          span.quiz__item-title-text How big is the grow area? 
-                        .quiz__form-content
-                          label.quiz__form-label
-                            input.radio.visually-hidden(type="radio" checked name="quiz-first" value="1")
-                            span.radio__custom
-                            span.quiz__form-text Large: &gt; 500
-                          label.quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="2")
-                            span.radio__custom
-                            span.quiz__form-text Medium: 100-500
-                          label.quiz__form-label
-                            input.radio.visually-hidden(type="radio" name="quiz-first" value="3")
-                            span.radio__custom
-                            span.quiz__form-text Small: &lt; 100
-                        .slider__btn-wrap
-                          button.slider__btn.slider__btn_prev(type="button" disabled)
-                            svg.slider__btn-icon
-                              use(xlink:href="@img/sprite.svg#arrow-long")
-                          button.slider__btn.slider__btn_next(type="button" )
-                            svg.slider__btn-icon
-                              use(xlink:href="@img/sprite.svg#arrow-long")
-
+                  .swiper.swiper-2
+                    ul.swiper-wrapper
+                      li.swiper-slide
+                        .quiz__item
+                          h3.quiz__item-title
+                            span.swiper-pagination.quiz__item-title-pagination
+                            span.quiz__item-title-text How big is the grow area? 
+                          .quiz__form-content
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-1" value="1")
+                              span.radio__custom
+                              span.quiz__form-text Large: &gt; 500
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" checked name="quiz-1" value="2")
+                              span.radio__custom
+                              span.quiz__form-text Medium: 100-500
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-1" value="3")
+                              span.radio__custom
+                              span.quiz__form-text Small: &lt; 100
+                          .swiper__btn-wrap
+                            button.swiper-button-prev.swiper__btn.swiper__btn_prev(type="button")
+                              svg.swiper__btn-icon
+                                use(xlink:href="@img/sprite.svg#arrow-long")
+                            button.swiper-button-next.swiper__btn.swiper__btn_next(type="button" )
+                              svg.swiper__btn-icon
+                                use(xlink:href="@img/sprite.svg#arrow-long")
+                      li.swiper-slide
+                        .quiz__item
+                          h3.quiz__item-title
+                            span.swiper-pagination.quiz__item-title-pagination
+                            span.quiz__item-title-text What's your method of cultivation?
+                          .quiz__form-content
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-2" value="1")
+                              span.radio__custom
+                              span.quiz__form-text Hydroponics water only
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" checked name="quiz-2" value="2")
+                              span.radio__custom
+                              span.quiz__form-text Hydroponics in coco substance 
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-2" value="4")
+                              span.radio__custom
+                              span.quiz__form-text Coir or rockwool 
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-2" value="5")
+                              span.radio__custom
+                              span.quiz__form-text Soil
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-2" value="6")
+                              span.radio__custom
+                              span.quiz__form-text Others
+                          .swiper__btn-wrap
+                            button.swiper-button-prev.swiper__btn.swiper__btn_prev(type="button")
+                              svg.swiper__btn-icon
+                                use(xlink:href="@img/sprite.svg#arrow-long")
+                            button.swiper-button-next.swiper__btn.swiper__btn_next(type="button" )
+                              svg.swiper__btn-icon
+                                use(xlink:href="@img/sprite.svg#arrow-long")
+                      li.swiper-slide
+                        .quiz__item
+                          h3.quiz__item-title
+                            span.swiper-pagination.quiz__item-title-pagination
+                            span.quiz__item-title-text What do you grow?
+                          .quiz__form-content
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-3" value="1")
+                              span.radio__custom
+                              span.quiz__form-text Lettuce or greens
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" checked name="quiz-3" value="2")
+                              span.radio__custom
+                              span.quiz__form-text Strawberries
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-3" value="3")
+                              span.radio__custom
+                              span.quiz__form-text Tomatoes 
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-3" value="4")
+                              span.radio__custom
+                              span.quiz__form-text Сannabis 
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-3" value="5")
+                              span.radio__custom
+                              span.quiz__form-text Cabbage
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-3" value="6")
+                              span.radio__custom
+                              span.quiz__form-text Flowers
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-3" value="7")
+                              span.radio__custom
+                              span.quiz__form-text Others
+                          .swiper__btn-wrap
+                            button.swiper-button-prev.swiper__btn.swiper__btn_prev(type="button")
+                              svg.swiper__btn-icon
+                                use(xlink:href="@img/sprite.svg#arrow-long")
+                            button.swiper-button-next.swiper__btn.swiper__btn_next(type="button" )
+                              svg.swiper__btn-icon
+                                use(xlink:href="@img/sprite.svg#arrow-long")
+                      li.swiper-slide
+                        .quiz__item
+                          h3.quiz__item-title
+                            span.swiper-pagination.quiz__item-title-pagination
+                            span.quiz__item-title-text Is there a WiFi connection?
+                          .quiz__form-content
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-4" value="1")
+                              span.radio__custom
+                              span.quiz__form-text Yes
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" checked name="quiz-4" value="2")
+                              span.radio__custom
+                              span.quiz__form-text No
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-4" value="3")
+                              span.radio__custom
+                              span.quiz__form-text Yes, there may be interruptions 
+                          .swiper__btn-wrap
+                            button.swiper-button-prev.swiper__btn.swiper__btn_prev(type="button")
+                              svg.swiper__btn-icon
+                                use(xlink:href="@img/sprite.svg#arrow-long")
+                            button.swiper-button-next.swiper__btn.swiper__btn_next(type="button" )
+                              svg.swiper__btn-icon
+                                use(xlink:href="@img/sprite.svg#arrow-long")
+                      li.swiper-slide
+                        .quiz__item
+                          h3.quiz__item-title
+                            span.swiper-pagination.quiz__item-title-pagination
+                            span.quiz__item-title-text What you want to control? 
+                          .quiz__form-content
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-5" value="1")
+                              span.radio__custom
+                              span.quiz__form-text Sensors 
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" checked name="quiz-5" value="2")
+                              span.radio__custom
+                              span.quiz__form-text Environment  
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-5" value="3")
+                              span.radio__custom
+                              span.quiz__form-text Irrigation 
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-5" value="4")
+                              span.radio__custom
+                              span.quiz__form-text Light 
+                            label.quiz__form-label
+                              input.radio.visually-hidden(type="radio" name="quiz-5" value="5")
+                              span.radio__custom
+                              span.quiz__form-text All of the greenhouse devices
+                          .swiper__btn-wrap
+                            button.swiper-button-prev.swiper__btn.swiper__btn_prev(type="button")
+                              svg.swiper__btn-icon
+                                use(xlink:href="@img/sprite.svg#arrow-long")
+                            button.swiper-button-next.swiper__btn.swiper__btn_next(type="button")
+                              svg.swiper__btn-icon
+                                use(xlink:href="@img/sprite.svg#arrow-long")
+                      li.swiper-slide
+                        .quiz__item
+                          h3.quiz__item-title
+                            span.quiz__item-title-text Fill out the form and we will send you the result? 
+                          .quiz__form-field-content
+                            label.visually-hidden(for="quiz-email")  Your email
+                            input#quiz-email.quiz__form-field(type="text" name="quiz-email" placeholder="Your email")
+                            +btn('green','Send','submit','.quiz__form-field-btn')
+                          
         section.popular-products
           .container.popular-products__container
-            .popular-products__top 
-              +sectionTitle('Bestsellers','popular-products__title')
-              a.popular-products__more(href="./catalog.html") 
+            .popular-products__text-block(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
+              .popular-products__top 
+                +sectionTitle('Bestsellers','popular-products__title')
+                a.popular-products__more(href="./catalog.html") 
+                  span.popular-products__more-text All products
+                  svg.popular-products__more-icon
+                    use(xlink:href="@img/sprite.svg#arrow-long")
+              p.popular-products__desc.col-md-4.col-6 Introducing our innovative and accessible devices to automate it all
+              a.popular-products__more.popular-products__more_adaptive(href="#") 
                 span.popular-products__more-text All products
                 svg.popular-products__more-icon
                   use(xlink:href="@img/sprite.svg#arrow-long")
-            p.popular-products__desc.col-md-4.col-6 Introducing our innovative and accessible devices to automate it all
-            a.popular-products__more.popular-products__more_adaptive(href="#") 
-              span.popular-products__more-text All products
-              svg.popular-products__more-icon
-                use(xlink:href="@img/sprite.svg#arrow-long")
-            ul.popular-products__list.row
+            ul.popular-products__list.row(data-aos="fade-up" data-aos-delay="200" data-aos-duration="500" data-aos-easing="ease-in-out")
               li.popular-products__item.col-md-4.col-sm-6.col-12
-                img.popular-products__item-img(src="@img/product-1.png", alt="Product")
+                picture
+                  source(srcset="@img/product-1.webp" type="image/webp")
+                  source(srcset="@img/product-1.png" type="image/png" )
+                  img.popular-products__item-img(src="@img/product-1.png", alt="Product")
                 strong.popular-products__item-title HydroDirector
                 span.popular-products__item-price $635
                 +link('green','Open a shop','./product-page.html','popular-products__item-btn')
               li.popular-products__item.col-md-4.col-sm-6.col-12
-                img.popular-products__item-img(src="@img/product-2.png", alt="Product")
+                picture
+                  source(srcset="@img/product-2.webp" type="image/webp")
+                  source(srcset="@img/product-2.png" type="image/png" )
+                  img.popular-products__item-img(src="@img/product-2.png", alt="Product")
                 strong.popular-products__item-title DryContactDirector
                 span.popular-products__item-price $365
                 +link('green','Open a shop','./product-page.html','popular-products__item-btn')
               li.popular-products__item.col-md-4.col-sm-6.col-12
-                img.popular-products__item-img(src="@img/product-3.png", alt="Product")
+                picture
+                  source(srcset="@img/product-3.webp" type="image/webp")
+                  source(srcset="@img/product-3.png" type="image/png" )
+                  img.popular-products__item-img(src="@img/product-3.png", alt="Product")
                 strong.popular-products__item-title SensorDirector
                 span.popular-products__item-price $365
                 +link('green','Open a shop','./product-page.html','popular-products__item-btn')
             
         section.subscribe-news
-          .container.subscribe-news__container
+          .container.subscribe-news__container(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
             .subscribe-news__text-block.col-md-6.col-sm-9.col-12
-              h2.subscribe-news__title Subscribe to news
-              p.subscribe-news__desc Stay up to date with all discounts, promotions and updates - subscribe to the notification mailing list
+              h2.subscribe-news__title
+              p.subscribe-news__desc
             form.subscribe-news__form(action="#").row
               input.white.subscribe-news__input.col-5(type="email" placeholder="Your email")
               +btn('green','Send',0,'subscribe-news__btn')
 
         section.about-app
           .container.about-app__container.row
-            .about-app__left.col-lg-5.col-md-6
+            .about-app__left.col-lg-5.col-md-6(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
               +sectionTitle('About the app','about-app__title')
-              img.about-app__phone(src="@img/phone.png", alt="")
-            .about-app__right.col-md-6
+              picture
+                source(srcset="@img/phone.webp" type="image/webp")
+                source(srcset="@img/phone.png" type="image/png" )
+                img.about-app__phone(src="@img/phone.png", alt="")
+            .about-app__right.col-md-6(data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200")
               p.about-app__desc Control all the sensors and equipment in your greenhouse or grow room from your phone, tablet or laptop. All kinds of media can be automated: from hydroponics to soil and everything in between. Controls any sensor, like temperature, humidity, CO2, VPD, EC, pH, DO, ORP, PAR, LUX, soil moisture and EC, flow meter, and many more to come. You can control anything in your greenhouse (light, irrigation, ventilation, etc.).
               ol.about-app__list.row
                 li.about-app__item.col-md-6
@@ -158,93 +335,226 @@ html(lang="ru")
                   p.about-app__item-desc User-friendly interface. Grow Director Pro can control up to 16,000 devices and merge them into one system, or divide them into different zones.
               .about-app__app-wrap 
                 a.about-app__app(href="#") 
-                  img.about-app__app-img(src="@img/google-play.png", alt="Download App")
+                  picture
+                    source(srcset="@img/google-play.webp" type="image/webp")
+                    source(srcset="@img/google-play.png" type="image/png" )
+                    img.about-app__app-img(src="@img/google-play.png", alt="Download App")
                 a.about-app__app(href="#") 
-                  img.about-app__app-img(src="@img/app-store.png", alt="Download App")
-            img.about-app__phone.about-app__phone_adaptive(src="@img/phone.png", alt="")
-            
+                  picture
+                    source(srcset="@img/app-store.webp" type="image/webp")
+                    source(srcset="@img/app-store.png" type="image/png" )
+                    img.about-app__app-img(src="@img/app-store.png", alt="Download App")
+            picture
+              source(srcset="@img/phone.webp" type="image/webp")
+              source(srcset="@img/phone.png" type="image/png" )
+              img.about-app__phone.about-app__phone_adaptive(src="@img/phone.png", alt="" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
             .col-lg-1
 
         section.current-news
           .container.current-news__container 
-            +sectionTitle('Current news from GrowDirector Pro','current-news__title')
-            .slider.slider-3.current-news__item
-              ul.slider__wrapper.row
-                li.slider__slide.current-news__item.col-lg-3.col-md-4.col-sm-6
-                  a.current-news__item__inner(href="./news.html")
-                    .current-news__item-img-wrap
-                      img.current-news__item-img(src="@img/current-news-1.jpg", alt="Novelty")
-                    h3.current-news__item-title Indoor Growing
-                li.slider__slide.current-news__item.col-lg-3.col-md-4.col-sm-6
-                  a.current-news__item__inner(href="./news.html")
-                    .current-news__item-img-wrap
-                      img.current-news__item-img(src="@img/current-news-2.jpg", alt="Novelty")
-                      .current-news__item-desc-wrap 
-                        p.current-news__item-desc Hydroponics is a modern method of growing plants in a closed and controlled ecological system. A large variety of plants do not ...
+            +sectionTitle('Current news from GrowDirector Pro','current-news__title', 'fade-up', '500', 'ease-in-out', '0')
+            .swiper.swiper-3.current-news__item(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200")
+              ul.swiper-wrapper
+                li.swiper-slide
+                  .current-news__item
+                    a.current-news__item__inner(href="./news.html")
+                      .current-news__item-img-wrap
+                        picture
+                          source(srcset="@img/current-news-1.webp" type="image/webp")
+                          source(srcset="@img/current-news-1.jpg" type="image/jpeg" )
+                          img.current-news__item-img(src="@img/current-news-1.jpg" alt="Novelty")
+                      h3.current-news__item-title Indoor Growing
+                li.swiper-slide
+                  .current-news__item
+                    a.current-news__item__inner(href="./news.html")
+                      .current-news__item-img-wrap
+                        picture
+                          source(srcset="@img/current-news-2.webp" type="image/webp")
+                          source(srcset="@img/current-news-2.jpg" type="image/jpeg" )
+                          img.current-news__item-img(src="@img/current-news-2.jpg" alt="Novelty")
+                        .current-news__item-desc-wrap 
+                          p.current-news__item-desc Hydroponics is a modern method of growing plants in a closed and controlled ecological system. A large variety of plants do not ...
                     h3.current-news__item-title Hydroponic Growing
-                li.slider__slide.current-news__item.col-lg-3.col-md-4.col-sm-6
-                  a.current-news__item__inner(href="./news.html")
-                    .current-news__item-img-wrap
-                      img.current-news__item-img(src="@img/current-news-3.jpg", alt="Novelty")
-                    h3.current-news__item-title Home-based urban agriculture
-                li.slider__slide.current-news__item.col-lg-3.col-md-4.col-sm-6
-                  a.current-news__item__inner(href="./news.html")
-                    .current-news__item-img-wrap
-                      img.current-news__item-img(src="@img/current-news-4.jpg", alt="Novelty")
-                    h3.current-news__item-title Greenhouse growing
-                li.slider__slide.current-news__item.col-lg-3.col-md-4.col-sm-6
-                  a.current-news__item__inner(href="./news.html")
-                    .current-news__item-img-wrap
-                      img.current-news__item-img(src="@img/current-news-5.jpg", alt="Novelty")
-                    h3.current-news__item-title Indoor Growing
-              .slider__btn-wrap
-                button.slider__btn.slider__btn_prev(type="button" disabled)
-                  svg.slider__btn-icon
+                li.swiper-slide
+                  .current-news__item
+                    a.current-news__item__inner(href="./news.html")
+                      .current-news__item-img-wrap
+                        picture
+                          source(srcset="@img/current-news-3.webp" type="image/webp")
+                          source(srcset="@img/current-news-3.jpg" type="image/jpeg" )
+                          img.current-news__item-img(src="@img/current-news-3.jpg" alt="Novelty")
+                      h3.current-news__item-title Home-based urban agriculture
+                li.swiper-slide
+                  .current-news__item
+                    a.current-news__item__inner(href="./news.html")
+                      .current-news__item-img-wrap
+                        picture
+                          source(srcset="@img/current-news-4.webp" type="image/webp")
+                          source(srcset="@img/current-news-4.jpg" type="image/jpeg" )
+                          img.current-news__item-img(src="@img/current-news-4.jpg" alt="Novelty")
+                      h3.current-news__item-title Greenhouse growing
+                li.swiper-slide
+                  .current-news__item
+                    a.current-news__item__inner(href="./news.html")
+                      .current-news__item-img-wrap
+                        picture
+                          source(srcset="@img/current-news-5.webp" type="image/webp")
+                          source(srcset="@img/current-news-5.jpg" type="image/jpeg" )
+                          img.current-news__item-img(src="@img/current-news-5.jpg" alt="Novelty")
+                      h3.current-news__item-title Indoor Growing
+                li.swiper-slide
+                  .current-news__item
+                    a.current-news__item__inner(href="./news.html")
+                      .current-news__item-img-wrap
+                        picture
+                          source(srcset="@img/current-news-1.webp" type="image/webp")
+                          source(srcset="@img/current-news-1.jpg" type="image/jpeg" )
+                          img.current-news__item-img(src="@img/current-news-1.jpg" alt="Novelty")
+                      h3.current-news__item-title Indoor Growing
+                li.swiper-slide
+                  .current-news__item
+                    a.current-news__item__inner(href="./news.html")
+                      .current-news__item-img-wrap
+                        picture
+                          source(srcset="@img/current-news-2.webp" type="image/webp")
+                          source(srcset="@img/current-news-2.jpg" type="image/jpeg" )
+                          img.current-news__item-img(src="@img/current-news-2.jpg" alt="Novelty")
+                        .current-news__item-desc-wrap 
+                          p.current-news__item-desc Hydroponics is a modern method of growing plants in a closed and controlled ecological system. A large variety of plants do not ...
+                    h3.current-news__item-title Hydroponic Growing
+                li.swiper-slide
+                  .current-news__item
+                    a.current-news__item__inner(href="./news.html")
+                      .current-news__item-img-wrap
+                        picture
+                          source(srcset="@img/current-news-3.webp" type="image/webp")
+                          source(srcset="@img/current-news-3.jpg" type="image/jpeg" )
+                          img.current-news__item-img(src="@img/current-news-3.jpg" alt="Novelty")
+                      h3.current-news__item-title Home-based urban agriculture
+                li.swiper-slide
+                  .current-news__item
+                    a.current-news__item__inner(href="./news.html")
+                      .current-news__item-img-wrap
+                        picture
+                          source(srcset="@img/current-news-4.webp" type="image/webp")
+                          source(srcset="@img/current-news-4.jpg" type="image/jpeg" )
+                          img.current-news__item-img(src="@img/current-news-4.jpg" alt="Novelty")
+                      h3.current-news__item-title Greenhouse growing
+                li.swiper-slide
+                  .current-news__item
+                    a.current-news__item__inner(href="./news.html")
+                      .current-news__item-img-wrap
+                        picture
+                          source(srcset="@img/current-news-5.webp" type="image/webp")
+                          source(srcset="@img/current-news-5.jpg" type="image/jpeg" )
+                          img.current-news__item-img(src="@img/current-news-5.jpg" alt="Novelty")
+                      h3.current-news__item-title Indoor Growing
+              .swiper__btn-wrap
+                button.swiper-button-prev.swiper__btn.swiper__btn_prev(type="button")
+                  svg.swiper__btn-icon
                     use(xlink:href="@img/sprite.svg#arrow-long")
-                button.slider__btn.slider__btn_next(type="button")
-                  svg.slider__btn-icon
+                button.swiper-button-next.swiper__btn.swiper__btn_next(type="button")
+                  svg.swiper__btn-icon
                     use(xlink:href="@img/sprite.svg#arrow-long")
         
         section.review
           .container.review__container 
-            .review__text-block
+            .review__text-block(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
               +sectionTitle('Reviews','review__title')
               p.review__desc Users love GrowDirector Pro, so that's the best proof.
-            .slider.slider-4.review__slider.col-lg-10
-              ul.slider__wrapper
-                li.slider__slide.review__item 
-                  .review__item-person
-                    img.review__item-avatar(src="@img/avatar.png", alt="Face")
-                    strong.review__item-name David
-                    span.review__item-info from Youth Village explains
-                  .review__item-content
-                    h3.review__item-title Our two Hydroponic Boxes &amp; Grow Director 🎛️ are now installed at The Youth Village Learning Center 🙌
-                    .review__item-more-wrap
-                      +link('green-trs','Read more','#','review__item-more')
-              .slider__btn-wrap
-                button.slider__btn.slider__btn_prev(type="button")
-                  svg.slider__btn-icon
+            .swiper.swiper-4.col-lg-10(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200")
+              ul.swiper-wrapper
+                li.swiper-slide 
+                  .review__item
+                    .review__item-person
+                      picture
+                        source(srcset="@img/avatar.webp" type="image/webp")
+                        source(srcset="@img/avatar.png" type="image/png" )
+                        img.review__item-avatar(src="@img/avatar.png", alt="Face")
+                      strong.review__item-name David
+                      span.review__item-info from Youth Village explains
+                    .review__item-content
+                      h3.review__item-title Our two Hydroponic Boxes &amp; Grow Director 🎛️ are now installed at The Youth Village Learning Center 🙌
+                      .review__item-more-wrap
+                        +link('green-trs','Read more','#','review__item-more')
+                li.swiper-slide 
+                  .review__item
+                    .review__item-person
+                      picture
+                        source(srcset="@img/avatar.webp" type="image/webp")
+                        source(srcset="@img/avatar.png" type="image/png" )
+                        img.review__item-avatar(src="@img/avatar.png", alt="Face")
+                      strong.review__item-name David
+                      span.review__item-info from Youth Village explains
+                    .review__item-content
+                      h3.review__item-title Our two Hydroponic Boxes &amp; Grow Director 🎛️ are now installed at The Youth Village Learning Center 🙌
+                      .review__item-more-wrap
+                        +link('green-trs','Read more','#','review__item-more')
+                li.swiper-slide 
+                  .review__item
+                    .review__item-person
+                      picture
+                        source(srcset="@img/avatar.webp" type="image/webp")
+                        source(srcset="@img/avatar.png" type="image/png" )
+                        img.review__item-avatar(src="@img/avatar.png", alt="Face")
+                      strong.review__item-name David
+                      span.review__item-info from Youth Village explains
+                    .review__item-content
+                      h3.review__item-title Our two Hydroponic Boxes &amp; Grow Director 🎛️ are now installed at The Youth Village Learning Center 🙌
+                      .review__item-more-wrap
+                        +link('green-trs','Read more','#','review__item-more')
+                li.swiper-slide 
+                  .review__item
+                    .review__item-person
+                      picture
+                        source(srcset="@img/avatar.webp" type="image/webp")
+                        source(srcset="@img/avatar.png" type="image/png" )
+                        img.review__item-avatar(src="@img/avatar.png", alt="Face")
+                      strong.review__item-name David
+                      span.review__item-info from Youth Village explains
+                    .review__item-content
+                      h3.review__item-title Our two Hydroponic Boxes &amp; Grow Director 🎛️ are now installed at The Youth Village Learning Center 🙌
+                      .review__item-more-wrap
+                        +link('green-trs','Read more','#','review__item-more')
+              .swiper__btn-wrap
+                button.swiper-button-prev.swiper__btn.swiper__btn_prev(type="button")
+                  svg.swiper__btn-icon
                     use(xlink:href="@img/sprite.svg#arrow-long")
-                button.slider__btn.slider__btn_next(type="button")
-                  svg.slider__btn-icon
+                button.swiper-button-next.swiper__btn.swiper__btn_next(type="button")
+                  svg.swiper__btn-icon
                     use(xlink:href="@img/sprite.svg#arrow-long")
 
         section.partners
           .container.partners__container.row
-            .partners__text-block.col-xl-6.col-12
+            .partners__text-block.col-xl-7.col-12(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
               +sectionTitle('Partners who trust us','partners__title')
               +link('green','Start a collaboration','#','partners__btn')
-            .partners__img-wrap.col-xl-8.col-12
-              img.partners__img(src="@img/partner-5.png", alt="Partner Logo")
-              img.partners__img(src="@img/partner-4.png", alt="Partner Logo")
-              img.partners__img(src="@img/partner-3.png", alt="Partner Logo")
-              img.partners__img(src="@img/partner-2.svg", alt="Partner Logo")
-              img.partners__img(src="@img/partner-1.png", alt="Partner Logo")
+            .partners__img-wrap.col-xl-8.col-12(data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200")
+              picture
+                source(srcset="@img/partner-5.webp" type="image/webp")
+                source(srcset="@img/partner-5.png" type="image/png" )
+                img.partners__img(src="@img/partner-5.png", alt="Partner Logo")
+              picture
+                source(srcset="@img/partner-4.webp" type="image/webp")
+                source(srcset="@img/partner-4.png" type="image/png" )
+                img.partners__img(src="@img/partner-4.png", alt="Partner Logo")
+              picture
+                source(srcset="@img/partner-3.webp" type="image/webp")
+                source(srcset="@img/partner-3.png" type="image/png" )
+                img.partners__img(src="@img/partner-3.png", alt="Partner Logo")
+              picture
+                source(srcset="@img/partner-2.webp" type="image/webp")
+                source(srcset="@img/partner-2.png" type="image/png" )
+                img.partners__img(src="@img/partner-2.svg", alt="Partner Logo")
+              picture
+                source(srcset="@img/partner-1.webp" type="image/webp")
+                source(srcset="@img/partner-1.png" type="image/png" )
+                img.partners__img(src="@img/partner-1.png", alt="Partner Logo")
             p.partners__info.col-md-3.col-sm-4.col-6 It's great for hydroponics or whatever growing media you want to use.
 
         section.contacts
           .container.contacts__container.row
-            .contacts__content.col-md-7.col-12
+            .contacts__content.col-md-7.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
               h2.contacts__title Contact form
               p.contacts__desc To ask any question? Leave your contact details for free consultation with rus. 
               form.contacts__form(action="#") 

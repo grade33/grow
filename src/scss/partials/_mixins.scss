@@ -1,0 +1,161 @@
+@mixin bold-80-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(var(--bold-80-inter) / var(--rem) * 1rem);
+  line-height: 106%;
+}
+
+@mixin bold-65-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(var(--bold-65-inter) / var(--rem) * 1rem);
+  line-height: 115%;
+}
+
+@mixin semibold-48-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(var(--semibold-48-inter) / var(--rem) * 1rem);
+  line-height: 125%;
+}
+
+// Text
+
+@mixin semibold-38-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(var(--semibold-38-inter) / var(--rem) * 1rem);
+  line-height: 139%;
+}
+
+@mixin semibold-32-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(var(--semibold-32-inter) / var(--rem) * 1rem);
+  line-height: 144%;
+}
+
+@mixin medium-30-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(var(--medium-30-inter) / var(--rem) * 1rem);
+  line-height: 130%;
+}
+
+@mixin semibold-24-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(var(--semibold-24-inter) / var(--rem) * 1rem);
+  line-height: 133%;
+}
+
+@mixin medium-24-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(var(--medium-24-inter) / var(--rem) * 1rem);
+  line-height: 133%;
+}
+
+@mixin medium-23-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(var(--medium-23-gilroy) / var(--rem) * 1rem);
+  line-height: 139%;
+}
+
+@mixin medium-22-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(var(--medium-22-gilroy) / var(--rem) * 1rem);
+  line-height: 109%;
+}
+
+@mixin regular-22-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--regular-22-gilroy) / var(--rem) * 1rem);
+  line-height: 109%;
+}
+
+@mixin semibold-21-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(var(--semibold-21-gilroy) / var(--rem) * 1rem);
+  line-height: 140%;
+}
+
+@mixin semibold-20-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(var(--semibold-20-gilroy) / var(--rem) * 1rem);
+  line-height: 140%;
+}
+
+@mixin regular-20-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--regular-20-gilroy) / var(--rem) * 1rem);
+  line-height: 125%;
+}
+
+@mixin regular-18-inter {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--regular-18-inter) / var(--rem) * 1rem);
+  line-height: 168%;
+}
+
+@mixin medium-17-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(var(--medium-17-gilroy) / var(--rem) * 1rem);
+  line-height: 141%;
+}
+
+@mixin regular-17-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--regular-17-gilroy) / var(--rem) * 1rem);
+  line-height: 141%;
+}
+
+@mixin regular-16-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--regular-16-gilroy) / var(--rem) * 1rem);
+  line-height: 150%;
+}
+
+@mixin regular-15-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--regular-15-gilroy) / var(--rem) * 1rem);
+  line-height: 160%;
+}
+
+@mixin semibold-14-gilroy {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(var(--semibold-14-gilroy) / var(--rem) * 1rem); ;
+  line-height: 150%;
+}

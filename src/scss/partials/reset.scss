@@ -1,11 +1,11 @@
 .visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 0;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 0 !important;
 }
 
 html,
@@ -35,7 +35,7 @@ ol {
   list-style: none;
 }
 
-a,img,svg {
+a,img,svg,strong {
   display: inline-block;
 }
 
@@ -44,6 +44,8 @@ a {
 }
 
 svg {
+  max-width: 100%;
+  max-height: 100%;
   vertical-align: middle;
   font-size: 0;
 }
@@ -60,6 +62,7 @@ select {
 }
 
 button {
+  text-align: left;
   cursor: pointer;
 }
 
@@ -67,11 +70,22 @@ textarea {
   resize: none;
 }
 
-img {
+img, video {
   max-width: 100%;
   max-height: 100%;
   height: auto;
   object-fit: cover;
+}
+
+input[type="password"] {
+  &::-ms-reveal {
+    display: none;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 input[type=text]::-ms-clear {

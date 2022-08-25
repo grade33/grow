@@ -3,9 +3,9 @@ mixin btn(color,text,typeBool,Class)
   button.btn(class=Class + " btn__" + color, type=type)
     span.btn__text= text
 
-mixin link(color,text,goTo,Class)
+mixin link(color,text,goTo,Class,aos1,aos2,aos3,aos4)
   - let type = typeBool ? 'button' : 'sumbit'
-  a.btn(class=Class + " btn__" + color, href=goTo)
+  a.btn(class=Class + " btn__" + color, href=goTo data-aos=aos1 data-aos-duration=aos2 data-aos-easing=aos3 data-aos-delay=aos4)
     span.btn__text= text
 
 mixin linkVideo(Class,link)
@@ -26,37 +26,41 @@ mixin counter(Class)
     span.counter__value 1
     button.counter__btn.counter__btn_plus(type="button") +
 
-mixin sectionTitle(text,Class)
-  .section-title(class=Class)
+mixin sectionTitle(text,Class,aos1,aos2,aos3,aos4)
+  .section-title(class=Class data-aos=aos1 data-aos-duration=aos2 data-aos-easing=aos3 data-aos-delay=aos4)
     svg.section-title__icon
       use(xlink:href="@img/sprite.svg#before-title-tree")
     h2.section-title__heading= text
 
 
-mixin discount
-  .discount
-    span.discount__text 15% discount on new items
-
-
-
+//- Sections
 mixin sectionPopularProducts(title)
   section.popular-products
     .container.popular-products__container
       .popular-products__top 
-        +sectionTitle(title,'popular-products__title')
+        +sectionTitle(title,'popular-products__title', 'fade-up', '500', 'ease-in-out', '0')
       ul.popular-products__list.row
-        li.popular-products__item.col-md-4.col-sm-6.col-12
-          img.popular-products__item-img(src="@img/product-1.png", alt="Product")
+        li.popular-products__item.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200")
+          picture
+            source(srcset="@img/product-1.webp" type="image/webp")
+            source(srcset="@img/product-1.png" type="image/png" )
+            img.popular-products__item-img(src="@img/product-1.png", alt="Product")
           strong.popular-products__item-title HydroDirector
           span.popular-products__item-price $635
           +link('green','Open a shop','./product-page.html','popular-products__item-btn')
-        li.popular-products__item.col-md-4.col-sm-6.col-12
-          img.popular-products__item-img(src="@img/product-2.png", alt="Product")
+        li.popular-products__item.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200")
+          picture
+            source(srcset="@img/product-1.webp" type="image/webp")
+            source(srcset="@img/product-1.png" type="image/png" )
+            img.popular-products__item-img(src="@img/product-2.png", alt="Product")
           strong.popular-products__item-title DryContactDirector
           span.popular-products__item-price $365
           +link('green','Open a shop','./product-page.html','popular-products__item-btn')
-        li.popular-products__item.col-md-4.col-sm-6.col-12
-          img.popular-products__item-img(src="@img/product-3.png", alt="Product")
+        li.popular-products__item.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200")
+          picture
+            source(srcset="@img/product-1.webp" type="image/webp")
+            source(srcset="@img/product-1.png" type="image/png" )
+            img.popular-products__item-img(src="@img/product-3.png", alt="Product")
           strong.popular-products__item-title SensorDirector
           span.popular-products__item-price $365
           +link('green','Open a shop','./product-page.html','popular-products__item-btn')
@@ -64,20 +68,29 @@ mixin sectionPopularProducts(title)
 mixin sectionApplication(text)
   section.application
     .container.application__container.row
-      .application__text-block.col-md-8
+      .application__text-block.col-md-8(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
         .application__desc=text
           | &nbsp;через удобное приложение, где вы можете 
           span.application__desc_green отследить историю ваших действий, изменить заданные параметры 
           | в любой точке мира при наличии вайфай соединения в месте подключения девайса. 
         +link('green','Посмотреть в каталоге','#','application__btn')
-      .application__phone-wrap.col-md-4.col-4
-        img.application__phone(src="@img/phone.png", alt="")
+      .application__phone-wrap.col-md-4.col-4(data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out")
+        picture
+          source(srcset="@img/phone.webp" type="image/webp")
+          source(srcset="@img/phone.png" type="image/png" )
+          img.application__phone(src="@img/phone.png", alt="")
 
-mixin sectionDeviceConnecting(device,url)
+mixin sectionDeviceConnecting(device,imagePath,imageExtension,imageType)
   section.device-connecting
-    .device-connecting__bg-wrap
-      img.device-connecting__bg(src=url, alt="")
-    .container.device-connecting__container.row
+    .device-connecting__bg-wrap(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
+      if (imageExtension && imageType)
+        picture
+          source(srcset=imagePath+".webp" type="image/webp")
+          source(srcset=imagePath+"."+imageExtension type="image/"+imageType )
+          img.device-connecting__bg(src=imagePath+"."+imageExtension alt="")
+      else 
+        img.device-connecting__bg(src=imagePath, alt="")
+    .container.device-connecting__container(data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out")
       p.device-connecting__desc.col-xl-6.col-lg-7.col-md-8
         = device 
         | &nbsp; может подключаться в сеть как самостоятельное одиночное устройство, так и объединяться в единую систему с любыми другими устройствами гроудиректор через мобильное приложение.
@@ -85,27 +98,34 @@ mixin sectionDeviceConnecting(device,url)
 mixin sectionDeviceCharacteristics
   section.device-characteristics 
     .container.device-characteristics__container
-      h2.device-characteristics__title Основные характеристики
+      h2.device-characteristics__title(data-aos="fade-down" data-aos-duration="500" data-aos-easing="ease-in-out") Основные характеристики
       ul.device-characteristics__list.row
-        li.device-characteristics__item.col-lg-3.col-sm-4.col-6
+        li.device-characteristics__item.col-lg-3.col-sm-4.col-sm-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
           h3.device-characteristics__item-title Вес:
           p.device-characteristics__item-desc Здесь будет характеристика аппарата
-        li.device-characteristics__item.col-lg-3.col-sm-4.col-6
+        li.device-characteristics__item.col-lg-3.col-sm-4.col-sm-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
           h3.device-characteristics__item-title Габариты:
           p.device-characteristics__item-desc Здесь будет характеристика аппарата
-        li.device-characteristics__item.col-lg-3.col-sm-4.col-6
+        li.device-characteristics__item.col-lg-3.col-sm-4.col-sm-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
           h3.device-characteristics__item-title Мощность:
           p.device-characteristics__item-desc Здесь будет характеристика аппарата
-        li.device-characteristics__item.col-lg-3.col-sm-4.col-6
+        li.device-characteristics__item.col-lg-3.col-sm-4.col-sm-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
           h3.device-characteristics__item-title Гарантия:
           p.device-characteristics__item-desc Здесь будет характеристика аппарата
-      +link('white','Заказать Hydrodirector','./product-page.html','device-characteristics__btn')
+      +link('white','Заказать Hydrodirector','./product-page.html','device-characteristics__btn', 'fade-up', '500', 'ease-in-out', '0')
 
-mixin sectionDeviceInstallation(url)
+mixin sectionDeviceInstallation(imagePath,imageExtension,imageType)
   section.device-installation
     .container.device-installation__container
-      .device-installation__text-block.col-md-6
+      .device-installation__text-block.col-md-6(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
         strong.device-installation__title Установка:
         p.device-installation__desc Монтируется с помощью специального держателя к вертикальным поверхностям.
-      .device-installation__bg-wrap
-        img.device-installation__bg(src=url, alt="")
+      .device-installation__bg-wrap(data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out")
+        if (imageExtension && imageType)
+          picture
+            source(srcset=imagePath+".webp" type="image/webp")
+            source(srcset=imagePath+"."+imageExtension type="image/"+imageType )
+            img.device-installation__bg(src=imagePath+"."+imageExtension alt="")
+        else 
+          img.device-connecting__bg(src=imagePath, alt="")
+        

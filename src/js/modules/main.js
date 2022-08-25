@@ -1,5 +1,5 @@
-// Проверка поддержки webp, добавление класса webp или no-webp для HTML
-export function isWebp() {
+// Webp
+{
   // Проверка поддержки webp
   function testWebP(callback) {
     let webP = new Image();
@@ -15,7 +15,8 @@ export function isWebp() {
   });
 }
 
-export function isBurger() {
+// Burger
+{
   const burgerBtn = document.querySelector('.burger')
   const menu = document.querySelector('.menu')
   const popup = menu.parentElement
@@ -33,8 +34,8 @@ export function isBurger() {
   })
 }
 
-
-export function isAccordion() {
+// Accordion
+{
   document.querySelectorAll('.acc').forEach(acc => {
     const accBtn = acc.querySelector('.acc__trigger')
     const accPanel = acc.querySelector('.acc__panel')
@@ -49,8 +50,23 @@ export function isAccordion() {
   })
 }
 
-export function isMenuProductItems() {
+// Open Product Menu
+{
   const btn = document.querySelector('.nav__link_product')
+  const menu = document.querySelector('.product-menu')
+  btn.addEventListener('click', function () {
+    menu.classList.toggle('product-menu_active')
+  })
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.nav__link_product') === btn ||
+      e.target.closest('.product-menu') === menu) return;
+    menu.classList.remove('product-menu_active')
+  })
+}
+
+// Open Product Menu Adaptive
+{
+  const btn = document.querySelector('.nav__link_product-mobile')
   const menu = document.querySelector('.menu__product-menu')
   btn.addEventListener('click', function () {
     menu.classList.toggle('menu__product-menu_active')

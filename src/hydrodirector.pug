@@ -1,5 +1,5 @@
 include ./html/mixins.pug
-include ./html/header.pug
+
 doctype html
 html(lang="ru")
   head
@@ -10,8 +10,7 @@ html(lang="ru")
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
   body.hydrodirector-page
-      +discount
-      +header()
+      include ./html/header.pug
 
       main.main 
 
@@ -19,12 +18,15 @@ html(lang="ru")
           .container.device-hero__container
             .device-hero__ellipse-wrap
               img.device-hero__ellipse(src="@img/hydrodirector/hero-ellipse.svg", alt="")
-            .device-hero__info
+            .device-hero__info(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
               h1.device-hero__title HydroDirector
               p.device-hero__desc.col-xl-12.col-md-8.col-sm-10.col-12 Специализированный девайс для гидропонных систем всех типов. Подходит для автоматизации любых площадей от маленьких гроурумов до промышленных теплиц.
               +link('white','Заказать','product-page.html','device-hero__btn-buy')
-            .device-hero__device 
-              img.device-hero__device-img(src="@img/hydrodirector/hero-bg.png", alt="Hydrodirector")
+            .device-hero__device(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
+              picture
+                source(srcset="@img/hydrodirector/hero-bg.webp" type="image/webp")
+                source(srcset="@img/hydrodirector/hero-bg.png" type="image/png" )
+                img.device-hero__device-img(src="@img/hydrodirector/hero-bg.png", alt="Hydrodirector")
               .device-hero__device-icon-wrap
                 button.device-hero__device-tooltip-btn.device-hero__device-icon_1(type="button")
                   img(src="@img/hydrodirector/icon-1.svg", alt="Hydrodirector")
@@ -46,84 +48,102 @@ html(lang="ru")
                   img(src="@img/hydrodirector/icon-5.svg", alt="Hydrodirector icon")
                   span.device-hero__device-tooltip-content
                     span EAir temp &amp; humidity &amp; VPD
-            p.device-hero__text
+            p.device-hero__text(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
               | Вы можете объединять в одну систему и 
               span.device-hero__text_green  одновременно контролировать от 3 до 16.000 девайсов,
               |  что составляет в сумме 48.000 помп.
-            +link('green','Download manual','#','device-hero__btn-download')
+            +link('green','Download manual','#','device-hero__btn-download', 'fade-up', '500', 'ease-in-out', '0')
 
         section.device-advantages
+          picture
+            source(srcset="@img/hydrodirector/advantages.webp" type="image/webp")
+            source(srcset="@img/hydrodirector/advantages.png" type="image/png" )
+            img.device-advantages__bg(src="@img/hydrodirector/advantages.png", alt="" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out")
           .container.device-advantages__container
-            img.device-advantages__bg(src="@img/hydrodirector/advantages.png", alt="")
-            +sectionTitle('Что он может?','device-advantages__title')
+            +sectionTitle('Что он может?','device-advantages__title', 'fade-right', '500', 'ease-in-out', '0')
             ul.device-advantages__list.row
-              li.device-advantages__item.col-lg-5
+              li.device-advantages__item.col-lg-5(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-1.svg", alt="")
                 p.device-advantages__desc Контролировать подачу удобрений, воды или pH-балансирующих растворов в систему
-              li.device-advantages__item.col-lg-5
+              li.device-advantages__item.col-lg-5(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-2.svg", alt="")
                 p.device-advantages__desc Следить за уровнем Dissolved Oxygen (DO) в гидропонном растворесоздавать заданный баланс между pH oxidation-reduction potential
-              li.device-advantages__item.col-lg-5
+              li.device-advantages__item.col-lg-5(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-3.svg", alt="")
                 p.device-advantages__desc Отправлять уведомления о неполадках в системе и анализировать возможные причины их возникновения
-              li.device-advantages__item.col-lg-5
+              li.device-advantages__item.col-lg-5(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-4.svg", alt="")
                 p.device-advantages__desc Объединять в единую систему до 16 000 девайсов создавая невероятные возможности для автоматизации промышленных теплиц
-              li.device-advantages__item.col-lg-5
+              li.device-advantages__item.col-lg-5(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-5.svg", alt="")
                 p.device-advantages__desc Смешивать необходимые удобрения в нужных пропорциях согласно показателям EC сенсора
-              li.device-advantages__item.device-advantages__item_row
+              li.device-advantages__item.device-advantages__item_row(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-6.svg", alt="")
                 p.device-advantages__desc Собирать и хранить все данные в облаке
-              li.device-advantages__item.device-advantages__item_row
+              li.device-advantages__item.device-advantages__item_row(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-7.svg", alt="")
                 p.device-advantages__desc Удаленно изменять настройки системы
-              li.device-advantages__item.device-advantages__item_row
+              li.device-advantages__item.device-advantages__item_row(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-advantages__icon-wrap
                   img.device-advantages__icon(src="@img/device-advantages/advantage-8.svg", alt="")
                 p.device-advantages__desc Поддерживать заданный уровень pH
                     
         section.pluggable-sensors
           .container.pluggable-sensors__container 
-            h2.pluggable-sensors__title Подключаемые сенсоры:
+            h2.pluggable-sensors__title(data-aos="fade-down" data-aos-duration="500" data-aos-easing="ease-in-out") Подключаемые сенсоры:
             ul.pluggable-sensors__list.row
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-1.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-1.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-1.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-1.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name Ph
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-1.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-1.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-1.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-1.png", alt="pluggable-sensors sensors")
                   p.pluggable-sensors__item-info EAir temp &amp; humidity &amp; VPD
                 strong.pluggable-sensors__name EC
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-2.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-2.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-2.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-2.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name DO
-              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12
+              li.pluggable-sensors__item.col-lg-3.col-md-4.col-sm-6.col-12(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .pluggable-sensors__icon-wrap 
-                  img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-3.png", alt="pluggable-sensors sensors")
+                  picture
+                    source(srcset="@img/pluggable-sensors/sensor-3.webp" type="image/webp")
+                    source(srcset="@img/pluggable-sensors/sensor-3.png" type="image/png" )
+                    img.pluggable-sensors__img(src="@img/pluggable-sensors/sensor-3.png", alt="pluggable-sensors sensors")
                 strong.pluggable-sensors__name ORP
 
         section.device-equipped
           .container.device-equipped__container
-            img.device-equipped__bg(src="@img/hydrodirector/device.png", alt="")
-            h2.device-equipped__title Каждый девайс оснащён:
+            picture
+              source(srcset="@img/hydrodirector/device.webp" type="image/webp")
+              source(srcset="@img/hydrodirector/device.png" type="image/png" )
+              img.device-equipped__bg(src="@img/hydrodirector/device.png", alt="" data-aos="fade-down" data-aos-duration="600" data-aos-easing="ease-in-out")
+            h2.device-equipped__title(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out") Каждый девайс оснащён:
             .device-equipped__list.row
-              .device-equipped__item
+              .device-equipped__item(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text Тремя мощными помпами, способными перекачивать объем до 12 л в час каждая
-              .device-equipped__item
+              .device-equipped__item(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text Встроенным уникальным софтом,который позволяет очень просто задавать сложные настройки и контролировать их, предотвращая ошибки пользователя 
-              .device-equipped__item
+              .device-equipped__item(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text На нижней части располагается 3 разъема для подключения сенсоров (вы можете комбинировать сенсоры на своё усмотрение)
                   .device-equipped__tooltip
@@ -133,13 +153,13 @@ html(lang="ru")
                         li EC + temp
                         li pH
                         li DO или ORP
-              .device-equipped__item
+              .device-equipped__item(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text Держатель для крепления к вертикальным поверхностям
-              .device-equipped__item
+              .device-equipped__item(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text Проводом для подключения в сеть __V системой Wi-Fi MESH connection для установления соединения с вашим телефоном, лэптопом или планшетом
-              .device-equipped__item
+              .device-equipped__item(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-equipped__desc
                   p.device-equipped__text 12 метровая гибкая трубка для подключения помп к резервуарам с жидкостями объемом до 10.000 л
 
@@ -149,7 +169,7 @@ html(lang="ru")
 
         +sectionDeviceCharacteristics
 
-        +sectionDeviceInstallation('@img/hydrodirector/installation.png')
+        +sectionDeviceInstallation('@img/hydrodirector/installation','png','png')
 
         +sectionPopularProducts('Этот девайс идеально сочетается с:')
 

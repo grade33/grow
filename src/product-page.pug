@@ -1,5 +1,5 @@
 include ./html/mixins.pug
-include ./html/header.pug
+
 doctype html
 html(lang="ru")
   head
@@ -10,34 +10,46 @@ html(lang="ru")
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
   body.product-page
-      +discount
-      +header()
+      include ./html/header.pug
 
       main.main 
 
         section.device-info
           .container.device-info__container
             .device-info__content.row
-              .device-info__view.col-lg-7
+              .device-info__view.col-lg-7(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .device-info__view-main
-                  img.device-info__view-img(src="@img/card/card-1.png", alt="Product Image")
+                  picture
+                    source(srcset="@img/card/card-1.webp" type="image/webp")
+                    source(srcset="@img/card/card-1.png" type="image/png" )
+                    img.device-info__view-img(src="@img/card/card-1.png", alt="Product Image")
                 ul.device-info__view-list  
                   li.device-info__view-item
-                    img.device-info__view-img(src="@img/card/card-2.png", alt="Product Image")
+                    picture
+                      source(srcset="@img/card/card-2.webp" type="image/webp")
+                      source(srcset="@img/card/card-2.png" type="image/png" )
+                      img.device-info__view-img(src="@img/card/card-2.png", alt="Product Image")
                   li.device-info__view-item
-                    img.device-info__view-img(src="@img/card/card-3.png", alt="Product Image")
+                    picture
+                      source(srcset="@img/card/card-3.webp" type="image/webp")
+                      source(srcset="@img/card/card-3.png" type="image/png" )
+                      img.device-info__view-img(src="@img/card/card-3.png", alt="Product Image")
                   li.device-info__view-item
-                    img.device-info__view-img(src="@img/card/card-4.png", alt="Product Image")
-              .device-info__text-block.col-lg-5
+                    picture
+                      source(srcset="@img/card/card-4.webp" type="image/webp")
+                      source(srcset="@img/card/card-4.png" type="image/png" )
+                      img.device-info__view-img(src="@img/card/card-4.png", alt="Product Image")
+              .device-info__text-block.col-lg-5(data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out")
                 h1.device-info__name HydroDirector PRO
                 strong.device-info__price $635
                 form.device-info__form(action="#") 
                   .device-info__fields
                     .device-info__field-wrap
                       label.device-info__label(for="device-socket-type") Select socket type:
-                      select.select.device-info__select
-                        option(value="US") US
-                        option(value="AM") AM
+                      .select-1-wrap
+                        select.select-1
+                          option(value="US") US
+                          option(value="AM") AM
                     .device-info__field-wrap
                       label.device-info__label(for="device-quantity") Quantity:
                       +counter('device-info__counter')
@@ -57,31 +69,46 @@ html(lang="ru")
                     li.device-info__item Встроенный софт и передатчик MESH WiFi
                 .device-info__app-wrap 
                   a.device-info__app-link(href="#")
-                    img.device-info__app-img(src="@img/google-play.png", alt="App")
+                    picture
+                      source(srcset="@img/google-play.webp" type="image/webp")
+                      source(srcset="@img.png/google-play" type="image/png" )
+                      img.device-info__app-img(src="@img/google-play.png", alt="App")
                   a.device-info__app-link(href="#")
-                    img.device-info__app-img(src="@img/app-store.png", alt="App")
+                    picture
+                      source(srcset="@img/app-store.webp" type="image/webp")
+                      source(srcset="@img/app-store.png" type="image/png" )
+                      img.device-info__app-img(src="@img/app-store.png", alt="App")
 
         section.offer-sensors
           .container.offer-sensors__container
-            +sectionTitle('Please add sensors for your device','offer-sensors__title')
+            +sectionTitle('Please add sensors for your device','offer-sensors__title', 'fade-up', '500', 'ease-in-out', '0')
             ul.offer-sensors__list.row
-              li.offer-sensors__item.col-md-4
+              li.offer-sensors__item.col-md-4(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .offer-sensors__img-wrap
-                  img.offer-sensors__img(src="@img/offer-sensors/sensor-1.png", alt="Sensor")
+                  picture
+                    source(srcset="@img/offer-sensors/sensor-1.webp" type="image/webp")
+                    source(srcset="@img/offer-sensors/sensor-1.png" type="image/png" )
+                    img.offer-sensors__img(src="@img/offer-sensors/sensor-1.png", alt="Sensor")
                 strong.offer-sensors__name Temperature&amp;Humidity sensor
                 span.offer-sensors__price $55
                 +counter('offer-sensors__counter')
                 +btn('green','Add to card',1,'offer-sensors__btn')
-              li.offer-sensors__item.col-md-4
+              li.offer-sensors__item.col-md-4(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .offer-sensors__img-wrap
-                  img.offer-sensors__img(src="@img/offer-sensors/sensor-2.png", alt="Sensor")
+                  picture
+                    source(srcset="@img/offer-sensors/sensor-2.webp" type="image/webp")
+                    source(srcset="@img/offer-sensors/sensor-2.png" type="image/png" )
+                    img.offer-sensors__img(src="@img/offer-sensors/sensor-2.png", alt="Sensor")
                 strong.offer-sensors__name Soil moisture sensor
                 span.offer-sensors__price $130
                 +counter('offer-sensors__counter')
                 +btn('green','Add to card',1,'offer-sensors__btn')
-              li.offer-sensors__item.col-md-4
+              li.offer-sensors__item.col-md-4(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out")
                 .offer-sensors__img-wrap
-                  img.offer-sensors__img(src="@img/offer-sensors/sensor-3.png", alt="Sensor")
+                  picture
+                    source(srcset="@img/offer-sensors/sensor-3.webp" type="image/webp")
+                    source(srcset="@img/offer-sensors/sensor-3.png" type="image/png" )
+                    img.offer-sensors__img(src="@img/offer-sensors/sensor-3.png", alt="Sensor")
                 strong.offer-sensors__name LUX sensor
                 span.offer-sensors__price $130
                 +counter('offer-sensors__counter')
@@ -89,8 +116,8 @@ html(lang="ru")
         
         section.delivery
           .container.delivery__container
-            +sectionTitle('Delivery','delivery__title')
+            +sectionTitle('Delivery','delivery__title', 'fade-up', '500', 'ease-in-out', '0')
             .col-1
-            p.delivery__desc.col-sm-7 Специализированный девайс для гидропонных систем с тремя помпами. В общую систему можно объединять до 16.000 устройств и контролировать их удаленно. Специализированный девайс для гидропонных систем с тремя помпами. В общую систему можно объединять до 16.000 устройств и контролировать их удаленно.
+            p.delivery__desc.col-sm-7(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100") Специализированный девайс для гидропонных систем с тремя помпами. В общую систему можно объединять до 16.000 устройств и контролировать их удаленно. Специализированный девайс для гидропонных систем с тремя помпами. В общую систему можно объединять до 16.000 устройств и контролировать их удаленно.
 
       include ./html/footer.pug

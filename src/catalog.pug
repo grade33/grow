@@ -1,5 +1,5 @@
 include ./html/mixins.pug
-include ./html/header.pug
+
 doctype html
 html(lang="ru")
   head
@@ -10,13 +10,12 @@ html(lang="ru")
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
   body.catalog-page
-      +discount
-      +header()
+      include ./html/header.pug
 
       main.main 
         section.catalog-products
           .container.catalog-products__container
-            +sectionTitle('Products','catalog-products__title')
+            +sectionTitle('Products','catalog-products__title', 'fade-up', '500', 'ease-in-out', '0')
             ul.catalog-products__list.catalog-products__list_flex.row
               -
                 const products = [
@@ -38,9 +37,12 @@ html(lang="ru")
                   ['Flow Meter','$32']
                 ]
               each value, idx in products
-                li.catalog-products__item.col-lg-4.col-6
+                li.catalog-products__item.col-lg-4.col-6(data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="100")
                   .catalog-products__img-wrap
-                    img.catalog-products__img(src="@img/catalog/catalog-product-"+(idx + 1)+".jpg", alt="Product")
+                    picture
+                      source(srcset="@img/catalog/catalog-product-"+(idx + 1)+".webp" type="image/webp")
+                      source(srcset="@img/catalog/catalog-product-"+(idx + 1)+".jpg" type="image/jpeg" )
+                      img.catalog-products__img(src="@img/catalog/catalog-product-"+(idx + 1)+".jpg" alt="Product")
                   strong.catalog-products__name= value[0]
                   span.catalog-products__price= value[1]
                   +link('green','Open a shop','./product-page.html','catalog-products__btn')

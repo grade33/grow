@@ -1,6 +1,6 @@
 import Choices from "choices.js";
 
-document.querySelectorAll('.select').forEach(choicesEl => {
+document.querySelectorAll('.select-1').forEach(choicesEl => {
   const choices1 = new Choices(choicesEl, {
     searchEnabled: false,
     position: 'bottom',

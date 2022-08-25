@@ -1,5 +1,5 @@
 include ./html/mixins.pug
-include ./html/header.pug
+
 doctype html
 html(lang="ru")
   head
@@ -10,17 +10,16 @@ html(lang="ru")
     link(rel="stylesheet", href="./css/style.min.css")
     script(defer src="./js/app.min.js")
   body.checkout-page
-      +discount
-      +header()
+      include ./html/header.pug
 
       main.main 
 
         section.checkout
           .container.checkout__container 
-            +sectionTitle('Checkout','checkout__title')
+            +sectionTitle('Checkout','checkout__title', 'fade-down', '500', 'ease-in-out', '300')
             form.checkout__content.row
               .checkout__form.col-xl-5.col-lg-6(action="#")
-                .checkout__form-main
+                .checkout__form-main(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                   h3.checkout__form-title Billing details
                   label.checkout__field-wrap 
                     span.checkout__label First name *
@@ -33,11 +32,12 @@ html(lang="ru")
                     input.checkout__field(type="text")
                   label.checkout__field-wrap 
                     span.checkout__label Country / Region *
-                    select.select
-                      option(value="") Armenia
-                      option(value="armenia") Armenia
-                      option(value="russia") Russia
-                      option(value="israel") Israel
+                    .select-1-wrap
+                      select.select-1
+                        option(value="") Armenia
+                        option(value="armenia") Armenia
+                        option(value="russia") Russia
+                        option(value="israel") Israel
                   label.checkout__field-wrap 
                     span.checkout__label Street address *
                     input.checkout__field(type="text" placeholder="House number and street name")
@@ -54,12 +54,12 @@ html(lang="ru")
                   label.checkout__field-wrap.checkout__field-wrap_short
                     span.checkout__label Email address *
                     input.checkout__field(type="email")
-                .checkout__form-bottom
+                .checkout__form-bottom(data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out")
                   h3.checkout__form-title Billing details
                   label.checkout__field-wrap 
                       span.checkout__label Ship to a different address?
                       textarea.checkout__field.checkout__textarea(placeholder="Notes about your order, e. g. spesical notes for delivery")
-              .order.checkout__order.col-lg-5(action="#") 
+              .order.checkout__order.col-lg-5(action="#" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-delay="200") 
                 .order__text-block
                   strong.order__title Order Summary
                   .order__row
